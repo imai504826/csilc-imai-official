@@ -117,7 +117,28 @@
 
         .btn-wrapper { text-align: center; margin-top: 40px; }
         .btn-home { display: inline-block; text-decoration: none; border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 12px 35px; border-radius: 50px; font-weight: bold; }
-
+        /* --- フッター --- */
+        footer {
+            background: var(--footer-bg);
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .footer-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .copyright {
+            font-size: 0.8rem;
+            color: #888888;
+        }
+        .footer-srp {
+            width: 80px;
+            margin: 20px auto;
+            opacity: 0.8;
+        }
+        
        /* --- レスポンシブ --- */
         @media (max-width: 768px) {
             .header-inner { 
@@ -213,7 +234,9 @@
     <footer>
         <div class="container">
             <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
-            <div class="copyright">&copy; 2026 IMAI HISAICHIRO All Rights Reserved.</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
         </div>
     </footer>
 
