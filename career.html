@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>実績・職務歴 | 今井久一郎 社会保険労務士事務所</title>
     <style>
-        /* --- 基本設定 --- */
+        /* --- 基本設定 IMAI  --- */
         :root {
             --primary-blue: #0068b7;
             --accent-orange: #e6852e;
@@ -15,15 +15,21 @@
             --text-gray: #666666;
             --footer-bg: #1a1a1a;
         }
-
+        /* スムーズスクロールをCSSで有効化 */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
             color: var(--text-dark);
             background-color: var(--white);
             margin: 0;
             padding: 0;
-            line-height: 1.8;
+            line-height: 1.7;
         }
+
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
 
         .container {
             max-width: 1000px;
@@ -31,14 +37,14 @@
             padding: 0 20px;
         }
 
-        /* --- ヘッダー（共通・スマホ最適化済） --- */
+       /* --- ヘッダー --- */
         header {
             background: var(--white);
             padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .header-inner {
             display: flex;
@@ -49,7 +55,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
         }
         .logo-area img {
             height: 40px;
@@ -64,17 +69,13 @@
         .nav-menu {
             display: flex;
             gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
         }
         .nav-menu a {
-            text-decoration: none;
             color: var(--primary-blue);
             font-weight: bold;
             font-size: 0.9rem;
-            white-space: nowrap;
-            transition: 0.3s;
+            cursor: pointer;
+            white-space: nowrap; /* 文字の折り返しを防ぐ */
         }
         .nav-menu a:hover { color: var(--accent-orange); }
 
@@ -254,7 +255,7 @@
                 <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI">
                 <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
             </a>
-            <nav style="width: 100%; max-width: 650px;">
+            <nav style="width: 100%; max-width: 600px;">
                 <ul class="nav-menu">
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="services.html">3つの柱</a></li>

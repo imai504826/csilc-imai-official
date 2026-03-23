@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サービス内容 | 今井久一郎 社会保険労務士事務所</title>
     <style>
+        /* --- 基本設定 IMAI  --- */
         :root {
             --primary-blue: #0068b7;
             --accent-orange: #e6852e;
@@ -68,11 +69,25 @@
         }
 
         /* PCナビゲーション */
-        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-        .nav-menu a { text-decoration: none; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-menu a {
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            white-space: nowrap; /* 文字の折り返しを防ぐ */
+        }
         .nav-menu a:hover { color: var(--accent-orange); }
 
-        .header-line { display: flex; width: 100%; height: 6px; }
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line {
+            display: flex;
+            width: 100%;
+            height: 6px;
+        }
         .line-blue { background-color: #1c4b8e; flex: 2; }
         .line-sky { background-color: #3498db; flex: 1; }
         .line-orange { background-color: #fabc3f; flex: 0.8; }
@@ -237,7 +252,7 @@
                 <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI">
                 <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
             </a>
-            <nav>
+            <nav style="width: 100%; max-width: 600px;">
                 <ul class="nav-menu">
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="services.html">3つの柱</a></li>
@@ -322,7 +337,6 @@
                 <div class="service-card">
                     <h3>社会保険手続き（給付・算定）</h3>
                     <ul class="service-list">
-                        <li>社会保険の算定基礎届（定時決定）</li>
                         <li>標準報酬月額の随時改定届（月変）</li>
                         <li>傷病手当金・出産手当金の支給申請</li>
                         <li>出産育児一時金・埋葬料等の請求</li>

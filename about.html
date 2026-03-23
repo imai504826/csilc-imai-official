@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事務所紹介 | 今井久一郎 社会保険労務士事務所</title>
     <style>
+        /* --- 基本設定 IMAI  --- */
         :root {
             --primary-blue: #0068b7;
             --accent-orange: #e6852e;
@@ -13,8 +14,10 @@
             --footer-bg: #1a1a1a;
             --border-light: #f0f0f0; /* 画像に合わせた薄いグレー */
         }
-
-        html { scroll-behavior: smooth; }
+        /* スムーズスクロールをCSSで有効化 */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
             color: var(--text-dark);
@@ -24,7 +27,14 @@
             line-height: 1.7;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
         /* --- ヘッダー --- */
         header {
@@ -40,20 +50,40 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-area img { height: 40px; width: auto; }
-        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); }
-
-        /* PCナビゲーション */
-        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-area img {
+            height: 40px;
+            width: auto;
+        }
+        .office-name-top {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
         .nav-menu a {
-            text-decoration: none;
             color: var(--primary-blue);
             font-weight: bold;
             font-size: 0.9rem;
+            cursor: pointer;
+            white-space: nowrap; /* 文字の折り返しを防ぐ */
         }
+        .nav-menu a:hover { color: var(--accent-orange); }
 
-        .header-line { display: flex; width: 100%; height: 6px; }
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line {
+            display: flex;
+            width: 100%;
+            height: 6px;
+        }
         .line-blue { background-color: #1c4b8e; flex: 2; }
         .line-sky { background-color: #3498db; flex: 1; }
         .line-orange { background-color: #fabc3f; flex: 0.8; }

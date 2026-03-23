@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サービスメニュー | 今井久一郎 社会保険労務士事務所</title>
     <style>
-        /* --- 基本設定（既存サイト統一） --- */
+        /* --- 基本設定 IMAI  --- */
         :root {
             --primary-blue:   #0068b7;
             --accent-orange:  #e6852e;
@@ -32,13 +32,22 @@
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+        /* スムーズスクロールをCSSで有効化 */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-                         "Hiragino Sans", "Meiryo UI", "Meiryo", sans-serif;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
             color: var(--text-dark);
             background-color: var(--white);
-            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
         }
+
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
 
         .container {
             max-width: 1000px;
@@ -46,14 +55,14 @@
             padding: 0 20px;
         }
 
-        /* ===== ヘッダー（既存サイト統一） ===== */
+       /* --- ヘッダー --- */
         header {
             background: var(--white);
             padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .header-inner {
             display: flex;
@@ -64,7 +73,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
         }
         .logo-area img {
             height: 40px;
@@ -79,17 +87,15 @@
         .nav-menu {
             display: flex;
             gap: 20px;
-            list-style: none;
         }
         .nav-menu a {
-            text-decoration: none;
             color: var(--primary-blue);
             font-weight: bold;
             font-size: 0.9rem;
-            transition: 0.3s;
+            cursor: pointer;
+            white-space: nowrap; /* 文字の折り返しを防ぐ */
         }
         .nav-menu a:hover { color: var(--accent-orange); }
-        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); }
 
         /* --- ヘッダー下3色ライン --- */
         .header-line {
@@ -543,7 +549,7 @@
             color: #888888;
         }
 
-        /* --- レスポンシブ --- */
+       /* --- レスポンシブ --- */
         @media (max-width: 768px) {
             .header-inner { 
                 flex-direction: column; 
