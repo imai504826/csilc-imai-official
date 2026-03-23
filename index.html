@@ -15,12 +15,10 @@
             --text-gray: #666666;
             --white: #ffffff;
         }
-
         /* スムーズスクロールをCSSで有効化 */
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
             color: var(--text-dark);
@@ -32,13 +30,12 @@
 
         a { text-decoration: none; transition: 0.3s; }
         ul { list-style: none; padding: 0; margin: 0; }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         /* --- ヘッダー --- */
         header {
             background: var(--white);
@@ -303,7 +300,14 @@
             }
         }
     </style>
+    <script>
+        // ページが読み込まれた瞬間に、スクロール位置を(x:0, y:0)にリセット
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
 </head>
+
 <body>
     <header>
         <div class="container header-inner">
@@ -315,9 +319,10 @@
                 <ul class="nav-menu">
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="services.html">3つの柱</a></li>
+                    <li><a href="serviceAbaut.html">サービス内容</a></li>
                     <li><a href="career.html">実績・職務歴</a></li>
                     <li><a href="kintaiservice.html">勤怠システム</a></li>
-                    <li><a href="index.html#concept">事務所紹介</a></li>
+                    <li><a href="about.html">事務所紹介</a></li>
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -407,7 +412,6 @@
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-
         // 2. ページ読み込み完了時、確実に最上部(0,0)へ戻す
         window.onload = function() {
             setTimeout(function() {
@@ -418,7 +422,6 @@
                 });
             }, 10);
         };
-
         // 3. クリック時のみ指定のセクションへスクロール
         function scrollToSection(id) {
             const target = document.getElementById(id);

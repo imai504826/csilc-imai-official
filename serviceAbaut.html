@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス内容 | 今井久一郎 社会保険労務士事務所</title>
+    <style>
+        :root {
+            --primary-blue: #0068b7;
+            --accent-orange: #e6852e;
+            --white: #ffffff;
+            --text-dark: #333;
+            --light-bg: #f4f7fa;
+            --border-color: #ddd;
+            --footer-bg: #1a1a1a;
+            --border-light: #f0f0f0;
+        }
+        /* スムーズスクロールをCSSで有効化 */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-area img {
+            height: 40px;
+            width: auto;
+        }
+        .office-name-top {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        /* PCナビゲーション */
+        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        .nav-menu a { text-decoration: none; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        .services-section { padding: 40px 0 60px; background: #fcfdfe; }
+        .section-title { text-align: center; color: var(--primary-blue); font-size: 2.2rem; margin-top: 0; margin-bottom: 30px; position: relative; }
+        .section-title::after { content: ""; display: block; width: 60px; height: 4px; background: var(--accent-orange); margin: 10px auto 0; border-radius: 2px; }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--primary-blue);
+            padding: 30px;
+        }
+
+        .it-card {
+            border-top: 4px solid var(--accent-orange);
+            background-color: #fffaf5;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .service-card h3::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--accent-orange);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .service-list { list-style: none; padding: 0; margin: 0; }
+        .service-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #444;
+        }
+        .service-list li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+        }
+
+        .wide-card { grid-column: 1 / -1; }
+        .sub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 40px;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            background: #eef4f9;
+            color: var(--primary-blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .it-tag { background: #ffe9d6; color: #d35400; }
+
+        .btn-wrapper { text-align: center; margin-top: 40px; margin-bottom: 80px; }
+        .btn-home {
+            display: inline-block;
+            text-decoration: none;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 12px 35px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-home:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,104,183,0.3);
+        }
+
+        footer { background: var(--footer-bg); color: #ffffff; padding: 40px 0 25px; text-align: center; }
+        .footer-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 10px; }
+        .copyright { font-size: 0.85rem; opacity: 0.6; letter-spacing: 1px; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { 
+                flex-direction: column; 
+                gap: 15px; 
+                padding: 10px 0; 
+            }
+            .logo-area {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            nav { width: 100%; }
+            .nav-menu { 
+                display: grid; /* グリッドレイアウトで整列 */
+                grid-template-columns: repeat(2, 1fr); /* 2列にする */
+                gap: 8px 15px; 
+                width: 100%;
+                text-align: center;
+            }
+            .nav-menu li {
+                padding: 5px 0;
+                border-bottom: 1px solid #f0f0f0; /* 境界線で見やすく */
+            }
+            .nav-menu a { 
+                font-size: 0.8rem; 
+                display: block; 
+                width: 100%;
+            }
+            .hero { padding: 40px 20px; }
+            .hero h1 { font-size: 1.4rem; }
+            .hero p { font-size: 0.9rem; }
+            .service-card { padding: 30px 20px; }
+            .section-title { font-size: 1.4rem; }
+        }
+
+        /* 超小型画面（iPhone SE等）用 */
+        @media (max-width: 375px) {
+            .nav-menu {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 5px;
+            }
+            .nav-menu a {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-area">
+                <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="services.html">3つの柱</a></li>
+                    <li><a href="serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="career.html">実績・職務歴</a></li>
+                    <li><a href="kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="about.html">事務所紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <main class="services-section">
+        <div class="container">
+            <h2 class="section-title">サービス内容</h2>
+            
+            <div class="service-grid">
+                <div class="service-card it-card">
+                    <h3>システム導入・コンサルタント</h3>
+                    <div class="category-tag it-tag">導入前・導入期</div>
+                    <ul class="service-list">
+                        <li>システム選定・導入・移行要件定義</li>
+                        <li>業務分析（BPM）</li>
+                        <li>システム設定における就業規則・法令適合チェック</li>
+                        <li>システムパラメータ設定・データ移行</li>
+                        <li>導入後の操作説明会（現場向け・管理者向け）</li>
+                    </ul>
+                </div>
+
+                <div class="service-card it-card">
+                    <h3>導入後の定期サポート</h3>
+                    <div class="category-tag it-tag">運用期・改善期</div>
+                    <ul class="service-list">
+                        <li>システムパラメータ設定変更対応</li>
+                        <li>操作方法・仕様に関する問い合わせ対応</li>
+                        <li>定期データチェック・異常値モニタリング</li>
+                        <li>課題整理およびシステム化改善提案</li>
+                        <li>最新の法令改正に伴うシステム改修アドバイス</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>労働保険手続き</h3>
+                    <ul class="service-list">
+                        <li>労働保険の年度更新業務</li>
+                        <li>労災保険の特別加入手続き</li>
+                        <li>療養補償給付等の請求（労災事故対応）</li>
+                        <li>休業補償給付等の請求</li>
+                        <li>障害補償給付・遺族補償給付の請求</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>雇用保険手続き</h3>
+                    <ul class="service-list">
+                        <li>被保険者資格取得届（新規採用時）</li>
+                        <li>被保険者資格喪失届・離職票作成（退職時）</li>
+                        <li>育児休業給付金・介護休業給付金の申請</li>
+                        <li>高年齢雇用継続給付金の申請手続き</li>
+                        <li>事業所設置届・各種変更届の手続き</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>社会保険手続き（入退社・扶養）</h3>
+                    <ul class="service-list">
+                        <li>健康保険・厚生年金 資格取得・喪失届</li>
+                        <li>被扶養者（異動）届（家族の加入・削除）</li>
+                        <li>国民年金第3号被保険者関係届</li>
+                        <li>被保険者 氏名変更・住所変更届</li>
+                        <li>二以上事業所勤務届等の特殊手続き</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>社会保険手続き（給付・算定）</h3>
+                    <ul class="service-list">
+                        <li>社会保険の算定基礎届（定時決定）</li>
+                        <li>標準報酬月額の随時改定届（月変）</li>
+                        <li>傷病手当金・出産手当金の支給申請</li>
+                        <li>出産育児一時金・埋葬料等の請求</li>
+                        <li>産前産後・育児休業終了時の報酬改定届</li>
+                        <li>養育期間の標準報酬月額特例申出書</li>
+                    </ul>
+                </div>
+
+                <div class="service-card wide-card">
+                    <h3>事務代行・スポットサービス</h3>
+                    <div class="sub-grid">
+                        <div>
+                            <div class="category-tag">新規設立・開始時</div>
+                            <ul class="service-list">
+                                <li>労働保険関係成立届（新規事業所）</li>
+                                <li>雇用保険適用事業設置届</li>
+                                <li>社会保険新規適用（新規事業所）</li>
+                                <li>就業規則及び賃金規定新規作成・提出</li>
+                            </ul>
+                            <div class="category-tag">年度更新・定例業務</div>
+                            <ul class="service-list">
+                                <li>労働保険料確定・概算申告（年1回）</li>
+                                <li>社会保険算定基礎（年1回）</li>
+                                <li>各種労使協定書作成・提出（年1回）</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="category-tag">規定改定・助成金</div>
+                            <ul class="service-list">
+                                <li>就業規則及び賃金規定改定</li>
+                                <li>その他法的規定作成・改定提出</li>
+                                <li>助成金申請手続き</li>
+                                <li>助成金申請の作成書類確認</li>
+                            </ul>
+                            <div class="category-tag">個別給付・年金・災害</div>
+                            <ul class="service-list">
+                                <li>年金裁定請求（老齢・障害・遺族）</li>
+                                <li>労災保険給付手続き（障害・遺族・埋葬）</li>
+                                <li>労災保険第三者行為災害届</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-home">トップページに戻る</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.8;">ITと労務の融合で、企業の持続的な成長をサポートします</p>
+            <div class="copyright">&copy; 2026 IMAI HISAICHIRO All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
+</body>
+</html>
