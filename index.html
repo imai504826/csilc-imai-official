@@ -204,15 +204,30 @@
             margin-bottom: 30px;
             font-size: 1.6rem;
         }
-        .office-info-box {
+        .office-info-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
             margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .office-info-box {
             padding: 35px;
             background: var(--white);
             border-radius: 15px;
-            display: inline-block;
             text-align: left;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-left: 5px solid var(--primary-blue);
+            flex: 1;
+            min-width: 300px;
+        }
+        .srp-mark-box {
+            flex: 0 0 150px;
+        }
+        .srp-mark-box img {
+            width: 100%;
+            height: auto;
         }
 
         /* --- お問い合わせ --- */
@@ -247,6 +262,11 @@
             color: var(--white);
             margin-bottom: 15px;
             font-weight: bold;
+        }
+        .footer-srp {
+            width: 80px;
+            margin: 20px auto;
+            opacity: 0.8;
         }
         .copyright {
             font-size: 0.75rem;
@@ -287,6 +307,15 @@
             .hero p { font-size: 0.9rem; }
             .service-card { padding: 30px 20px; }
             .section-title { font-size: 1.4rem; }
+            
+            .office-info-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .srp-mark-box {
+                order: -1; /* スマホではマークを上にする */
+                width: 120px;
+            }
         }
 
         /* 超小型画面（iPhone SE等）用 */
@@ -375,11 +404,16 @@
                     経営者様が抱える「人」の悩みを解消し、本来の事業成長に集中できる環境を共に創り上げます。
                 </p>
                 
-                <div class="office-info-box">
-                    <strong>事務所概要</strong><br>
-                    事務所名：今井久一郎 社会保険労務士事務所<br>
-                    代表者：特定社会保険労務士 今井 久一郎（登録番号 12230040)<br>
-                    主なサービス：労務コンサルティング、IT導入支援、社労士業務全般
+                <div class="office-info-wrapper">
+                    <div class="office-info-box">
+                        <strong>事務所概要</strong><br>
+                        事務所名：今井久一郎 社会保険労務士事務所<br>
+                        代表者：特定社会保険労務士 今井 久一郎（登録番号 12230040)<br>
+                        主なサービス：労務コンサルティング、IT導入支援、社労士業務全般
+                    </div>
+                    <div class="srp-mark-box">
+                        <img src="images/認証マーク_SRPⅡ.jpg" alt="社会保険労務士個人情報保護事務所 SRP II 認証">
+                    </div>
                 </div>
             </div>
         </section>
@@ -397,6 +431,7 @@
         <div class="container">
             <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
             <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
             <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
         </div>
     </footer>
