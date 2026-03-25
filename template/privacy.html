@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人情報保護方針（SRP II 準拠） | 今井久一郎 社会保険労務士事務所</title>
+    <style>
+        /* --- 基本設定 IMAI --- */
+        :root {
+            --primary-blue: #0068b7;
+            --accent-orange: #e6852e;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --footer-bg: #1a1a1a;
+            --border-light: #f0f0f0; 
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; cursor: pointer; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- メイン --- */
+        .policy-section { padding: 60px 0 80px; background: #fcfdfe; }
+        .section-title { text-align: center; color: var(--primary-blue); font-size: 2.2rem; margin-bottom: 40px; }
+        .policy-card { 
+            background: var(--white); 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            max-width: 850px; 
+            margin: 0 auto; 
+            border-top: 5px solid var(--primary-blue);
+            padding: 50px 40px;
+        }
+        .policy-intro { margin-bottom: 30px; font-size: 1rem; color: var(--text-dark); }
+        .policy-item { margin-bottom: 35px; }
+        .policy-item h3 {
+            color: var(--primary-blue);
+            font-size: 1.15rem;
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .policy-item p { font-size: 0.95rem; margin: 0 0 10px; color: var(--text-dark); }
+        .policy-item ul { padding-left: 20px; list-style-type: disc; margin-bottom: 15px; }
+        .policy-item li { font-size: 0.95rem; margin-bottom: 8px; }
+
+        .btn-wrapper { text-align: center; margin-top: 40px; }
+        .btn-home { display: inline-block; text-decoration: none; border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 12px 35px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+        .btn-home:hover { background: var(--primary-blue); color: var(--white); }
+
+        /* --- フッター --- */
+        footer { background: var(--footer-bg); color: #ffffff; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.25rem; font-weight: bold; margin-bottom: 15px; }
+        .copyright { font-size: 0.8rem; color: #888888; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; }
+        
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; padding: 10px 0; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .policy-card { padding: 30px 20px; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-area">
+                <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="services.html">3つの柱</a></li>
+                    <li><a href="serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="career.html">実績・職務歴</a></li>
+                    <li><a href="kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="about.html">事務所紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <main class="policy-section">
+        <div class="container">
+            <h1 class="section-title">個人情報保護方針</h1>
+            
+            <div class="policy-card">
+                <p class="policy-intro">
+                    今井久一郎 社会保険労務士事務所（以下「当事務所」）は、社会保険労務士として取り扱う顧問先様の個人情報および当事務所の従業者の個人情報の重要性を深く認識し、その適切な保護と管理を徹底いたします。当事務所は、社会保険労務士会連合会が定めるSRP II（社労士事務所における個人情報保護）の認証基準を遵守し、以下の通り個人情報保護方針を定め、これを実行維持することを宣言いたします。
+                </p>
+
+                <div class="policy-item">
+                    <h3>1. 法令、規範の遵守</h3>
+                    <p>当事務所は、個人情報の保護に関する法令（個人情報保護法、マイナンバー法）、社会保険労務士法、国が定める指針、およびSRP II認証規定を厳守いたします。また、個人情報保護マネジメントシステムを構築し、適宜見直しを行い、継続的な改善を図ります。</p>
+                </div>
+
+                <div class="policy-item">
+                    <h3>2. 業務委託（外部委託）における監督と責任</h3>
+                    <p>当事務所は、業務を円滑に遂行するため、労務管理システムの提供元（ASP・クラウドベンダー）等に個人情報の取り扱いを委託する場合があります。この際、以下の事項を徹底いたします。</p>
+                    <ul>
+                        <li>当事務所の選定基準に基づき、十分な保護水準を満たす委託先を選定します。</li>
+                        <li>秘密保持、再委託の禁止（または事前の書面承諾義務）、事故発生時の責任分担を明記した契約を締結します。</li>
+                        <li>委託先に対し、定期的または必要に応じて情報の管理状況を調査・監督し、安全性を担保します。</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>3. 特定個人情報（マイナンバー）の厳格な管理</h3>
+                    <p>当事務所は、特定個人情報取扱管理責任者を配置し、マイナンバー法に定められた事務（社会保険・労働保険の届出、雇用保険事務等）の範囲内でのみ取得・利用いたします。特定個人情報は以下の措置により保護されます。</p>
+                    <ul>
+                        <li>事務取扱担当者の限定と、アクセス権限の厳格な管理。</li>
+                        <li>物理的な「取扱い区域」および「保管区域」の設置と入退室制限。</li>
+                        <li>マイナンバーを取り扱う専用端末の分離、および通信の暗号化。</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>4. 組織的・技術的安全管理措置</h3>
+                    <p>個人情報への不正アクセス、紛失、破壊、改ざんおよび漏えい等を防止するため、以下の措置を講じます。</p>
+                    <ul>
+                        <li>不正アクセス防止のためのファイアウォール設置とウイルス対策ソフトの最新化。</li>
+                        <li>個人情報を含む電子データの暗号化、および外部持ち出しの原則禁止。</li>
+                        <li>従業者に対する採用時の秘密保持誓約書の締結、および年1回以上の情報セキュリティチェックの実施。</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>5. 廃棄・消去の確実な履行</h3>
+                    <p>法令に基づく保存期間が経過した個人情報、および利用目的を達成した特定個人情報等は、機密性を保持しつつ、以下の方法で確実に廃棄いたします。</p>
+                    <ul>
+                        <li>紙媒体：シュレッダーによる判読不能な裁断、または専門業者による機密溶解処理。</li>
+                        <li>電子媒体：専用ソフトによるデータ完全消去、または物理的な媒体破壊。</li>
+                        <li>廃棄・消去後は、その「種類・日時・方法」を廃棄管理簿に記録し、管理責任者が確認を行います。</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>6. 開示、訂正、利用停止および苦情への対応</h3>
+                    <p>本人より自己の個人情報について、開示・訂正・利用停止・消去等の請求があった場合には、本人確認の上、合理的な範囲で速やかに対応いたします。また、個人情報の取り扱いに関する苦情・相談に対しても誠実かつ迅速に対応するための窓口を設置いたします。</p>
+                </div>
+
+                <p style="text-align: right; font-size: 0.95rem; margin-top: 40px; line-height: 1.8;">
+                    制定日：2026年3月1日<br>
+                    今井久一郎 社会保険労務士事務所<br>
+                    代表 　特定社会保険労務士 今井 久一郎
+                </p>
+            </div>
+
+            <div class="btn-wrapper">
+                <a href="index.html" class="btn-home">ホームへ戻る</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
