@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今井久一郎 社会保険労務士事務所 | CSI&LC IMAI</title>
     <style>
-        /* --- 基本設定 IMAI  --- */
+/* --- プロフェッショナル・ビジネス設定 IMAI --- */
         :root {
-            --primary-blue: #0068b7;
-            --accent-orange: #e6852e;
-            --accent-sky: #3498db;
-            --light-blue-bg: #f0f6ff;
-            --text-dark: #333333;
-            --text-gray: #666666;
+            /* メインカラー：信頼と誠実さを表す深みのあるネイビーブルー */
+            --primary-blue: #1a4a93; 
+            /* アクセント：エネルギッシュかつ視認性の高いブラッシュオレンジ（クリックを誘発） */
+            --accent-orange: #f39800; 
+            /* サブアクセント：知的な印象を与えるスカイブルー */
+            --accent-sky: #00a0e9; 
+            /* 背景用ドット：少しグレーを混ぜた落ち着いた水色（ドットを際立たせる） */
+            --light-blue-bg: #f3f5f8fd; 
+            /* テキスト：真っ黒を避け、可読性を高めた墨色 */
+            --text-dark: #2d3436; 
+            /* 補助テキスト：高級感のあるチャコールグレー */
+            --text-gray: #636e72; 
+            /* ベースカラー：清潔感のある純白 */
             --white: #ffffff;
+            /* 追加：セクション背景用の非常に薄いグレー（画面のメリハリ用） */
+            --bg-soft: #f8fafc;
         }
         /* スムーズスクロールをCSSで有効化 */
         html {
@@ -107,16 +116,36 @@
             display: block;
             font-size: 1.1rem;
             color: var(--primary-blue);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: bold;
         }
+        /* 追加：専門職タグ */
+        .specialist-tag {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: #fff;
+            padding: 4px 15px;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(230, 133, 46, 0.3);
+        }
+        .specialist-tag:hover {
+            background-color: var(--primary-blue);
+            color: #fff;
+        }
+
         .hero h1 {
             font-size: 2rem;
-            color: var(--accent-orange);
+            color: var(--primary-blue); /* オレンジからブルーに変更し、専門性を強調 */
             margin-bottom: 25px;
             letter-spacing: 0.05em;
             font-weight: bold;
             line-height: 1.4;
+        }
+        .hero h1 span.highlight {
+            color: var(--accent-orange);
         }
         .hero p {
             font-size: 1.05rem;
@@ -363,12 +392,19 @@
             <div class="container">
                 <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI" class="hero-logo-large">
                 <span class="hero-sub">今井久一郎 社会保険労務士事務所</span>
-                <h1>人とシステムを、最適につなぐ。<br>次世代の労務パートナー。</h1>
+                
+                <a href="kintaiservice.html" class="specialist-tag">労務管理システム導入サポート専門社労士</a>
+
+                <h1>人とシステムを、最適につなぐ。<br><span class="highlight">労務管理システム導入サポート</span>の専門家。</h1>
+                
                 <p>
                     労務相談 × システムによる効率化 × 労働・社会保険手続代行<br>
                     企業の持続的な成長を、最先端の労務管理でサポートします。
                 </p>
-                <button type="button" onclick="scrollToSection('contact')" class="cta-button">初回無料相談はこちら</button>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <button type="button" onclick="scrollToSection('contact')" class="cta-button">初回無料相談はこちら</button>
+                    <a href="kintaiservice.html" class="cta-button" style="background-color: var(--accent-orange); box-shadow: 0 4px 15px rgba(230, 133, 46, 0.3);">システム導入詳細はこちら</a>
+                </div>
             </div>
         </section>
 
@@ -384,8 +420,10 @@
                         <p>法令遵守に基づいた就業規則の整備により、働きやすい職場環境を構築。助成金の活用提案を通じた経営サポートから万が一の問題発生時の的確な対応まで、企業の健全な成長を幅広く支えます。</p>
                     </div>
                     <div class="service-card" style="border-color: var(--accent-orange);">
-                        <h3>システムによる効率化</h3>
-                        <p>クラウド勤怠や給与計算システムの導入を徹底サポート。ITの活用によりバックオフィスの生産性を高め、ヒューマンエラーを最小限に抑えます。</p>
+                        <a href="kintaiservice.html" style="color: inherit; display: block;">
+                            <h3>システムによる効率化</h3>
+                            <p><strong>労務管理システム導入サポートの専門家</strong>として、クラウド勤怠や給与計算システムの導入を徹底サポート。ITの活用によりバックオフィスの生産性を高め、ヒューマンエラーを最小限に抑えます。</p>
+                        </a>
                     </div>
                     <div class="service-card" style="border-color: var(--accent-sky);">
                         <h3>労働・社会保険手続代行</h3>
@@ -409,7 +447,7 @@
                         <strong>事務所概要</strong><br>
                         事務所名：今井久一郎 社会保険労務士事務所<br>
                         代表者：特定社会保険労務士 今井 久一郎（登録番号 12230040)<br>
-                        主なサービス：労務コンサルティング、IT導入支援、社労士業務全般
+                        主なサービス：<strong>労務管理システム導入サポート</strong>、労務コンサルティング、社労士業務全般
                     </div>
                     <div class="srp-mark-box">
                         <img src="images/認証マーク_SRPⅡ.jpg" alt="社会保険労務士個人情報保護事務所 SRP II 認証">
