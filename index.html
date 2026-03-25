@@ -5,29 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今井久一郎 社会保険労務士事務所 | CSI&LC IMAI</title>
     <style>
-/* --- プロフェッショナル・ビジネス設定 IMAI --- */
+        /* --- プロフェッショナル・ビジネス設定 IMAI --- */
         :root {
-            /* メインカラー：信頼と誠実さを表す深みのあるネイビーブルー */
             --primary-blue: #1a4a93; 
-            /* アクセント：エネルギッシュかつ視認性の高いブラッシュオレンジ（クリックを誘発） */
             --accent-orange: #f39800; 
-            /* サブアクセント：知的な印象を与えるスカイブルー */
             --accent-sky: #00a0e9; 
-            /* 背景用ドット：少しグレーを混ぜた落ち着いた水色（ドットを際立たせる） */
             --light-blue-bg: #f3f5f8fd; 
-            /* テキスト：真っ黒を避け、可読性を高めた墨色 */
             --text-dark: #2d3436; 
-            /* 補助テキスト：高級感のあるチャコールグレー */
             --text-gray: #636e72; 
-            /* ベースカラー：清潔感のある純白 */
             --white: #ffffff;
-            /* 追加：セクション背景用の非常に薄いグレー（画面のメリハリ用） */
             --bg-soft: #f8fafc;
         }
-        /* スムーズスクロールをCSSで有効化 */
-        html {
-            scroll-behavior: smooth;
-        }
+
+        html { scroll-behavior: smooth; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
             color: var(--text-dark);
@@ -45,6 +35,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
         /* --- ヘッダー --- */
         header {
             background: var(--white);
@@ -83,7 +74,7 @@
             font-weight: bold;
             font-size: 0.9rem;
             cursor: pointer;
-            white-space: nowrap; /* 文字の折り返しを防ぐ */
+            white-space: nowrap;
         }
         .nav-menu a:hover { color: var(--accent-orange); }
 
@@ -100,7 +91,7 @@
         /* --- メインビジュアル --- */
         .hero {
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px 40px; /* 下部余白を調整 */
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
             background-image: radial-gradient(var(--light-blue-bg) 20%, transparent 20%);
             background-size: 25px 25px;
@@ -116,37 +107,80 @@
             display: block;
             font-size: 1.1rem;
             color: var(--primary-blue);
-            margin-bottom: 10px;
+            margin-bottom: 30px;
             font-weight: bold;
         }
-        /* 追加：専門職タグ */
-        .specialist-tag {
+
+        /* --- メッセージバナー（整列版） --- */
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+        .specialist-card {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 560px;
+            background: linear-gradient(90deg, var(--accent-orange), #ffb400);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: left;
+            box-shadow: 0 3px 12px rgba(230, 133, 46, 0.25);
+            position: relative;
+            transition: 0.3s;
+            overflow: hidden;
+            border: none;
+        }
+        .specialist-card::before {
+            content: "CHECK!";
+            flex-shrink: 0; 
+            width: 55px;
+            background: #fff;
+            color: var(--accent-orange);
+            font-size: 0.7rem;
+            padding: 1px 0;
+            border-radius: 3px;
+            margin-right: 12px;
+            text-align: center;
             display: inline-block;
-            background-color: var(--accent-orange);
-            color: #fff;
-            padding: 4px 15px;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(230, 133, 46, 0.3);
         }
-        .specialist-tag:hover {
-            background-color: var(--primary-blue);
-            color: #fff;
+        .specialist-card::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            animation: shine 4s infinite;
+        }
+        @keyframes shine {
+            0% { left: -60%; }
+            20% { left: 120%; }
+            100% { left: 120%; }
+        }
+        .specialist-card:hover {
+            transform: translateX(6px);
+            background: var(--primary-blue);
         }
 
         .hero h1 {
             font-size: 2rem;
-            color: var(--primary-blue); /* オレンジからブルーに変更し、専門性を強調 */
+            color: var(--primary-blue);
+            margin-top: 15px;
             margin-bottom: 25px;
             letter-spacing: 0.05em;
             font-weight: bold;
             line-height: 1.4;
         }
-        .hero h1 span.highlight {
-            color: var(--accent-orange);
-        }
+        .hero h1 span.highlight { color: var(--accent-orange); }
         .hero p {
             font-size: 1.05rem;
             color: var(--text-gray);
@@ -155,6 +189,58 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* --- お知らせセクション --- */
+        .news-section {
+            background-color: var(--white);
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .news-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+            padding-top: 5px;
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 15px;
+        }
+        .news-list {
+            flex-grow: 1;
+        }
+        .news-item {
+            display: flex;
+            gap: 15px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 0.95rem;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-date {
+            color: var(--text-gray);
+            font-family: Arial, sans-serif;
+            flex-shrink: 0;
+            min-width: 100px;
+        }
+        .news-category {
+            background: var(--primary-blue);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            height: fit-content;
+            margin-top: 2px;
+        }
+        .news-text {
+            color: var(--text-dark);
+        }
+        .news-text:hover { color: var(--accent-sky); }
+
         .cta-button {
             display: inline-block;
             background-color: var(--primary-blue);
@@ -171,10 +257,7 @@
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 104, 183, 0.4); }
 
         /* --- サービスセクション --- */
-        .services {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
+        .services { padding: 80px 0; background-color: var(--white); }
         .section-title {
             text-align: center;
             font-size: 1.8rem;
@@ -199,40 +282,17 @@
             background: var(--light-blue-bg);
             padding: 45px 30px;
             border-radius: 20px;
-            text-align: center;
             transition: 0.3s;
             border-bottom: 5px solid transparent;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            background: #eef4ff;
-        }
-        .service-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            text-align: left;
-            margin: 0;
-        }
+        .service-card:hover { transform: translateY(-5px); background: #eef4ff; }
+        .service-card h3 { color: var(--primary-blue); margin-bottom: 20px; font-size: 1.4rem; text-align: center; }
+        .service-card p { font-size: 0.95rem; text-align: left; margin: 0; }
 
         /* --- 事務所紹介 --- */
-        .concept {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-        }
-        .concept-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .concept h2 {
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-            font-size: 1.6rem;
-        }
+        .concept { padding: 80px 0; background-color: #f9f9f9; }
+        .concept-content { text-align: center; max-width: 800px; margin: 0 auto; }
+        .concept h2 { color: var(--primary-blue); margin-bottom: 30px; font-size: 1.6rem; }
         .office-info-wrapper {
             display: flex;
             align-items: center;
@@ -251,13 +311,8 @@
             flex: 1;
             min-width: 300px;
         }
-        .srp-mark-box {
-            flex: 0 0 150px;
-        }
-        .srp-mark-box img {
-            width: 100%;
-            height: auto;
-        }
+        .srp-mark-box { flex: 0 0 150px; }
+        .srp-mark-box img { width: 100%; height: auto; }
 
         /* --- お問い合わせ --- */
         .contact {
@@ -266,7 +321,6 @@
             color: var(--white);
             text-align: center;
         }
-        .contact h2 { margin-bottom: 15px; }
         .contact-btn {
             display: inline-block;
             background: var(--white);
@@ -286,76 +340,20 @@
             padding: 50px 0;
             text-align: center;
         }
-        .footer-name {
-            font-size: 1.2rem;
-            color: var(--white);
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        .footer-srp {
-            width: 80px;
-            margin: 20px auto;
-            opacity: 0.8;
-        }
-        .copyright {
-            font-size: 0.75rem;
-            margin-top: 25px;
-            color: #666;
-        }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
 
-        /* --- レスポンシブ --- */
         @media (max-width: 768px) {
-            .header-inner { 
-                flex-direction: column; 
-                gap: 15px; 
-                padding: 10px 0; 
-            }
-            .logo-area {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
-            .nav-menu { 
-                display: grid; /* グリッドレイアウトで整列 */
-                grid-template-columns: repeat(2, 1fr); /* 2列にする */
-                gap: 8px 15px; 
-                width: 100%;
-                text-align: center;
-            }
-            .nav-menu li {
-                padding: 5px 0;
-                border-bottom: 1px solid #f0f0f0; /* 境界線で見やすく */
-            }
-            .nav-menu a { 
-                font-size: 0.8rem; 
-                display: block; 
-                width: 100%;
-            }
-            .hero { padding: 40px 20px; }
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
             .hero h1 { font-size: 1.4rem; }
-            .hero p { font-size: 0.9rem; }
-            .service-card { padding: 30px 20px; }
-            .section-title { font-size: 1.4rem; }
-            
-            .office-info-wrapper {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .srp-mark-box {
-                order: -1; /* スマホではマークを上にする */
-                width: 120px;
-            }
-        }
-
-        /* 超小型画面（iPhone SE等）用 */
-        @media (max-width: 375px) {
-            .nav-menu {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 5px;
-            }
-            .nav-menu a {
-                font-size: 0.75rem;
-            }
+            .specialist-card { font-size: 0.8rem; padding: 8px 12px; max-width: 100%; }
+            .specialist-card::before { width: 45px; font-size: 0.6rem; margin-right: 8px; }
+            .news-box { flex-direction: column; gap: 15px; }
+            .news-item { flex-wrap: wrap; gap: 5px 10px; }
+            .news-date { width: 100%; }
+            .office-info-wrapper { flex-direction: column; }
         }
     </style>
 </head>
@@ -367,14 +365,14 @@
                 <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
                 <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
             </div>
-            <nav style="width: 100%; max-width: 600px;">
+            <nav style="width: 100%; max-width: 620px;">
                 <ul class="nav-menu">
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="services.html">3つの柱</a></li>
                     <li><a href="serviceAbaut.html">サービス内容</a></li>
                     <li><a href="career.html">実績・職務歴</a></li>
                     <li><a href="kintaiservice.html">勤怠システム</a></li>
-                    <li><a href="privacy.html">個人情報</a></li>
+                    <li><a href="privacy.html">個人情報方針</a></li>
                     <li><a href="about.html">事務所紹介</a></li>
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
@@ -394,7 +392,11 @@
                 <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI" class="hero-logo-large">
                 <span class="hero-sub">今井久一郎 社会保険労務士事務所</span>
                 
-                <a href="kintaiservice.html" class="specialist-tag">労務管理システム導入サポート専門社労士</a>
+                <div class="message-container">
+                    <a href="kintaiservice.html" class="specialist-card">残業計算・複雑な勤務に対する時間管理でお困りではないですか？</a>
+                    <a href="kintaiservice.html" class="specialist-card">複雑なシフト・交代勤務の管理にお困りではないですか？</a>
+                    <a href="kintaiservice.html" class="specialist-card">正確な勤務実績をリアルタイムで把握したいことはありませんか？</a>
+                </div>
 
                 <h1>人とシステムを、最適につなぐ。<br><span class="highlight">労務管理システム導入サポート</span>の専門家。</h1>
                 
@@ -409,6 +411,26 @@
             </div>
         </section>
 
+        <section class="news-section">
+            <div class="container news-box">
+                <div class="news-title">INFORMATION</div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <span class="news-date">2026.03.25</span>
+                        <span class="news-category">お知らせ</span>
+                        <a href="#" class="news-text">ウェブサイトをリニューアルいたしました。</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2026.03.10</span>
+                        <span class="news-category" style="background: #e74c3c;">PDF資料</span>
+                        <a href="pdf/ご紹介資料_V2.pdf" download="今井久一郎社会保険労務士事務所_ご紹介資料.pdf" class="news-text download-link">
+                            <span class="pdf-icon">今井久一郎社会保険労務士事務所 ご紹介資料をダウンロード（掲載しました）</span> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="services" class="services">
             <div class="container">
                 <h2 class="section-title">
@@ -418,17 +440,17 @@
                 <div class="service-grid">
                     <div class="service-card" style="border-color: var(--primary-blue);">
                         <h3>労務の適正化・助成金</h3>
-                        <p>法令遵守に基づいた就業規則の整備により、働きやすい職場環境を構築。助成金の活用提案を通じた経営サポートから万が一の問題発生時の的確な対応まで、企業の健全な成長を幅広く支えます。</p>
+                        <p>法令遵守に基づいた就業規則の整備により、働きやすい職場環境を構築.助成金の活用提案を通じた経営サポートから万が一の問題発生時の的確な対応まで、企業の健全な成長を幅広く支えます。</p>
                     </div>
                     <div class="service-card" style="border-color: var(--accent-orange);">
                         <a href="kintaiservice.html" style="color: inherit; display: block;">
                             <h3>システムによる効率化</h3>
-                            <p><strong>労務管理システム導入サポートの専門家</strong>として、クラウド勤怠や給与計算システムの導入を徹底サポート。ITの活用によりバックオフィスの生産性を高め、ヒューマンエラーを最小限に抑えます。</p>
+                            <p><strong>労務管理システム導入サポートの専門家</strong>として、クラウド勤怠や給与計算システムの導入を徹底サポート.ITの活用によりバックオフィスの生産性を高め、ヒューマンエラーを最小限に抑えます。</p>
                         </a>
                     </div>
                     <div class="service-card" style="border-color: var(--accent-sky);">
                         <h3>労働・社会保険手続代行</h3>
-                        <p>労働保険・社会保険の複雑な手続きを正確に代行。法改正情報をいち早くお届けし、法令遵守（コンプライアンス）の徹底をサポートします。</p>
+                        <p>労働保険・社会保険の複雑な手続きを正確に代行.法改正情報をいち早くお届けし、法令遵守（コンプライアンス）の徹底をサポートします。</p>
                     </div>
                 </div>
             </div>
@@ -476,32 +498,20 @@
     </footer>
 
     <script>
-        // 1. ブラウザの自動スクロール位置復元を即座に無効化
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        // 2. ページ読み込み完了時、確実に最上部(0,0)へ戻す
         window.onload = function() {
             setTimeout(function() {
-                window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: 'instant'
-                });
+                window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
             }, 10);
         };
-        // 3. クリック時のみ指定のセクションへスクロール
         function scrollToSection(id) {
             const target = document.getElementById(id);
             if (target) {
-                // ヘッダーの高さ（スマホ時は高くなるので動的に取得）
                 const headerHeight = document.querySelector('header').offsetHeight || 80;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
         }
     </script>
