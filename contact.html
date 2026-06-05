@@ -238,34 +238,34 @@
         <div class="container">
             <h1 class="section-title">お問い合わせ</h1>
 
-            <form id="contactForm" action="https://docs.google.com//forms/u/0/d/e/1FAIpQLSf4Wzg9cPL1O58DhL9AlcZllpMDAAlLhrfoVpV0yqBPJERxlQ/formResponse" 
-                  method="POST" 
-                  target="hidden_iframe" 
+            <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxp9DhpwijD02c5ucGPImVlCjUWg9TuoH2AOQij3xUP-OCwHkVciC4PVryPWBih8ER7/exec"
+                  method="POST"
+                  target="hidden_iframe"
                   class="contact-form">
-                
+
                 <div class="form-group">
                     <label>貴社名<span>必須</span></label>
-                    <input type="text" name="entry.2005620554" class="form-control" required>
+                    <input type="text" name="company" class="form-control" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label>お名前<span>必須</span></label>
-                    <input type="text" name="entry.1918992786" class="form-control" required>
+                    <input type="text" name="name" class="form-control" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label>メールアドレス<span>必須</span></label>
-                    <input type="email" name="entry.1045781291" class="form-control" required>
+                    <input type="email" name="email" class="form-control" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label>電話番号</label>
-                    <input type="tel" name="entry.1166974658" class="form-control">
+                    <input type="tel" name="phone" class="form-control">
                 </div>
-                
+
                 <div class="form-group">
                     <label>お問い合わせ内容<span>必須</span></label>
-                    <textarea name="entry.839337160" class="form-control" required placeholder="ご相談内容をご記入ください"></textarea>
+                    <textarea name="message" class="form-control" required placeholder="ご相談内容をご記入ください"></textarea>
                 </div>
 
                 <div class="submit-area">
@@ -274,7 +274,7 @@
             </form>
 
             <script type="text/javascript">
-                // 1. スクロール位置の制御
+                // スクロール位置の制御
                 if ('scrollRestoration' in history) {
                     history.scrollRestoration = 'manual';
                 }
@@ -284,24 +284,37 @@
                     }, 10);
                 };
 
-                // 2. フォーム送信処理
-                var submitted = false;
+                // フォーム送信処理（fetch方式）
                 var form = document.getElementById('contactForm');
-                var btn = document.getElementById('submitBtn');
+                var btn  = document.getElementById('submitBtn');
 
-                form.onsubmit = function() {
-                    submitted = true;
-                    btn.disabled = true; 
-                    btn.innerHTML = "送信中...";
-                };
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    btn.disabled = true;
+                    btn.innerHTML = '送信中...';
+                    console.log('送信開始');
 
-                function handleIframeLoad() {
-                    if (submitted) {
+                    var url = new URL(form.action);
+                    url.searchParams.append('company', document.querySelector('[name="company"]').value);
+                    url.searchParams.append('name',    document.querySelector('[name="name"]').value);
+                    url.searchParams.append('email',   document.querySelector('[name="email"]').value);
+                    url.searchParams.append('phone',   document.querySelector('[name="phone"]').value);
+                    url.searchParams.append('message', document.querySelector('[name="message"]').value);
+
+                    fetch(url.toString(), {
+                        method: 'GET',
+                        mode: 'no-cors'
+                    })
+                    .then(function() {
+                        console.log('送信成功');
                         window.location.href = 'thanks.html';
-                    }
-                }
+                    })
+                    .catch(function(err) {
+                        console.log('送信エラー:', err);
+                        window.location.href = 'thanks.html';
+                    });
+                });
             </script>
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleIframeLoad()"></iframe>
         </div>
     </main>
 
