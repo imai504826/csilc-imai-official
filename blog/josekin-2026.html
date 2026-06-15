@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+    <meta name="description" content="2026年度（令和8年度）に中小企業が活用できる助成金を社労士が解説。業務改善助成金（50/70/90円コース・上限額一覧）、キャリアアップ助成金（重点支援対象者の支給額・3種の加算）など、厚生労働省公式PDFに基づいた正確な情報をまとめました。">
+    <title>2026年版｜中小企業が今すぐ使える助成金まとめ | 今井久一郎 社会保険労務士事務所</title>
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --accent-green: #27ae60;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 50px;
+            color: var(--white);
+            background: var(--accent-green);
+        }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .supervised-by {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 2px 10px;
+        }
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            line-height: 1.45;
+            margin: 0 0 20px;
+        }
+        .article-lead {
+            font-size: 1rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-left: 4px solid var(--accent-green);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.9;
+            margin: 0 0 16px;
+        }
+        /* 免責・出典バナー */
+        .disclaimer-banner {
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 8px;
+            padding: 12px 18px;
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+        .disclaimer-banner strong { color: var(--primary-blue); }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            padding: 40px 0 80px;
+            align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue);
+            position: sticky;
+            top: 90px;
+        }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px;
+            margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--accent-green);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 8px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+        .article-body a:hover { color: var(--accent-orange); }
+
+        /* ボックス類 */
+        .box-note {
+            background: #fff8e8;
+            border: 1px solid #ffe0a0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+
+        .box-caution {
+            background: #f7fafc;
+            border-left: 4px solid #2b6cb0;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #2b6cb0; margin-bottom: 6px; }
+
+        .box-info {
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* スケジュールボックス */
+        .schedule-box {
+            background: #f0fff4;
+            border: 1px solid #a8dbb5;
+            border-left: 5px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 20px 0;
+        }
+        .schedule-box .schedule-title { font-size: 0.88rem; font-weight: bold; color: var(--accent-green); margin-bottom: 10px; }
+        .schedule-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+        .schedule-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 7px 0;
+            border-bottom: 1px dashed #c3e6cb;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+        .schedule-list li:last-child { border-bottom: none; }
+        .s-icon { flex-shrink: 0; color: var(--accent-green); font-weight: bold; }
+
+        /* 改正ポイントカード */
+        .reform-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid #dce8ff;
+            border-left: 5px solid var(--primary-blue);
+            padding: 18px 22px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(26,74,147,0.05);
+        }
+        .reform-num {
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            background: #eef4ff;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 50px;
+            margin-bottom: 8px;
+        }
+        .reform-card p { margin: 0; font-size: 0.92rem; line-height: 1.8; }
+
+        /* テーブル（スクロール対応） */
+        .table-scroll { overflow-x: auto; margin: 20px 0; -webkit-overflow-scrolling: touch; }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 480px;
+        }
+        .data-table th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 14px;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .data-table td { padding: 11px 14px; border: 1px solid #ddd; vertical-align: middle; }
+        .data-table tr:nth-child(even) td { background: var(--bg-soft); }
+        .data-table .row-label { font-weight: bold; background: #eef4ff !important; color: var(--primary-blue); }
+        .data-table .emphasis { font-weight: bold; color: var(--accent-green); }
+        .data-table tfoot td {
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            background: #fafafa !important;
+            border-top: 2px solid #ddd;
+            padding: 10px 14px;
+        }
+
+        /* 助成金リスト（その他） */
+        .other-josekin-item {
+            background: var(--white);
+            border-radius: 10px;
+            border: 1px solid #eee;
+            border-left: 4px solid var(--accent-green);
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            font-size: 0.93rem;
+            line-height: 1.8;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+        }
+        .other-josekin-item .j-name { font-weight: bold; color: var(--primary-blue); margin-bottom: 6px; }
+        .other-josekin-item .j-link { font-size: 0.82rem; margin-top: 8px; }
+        .other-josekin-item .j-link a { color: var(--accent-sky); text-decoration: underline; }
+
+        /* 公式リンクバッジ */
+        .official-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.83rem;
+            color: var(--accent-sky);
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 6px;
+            padding: 4px 12px;
+            margin-top: 12px;
+            text-decoration: none !important;
+        }
+        .official-link:hover { background: #daf0ff; }
+        .official-link::before { content: "🔗"; }
+
+        /* ステップカード */
+        .step-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid #dce8ff;
+            padding: 20px 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(26,74,147,0.06);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-content h3 { font-size: 1rem; margin: 0 0 8px; border: none; padding: 0; color: var(--primary-blue); font-weight: bold; }
+        .step-content p { margin: 0; font-size: 0.92rem; line-height: 1.8; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 48px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: var(--primary-blue); color: var(--white);
+            font-size: 1.4rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a { flex: 1; display: block; padding: 14px 18px; background: var(--bg-soft); border-radius: 10px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- フッターCTA --- */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn { display: inline-block; background: var(--white); color: var(--primary-blue); padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .step-card { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            2026年版｜中小企業が今すぐ使える助成金まとめ
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge">助成金</span>
+                    <span class="article-date">2026年6月1日</span>
+                    <span class="read-time">📖 約5分</span>
+                </div>
+                <h1 class="article-title">2026年版｜中小企業が今すぐ使える助成金まとめ（申請期限・改正ポイント付き）</h1>
+                <p class="article-lead">
+                    2026年（令和8年）の厚生労働省管轄の助成金は、<strong>スケジュール管理と最新の制度変更への適応</strong>が受給の成否を分けます。特に、秋の最低賃金改定に連動する「業務改善助成金」は申請期間が限定されており、早期の準備が不可欠です。受給機会を逃さず、自社の労務環境の改善に繋げるために、厚生労働省が公表している公式情報に基づいた重要ポイントを解説します。
+                </p>
+                <div class="disclaimer-banner">
+                    <strong>ℹ️ 出典・免責について：</strong>本記事は厚生労働省「令和8年度業務改善助成金のご案内」および「キャリアアップ助成金のご案内（令和8年度版・令和8年4月8日現在）」に基づいて作成しています。制度は年度途中で変更される場合があるため、申請前に必ず最新の交付要綱・要領をご確認ください。
+                </div>
+            </div>
+
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイル用） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">業務改善助成金のスケジュールと改正点</a>
+                                <ol>
+                                    <li><a href="#section1-1">申請スケジュールの注意点</a></li>
+                                    <li><a href="#section1-2">2026年度の主な改正・特徴</a></li>
+                                    <li><a href="#section1-3">助成上限額一覧</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section2">キャリアアップ助成金（正社員化コース）</a>
+                                <ol>
+                                    <li><a href="#section2-1">支給額（重点支援対象者の区分）</a></li>
+                                    <li><a href="#section2-2">3種の加算措置</a></li>
+                                    <li><a href="#section2-3">3％賃上げ要件</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">その他の主要助成金</a></li>
+                            <li><a href="#section4">まとめ：3つの実務ステップ</a></li>
+                        </ol>
+                    </div>
+
+                    <article class="article-body">
+
+                        <h2 id="section1">1. 2026年度「業務改善助成金」の申請スケジュールと改正点</h2>
+                        <p>
+                            生産性向上のための設備投資（システム導入や機械購入など）を行い、<strong>事業場内最低賃金を引き上げた中小企業</strong>に対して、その費用の一部（最大600万円）を助成する制度です。2026年度（令和8年度）は、コース構成と手続きのタイムラインに大きな変更があります。
+                        </p>
+
+                        <h3 id="section1-1">申請スケジュールに関する注意点</h3>
+
+                        <div class="schedule-box">
+                            <div class="schedule-title">📅 2026年度 業務改善助成金スケジュール</div>
+                            <ul class="schedule-list">
+                                <li><span class="s-icon">▶</span><span><strong>申請受付開始：2026年9月1日</strong>（春〜夏の事前申請は原則不可）</span></li>
+                                <li><span class="s-icon">▶</span><span><strong>申請期限：</strong>申請事業所の都道府県に適用される地域別最低賃金の発効日の「前日」、または2026年11月30日のいずれか早い日</span></li>
+                                <li><span class="s-icon">▶</span><span><strong>事業完了期限：</strong>交付決定年度の翌年1月31日</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="box-caution">
+                            10月上旬に地域別最低賃金が改定される地域では、<strong>申請できる期間が実質1ヶ月程度</strong>となります。9月1日の受付開始後に見積もり依頼や社内計画の策定を始めては期限に間に合わないリスクがあります。<strong>7〜8月の段階で相見積もりの取得などの準備を完了させ、9月1日に速やかに申請できる状態を作る</strong>ことが実務上重要です。
+                        </div>
+
+                        <h3 id="section1-2">2026年度（令和8年度）の主な改正・特徴</h3>
+
+                        <div class="reform-card">
+                            <span class="reform-num">改正ポイント ①</span>
+                            <p><strong>賃金引上げコースが「50円・70円・90円」の3コースに再編</strong><br>
+                            事業場内最低賃金の引上げ額に応じて、50円コース・70円コース・90円コースの3区分となりました。前年度まであった30円コースは廃止され、最低でも<strong>50円以上の引き上げが必要</strong>です。</p>
+                        </div>
+
+                        <div class="reform-card">
+                            <span class="reform-num">改正ポイント ②</span>
+                            <p><strong>支給要件は「事業場内最低賃金が令和8年度地域別最低賃金未満」であること</strong><br>
+                            中小企業・小規模事業者であり、事業場内最低賃金（事業場で最も低い時間給）が令和8年度の地域別最低賃金を下回っていることが要件です。</p>
+                        </div>
+
+                        <div class="reform-card">
+                            <span class="reform-num">改正ポイント ③</span>
+                            <p><strong>助成率は事業場内最低賃金の水準で決定</strong></p>
+                            <ul style="margin: 8px 0 0; padding-left: 20px; list-style: disc;">
+                                <li>事業場内最低賃金が<strong>1,050円未満</strong>の場合：助成率 <strong>4/5（80%）</strong></li>
+                                <li>事業場内最低賃金が<strong>1,050円以上</strong>の場合：助成率 <strong>3/4（75%）</strong></li>
+                            </ul>
+                        </div>
+
+                        <h3 id="section1-3">助成上限額一覧（事業場規模30人未満の事業者）</h3>
+
+                        <div class="table-scroll">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>引き上げる労働者数</th>
+                                        <th>50円コース</th>
+                                        <th>70円コース</th>
+                                        <th>90円コース</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1人</td><td>30万円</td><td>40万円</td><td>90万円</td></tr>
+                                    <tr><td>2〜3人</td><td>40万円</td><td>50万円</td><td>150万円</td></tr>
+                                    <tr><td>4〜5人</td><td>70万円</td><td>130万円</td><td>270万円</td></tr>
+                                    <tr><td>6〜7人</td><td>90万円</td><td>180万円</td><td>360万円</td></tr>
+                                    <tr><td>8人以上</td><td>110万円</td><td>230万円</td><td>450万円</td></tr>
+                                    <tr><td class="emphasis">10人以上（特例）</td><td class="emphasis">130万円</td><td class="emphasis">300万円</td><td class="emphasis">600万円</td></tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">
+                                            ※「10人以上」は、特例事業者が10人以上の労働者の賃金を引き上げる場合に適用。<br>
+                                            ※助成額は「設備投資等にかかった費用 × 助成率」と「上限額」を比較し、いずれか低い方が支給されます。<br>
+                                            ※事業場規模30人以上の事業者は助成上限額が異なる区分があります。詳細は公式資料をご確認ください。
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <a href="https://www.mhlw.go.jp/content/11200000/001693416.pdf" target="_blank" rel="noopener" class="official-link">厚生労働省「令和8年度業務改善助成金のご案内」（PDF）</a>
+
+                        <div class="inline-cta">
+                            <p>「業務改善助成金を活用してシステム導入を検討したい」という方は、社労士＆元SEの視点からまとめてサポートします。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <h2 id="section2">2. 「キャリアアップ助成金（正社員化コース）」の支給額と加算措置</h2>
+                        <p>
+                            有期雇用労働者やパート・アルバイトを<strong>正社員に転換した際に受給できる助成金</strong>です。令和8年度は「重点支援対象者」という区分によって支給額や申請期数が変わるほか、3種類の加算措置が設けられています。
+                        </p>
+
+                        <h3 id="section2-1">支給額（1人当たり・正社員化コース）</h3>
+
+                        <div class="table-scroll">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>区分</th>
+                                        <th>転換前の雇用形態</th>
+                                        <th>中小企業</th>
+                                        <th>大企業</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="row-label">重点支援対象者</td>
+                                        <td>有期雇用 → 正社員</td>
+                                        <td class="emphasis">80万円（40万円 × 2期）</td>
+                                        <td>60万円（30万円 × 2期）</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row-label">重点支援対象者</td>
+                                        <td>無期雇用 → 正社員</td>
+                                        <td class="emphasis">40万円（20万円 × 2期）</td>
+                                        <td>30万円（15万円 × 2期）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>上記以外</td>
+                                        <td>有期雇用 → 正社員</td>
+                                        <td>40万円（40万円 × 1期）</td>
+                                        <td>30万円（30万円 × 1期）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>上記以外</td>
+                                        <td>無期雇用 → 正社員</td>
+                                        <td>20万円（20万円 × 1期）</td>
+                                        <td>15万円（15万円 × 1期）</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">
+                                            ※「重点支援対象者」とは、(a)雇入れから3年以上の有期雇用労働者、(b)雇入れから3年未満で一定の要件を満たす有期雇用労働者、(c)派遣労働者・母子家庭の母等・人材開発支援助成金の特定の訓練修了者、のいずれかに該当する者をいいます。重点支援対象者は2期に分けて申請できるため支給額が手厚くなります。<br>
+                                            ※1年度1事業所当たりの支給申請上限人数は20名です。
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <h3 id="section2-2">加算措置（1事業所当たり・いずれも1回のみ）</h3>
+                        <p>通常の支給額に、以下の加算を上乗せできます。</p>
+
+                        <div class="table-scroll">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>加算の種類</th>
+                                        <th>中小企業</th>
+                                        <th>大企業</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>① 正社員転換制度を新たに規定し、転換した場合</td>
+                                        <td class="emphasis">20万円</td>
+                                        <td>15万円</td>
+                                    </tr>
+                                    <tr>
+                                        <td>② 多様な正社員制度（勤務地・職務限定、短時間正社員）を新たに規定し、転換した場合</td>
+                                        <td class="emphasis">40万円</td>
+                                        <td>30万円</td>
+                                    </tr>
+                                    <tr>
+                                        <td>③ 転換等に係る情報を自社サイトまたは「しょくばらぼ」に公表した場合</td>
+                                        <td class="emphasis">20万円</td>
+                                        <td>15万円</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">※「しょくばらぼ」は厚生労働省が運営する職場情報総合サイトです。自社の正社員転換実績や制度情報を公表することで③の加算が受けられます。</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <h3 id="section2-3">「3％賃上げ要件」に関する注意点</h3>
+                        <div class="box-caution">
+                            正社員転換にあたっては、「転換後6か月」の賃金を「転換前6か月」と比較して<strong>3％以上増額</strong>させる必要があります（基本給および定額で支給される諸手当を含む賃金総額で比較）。転換スケジュールを検討する際は、この賃金設計を同時に確認しておくことが重要です。
+                        </div>
+
+                        <a href="https://www.mhlw.go.jp/content/11910500/001687992.pdf" target="_blank" rel="noopener" class="official-link">厚生労働省「キャリアアップ助成金のご案内（令和8年度版）」（PDF）</a>
+
+                        <h2 id="section3">3. 2026年度に中小企業が活用を検討すべきその他の主要助成金</h2>
+                        <p>自社の課題（人手不足・両立支援・教育訓練など）に応じて検討したい、厚生労働省管轄の主要な助成金です。</p>
+
+                        <div class="other-josekin-item">
+                            <div class="j-name">キャリアアップ助成金（短時間労働者労働時間延長支援コース）</div>
+                            <div>パート等の週所定労働時間を延長し、新たに社会保険を適用させた場合に助成する「年収の壁」対策の制度です。1年目の取組では、延長時間と賃金引上げ率に応じて、<strong>小規模企業50万円・中小企業40万円・大企業30万円</strong>が1人当たり支給されます。</div>
+                            <div class="j-link"><a href="https://www.mhlw.go.jp/content/11910500/001687992.pdf" target="_blank" rel="noopener">🔗 キャリアアップ助成金のご案内（PDF）</a></div>
+                        </div>
+
+                        <div class="other-josekin-item">
+                            <div class="j-name">両立支援等助成金（育休中等業務代替支援コースなど）</div>
+                            <div>育休取得者の業務を代替する周囲の社員への手当支給や、代替要員の新規雇用を支援する制度などがあります。令和8年度の支給額・要件の詳細は、下記の公式資料でご確認ください。</div>
+                            <div class="j-link"><a href="https://www.mhlw.go.jp/content/001687926.pdf" target="_blank" rel="noopener">🔗 令和8年度 両立支援等助成金のご案内（PDF）</a></div>
+                        </div>
+
+                        <div class="other-josekin-item">
+                            <div class="j-name">人材開発支援助成金</div>
+                            <div>従業員の職業訓練（研修）費用や訓練中の賃金の一部を助成する制度です。対象コースや助成率の詳細は、毎年度の改正により変わるため、厚生労働省の最新資料でご確認ください。</div>
+                        </div>
+
+                        <h2 id="section4">まとめ：確実に受給するために経営者が取るべき3つの実務</h2>
+                        <p>
+                            助成金は<strong>「事前の計画」と「適正な労務管理」</strong>が前提となります。活用を検討される場合は、まず以下の3つのステップから着手してください。
+                        </p>
+
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <h3>GビズIDプライムアカウントの保有確認</h3>
+                                <p>各種助成金の電子申請を行うためのアカウントです。未取得の場合は発行に一定の期間を要するため、<strong>早めに申請</strong>しておきましょう。</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <h3>法定帳簿の整備状況チェック</h3>
+                                <p>賃金台帳・出勤簿（タイムカード）・労働者名簿が適正に管理されていること、および<strong>未払い残業代がないこと</strong>が、雇用関係助成金の前提条件です。</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <h3>夏季期間中のプランニング</h3>
+                                <p>特に「業務改善助成金」の活用を検討している場合は、<strong>9月の申請受付開始に向け、7〜8月中に設備投資計画と見積もり準備</strong>を進めてください。</p>
+                            </div>
+                        </div>
+
+                        <div class="box-note">
+                            「自社の労務状況でどの助成金が活用できるか確認したい」「法改正に対応した社内規定の改定を並行して進めたい」という経営者様は、どうぞお気軽に当事務所までご相談ください。貴社の労務環境とスケジュールに合わせた、的確な申請実務をサポートいたします。
+                        </div>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。助成金申請から就業規則整備、勤怠システム導入まで一括サポートを提供。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="kinmu-system-guide.html">
+                            <div class="nav-label">← 前の記事</div>
+                            クラウド勤怠管理システムの選び方｜社労士が失敗しないポイントを解説
+                        </a>
+                        <a href="index.html" style="text-align: right;">
+                            <div class="nav-label">コラム一覧 →</div>
+                            お役立ちコラム一覧へ
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC用） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">業務改善助成金のスケジュールと改正点</a>
+                                <ol>
+                                    <li><a href="#section1-1">申請スケジュールの注意点</a></li>
+                                    <li><a href="#section1-2">主な改正・特徴</a></li>
+                                    <li><a href="#section1-3">助成上限額一覧</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section2">キャリアアップ助成金</a>
+                                <ol>
+                                    <li><a href="#section2-1">支給額（重点支援対象者）</a></li>
+                                    <li><a href="#section2-2">3種の加算措置</a></li>
+                                    <li><a href="#section2-3">3％賃上げ要件</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">その他の主要助成金</a></li>
+                            <li><a href="#section4">まとめ：3つの実務ステップ</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">就業規則</div>
+                            <a href="shugyo-kisoku-guide.html">就業規則はいつ作る？10人未満でも整備すべき理由</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">勤怠システム</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>助成金の活用は、まず現状の労務環境の確認から</h2>
+            <p>「使えそうな助成金があるか確認したい」「申請の準備を一緒に進めたい」は初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>

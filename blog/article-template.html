@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+    <!--
+    ========================================================
+    【記事テンプレートの使い方】
+    1. このファイルをコピーして記事ファイル名にリネーム
+       例: 36kyotei-guide.html / kinmu-system-howto.html
+    2. <title> <meta description> を記事に合わせて書き換える
+    3. <!-- ARTICLE: xxx --> のコメントを目印に内容を書き換える
+    4. 記事カテゴリ（CATEGORY_CLASS）を変更する
+       選択肢: 勤怠システム / 助成金 / 労務手続き / 就業規則 / よくある質問
+    ========================================================
+    -->
+
+    <!-- ARTICLE: metaを記事に合わせて書き換える -->
+    <meta name="description" content="【記事の説明文をここに書く】120文字以内で、記事の要点をまとめる。">
+    <title>【記事タイトルをここに書く】 | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header {
+            padding: 40px 0 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 50px;
+            color: var(--white);
+            background: var(--primary-blue);
+        }
+        /* CATEGORY_CLASS — カテゴリに合わせてclassを変更 */
+        .cat-badge.勤怠システム { background: var(--accent-sky); }
+        .cat-badge.助成金 { background: #27ae60; }
+        .cat-badge.労務手続き { background: #8e44ad; }
+        .cat-badge.就業規則 { background: #c0392b; }
+        .cat-badge.よくある質問 { background: var(--accent-orange); }
+
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            line-height: 1.45;
+            margin: 0 0 20px;
+        }
+        .article-lead {
+            font-size: 1rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-left: 4px solid var(--accent-orange);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            padding: 40px 0 80px;
+            align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue);
+            position: sticky;
+            top: 90px;
+        }
+        .toc-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc ol {
+            list-style: decimal;
+            padding-left: 18px;
+            margin: 0;
+        }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px;
+            margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+        .article-body p {
+            font-size: 0.97rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .article-body ul, .article-body ol {
+            list-style: revert;
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 注意・補足ボックス */
+        .box-note {
+            background: #fff8e8;
+            border: 1px solid #ffe0a0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+
+        .box-caution {
+            background: #fff0f0;
+            border: 1px solid #ffb3b3;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+
+        .box-info {
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+        .article-body th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 14px;
+            text-align: left;
+        }
+        .article-body td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 48px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .article-nav a {
+            flex: 1;
+            display: block;
+            padding: 14px 18px;
+            background: var(--bg-soft);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            margin-top: 16px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white);
+            border-radius: 14px;
+            padding: 28px 28px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- フッターCTA --- */
+        .cta-section {
+            background: var(--primary-blue);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            <!-- ARTICLE: パンくず末尾の記事タイトルを書き換える -->
+            【記事タイトル（短縮版）】
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <!-- 記事ヘッダー -->
+            <div class="article-header">
+                <div class="article-meta">
+                    <!-- ARTICLE: カテゴリclassを変更（勤怠システム / 助成金 / 労務手続き / 就業規則 / よくある質問） -->
+                    <span class="cat-badge 労務手続き">労務手続き</span>
+                    <!-- ARTICLE: 日付を変更 -->
+                    <span class="article-date">2026年6月15日</span>
+                    <!-- ARTICLE: 読了時間の目安を変更 -->
+                    <span class="read-time">📖 約5分</span>
+                </div>
+                <!-- ARTICLE: 記事タイトルを書き換える -->
+                <h1 class="article-title">【記事タイトルをここに書く】</h1>
+                <!-- ARTICLE: リード文（記事冒頭の要約）を書き換える -->
+                <p class="article-lead">
+                    この記事では〇〇について解説します。対象読者や、記事を読んでわかることを2〜3文でまとめましょう。検索した人が「これは自分が探していた記事だ」と感じるようなリード文にするのがポイントです。
+                </p>
+            </div>
+
+            <!-- 2カラムレイアウト -->
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイルでは本文の先頭に表示） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <!-- ARTICLE: 目次を記事の見出しに合わせて書き換える -->
+                            <li><a href="#section1">見出し1</a></li>
+                            <li><a href="#section2">見出し2</a>
+                                <ol>
+                                    <li><a href="#section2-1">見出し2-1</a></li>
+                                    <li><a href="#section2-2">見出し2-2</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">見出し3</a></li>
+                            <li><a href="#section4">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 記事本文 -->
+                    <article class="article-body">
+
+                        <!-- ARTICLE: 本文をここから書く -->
+
+                        <h2 id="section1">見出し1</h2>
+                        <p>
+                            本文テキストをここに書きます。1段落は4〜6行程度を目安にすると読みやすくなります。
+                        </p>
+                        <p>
+                            改行は意味のある区切りで入れましょう。長すぎる段落は読者が離脱しやすくなります。
+                        </p>
+
+                        <div class="box-note">
+                            ポイントや重要事項はこのボックスで強調できます。
+                        </div>
+
+                        <h2 id="section2">見出し2</h2>
+                        <p>見出し2の説明テキストをここに書きます。</p>
+
+                        <h3 id="section2-1">見出し2-1</h3>
+                        <p>小見出しの説明テキストをここに書きます。</p>
+                        <ul>
+                            <li>箇条書きアイテム1</li>
+                            <li>箇条書きアイテム2</li>
+                            <li>箇条書きアイテム3</li>
+                        </ul>
+
+                        <h3 id="section2-2">見出し2-2</h3>
+                        <p>小見出しの説明テキストをここに書きます。</p>
+
+                        <div class="box-caution">
+                            注意事項があればこのボックスを使います。
+                        </div>
+
+                        <!-- 記事中途のCTA（読者が「相談したい」と感じたタイミングに挿入） -->
+                        <div class="inline-cta">
+                            <p>「自分のケースではどうなる？」ご自身の状況に合わせた確認は、専門家への相談が確実です。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <h2 id="section3">見出し3</h2>
+                        <p>見出し3の説明テキストをここに書きます。</p>
+
+                        <!-- テーブルの例 -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>項目1</td>
+                                    <td>説明テキスト</td>
+                                </tr>
+                                <tr>
+                                    <td>項目2</td>
+                                    <td>説明テキスト</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-info">
+                            補足情報や参考リンクはこのボックスを使います。
+                        </div>
+
+                        <h2 id="section4">まとめ</h2>
+                        <p>
+                            記事のまとめをここに書きます。読者が「この記事を読んでわかったこと・次にすべきこと」を箇条書きで整理するのが効果的です。
+                        </p>
+                        <ul>
+                            <li>まとめポイント1</li>
+                            <li>まとめポイント2</li>
+                            <li>まとめポイント3</li>
+                        </ul>
+                        <p>
+                            「詳しくご自身の状況を確認したい」という方は、初回無料でご相談いただけます。お気軽にお問い合わせください。
+                        </p>
+
+                        <!-- ARTICLE: 本文はここまで -->
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <!-- ARTICLE: 前後の記事に合わせて変更（なければ削除） -->
+                        <a href="#">
+                            <div class="nav-label">← 前の記事</div>
+                            前の記事タイトルをここに
+                        </a>
+                        <a href="#" style="text-align: right;">
+                            <div class="nav-label">次の記事 →</div>
+                            次の記事タイトルをここに
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC表示） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <!-- ARTICLE: 目次を本文の見出しに合わせて書き換える -->
+                            <li><a href="#section1">見出し1</a></li>
+                            <li><a href="#section2">見出し2</a>
+                                <ol>
+                                    <li><a href="#section2-1">見出し2-1</a></li>
+                                    <li><a href="#section2-2">見出し2-2</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">見出し3</a></li>
+                            <li><a href="#section4">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <!-- ARTICLE: 関連記事リンクを差し替える -->
+                        <div class="related-item">
+                            <div class="related-cat">勤怠システム</div>
+                            <a href="#">クラウド勤怠管理システムの選び方</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="#">2026年版 中小企業が使える助成金まとめ</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">就業規則</div>
+                            <a href="#">就業規則はいつ作る？</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルでは目次をサイドバーから本文先頭に移動
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>

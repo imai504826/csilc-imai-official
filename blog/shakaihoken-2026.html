@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+    <meta name="description" content="2026年10月に「106万円の壁（賃金要件）」が撤廃される社会保険適用拡大。週20時間以上のパート・アルバイトが新たに加入対象に。2035年までの段階的スケジュールと企業の4つの対応手順を社労士が解説します。">
+    <title>【2026年10月】社会保険の「106万円の壁」が撤廃へ｜中小企業が今すぐ準備すべきこと | 今井久一郎 社会保険労務士事務所</title>
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --accent-green: #27ae60;
+            --accent-purple: #8e44ad;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- ヘッダー --- */
+        header { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge { font-size: 0.78rem; font-weight: bold; padding: 4px 14px; border-radius: 50px; color: var(--white); background: var(--accent-purple); }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .supervised-by { font-size: 0.8rem; color: var(--text-gray); background: var(--bg-soft); border: 1px solid #ddd; border-radius: 4px; padding: 2px 10px; }
+        .article-title { font-size: 1.8rem; color: var(--primary-blue); line-height: 1.45; margin: 0 0 20px; }
+        .article-lead { font-size: 1rem; color: var(--text-gray); background: var(--bg-soft); border-left: 4px solid var(--accent-orange); padding: 16px 20px; border-radius: 0 8px 8px 0; line-height: 1.9; margin: 0 0 16px; }
+        .disclaimer-banner { background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 8px; padding: 12px 18px; font-size: 0.82rem; color: var(--text-gray); line-height: 1.7; }
+        .disclaimer-banner strong { color: var(--primary-blue); }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout { display: grid; grid-template-columns: 1fr 260px; gap: 40px; padding: 40px 0 80px; align-items: start; }
+
+        /* --- 目次 --- */
+        .toc { background: var(--bg-soft); border-radius: 12px; padding: 22px 24px; border-top: 4px solid var(--primary-blue); position: sticky; top: 90px; }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 { font-size: 1.35rem; color: var(--primary-blue); border-left: 5px solid var(--primary-blue); border-bottom: 1px solid #dce8ff; padding: 10px 16px; margin: 48px 0 20px; background: linear-gradient(90deg, #eef4ff, transparent); border-radius: 0 8px 8px 0; }
+        .article-body h3 { font-size: 1.1rem; color: var(--text-dark); border-left: 3px solid var(--accent-orange); padding-left: 12px; margin: 32px 0 14px; }
+        .article-body h4 { font-size: 1rem; color: var(--primary-blue); background: #eef4ff; border-radius: 6px; padding: 8px 14px; margin: 22px 0 12px; }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 8px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+        .article-body a:hover { color: var(--accent-orange); }
+
+        /* ボックス類 */
+        .box-note { background: #fff8e8; border: 1px solid #ffe0a0; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+        .box-caution { background: #f7fafc; border-left: 4px solid #2b6cb0; border-radius: 0 8px 8px 0; padding: 15px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #2b6cb0; margin-bottom: 6px; }
+        .box-info { background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* 106万円撤廃ハイライトボックス（記事の核） */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff8e8, #fff3cd);
+            border: 2px solid var(--accent-orange);
+            border-radius: 14px;
+            padding: 24px 26px;
+            margin: 24px 0;
+        }
+        .highlight-box .highlight-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #b35900;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; line-height: 1.9; }
+
+        /* 4要件チェックリスト */
+        .requirement-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+        .requirement-item {
+            background: var(--white);
+            border: 1px solid #dce8ff;
+            border-left: 5px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            font-size: 0.93rem;
+            line-height: 1.8;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .req-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .req-content .req-title { font-weight: bold; color: var(--primary-blue); margin-bottom: 4px; }
+        .req-content .req-note { font-size: 0.85rem; color: var(--text-gray); }
+        .requirement-item.abolished { border-left-color: #c0392b; opacity: 0.8; }
+        .requirement-item.abolished .req-num { background: #c0392b; }
+        .abolished-badge {
+            font-size: 0.72rem;
+            font-weight: bold;
+            color: var(--white);
+            background: #c0392b;
+            border-radius: 4px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* 企業への影響リスト */
+        .impact-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+        .impact-item {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 0.93rem;
+            line-height: 1.8;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .impact-item:last-child { border-bottom: none; }
+        .impact-icon { color: #c0392b; font-weight: bold; flex-shrink: 0; margin-top: 2px; }
+
+        /* スケジュールテーブル */
+        .table-scroll { overflow-x: auto; margin: 20px 0; -webkit-overflow-scrolling: touch; }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 440px; }
+        .data-table th { background: var(--primary-blue); color: var(--white); padding: 12px 16px; text-align: left; }
+        .data-table td { padding: 12px 16px; border: 1px solid #ddd; vertical-align: top; line-height: 1.7; }
+        .data-table tr:nth-child(even) td { background: var(--bg-soft); }
+        .data-table .done-row td { color: var(--text-gray); }
+        .data-table .now-row td { background: #fff8e8 !important; font-weight: bold; }
+        .data-table .key-row td { background: #fff0e8 !important; }
+        .data-table .key-row td:first-child { font-weight: bold; color: #c0392b; }
+        .data-table tfoot td { font-size: 0.82rem; color: var(--text-gray); background: #fafafa !important; border-top: 2px solid #ddd; padding: 10px 16px; }
+
+        /* ステップカード */
+        .step-card { background: var(--white); border-radius: 12px; border: 1px solid #dce8ff; padding: 22px 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(26,74,147,0.06); display: flex; gap: 18px; align-items: flex-start; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent-purple); color: var(--white); font-size: 1.1rem; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-content h3 { font-size: 1rem; margin: 0 0 10px; border: none; padding: 0; color: var(--primary-blue); font-weight: bold; }
+        .step-content p { margin: 0; font-size: 0.92rem; line-height: 1.8; }
+        .step-content .step-note { margin-top: 10px; font-size: 0.88rem; color: var(--text-gray); background: var(--bg-soft); border-radius: 6px; padding: 8px 12px; }
+
+        /* 公式リンクバッジ */
+        .official-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.83rem; color: var(--accent-sky); background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 6px; padding: 4px 12px; margin: 6px 4px 6px 0; text-decoration: none !important; }
+        .official-link:hover { background: #daf0ff; }
+        .official-link::before { content: "🔗"; }
+
+        /* 関連記事バナー */
+        .related-banner { display: flex; align-items: center; gap: 14px; background: var(--bg-soft); border: 1px solid #dce8ff; border-radius: 10px; padding: 14px 18px; margin: 28px 0; text-decoration: none !important; transition: 0.2s; }
+        .related-banner:hover { background: #eef4ff; border-color: var(--primary-blue); }
+        .related-banner .banner-label { font-size: 0.72rem; font-weight: bold; color: var(--accent-green); background: #f0fff4; border-radius: 4px; padding: 2px 8px; white-space: nowrap; }
+        .related-banner .banner-title { font-size: 0.9rem; font-weight: bold; color: var(--primary-blue); line-height: 1.5; }
+        .related-banner .banner-arrow { margin-left: auto; color: var(--text-gray); font-size: 1rem; flex-shrink: 0; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta { background: linear-gradient(135deg, var(--primary-blue), #0d3270); color: var(--white); border-radius: 14px; padding: 28px; text-align: center; margin: 40px 0; }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a { display: inline-block; background: var(--accent-orange); color: var(--white); padding: 12px 32px; border-radius: 50px; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- 著者ボックス --- */
+        .author-box { display: flex; gap: 20px; align-items: flex-start; background: var(--bg-soft); border-radius: 14px; padding: 24px; margin-top: 48px; border-top: 4px solid var(--primary-blue); }
+        .author-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--primary-blue); color: var(--white); font-size: 1.4rem; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a { flex: 1; display: block; padding: 14px 18px; background: var(--bg-soft); border-radius: 10px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事（サイドバー） --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- フッターCTA --- */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn { display: inline-block; background: var(--white); color: var(--primary-blue); padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .step-card { flex-direction: column; }
+            .requirement-item { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            社会保険の「106万円の壁」が撤廃へ
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge">労務手続き</span>
+                    <span class="article-date">2026年5月20日</span>
+                    <span class="read-time">📖 約8分</span>
+                </div>
+                <h1 class="article-title">【2026年10月】社会保険の「106万円の壁」が撤廃へ｜中小企業が今すぐ準備すべきこと</h1>
+                <p class="article-lead">
+                    「パートやアルバイトの社会保険加入、うちは関係ある？」<br>
+                    「2026年10月から、また何かが変わるって本当？」<br><br>
+                    社会保険の適用範囲は近年、段階的に拡大されてきました。そして2025年6月に成立した年金制度改正法により、<strong>2026年10月にはいわゆる「106万円の壁（賃金要件）」が撤廃</strong>され、さらに<strong>企業規模要件も2035年10月にかけて段階的に撤廃</strong>されることが確定しています。
+                </p>
+                <div class="disclaimer-banner">
+                    <strong>ℹ️ 出典・免責について：</strong>本記事は厚生労働省・日本年金機構の公表情報、および2025年6月成立の年金制度改正法に基づいて作成しています。制度・施行時期は変更される場合があるため、申請・対応の前に必ず公式サイトで最新情報をご確認ください。
+                </div>
+            </div>
+
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイル用） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">現状（2026年6月時点）の加入ルール</a>
+                                <ol>
+                                    <li><a href="#section1-1">対象企業：51人以上の数え方</a></li>
+                                    <li><a href="#section1-2">加入対象となる4つの条件</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section2">【最重要】2026年10月「106万円の壁」が撤廃</a>
+                                <ol>
+                                    <li><a href="#section2-1">これが意味すること</a></li>
+                                    <li><a href="#section2-2">企業への影響</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">企業規模要件も2035年に向けて段階的撤廃</a></li>
+                            <li><a href="#section4">今すぐ進めるべき4つの対応手順</a></li>
+                            <li><a href="#section5">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <article class="article-body">
+
+                        <h2 id="section1">1. まず現状（2026年6月時点）の加入ルールを整理</h2>
+                        <p>現在、短時間労働者が社会保険の加入対象となるのは、「対象となる企業」に雇用されており、かつ「4つの条件」をすべて満たす場合です。</p>
+
+                        <h3 id="section1-1">対象となる企業：従業員数51人以上</h3>
+                        <p>
+                            2024年10月の改正により、社会保険の適用対象は<strong>「従業員数51人以上」</strong>の企業に拡大されました。2022年10月までは101人以上、2024年10月以降は51人以上が対象となっています。
+                        </p>
+
+                        <h4>【重要】「従業員51人」の正しい数え方</h4>
+                        <p>
+                            ここで言う「従業員数」とは、会社の全スタッフの数ではなく、<strong>「現在の厚生年金保険の被保険者数」</strong>を指します。具体的には、フルタイムの正社員と、週の労働時間および月の労働日数が正社員の4分の3以上のパート・アルバイトの合計です。
+                        </p>
+                        <div class="box-caution">
+                            このカウントで、直近12ヶ月のうち6ヶ月以上「51人以上」となる場合、その企業は「特定適用事業所」となり、短時間労働者の社会保険加入義務が発生します。<br><br>
+                            ※新たに適用拡大で加入対象となる短時間労働者（週20時間以上等の人）は、この51人のカウントには含めません。
+                        </div>
+
+                        <h3 id="section1-2">対象となるパート・アルバイトの「4つの条件」（現行）</h3>
+                        <p>従業員数51人以上の企業において、以下の4要件をすべて満たす短時間労働者は社会保険への加入が義務づけられます。</p>
+
+                        <ul class="requirement-list">
+                            <li class="requirement-item">
+                                <div class="req-num">1</div>
+                                <div class="req-content">
+                                    <div class="req-title">週の所定労働時間が20時間以上</div>
+                                    <div class="req-note">※契約上の時間。臨時の残業は含みません</div>
+                                </div>
+                            </li>
+                            <li class="requirement-item abolished">
+                                <div class="req-num">2</div>
+                                <div class="req-content">
+                                    <div class="req-title">所定内賃金が月額8.8万円以上（年収換算で約106万円以上）<span class="abolished-badge">2026年10月撤廃</span></div>
+                                    <div class="req-note">※残業代・賞与・通勤手当・家族手当などは除外して計算</div>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="req-num">3</div>
+                                <div class="req-content">
+                                    <div class="req-title">2ヶ月を超える雇用の見込みがある</div>
+                                    <div class="req-note">※当初の契約が2ヶ月以内でも、更新の可能性がある場合は当初から対象</div>
+                                </div>
+                            </li>
+                            <li class="requirement-item">
+                                <div class="req-num">4</div>
+                                <div class="req-content">
+                                    <div class="req-title">学生ではない</div>
+                                    <div class="req-note">※休学中の方や夜間・定時制の学生は加入対象</div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h2 id="section2">2. 【最重要】2026年10月、「106万円の壁（賃金要件）」が撤廃される</h2>
+                        <p>2025年6月13日に成立した年金制度改正法により、<strong>2026年10月以降、加入要件のうち「月額8.8万円以上」という賃金要件が撤廃</strong>されます。</p>
+
+                        <div class="highlight-box">
+                            <div class="highlight-title">🚨 2026年10月以降の加入対象（51人以上の企業）</div>
+                            <p>賃金要件が撤廃されると、<strong>月収にかかわらず、週20時間以上働く短時間労働者は社会保険の加入対象</strong>となります（学生等を除く）。</p>
+                        </div>
+
+                        <h3 id="section2-1">これが意味すること</h3>
+                        <p>
+                            これまで「106万円の壁」を意識して扶養の範囲内で働いていたパート・アルバイトも、週20時間以上働いていれば加入対象に変わります。背景として、全国的な最低賃金の上昇により、週20時間働けば月額8.8万円に達するケースがすでに一般的になっており、賃金要件が実質的な意味を持たなくなってきたことがあります。
+                        </p>
+
+                        <h3 id="section2-2">企業への影響</h3>
+                        <ul class="impact-list">
+                            <li class="impact-item"><span class="impact-icon">▶</span> これまで扶養内（106万円未満）で働いていたパートの一部が、新たに社会保険の加入対象になる</li>
+                            <li class="impact-item"><span class="impact-icon">▶</span> 会社の社会保険料負担（法定福利費）が増加する</li>
+                            <li class="impact-item"><span class="impact-icon">▶</span>「106万円の壁」を意識していた従業員が、今度は「週20時間」を意識して働き方を調整する動きが出る可能性がある</li>
+                        </ul>
+
+                        <div class="box-caution">
+                            施行は<strong>2026年10月</strong>。残り時間は多くありません。自社に対象者がどれだけいるか、早めの把握が必要です。
+                        </div>
+
+                        <div class="inline-cta">
+                            <p>「自社の対象者を一緒に洗い出したい」「コストシミュレーションを手伝ってほしい」という方はご相談ください。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <h2 id="section3">3. 【さらに先】企業規模要件も2035年10月にかけて段階的に撤廃</h2>
+                        <p>
+                            「うちは従業員50人以下だから、まだ関係ない」と考えている経営者の方も、油断はできません。2025年の改正法では、企業規模要件（現在の「51人以上」）そのものを段階的に撤廃することが<strong>法律として確定</strong>しています。
+                        </p>
+
+                        <div class="table-scroll">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>時期</th>
+                                        <th>主な内容</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="done-row">
+                                        <td>2024年10月（実施済み）</td>
+                                        <td>企業規模要件が「51人以上」に拡大</td>
+                                    </tr>
+                                    <tr class="key-row">
+                                        <td>2026年10月</td>
+                                        <td>賃金要件（月額8.8万円以上＝106万円の壁）の撤廃</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2027年10月以降</td>
+                                        <td>企業規模要件の段階的な撤廃が開始</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2029年10月</td>
+                                        <td>常時5人以上の個人事業所が、全業種で適用対象に（現在は法定17業種）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2035年10月</td>
+                                        <td>企業規模要件が最終的に撤廃</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2">※詳細な施行時期は政令等で具体化されるため、公開直前に厚労省特設サイトで最新情報を必ずご確認ください。</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <p>
+                            現時点で50人以下の企業であっても、近い将来、確実に「週20時間以上働くパート・アルバイト」を社会保険に加入させる時代がやってきます。今のうちから人員配置やシフトの管理、人件費の予算組みを見直しておくことが、未来の経営を守るポイントです。
+                        </p>
+
+                        <div class="box-info">
+                            新たに加入対象となる短時間労働者や事業主に対しては、保険料負担を軽減する支援制度（キャリアアップ助成金など）も用意されています。コスト増への備えとして、こうした制度の活用も検討するとよいでしょう。
+                        </div>
+
+                        <!-- 助成金記事への内部リンク -->
+                        <a href="josekin-2026.html" class="related-banner">
+                            <span class="banner-label">関連コラム</span>
+                            <span class="banner-title">2026年版｜中小企業が今すぐ使える助成金まとめ（キャリアアップ助成金など）</span>
+                            <span class="banner-arrow">›</span>
+                        </a>
+
+                        <h2 id="section4">4. 企業が今すぐ進めるべき「4つの対応手順」</h2>
+                        <p>自社が現在「51人以上」に該当する場合はもちろん、50人以下の企業も将来に備えて以下の手順で準備を進めることをおすすめします。</p>
+
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <h3>加入対象者の正しい把握</h3>
+                                <p>雇用契約書や賃金台帳を確認し、2026年10月以降に要件を満たすことになる従業員が何人いるかを正確にリストアップします。</p>
+                                <p class="step-note">📌 「雇用保険には入っているけれど、社会保険には入っていないパートさん」は週20時間以上働いている可能性が高いため、特に要チェックです。</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <h3>会社負担分のコスト試算（シミュレーション）</h3>
+                                <p>社会保険料は<strong>労使折半</strong>（会社と従業員で半分ずつ負担）です。新たに加入する従業員が増えることで、会社の法定福利費がどれくらい増加するかを事前に試算します。</p>
+                                <p class="step-note">📌 厚生労働省の特設サイトには事業主向けの「社会保険料かんたんシミュレーター」が用意されています。</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <h3>対象となる従業員への丁寧な説明（面談）</h3>
+                                <p>扶養の範囲内で働きたい従業員は、手取り額が一時的に減ることを懸念する場合があります。「将来もらえる年金が増える」「傷病手当金・出産手当金など万が一の保障が手厚くなる」というメリットも合わせて、<strong>個人面談などで丁寧に伝えること</strong>が定着・離職防止のカギとなります。</p>
+                                <p class="step-note">⚠️ 一方的な通知ではなく、対話の機会を設けることが、労働時間調整や雇い止めをめぐるトラブルの回避にもつながります。</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div class="step-content">
+                                <h3>書類の作成と年金事務所への届出</h3>
+                                <p>対象者が確定したら、「被保険者資格取得届」などの必要書類を作成し、<strong>年金事務所へ速やかに提出</strong>します。</p>
+                            </div>
+                        </div>
+
+                        <!-- 36協定記事への内部リンク -->
+                        <a href="36kyotei-guide.html" class="related-banner">
+                            <span class="banner-label">関連コラム</span>
+                            <span class="banner-title">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</span>
+                            <span class="banner-arrow">›</span>
+                        </a>
+
+                        <h2 id="section5">まとめ</h2>
+                        <p>社会保険の適用拡大は、企業にとってはコストや事務負担の増加という側面もありますが、見方を変えれば<strong>「手厚い福利厚生をアピールして、優秀なパート・アルバイトを確保・定着させるチャンス」</strong>でもあります。</p>
+                        <ul>
+                            <li>2026年10月から「106万円の壁（月額8.8万円の賃金要件）」が撤廃される</li>
+                            <li>51人以上の企業では、週20時間以上働く短時間労働者が月収に関わらず加入対象に</li>
+                            <li>企業規模要件も2027年10月以降、段階的に撤廃（2035年10月に完全撤廃）</li>
+                            <li>今すぐ対象者の洗い出し→コスト試算→従業員への丁寧な説明の3ステップを進める</li>
+                        </ul>
+                        <p>「自社のカウント方法が合っているか不安」「従業員への説明や、その後の働き方の調整がうまくできるか心配」という場合は、ぜひ当事務所へご相談ください。対象者の正確な洗い出し、コストシミュレーション、さらには社会保険の加入手続き（書類作成・届出）の代行まで一貫してサポートいたします。</p>
+
+                        <!-- 公式根拠資料 -->
+                        <div class="box-info">
+                            <strong>公式根拠資料（一次情報）</strong><br>
+                            <a href="https://www.mhlw.go.jp/tekiyoukakudai/" target="_blank" rel="noopener" class="official-link">厚生労働省「社会保険適用拡大 特設サイト」</a>
+                            <a href="https://www.mhlw.go.jp/tekiyoukakudai/jigyonushi/" target="_blank" rel="noopener" class="official-link">事業主・人事労務担当者向けページ</a>
+                        </div>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                千葉市美浜区にてCSI&LC IMAIを運営。社会保険・労務手続きから勤怠システム導入まで、中小企業の人事労務をトータルサポート。法改正への対応実務を得意とする。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="36kyotei-guide.html">
+                            <div class="nav-label">← 前の記事</div>
+                            36協定とは？中小企業が最初に知っておくべき基本と届出の手順
+                        </a>
+                        <a href="index.html" style="text-align: right;">
+                            <div class="nav-label">コラム一覧 →</div>
+                            お役立ちコラム一覧へ
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">現状の加入ルール</a>
+                                <ol>
+                                    <li><a href="#section1-1">51人以上の数え方</a></li>
+                                    <li><a href="#section1-2">加入対象の4つの条件</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section2">2026年10月「106万円の壁」撤廃</a>
+                                <ol>
+                                    <li><a href="#section2-1">これが意味すること</a></li>
+                                    <li><a href="#section2-2">企業への影響</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">企業規模要件の段階的撤廃スケジュール</a></li>
+                            <li><a href="#section4">今すぐ進めるべき4つの手順</a></li>
+                            <li><a href="#section5">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="josekin-2026.html">2026年版 中小企業が今すぐ使える助成金まとめ</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">勤怠システム</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <div class="cta-section">
+            <h2>社会保険の適用拡大への対応は、今から始めましょう</h2>
+            <p>対象者の洗い出し・コスト試算・届出代行まで、初回無料でご相談いただけます。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>

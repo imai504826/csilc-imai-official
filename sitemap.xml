@@ -36,4 +36,34 @@
     <loc>https://imai504826.github.io/csilc-imai-official/privacy.html</loc>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://imai504826.github.io/csilc-imai-official/blog/index.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://imai504826.github.io/csilc-imai-official/blog/36kyotei-guide.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imai504826.github.io/csilc-imai-official/blog/kinmu-system-guide.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imai504826.github.io/csilc-imai-official/blog/josekin-2026.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imai504826.github.io/csilc-imai-official/blog/shakaihoken-2026.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://imai504826.github.io/csilc-imai-official/blog/shugyo-kisoku-guide.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>

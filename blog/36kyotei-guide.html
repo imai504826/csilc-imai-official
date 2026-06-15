@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+    <meta name="description" content="36協定とは何か、中小企業でも届出が必要な理由、残業時間の上限規制、締結から労基署への提出手順まで社労士がわかりやすく解説。「1人でも残業させるなら必要」「残業代を払えばOKは誤解」など、よくある勘違いも解消します。">
+    <title>36協定とは？中小企業が最初に知っておくべき基本と届出の手順 | 今井久一郎 社会保険労務士事務所</title>
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 50px;
+            color: var(--white);
+            background: #8e44ad;
+        }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .supervised-by {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 2px 10px;
+        }
+
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            line-height: 1.45;
+            margin: 0 0 20px;
+        }
+        .article-lead {
+            font-size: 1rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-left: 4px solid var(--accent-orange);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.9;
+            margin: 0;
+        }
+        .article-lead .conclusion {
+            display: block;
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: #fff3cd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            padding: 40px 0 80px;
+            align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue);
+            position: sticky;
+            top: 90px;
+        }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px;
+            margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* ボックス類 */
+        .box-note {
+            background: #fff8e8;
+            border: 1px solid #ffe0a0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+
+        .box-caution {
+            background: #fff0f0;
+            border: 1px solid #ffb3b3;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+
+        .box-info {
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* 上限ルール表 */
+        .limit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+        .limit-table th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 16px;
+            text-align: center;
+        }
+        .limit-table td {
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .limit-table .limit-label { font-weight: bold; background: var(--bg-soft); text-align: left; }
+        .limit-table .over-limit { background: #fff0f0; color: #c0392b; font-weight: bold; }
+        .limit-table .ok { color: #27ae60; font-weight: bold; }
+
+        /* 絶対上限ボックス */
+        .absolute-limit-box {
+            background: #fff0f0;
+            border: 2px solid #c0392b;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin: 20px 0;
+        }
+        .absolute-limit-box .title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #c0392b;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .absolute-limit-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+        .absolute-limit-list li {
+            padding: 9px 0;
+            border-bottom: 1px dashed #f5b3b3;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+        .absolute-limit-list li:last-child { border-bottom: none; }
+        .limit-icon { flex-shrink: 0; color: #c0392b; font-weight: bold; }
+
+        /* ステップカード */
+        .step-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid #dce8ff;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px rgba(26,74,147,0.06);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            font-size: 1rem;
+            margin: 0 0 10px;
+            border: none;
+            padding: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        .step-content p { margin: 0; font-size: 0.92rem; line-height: 1.8; }
+        .step-content .step-note {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+
+        /* ミスカード */
+        .mistake-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid #eee;
+            border-left: 5px solid var(--accent-orange);
+            padding: 20px 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .mistake-label {
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: var(--accent-orange);
+            background: #fff8e8;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .mistake-card h3 {
+            font-size: 1rem;
+            margin: 0 0 10px;
+            border: none;
+            padding: 0;
+            color: var(--text-dark);
+        }
+        .mistake-card p { margin: 0; font-size: 0.92rem; line-height: 1.8; color: var(--text-gray); }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white);
+            border-radius: 14px;
+            padding: 28px 28px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* 関連記事バナー（文中） */
+        .related-banner {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--bg-soft);
+            border: 1px solid #dce8ff;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 28px 0;
+            text-decoration: none !important;
+            transition: 0.2s;
+        }
+        .related-banner:hover { background: #eef4ff; border-color: var(--primary-blue); }
+        .related-banner .banner-label {
+            font-size: 0.72rem;
+            font-weight: bold;
+            color: var(--accent-sky);
+            background: #e8f6ff;
+            border-radius: 4px;
+            padding: 2px 8px;
+            white-space: nowrap;
+        }
+        .related-banner .banner-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            line-height: 1.5;
+        }
+        .related-banner .banner-arrow { margin-left: auto; color: var(--text-gray); font-size: 1rem; flex-shrink: 0; }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 48px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .article-nav a {
+            flex: 1;
+            display: block;
+            padding: 14px 18px;
+            background: var(--bg-soft);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            margin-top: 16px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- フッターCTA --- */
+        .cta-section {
+            background: var(--primary-blue);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .step-card { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            36協定とは？中小企業が最初に知っておくべき基本と届出の手順
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge">労務手続き</span>
+                    <span class="article-date">2026年6月15日</span>
+                    <span class="read-time">📖 約8分</span>
+                </div>
+                <h1 class="article-title">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</h1>
+                <p class="article-lead">
+                    「従業員に少しでも残業をさせるなら、36協定が必要って本当？」<br>
+                    「うちは5人の小さな会社だけど、届出をしないとペナルティがある？」<br><br>
+                    経営者や人事担当者の方から、このようなご質問をよくいただきます。
+                    <span class="conclusion">
+                        ✅ 結論：たとえ従業員が1人であっても、法定労働時間を超えて残業させる可能性があるなら、36協定の締結と労働基準監督署への届出が絶対に必要です。
+                    </span>
+                </p>
+            </div>
+
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイル用） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">そもそも「36協定」とは？基本の仕組み</a>
+                                <ol>
+                                    <li><a href="#section1-1">「残業代を払えばOK」の罠</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section2">残業時間の「上限ルール」</a>
+                                <ol>
+                                    <li><a href="#section2-1">「月45時間まで毎月OK」ではない</a></li>
+                                    <li><a href="#section2-2">特別条項でも超えられない絶対上限</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">締結から届出までの3ステップ</a></li>
+                            <li><a href="#section4">中小企業がやりがちなうっかりミス</a></li>
+                            <li><a href="#section5">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <article class="article-body">
+
+                        <h2 id="section1">1. そもそも「36協定」とは？基本の仕組み</h2>
+                        <p>
+                            労働基準法では、働く時間の上限が<strong>「1日8時間、1週40時間」</strong>と定められています。これを「法定労働時間」と言います。
+                        </p>
+                        <p>
+                            本来、この時間を1分でも超えて働かせることは法律違反（犯罪）です。しかし、企業の運営上、どうしても残業が発生することはありますよね。そこで、<strong>「会社と従業員の労働者代表が書面で約束（協定）を交わし、それを労基署に届け出れば、例外的に残業させても罰しませんよ」</strong>という免罰効果を与えるのが、労働基準法第36条に基づく「36協定（時間外・休日労働に関する協定届）」です。
+                        </p>
+
+                        <h3 id="section1-1">「うちは残業代を払っているから大丈夫」の罠</h3>
+                        <div class="box-caution">
+                            「残業代を割増（1.25倍）できちんと払っていれば問題ない」と誤解されているケースが多々あります。しかし、<strong>残業代の支払いと36協定の届出は全くの別物</strong>です。36協定を出さずに残業代だけ払っていても、法律違反（労働基準法第32条違反）になりますので注意してください。
+                        </div>
+
+                        <h2 id="section2">2. 絶対に超えてはならない！残業時間の「上限ルール」</h2>
+                        <p>
+                            36協定を提出すれば、いくらでも残業させて良いわけではありません。時間外労働の上限規制は、大企業は2019年4月から、中小企業は1年の猶予を経て<strong>2020年4月</strong>から適用されており、現在は罰則付きの厳格な「上限」が設けられています。
+                        </p>
+
+                        <div class="box-note">
+                            原則として、残業させられる上限は<strong>「月45時間・年360時間」</strong>までです。
+                        </div>
+
+                        <h3 id="section2-1">「月45時間まで毎月OK」ではない点に注意</h3>
+                        <p>
+                            ここで一つ、誤解しやすい点があります。「月45時間まで」という数字だけを見て、毎月45時間まで残業させてよいと考えてしまうケースです。しかし、毎月45時間の残業をさせると年間540時間（45時間 × 12か月）となり、<strong>年360時間の上限を超えてしまいます。</strong>
+                        </p>
+
+                        <table class="limit-table">
+                            <thead>
+                                <tr>
+                                    <th>考え方</th>
+                                    <th>月あたり</th>
+                                    <th>年間合計</th>
+                                    <th>判定</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="limit-label">❌ よくある誤解</td>
+                                    <td>45時間</td>
+                                    <td class="over-limit">540時間</td>
+                                    <td class="over-limit">年360時間超 → 違反</td>
+                                </tr>
+                                <tr>
+                                    <td class="limit-label">✅ 安全な目安</td>
+                                    <td>30時間程度</td>
+                                    <td class="ok">360時間以内</td>
+                                    <td class="ok">年上限内</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            そのため、「毎月の目安は30時間程度（360時間 ÷ 12か月）」と捉え、これを超えそうな場合にアラートを出す仕組みを持つことが、安全な運用につながります。
+                        </p>
+
+                        <h3 id="section2-2">特別条項を結んでも超えられない「絶対上限」</h3>
+                        <p>
+                            突発的なトラブルや臨時の大増産が見込まれる場合は、「特別条項付きの36協定」を締結する必要があります。ただし、特別条項を使えるのは<strong>年6回（6か月）まで</strong>という回数制限があります。さらに、特別条項を結んだ場合でも、以下の「絶対上限」は1分たりとも超えてはなりません。
+                        </p>
+
+                        <div class="absolute-limit-box">
+                            <div class="title">🚫 特別条項を結んでも超えられない「絶対上限」</div>
+                            <ul class="absolute-limit-list">
+                                <li><span class="limit-icon">▶</span> 特別条項を適用できるのは、年6回（6か月）まで</li>
+                                <li><span class="limit-icon">▶</span> 時間外労働が<strong>年720時間以内</strong></li>
+                                <li><span class="limit-icon">▶</span> 時間外労働＋休日労働の合計が<strong>月100時間未満</strong></li>
+                                <li><span class="limit-icon">▶</span> 時間外労働＋休日労働の合計が、どの2〜6ヶ月の平均をとっても<strong>80時間以内</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="box-caution">
+                            これらに違反すると、<strong>「6ヶ月以下の拘禁刑または30万円以下の罰金」</strong>という刑事罰が、会社だけでなく経営者個人（または労務責任者）に科されるリスクがあります（労働基準法第119条等）。<br><br>
+                            <small>※「拘禁刑」は2025年6月に施行された刑法改正により、従来の「懲役」「禁錮」が一本化されたものです。</small>
+                        </div>
+
+                        <div class="inline-cta">
+                            <p>「特別条項が必要か判断できない」「自社の残業実態が上限に近いか確認したい」というご相談も、初回無料で承っています。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <h2 id="section3">3. 【実務プロセス】36協定の締結から届出までの3ステップ</h2>
+                        <p>では、具体的にどのように手続きを進めればよいか、3つのステップで解説します。</p>
+
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <h3>労働者の「過半数代表者」を選出する</h3>
+                                <p>
+                                    会社が勝手に残業時間を決めることはできません。社内の全従業員（パート・アルバイト含む）の「過半数を代表する人」を適切に選ぶ必要があります。
+                                </p>
+                                <p class="step-note">
+                                    ⚠️ 社長が勝手に指名したり、管理職（課長や部長など管理監督者）を選んだりしてはいけません。投票や挙手で選ぶなど、民主的な手続きで選出する必要があります。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <h3>協定届（書類）を作成する</h3>
+                                <p>
+                                    選出された労働者代表と話し合い、残業の上限時間を決めて「時間外・休日労働に関する協定届」に署名・捺印（または記名）をします。
+                                </p>
+                                <p class="step-note">
+                                    📌 書類の様式は厚生労働省のホームページからダウンロードできますが、一般的な「原則的な働き方」用と「特別条項付き」用で様式が異なるため注意しましょう。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <h3>労働基準監督署へ提出する</h3>
+                                <p>
+                                    作成した書類を、管轄の労働基準監督署へ提出します。窓口への持参や郵送も可能ですが、現在は<strong>政府の電子申請システム（e-Gov）</strong>を使った電子申請が非常にスムーズでおすすめです。
+                                </p>
+                            </div>
+                        </div>
+
+                        <h2 id="section4">4. 中小企業がやりがちな「36協定のうっかりミス」</h2>
+                        <p>実務上、社労士の目から見て特によくあるミスを3つ挙げます。</p>
+
+                        <div class="mistake-card">
+                            <span class="mistake-label">よくあるミス ①</span>
+                            <h3>有効期間（1年間）が切れて「空白の期間」ができている</h3>
+                            <p>
+                                36協定の有効期間は一般的に「1年間」です。毎年、期間が満了する前に新しい協定を結んで届け出なければなりませんが、更新を忘れて「協定が未提出の空白の1ヶ月」を作ってしまう企業が後を絶ちません。
+                            </p>
+                        </div>
+
+                        <div class="mistake-card">
+                            <span class="mistake-label">よくあるミス ②</span>
+                            <h3>拠点（店舗や工場）ごとに提出していない</h3>
+                            <p>
+                                36協定は、企業単位ではなく<strong>「事業場（拠点）単位」</strong>で提出するのが原則です。本社だけでなく、別の場所に支店や店舗、工場がある場合は、それぞれの拠点ごとに労働者代表を選び、それぞれの管轄労基署に提出する必要があります（※一定の要件を満たせば本社一括提出も可能です）。
+                            </p>
+                        </div>
+
+                        <div class="mistake-card">
+                            <span class="mistake-label">よくあるミス ③</span>
+                            <h3>パート・アルバイトの「残業」をカウントし忘れている</h3>
+                            <p>
+                                雇用形態を問わず、<strong>全員の労働時間を管理する必要があります。</strong>「パートさんは週30時間契約だから、1日1時間残業（計7時間勤務）しても8時間以内だし関係ない」という認識は誤りです。契約時間（所定労働時間）を超えて働かせるためのルールが就業規則や雇用契約書にあるか、複数名の時間の合算がどうなるかなど、総合的な管理が必要です。
+                            </p>
+                        </div>
+
+                        <!-- 関連記事バナー -->
+                        <a href="kinmu-system-guide.html" class="related-banner">
+                            <span class="banner-label">関連コラム</span>
+                            <span class="banner-title">クラウド勤怠管理システムの選び方｜36協定の上限管理をシステムで自動化する視点から</span>
+                            <span class="banner-arrow">›</span>
+                        </a>
+
+                        <h2 id="section5">まとめ</h2>
+                        <p>
+                            36協定は、中小企業が従業員を守り、会社を安全に経営していくための<strong>「最低限のパスポート」</strong>です。
+                        </p>
+                        <ul>
+                            <li>従業員が1人でも、残業の可能性があれば36協定の届出が必要</li>
+                            <li>残業代の支払いとは別物。届出なしの残業はそれ自体が法律違反</li>
+                            <li>月45時間の上限は「毎月OK」ではなく、年360時間から逆算して管理する</li>
+                            <li>特別条項でも絶対上限（年720時間・月100時間未満等）は超えられない</li>
+                            <li>毎年の更新忘れと、拠点ごとの提出漏れに特に注意</li>
+                        </ul>
+                        <p>
+                            「労働者代表の選び方がこれで合っているか不安」「特別条項をつけるべきか判断できない」という場合は、労務のプロである社労士へお気軽にご相談ください。適切な協定書の作成から、将来的な労務監査に耐えうる体制づくりまでしっかりとサポートいたします。
+                        </p>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="index.html">
+                            <div class="nav-label">← コラム一覧</div>
+                            お役立ちコラム一覧へ
+                        </a>
+                        <a href="kinmu-system-guide.html" style="text-align: right;">
+                            <div class="nav-label">次の記事 →</div>
+                            クラウド勤怠管理システムの選び方｜社労士が失敗しないポイントを解説
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC用） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">36協定とは？基本の仕組み</a>
+                                <ol>
+                                    <li><a href="#section1-1">「残業代を払えばOK」の罠</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section2">残業時間の上限ルール</a>
+                                <ol>
+                                    <li><a href="#section2-1">月45時間が毎月OKではない理由</a></li>
+                                    <li><a href="#section2-2">特別条項でも超えられない絶対上限</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">締結から届出までの3ステップ</a></li>
+                            <li><a href="#section4">やりがちなうっかりミス</a></li>
+                            <li><a href="#section5">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">勤怠システム</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方｜社労士が失敗しないポイントを解説</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="index.html">2026年版 中小企業が今すぐ使える助成金まとめ</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">就業規則</div>
+                            <a href="shugyo-kisoku-guide.html">就業規則はいつ作る？10人未満でも整備すべき理由</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>36協定の届出・見直しは、まずご相談ください</h2>
+            <p>協定書の作成から労働者代表の選出方法まで、初回無料でサポートいたします。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>

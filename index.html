@@ -222,6 +222,20 @@
         }
         .news-list {
             flex-grow: 1;
+            max-height: 420px;
+            overflow-y: auto;
+            padding-right: 6px;
+        }
+        .news-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .news-list::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 3px;
+        }
+        .news-list::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 3px;
         }
         .news-item {
             display: flex;
@@ -521,7 +535,7 @@
                     <li><a href="serviceAbaut.html">サービス内容</a></li>
                     <li><a href="career.html">実績・職務歴</a></li>
                     <li><a href="kintaiservice.html">勤怠システム</a></li>
-                    <li><a href="privacy.html">個人情報方針</a></li>
+                    <li><a href="blog/index.html">コラム</a></li>
                     <li><a href="about.html">事務所紹介</a></li>
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
@@ -593,6 +607,31 @@
                 <div class="news-title">INFORMATION</div>
                 <div class="news-list">
                     <div class="news-item">
+                        <span class="news-date">2026.06.15</span>
+                        <span class="news-category" style="background: #8e44ad;">コラム</span>
+                        <a href="blog/36kyotei-guide.html" class="news-text">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2026.06.10</span>
+                        <span class="news-category" style="background: var(--accent-sky);">コラム</span>
+                        <a href="blog/kinmu-system-guide.html" class="news-text">クラウド勤怠管理システムの選び方｜社労士が失敗しないポイントを解説</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2026.06.01</span>
+                        <span class="news-category" style="background: #27ae60;">コラム</span>
+                        <a href="blog/josekin-2026.html" class="news-text">2026年版｜中小企業が今すぐ使える助成金まとめ（申請期限・改正ポイント付き）</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2026.05.20</span>
+                        <span class="news-category" style="background: #8e44ad;">コラム</span>
+                        <a href="blog/shakaihoken-2026.html" class="news-text">【2026年10月】社会保険の「106万円の壁」が撤廃へ｜中小企業が今すぐ準備すべきこと</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2026.05.10</span>
+                        <span class="news-category" style="background: #c0392b;">コラム</span>
+                        <a href="blog/shugyo-kisoku-guide.html" class="news-text">就業規則はいつ作る？10人未満でも整備すべき理由と作成の流れ</a>
+                    </div>
+                    <div class="news-item">
                         <span class="news-date">2026.03.25</span>
                         <span class="news-category">お知らせ</span>
                         <a href="#" class="news-text">ウェブサイトをリニューアルいたしました。</a>
@@ -601,7 +640,7 @@
                         <span class="news-date">2026.03.10</span>
                         <span class="news-category" style="background: #e74c3c;">PDF資料</span>
                         <a href="pdf/ご紹介資料_V2.pdf" download="今井久一郎社会保険労務士事務所_ご紹介資料.pdf" class="news-text download-link">
-                            <span class="pdf-icon">今井久一郎社会保険労務士事務所 ご紹介資料をダウンロード（掲載しました）</span> 
+                            <span class="pdf-icon">今井久一郎社会保険労務士事務所 ご紹介資料をダウンロード（掲載しました）</span>
                         </a>
                     </div>
                 </div>
