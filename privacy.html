@@ -94,9 +94,49 @@
         .copyright { font-size: 0.8rem; color: #888888; }
         .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; }
         
+        /* --- ハンバーガーメニュー --- */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1100;
+            flex-shrink: 0;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         @media (max-width: 768px) {
-            .header-inner { flex-direction: column; gap: 15px; padding: 10px 0; }
-            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .hamburger { display: flex; }
+            .header-inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 0; padding: 0; }
+            .office-name-top { font-size: 0.75rem; line-height: 1.3; }
+            #main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+                padding: 12px 20px 20px;
+                z-index: 999;
+            }
+            #main-nav.open { display: block; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; text-align: center; }
+            .nav-menu a { display: block; padding: 10px 8px; background: #f3f5f8; border-radius: 6px; font-size: 0.85rem; }
             .policy-card { padding: 30px 20px; }
             .section-title { font-size: 1.8rem; }
         }
@@ -110,7 +150,10 @@
                 <img src="images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI">
                 <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
             </a>
-            <nav style="width: 100%; max-width: 600px;">
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="main-nav">
                 <ul class="nav-menu">
                     <li><a href="index.html">ホーム</a></li>
                     <li><a href="services.html">3つの柱</a></li>
@@ -212,5 +255,31 @@
         </div>
     </footer>
 
+    <script>
+    (function() {
+        var btn = document.getElementById('hamburger');
+        var nav = document.getElementById('main-nav');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function() {
+            var open = nav.classList.toggle('open');
+            btn.classList.toggle('active', open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('click', function(e) {
+            if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                nav.classList.remove('open');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                nav.classList.remove('open');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
