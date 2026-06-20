@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+
+    <meta name="description" content="副業・兼業で2社に勤める場合の労働時間管理を図解で解説。割増賃金を支払うのはどちらの会社か、3つのケース（所定>8h・=8h・<8h）ごとにタイムライン図と厚労省ガイドライン根拠付きで整理します。">
+    <title>副業・兼業の労働時間管理ガイド｜割増賃金はどちらの会社が払う？【図解3ケース】 | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+            /* スライド準拠 追加 */
+            --navy-deep: #20305f;
+            --case1-navy: #20305f;
+            --case2-amber: #e8a33d;
+            --case3-green: #2e8b6f;
+            --soft-blue-bg: #eef2fa;
+            --soft-green-bg: #eaf5f0;
+            --soft-amber-bg: #fdf4e3;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge {
+            font-size: 0.78rem; font-weight: bold;
+            padding: 4px 14px; border-radius: 50px;
+            color: var(--white); background: var(--primary-blue);
+        }
+        .cat-badge.労務手続き { background: #8e44ad; }
+        .cat-badge.勤怠システム { background: var(--accent-sky); }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .article-title { font-size: 1.8rem; color: var(--primary-blue); line-height: 1.45; margin: 0 0 20px; }
+        .article-lead {
+            font-size: 1rem; color: var(--text-gray);
+            background: var(--bg-soft); border-left: 4px solid var(--accent-orange);
+            padding: 14px 18px; border-radius: 0 8px 8px 0; line-height: 1.8; margin: 0;
+        }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid; grid-template-columns: 1fr 260px;
+            gap: 40px; padding: 40px 0 80px; align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft); border-radius: 12px;
+            padding: 22px 24px; border-top: 4px solid var(--primary-blue);
+            position: sticky; top: 90px;
+        }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem; color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue); border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px; margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem; color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px; margin: 32px 0 14px;
+        }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; overflow-wrap: break-word; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 注意・補足ボックス */
+        .box-note {
+            background: #fff8e8; border: 1px solid #ffe0a0;
+            border-radius: 8px; padding: 16px 20px;
+            font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+        .box-caution {
+            background: #fff0f0; border: 1px solid #ffb3b3;
+            border-radius: 8px; padding: 16px 20px;
+            font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+        .box-info {
+            background: #f0f9ff; border: 1px solid #b3d9f7;
+            border-radius: 8px; padding: 16px 20px;
+            font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92rem; }
+        .article-body th { background: var(--primary-blue); color: var(--white); padding: 10px 14px; text-align: left; }
+        .article-body td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: top; }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex; gap: 20px; align-items: flex-start;
+            background: var(--bg-soft); border-radius: 14px;
+            padding: 24px; margin-top: 48px; border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: var(--primary-blue); color: var(--white);
+            font-size: 1.4rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a {
+            flex: 1; display: block; padding: 14px 18px;
+            background: var(--bg-soft); border-radius: 10px;
+            font-size: 0.88rem; color: var(--text-dark); line-height: 1.5;
+        }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white); border-radius: 14px;
+            padding: 28px; text-align: center; margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; color: var(--white); }
+        .inline-cta a {
+            display: inline-block; background: var(--accent-orange); color: var(--white);
+            padding: 12px 32px; border-radius: 50px; font-weight: bold; font-size: 0.95rem; transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- フッターCTA --- */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn {
+            display: inline-block; background: var(--white); color: var(--primary-blue);
+            padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s;
+        }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* ============================================
+           図解コンポーネント（スライド準拠）
+        ============================================ */
+
+        /* --- [図A] 通算イメージ --- */
+        .fig-a-wrap { margin: 24px 0; }
+        .fig-a-bars { display: flex; align-items: stretch; border-radius: 8px 8px 0 0; overflow: hidden; min-height: 75px; }
+        .fig-a-bar { flex: 1; padding: 14px 10px; text-align: center; color: white; display: flex; flex-direction: column; justify-content: center; }
+        .fig-a-bar.a-side { background: var(--primary-blue); }
+        .fig-a-bar.b-side { background: var(--accent-sky); }
+        .fig-a-bar.sym { flex: 0 0 44px; background: #e0e0e0; color: #555; font-size: 1.5rem; font-weight: bold; align-items: center; justify-content: center; padding: 8px 0; }
+        .fig-a-bar.result { background: var(--case3-green); }
+        .fig-a-bar .bar-label { font-size: 0.75rem; opacity: 0.85; }
+        .fig-a-bar .bar-main { font-size: 0.9rem; font-weight: bold; margin-top: 4px; line-height: 1.5; }
+        .fig-a-caption { background: var(--navy-deep); color: white; text-align: center; padding: 10px 16px; font-size: 0.88rem; border-radius: 0 0 8px 8px; line-height: 1.6; }
+
+        /* --- [図B] STEP1・STEP2カード --- */
+        .step-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+        .step-card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.09); }
+        .step-head { padding: 14px 18px; display: flex; align-items: center; gap: 12px; }
+        .step-head.s1 { background: var(--primary-blue); }
+        .step-head.s2 { background: var(--accent-orange); }
+        .step-num {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; font-weight: bold; color: white; flex-shrink: 0;
+        }
+        .step-head-title { font-weight: bold; font-size: 0.98rem; color: white; line-height: 1.4; }
+        .step-body { padding: 14px 18px; background: white; font-size: 0.88rem; line-height: 1.7; color: var(--text-dark); }
+        .step-rule {
+            background: var(--soft-blue-bg); border-left: 3px solid var(--primary-blue);
+            padding: 8px 12px; border-radius: 0 6px 6px 0;
+            margin-top: 10px; font-size: 0.85rem; font-weight: bold; color: var(--navy-deep);
+        }
+        .step-rule.amber { background: var(--soft-amber-bg); border-left-color: var(--case2-amber); color: #7a5200; }
+        .step-conclusion {
+            background: var(--soft-green-bg); border: 1px solid #8ecfb0;
+            border-radius: 8px; padding: 14px 18px;
+            font-size: 0.9rem; line-height: 1.85; margin-top: 16px;
+        }
+        .step-conclusion strong { color: var(--case3-green); }
+
+        /* --- [図C] 3ケース・カラーカード --- */
+        .case-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; align-items: stretch; }
+        .case-card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.09); display: flex; flex-direction: column; }
+        .case-head { padding: 12px 16px; color: white; font-weight: bold; font-size: 0.92rem; min-height: 56px; display: flex; align-items: center; }
+        .case-card.c1 .case-head { background: var(--case1-navy); }
+        .case-card.c2 .case-head { background: var(--case2-amber); }
+        .case-card.c3 .case-head { background: var(--case3-green); }
+        .case-body { padding: 14px 16px; background: white; font-size: 0.86rem; line-height: 1.7; flex: 1; display: flex; flex-direction: column; }
+        .case-soukei { font-size: 1.1rem; font-weight: bold; text-align: center; padding: 8px 6px; border-radius: 4px; margin: 8px 0; }
+        .case-card.c1 .case-soukei { background: var(--soft-blue-bg); color: var(--case1-navy); }
+        .case-card.c2 .case-soukei { background: var(--soft-amber-bg); color: #7a5200; }
+        .case-card.c3 .case-soukei { background: var(--soft-green-bg); color: var(--case3-green); }
+        .case-rule-txt { font-size: 0.82rem; color: var(--text-gray); margin-top: auto; padding-top: 10px; border-top: 1px dashed #ddd; }
+
+        /* --- タイムライン図 --- */
+        .tl-figure {
+            margin: 24px 0; background: #fff;
+            border: 1px solid #dde5f0; border-radius: 10px;
+            padding: 16px 12px 10px;
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
+        }
+        .tl-title { font-size: 0.88rem; font-weight: bold; color: var(--text-dark); margin-bottom: 8px; }
+        .tl-svg { display: block; min-width: 600px; width: 100%; height: auto; }
+        .tl-caption { font-size: 0.78rem; color: var(--text-gray); text-align: center; margin-top: 6px; }
+
+        /* --- 結論ボックス --- */
+        .result-box {
+            background: var(--soft-green-bg); border: 1px solid #8ecfb0;
+            border-left: 5px solid var(--case3-green);
+            border-radius: 0 8px 8px 0; padding: 16px 20px;
+            margin: 16px 0; font-size: 0.93rem; line-height: 1.85;
+        }
+        .result-box .result-label { font-weight: bold; color: var(--case3-green); font-size: 0.98rem; margin-bottom: 6px; }
+
+        /* --- 根拠帯 --- */
+        .genkyo {
+            background: #f5f7fa; border-left: 3px solid #aaa;
+            padding: 12px 16px; margin: 12px 0;
+            font-size: 0.82rem; line-height: 1.8;
+            border-radius: 0 6px 6px 0; color: #555;
+        }
+        .genkyo .genkyo-label { font-weight: bold; color: #666; margin-bottom: 6px; font-size: 0.8rem; }
+        .genkyo blockquote {
+            margin: 6px 0 0; padding: 10px 14px;
+            background: white; border-radius: 4px;
+            font-size: 0.83rem; line-height: 1.85; color: #444;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* --- 注意ボックス（アンバー） --- */
+        .box-amber {
+            background: var(--soft-amber-bg); border: 1px solid #e8c87a;
+            border-left: 4px solid var(--case2-amber);
+            border-radius: 0 8px 8px 0; padding: 16px 20px;
+            margin: 16px 0; font-size: 0.92rem; line-height: 1.8;
+        }
+        .box-amber::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c07800; margin-bottom: 6px; }
+
+        /* --- [図G] 早見表 --- */
+        .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        .summary-table th { background: var(--primary-blue); color: white; padding: 10px 14px; text-align: left; white-space: nowrap; }
+        .summary-table td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: middle; }
+        .summary-table tr.r1 td { background: white; }
+        .summary-table tr.r2 td { background: var(--bg-soft); }
+        .summary-table tr.r3 td { background: white; }
+        .summary-table tr.r1 td:first-child { border-left: 4px solid var(--case1-navy); }
+        .summary-table tr.r2 td:first-child { border-left: 4px solid var(--case2-amber); }
+        .summary-table tr.r3 td:first-child { border-left: 4px solid var(--case3-green); }
+        .case-tag { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: white; white-space: nowrap; }
+        .case-tag.t1 { background: var(--case1-navy); }
+        .case-tag.t2 { background: var(--case2-amber); }
+        .case-tag.t3 { background: var(--case3-green); }
+
+        /* --- [図H] 実務留意点カード --- */
+        .point-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+        .point-card { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 20px; border-top: 3px solid var(--primary-blue); }
+        .point-icon {
+            width: 44px; height: 44px; background: var(--soft-blue-bg);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 12px; color: var(--primary-blue);
+        }
+        .point-card h4 { font-size: 0.92rem; color: var(--primary-blue); margin: 0 0 8px; line-height: 1.5; }
+        .point-card p { font-size: 0.85rem; line-height: 1.75; color: var(--text-gray); margin: 0; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .step-cards { grid-template-columns: 1fr; }
+            .case-cards { grid-template-columns: 1fr; }
+            .point-cards { grid-template-columns: 1fr; }
+            .fig-a-bars { flex-wrap: wrap; }
+            .fig-a-bar.sym { flex: 0 0 100%; padding: 6px; border-radius: 0; }
+            .summary-table { font-size: 0.82rem; }
+            .summary-table th, .summary-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="../index.html" class="logo-area">
+            <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+            <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+        </a>
+        <nav style="width: 100%; max-width: 640px;">
+            <ul class="nav-menu">
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../services.html">3つの柱</a></li>
+                <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                <li><a href="../career.html">実績・職務歴</a></li>
+                <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                <li><a href="index.html" class="active">コラム</a></li>
+                <li><a href="../about.html">事務所紹介</a></li>
+                <li><a href="../contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="header-line">
+    <div class="line-blue"></div>
+    <div class="line-sky"></div>
+    <div class="line-orange"></div>
+</div>
+
+<div class="breadcrumb">
+    <div class="container">
+        <a href="../index.html">ホーム</a>
+        <span>›</span>
+        <a href="index.html">お役立ちコラム</a>
+        <span>›</span>
+        副業・兼業の労働時間管理ガイド
+    </div>
+</div>
+
+<main>
+    <div class="container">
+
+        <div class="article-header">
+            <div class="article-meta">
+                <span class="cat-badge 勤怠システム">勤怠システム</span>
+                <span class="article-date">2026年6月20日</span>
+                <span class="read-time">📖 約7分</span>
+            </div>
+            <h1 class="article-title">副業・兼業の労働時間管理ガイド｜割増賃金はどちらの会社が払う？【図解3ケース】</h1>
+            <p class="article-lead">
+                副業・兼業を認める企業が増えるなか、「労働時間の通算」と「割増賃金の支払い義務者」の判断に迷う担当者が後を絶ちません。本記事では、厚生労働省ガイドラインをもとに、2社の所定労働時間の合計が「8時間を超える・ちょうど8時間・8時間未満」の3ケースをタイムライン図解で整理。どちらの会社が割増賃金を支払うのかを、条文・通達根拠つきでわかりやすく解説します。
+            </p>
+        </div>
+
+        <div class="content-layout">
+
+            <!-- 本文エリア -->
+            <div>
+                <!-- 目次（モバイル） -->
+                <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                    <div class="toc-title">📋 この記事の目次</div>
+                    <ol>
+                        <li><a href="#section1">大原則：2社の労働時間は「通算」する</a></li>
+                        <li><a href="#section2">2つのステップと通算の順序ルール</a></li>
+                        <li><a href="#section3">3ケースの振り分け早見</a></li>
+                        <li><a href="#section4">ケース①：所定の合計が8時間を超える場合</a></li>
+                        <li><a href="#section5">ケース②：所定の合計がちょうど8時間の場合</a></li>
+                        <li><a href="#section6">ケース③：所定の合計が8時間未満の場合</a></li>
+                        <li><a href="#section7">割増賃金の支払義務者 早見表</a></li>
+                        <li><a href="#section8">実務上の留意点</a></li>
+                        <li><a href="#section9">まとめ</a></li>
+                    </ol>
+                </div>
+
+                <article class="article-body">
+
+                    <!-- §1 大原則 -->
+                    <h2 id="section1">大原則：2社の労働時間は「通算」する（労基法第38条第1項）</h2>
+
+                    <p>
+                        労働基準法第38条第1項は、「労働時間は、事業場を異にする場合においても、労働時間に関する規定の適用については通算する」と定めています。副業・兼業で2社に雇用されている場合、A社とB社の労働時間は合算して「1日8時間・週40時間」の法定労働時間を判定します。
+                    </p>
+
+                    <!-- [図A] 通算イメージ -->
+                    <div class="fig-a-wrap">
+                        <div class="fig-a-bars">
+                            <div class="fig-a-bar a-side">
+                                <div class="bar-label">本業</div>
+                                <div class="bar-main">A社の<br>労働時間</div>
+                            </div>
+                            <div class="fig-a-bar sym">＋</div>
+                            <div class="fig-a-bar b-side">
+                                <div class="bar-label">副業</div>
+                                <div class="bar-main">B社の<br>労働時間</div>
+                            </div>
+                            <div class="fig-a-bar sym">＝</div>
+                            <div class="fig-a-bar result">
+                                <div class="bar-label">通算して判定</div>
+                                <div class="bar-main">1日8時間<br>週40時間</div>
+                            </div>
+                        </div>
+                        <div class="fig-a-caption">
+                            2社の労働時間を合算し、法定労働時間（1日8時間・週40時間）超過分に割増賃金（25%以上）が発生する
+                        </div>
+                    </div>
+
+                    <div class="box-info">
+                        フリーランス・請負・委任など労基法が適用されない働き方や、管理監督者等は通算の対象外です。本記事は両社とも雇用契約（労基法適用）のケースを前提としています。
+                    </div>
+
+                    <!-- §2 2つのステップ -->
+                    <h2 id="section2">2つのステップと通算の順序ルール</h2>
+
+                    <p>
+                        労働時間の通算は、<strong>①所定労働時間</strong>と<strong>②所定外労働（残業）</strong>を別々に扱います。それぞれ通算する「順序」が異なる点が実務上の最大のポイントです。
+                    </p>
+
+                    <!-- [図B] STEP1・STEP2カード -->
+                    <div class="step-cards">
+                        <div class="step-card">
+                            <div class="step-head s1">
+                                <div class="step-num">1</div>
+                                <div class="step-head-title">STEP1<br>所定労働時間の通算</div>
+                            </div>
+                            <div class="step-body">
+                                契約上あらかじめ定められた所定労働時間を通算します。
+                                <div class="step-rule">通算の順序＝労働契約を締結した順（先→後）</div>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-head s2">
+                                <div class="step-num">2</div>
+                                <div class="step-head-title">STEP2<br>所定外労働（残業）の通算</div>
+                            </div>
+                            <div class="step-body">
+                                所定を超えて実際に行った残業時間を通算します。
+                                <div class="step-rule amber">通算の順序＝実際に残業が発生した順（発生順）</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-conclusion">
+                        <strong>支払う会社の決まり方：</strong>通算して1日8時間・週40時間を超えた部分について、その時間に実際に労働させていた会社が割増賃金（2割5分以上）を支払う（労基法第37条）。
+                    </div>
+
+                    <!-- §3 3ケース早見 -->
+                    <h2 id="section3">3ケースの振り分け早見</h2>
+
+                    <p>
+                        割増賃金の支払義務者は、契約締結時点での「2社の所定労働時間の合計」によって次の3パターンに振り分けられます。
+                    </p>
+
+                    <!-- [図C] 3ケース・カラーカード -->
+                    <div class="case-cards">
+                        <div class="case-card c1">
+                            <div class="case-head">ケース① 所定が超過</div>
+                            <div class="case-body">
+                                【契約時点】2社合計の所定
+                                <div class="case-soukei">合計 ＞ 8時間</div>
+                                所定の段階ですでに法定時間を超えるため、STEP1の時点で時間外労働が発生します。所定は契約を結んだ順（先→後）で通算するため、後から契約した会社の所定の一部が法定外となります。
+                                <div class="case-rule-txt">➜ 支払い：後から契約した会社</div>
+                            </div>
+                        </div>
+                        <div class="case-card c2">
+                            <div class="case-head">ケース② 所定がちょうど8時間</div>
+                            <div class="case-body">
+                                【契約時点】2社合計の所定
+                                <div class="case-soukei">合計 ＝ 8時間</div>
+                                所定の通算では法定時間を超えません。以後、いずれかの会社で残業が発生した順に通算し、8時間を超えた部分を担当した会社が割増賃金を支払います。
+                                <div class="case-rule-txt">➜ 支払い：超過時に残業していた会社</div>
+                            </div>
+                        </div>
+                        <div class="case-card c3">
+                            <div class="case-head">ケース③ 所定が8時間未満</div>
+                            <div class="case-body">
+                                【契約時点】2社合計の所定
+                                <div class="case-soukei">合計 ＜ 8時間</div>
+                                所定だけでは法定時間に達しません。所定は契約順で積み上げ、その後の残業を発生順で通算します。8時間を超えた部分を担当した会社が支払います（ケース②と同じ仕組み）。
+                                <div class="case-rule-txt">➜ 支払い：超過時に残業していた会社</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="inline-cta">
+                        <p>「うちの会社ではどのケースに当たる？」ご自身の状況に合わせた確認は専門家への相談が確実です。</p>
+                        <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                    </div>
+
+                    <!-- §4 ケース①詳細 -->
+                    <h2 id="section4">ケース①：所定の合計が8時間を超える場合</h2>
+
+                    <p>
+                        A社で所定5時間（9:00〜14:00）、その後B社で所定4時間（15:00〜19:00）勤務する例です。2社の所定合計は9時間で、すでに1日8時間を超えています。
+                    </p>
+
+                    <!-- [図D] ケース①タイムライン -->
+                    <!-- SVG座標: viewBox 0 0 1000 145, 時間軸6:00-21:00, x(t)=80+(t-6)*60, 1h=60px -->
+                    <!-- 9:00→x=260, 14:00→x=560, 15:00→x=620, 18:00→x=800, 19:00→x=860 -->
+                    <div class="tl-figure">
+                        <div class="tl-title">図D｜ケース①タイムライン（A社所定5h ＋ B社所定4h ＝ 合計9h）</div>
+                        <svg viewBox="0 0 1000 148" class="tl-svg" role="img" aria-label="ケース①タイムライン：A社9-14・B社15-19、B社18-19が時間外">
+
+                            <!-- 行ラベル -->
+                            <text x="72" y="42" font-size="13" fill="#1a4a93" text-anchor="end" font-weight="bold" font-family="sans-serif">A社</text>
+                            <text x="72" y="82" font-size="13" fill="#007ab5" text-anchor="end" font-weight="bold" font-family="sans-serif">B社</text>
+
+                            <!-- A社所定 9:00-14:00 (x=260, w=300) -->
+                            <rect x="260" y="24" width="300" height="30" fill="#1a4a93" rx="4"/>
+                            <text x="410" y="44" font-size="12" fill="white" text-anchor="middle" font-family="sans-serif">所定 5時間（9:00〜14:00）</text>
+
+                            <!-- B社所定 法定内 15:00-18:00 (x=620, w=180) -->
+                            <rect x="620" y="64" width="180" height="30" fill="#00a0e9" rx="4"/>
+                            <text x="710" y="83" font-size="12" fill="white" text-anchor="middle" font-family="sans-serif">所定（15:00〜18:00）</text>
+
+                            <!-- B社所定 時間外 18:00-19:00 (x=800, w=60) -->
+                            <rect x="800" y="64" width="60" height="30" fill="#ffe0e0" rx="3" stroke="#d64545" stroke-width="2.5"/>
+                            <text x="830" y="81" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">時間外</text>
+                            <text x="830" y="93" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">1h</text>
+
+                            <!-- 8h到達ライン at x=800 (18:00) -->
+                            <line x1="800" y1="15" x2="800" y2="104" stroke="#d64545" stroke-width="1.5" stroke-dasharray="5,3"/>
+                            <text x="800" y="12" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">通算8h到達</text>
+
+                            <!-- 通算カウント注記 -->
+                            <text x="410" y="19" font-size="10" fill="#1a4a93" text-anchor="middle" font-family="sans-serif">（通算 1〜5h）</text>
+                            <text x="710" y="59" font-size="10" fill="#007ab5" text-anchor="middle" font-family="sans-serif">（通算 6〜8h）</text>
+                            <text x="830" y="59" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">（9h目）</text>
+
+                            <!-- 軸線 -->
+                            <line x1="80" y1="104" x2="980" y2="104" stroke="#bbb" stroke-width="1"/>
+
+                            <!-- 目盛り・ラベル -->
+                            <line x1="260" y1="104" x2="260" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="260" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">9:00</text>
+
+                            <line x1="560" y1="104" x2="560" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="560" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">14:00</text>
+
+                            <line x1="620" y1="104" x2="620" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="620" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">15:00</text>
+
+                            <line x1="800" y1="104" x2="800" y2="111" stroke="#d64545" stroke-width="1.5"/>
+                            <text x="800" y="124" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">18:00</text>
+
+                            <line x1="860" y1="104" x2="860" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="860" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">19:00</text>
+
+                            <!-- 凡例 -->
+                            <rect x="80" y="133" width="13" height="9" fill="#1a4a93" rx="2"/>
+                            <text x="96" y="141" font-size="10" fill="#555" font-family="sans-serif">A社（所定）</text>
+                            <rect x="195" y="133" width="13" height="9" fill="#00a0e9" rx="2"/>
+                            <text x="211" y="141" font-size="10" fill="#555" font-family="sans-serif">B社（所定・法定内）</text>
+                            <rect x="370" y="133" width="13" height="9" fill="#ffe0e0" stroke="#d64545" stroke-width="1.5" rx="2"/>
+                            <text x="386" y="141" font-size="10" fill="#d64545" font-family="sans-serif">法定時間外（割増対象）</text>
+                        </svg>
+                        <div class="tl-caption">※ スマートフォンは横スクロール可 ／ 赤枠＝法定時間外（割増賃金対象）</div>
+                    </div>
+
+                    <div class="result-box">
+                        <div class="result-label">✅ 結論：B社（後から契約した会社）が割増賃金を支払う</div>
+                        所定は契約順（A社→B社）で通算します。A社の所定5時間を積み上げた時点で残り3時間で8時間に達するため、B社所定のうち最初の3時間（15:00〜18:00）が法定内、最後の1時間（18:00〜19:00）が法定外となります。法定外の時間に実際に労働させているのはB社なので、B社が割増賃金を支払います。
+                    </div>
+
+                    <div class="genkyo">
+                        <div class="genkyo-label">根拠｜厚生労働省「副業・兼業の促進に関するガイドライン わかりやすい解説」（2025.3）STEP4 P.16 ／ 本体 ウ（イ）b</div>
+                        <blockquote>
+                            「法定労働時間を超える部分がある場合は、時間的に後から労働契約を締結した使用者における当該超える部分が時間外労働となる」
+                        </blockquote>
+                    </div>
+
+                    <!-- §5 ケース②詳細 -->
+                    <h2 id="section5">ケース②：所定の合計がちょうど8時間の場合</h2>
+
+                    <p>
+                        A社で所定4時間（9:00〜13:00）、B社で所定4時間（15:00〜19:00）勤務するケースです。2社の所定合計はちょうど8時間で、所定の段階では法定時間を超えません。その後A社で1時間の残業（13:00〜14:00）が発生した場合を考えます。
+                    </p>
+
+                    <!-- [図E] ケース②タイムライン -->
+                    <!-- SVG座標: x(t)=80+(t-6)*60 -->
+                    <!-- 9:00→x=260, 13:00→x=500, 14:00→x=560, 15:00→x=620, 19:00→x=860 -->
+                    <div class="tl-figure">
+                        <div class="tl-title">図E｜ケース②タイムライン（A社所定4h ＋ B社所定4h ＝ 8h / その後A社残業1h）</div>
+                        <svg viewBox="0 0 1000 148" class="tl-svg" role="img" aria-label="ケース②タイムライン：A社9-13・残業13-14が時間外・B社15-19">
+
+                            <text x="72" y="42" font-size="13" fill="#1a4a93" text-anchor="end" font-weight="bold" font-family="sans-serif">A社</text>
+                            <text x="72" y="82" font-size="13" fill="#007ab5" text-anchor="end" font-weight="bold" font-family="sans-serif">B社</text>
+
+                            <!-- A社所定 9:00-13:00 (x=260, w=240) -->
+                            <rect x="260" y="24" width="240" height="30" fill="#1a4a93" rx="4"/>
+                            <text x="380" y="44" font-size="12" fill="white" text-anchor="middle" font-family="sans-serif">所定 4時間（9:00〜13:00）</text>
+
+                            <!-- A社残業（時間外）13:00-14:00 (x=500, w=60) -->
+                            <rect x="500" y="24" width="60" height="30" fill="#ffe0e0" rx="3" stroke="#d64545" stroke-width="2.5"/>
+                            <text x="530" y="41" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">残業</text>
+                            <text x="530" y="53" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">時間外</text>
+
+                            <!-- B社所定 15:00-19:00 (x=620, w=240) -->
+                            <rect x="620" y="64" width="240" height="30" fill="#00a0e9" rx="4"/>
+                            <text x="740" y="84" font-size="12" fill="white" text-anchor="middle" font-family="sans-serif">所定 4時間（15:00〜19:00）</text>
+
+                            <!-- 8h丁度ライン at x=500 (13:00) -->
+                            <line x1="500" y1="15" x2="500" y2="104" stroke="#d64545" stroke-width="1.5" stroke-dasharray="5,3"/>
+                            <text x="500" y="12" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">所定で8h丁度</text>
+
+                            <!-- 通算カウント注記 -->
+                            <text x="380" y="19" font-size="10" fill="#1a4a93" text-anchor="middle" font-family="sans-serif">（通算 1〜4h）</text>
+                            <text x="740" y="59" font-size="10" fill="#007ab5" text-anchor="middle" font-family="sans-serif">（通算 5〜8h）</text>
+                            <text x="530" y="19" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">（9h目）</text>
+
+                            <!-- 軸線 -->
+                            <line x1="80" y1="104" x2="980" y2="104" stroke="#bbb" stroke-width="1"/>
+
+                            <line x1="260" y1="104" x2="260" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="260" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">9:00</text>
+
+                            <line x1="500" y1="104" x2="500" y2="111" stroke="#d64545" stroke-width="1.5"/>
+                            <text x="500" y="124" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">13:00</text>
+
+                            <line x1="560" y1="104" x2="560" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="560" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">14:00</text>
+
+                            <line x1="620" y1="104" x2="620" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="620" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">15:00</text>
+
+                            <line x1="860" y1="104" x2="860" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="860" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">19:00</text>
+
+                            <!-- 凡例 -->
+                            <rect x="80" y="133" width="13" height="9" fill="#1a4a93" rx="2"/>
+                            <text x="96" y="141" font-size="10" fill="#555" font-family="sans-serif">A社（所定）</text>
+                            <rect x="195" y="133" width="13" height="9" fill="#00a0e9" rx="2"/>
+                            <text x="211" y="141" font-size="10" fill="#555" font-family="sans-serif">B社（所定）</text>
+                            <rect x="310" y="133" width="13" height="9" fill="#ffe0e0" stroke="#d64545" stroke-width="1.5" rx="2"/>
+                            <text x="326" y="141" font-size="10" fill="#d64545" font-family="sans-serif">残業（法定時間外・割増対象）</text>
+                        </svg>
+                        <div class="tl-caption">※ スマートフォンは横スクロール可 ／ 赤枠＝法定時間外（割増賃金対象）</div>
+                    </div>
+
+                    <div class="result-box">
+                        <div class="result-label">✅ 結論：残業した会社（この例ではA社）が割増賃金を支払う</div>
+                        所定の通算では8時間ちょうどで超過なし。その後、A社で残業1時間（13:00〜14:00）が先に発生したため、残業発生順に通算します。この1時間が通算9時間目となり法定外となるため、その時間に労働させているA社が割増賃金を支払います。
+                    </div>
+
+                    <div class="box-amber">
+                        「自社の所定を超えたら必ず自社が割増賃金を払う」ではありません。支払義務者は「通算して8時間を超えた時間に実際に労働させていた会社」です。例えばB社が先に残業すれば、B社の負担になります（発生順ルール）。
+                    </div>
+
+                    <!-- §6 ケース③詳細 -->
+                    <h2 id="section6">ケース③：所定の合計が8時間未満の場合</h2>
+
+                    <p>
+                        A社で所定3時間（7:00〜10:00）、B社で所定3時間（15:00〜18:00）のケースです（厚生労働省ガイドライン例1）。所定合計は6時間で法定時間に達しません。当日、A社で2時間の残業（10:00〜12:00）と、B社で1時間の残業（18:00〜19:00）が発生しました。
+                    </p>
+
+                    <p>
+                        通算の順序は<strong>所定は契約順（①A社→②B社）、所定外は発生順（③A社残業→④B社残業）</strong>で積み上げます。
+                    </p>
+
+                    <!-- [図F] ケース③タイムライン -->
+                    <!-- SVG座標: x(t)=80+(t-6)*60 -->
+                    <!-- 7:00→x=140, 10:00→x=320, 12:00→x=440, 15:00→x=620, 18:00→x=800, 19:00→x=860 -->
+                    <!-- ①A社所定(7-10): x=140,w=180 / ③A社残業(10-12): x=320,w=120 -->
+                    <!-- ②B社所定(15-18): x=620,w=180 / ④B社残業時間外(18-19): x=800,w=60 -->
+                    <!-- 通算: ①3h + ②3h + ③2h = 8h → ④の1hが法定時間外 -->
+                    <div class="tl-figure">
+                        <div class="tl-title">図F｜ケース③タイムライン（厚労省ガイドライン例1）― 通算順序：①→②→③→④</div>
+                        <svg viewBox="0 0 1000 165" class="tl-svg" role="img" aria-label="ケース③タイムライン：①A社所定7-10・③A社残業10-12・②B社所定15-18・④B社残業18-19が時間外">
+
+                            <text x="72" y="42" font-size="13" fill="#20305f" text-anchor="end" font-weight="bold" font-family="sans-serif">A社</text>
+                            <text x="72" y="82" font-size="13" fill="#b87000" text-anchor="end" font-weight="bold" font-family="sans-serif">B社</text>
+
+                            <!-- ①A社所定 7:00-10:00 (x=140, w=180) 濃紺 -->
+                            <rect x="140" y="24" width="180" height="30" fill="#20305f" rx="4"/>
+                            <text x="230" y="39" font-size="11" fill="white" text-anchor="middle" font-family="sans-serif">①所定 3h</text>
+                            <text x="230" y="51" font-size="10" fill="white" text-anchor="middle" font-family="sans-serif">7:00〜10:00</text>
+                            <circle cx="158" cy="29" r="8" fill="rgba(255,255,255,0.3)"/>
+                            <text x="158" y="33" font-size="10" fill="white" text-anchor="middle" font-weight="bold" font-family="sans-serif">①</text>
+
+                            <!-- ③A社残業 10:00-12:00 (x=320, w=120) 薄青 -->
+                            <rect x="320" y="24" width="120" height="30" fill="#4a7fc1" rx="4"/>
+                            <text x="380" y="39" font-size="11" fill="white" text-anchor="middle" font-family="sans-serif">③残業 2h</text>
+                            <text x="380" y="51" font-size="10" fill="white" text-anchor="middle" font-family="sans-serif">10:00〜12:00</text>
+                            <circle cx="338" cy="29" r="8" fill="rgba(255,255,255,0.3)"/>
+                            <text x="338" y="33" font-size="10" fill="white" text-anchor="middle" font-weight="bold" font-family="sans-serif">③</text>
+
+                            <!-- ②B社所定 15:00-18:00 (x=620, w=180) アンバー -->
+                            <rect x="620" y="64" width="180" height="30" fill="#e8a33d" rx="4"/>
+                            <text x="710" y="79" font-size="11" fill="white" text-anchor="middle" font-family="sans-serif">②所定 3h</text>
+                            <text x="710" y="91" font-size="10" fill="white" text-anchor="middle" font-family="sans-serif">15:00〜18:00</text>
+                            <circle cx="638" cy="69" r="8" fill="rgba(255,255,255,0.3)"/>
+                            <text x="638" y="73" font-size="10" fill="white" text-anchor="middle" font-weight="bold" font-family="sans-serif">②</text>
+
+                            <!-- ④B社残業 18:00-19:00（時間外）(x=800, w=60) -->
+                            <rect x="800" y="64" width="60" height="30" fill="#fde8c0" rx="3" stroke="#d64545" stroke-width="2.5"/>
+                            <text x="830" y="80" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">④時間外</text>
+                            <text x="830" y="92" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">1h</text>
+                            <circle cx="818" cy="69" r="8" fill="#d64545"/>
+                            <text x="818" y="73" font-size="10" fill="white" text-anchor="middle" font-weight="bold" font-family="sans-serif">④</text>
+
+                            <!-- ③終了(12:00=x=440)で通算8h到達 -->
+                            <line x1="440" y1="15" x2="440" y2="104" stroke="#d64545" stroke-width="1.5" stroke-dasharray="5,3"/>
+                            <text x="448" y="12" font-size="10" fill="#d64545" text-anchor="start" font-family="sans-serif">①+②+③で8h到達</text>
+
+                            <!-- 通算カウント注記 -->
+                            <text x="230" y="19" font-size="10" fill="#20305f" text-anchor="middle" font-family="sans-serif">（通算 1〜3h）</text>
+                            <text x="380" y="19" font-size="10" fill="#4a7fc1" text-anchor="middle" font-family="sans-serif">（通算 7〜8h）</text>
+                            <text x="710" y="59" font-size="10" fill="#b87000" text-anchor="middle" font-family="sans-serif">（通算 4〜6h）</text>
+                            <text x="830" y="59" font-size="10" fill="#d64545" text-anchor="middle" font-family="sans-serif">（9h目）</text>
+
+                            <!-- 軸線 -->
+                            <line x1="80" y1="104" x2="980" y2="104" stroke="#bbb" stroke-width="1"/>
+
+                            <line x1="140" y1="104" x2="140" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="140" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">7:00</text>
+
+                            <line x1="320" y1="104" x2="320" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="320" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">10:00</text>
+
+                            <line x1="440" y1="104" x2="440" y2="111" stroke="#d64545" stroke-width="1.5"/>
+                            <text x="440" y="124" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">12:00</text>
+
+                            <line x1="620" y1="104" x2="620" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="620" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">15:00</text>
+
+                            <line x1="800" y1="104" x2="800" y2="111" stroke="#d64545" stroke-width="1.5"/>
+                            <text x="800" y="124" font-size="11" fill="#d64545" text-anchor="middle" font-weight="bold" font-family="sans-serif">18:00</text>
+
+                            <line x1="860" y1="104" x2="860" y2="111" stroke="#666" stroke-width="1"/>
+                            <text x="860" y="124" font-size="11" fill="#555" text-anchor="middle" font-family="sans-serif">19:00</text>
+
+                            <!-- 通算順序説明テキスト -->
+                            <text x="500" y="140" font-size="11" fill="#444" text-anchor="middle" font-family="sans-serif">通算順序：①所定3h → ②所定3h → ③残業2h → ④残業1h（所定は契約順、所定外は発生順）</text>
+
+                            <!-- 凡例 -->
+                            <rect x="80" y="150" width="12" height="9" fill="#20305f" rx="1"/>
+                            <text x="95" y="158" font-size="9" fill="#555" font-family="sans-serif">①A社所定</text>
+                            <rect x="175" y="150" width="12" height="9" fill="#4a7fc1" rx="1"/>
+                            <text x="190" y="158" font-size="9" fill="#555" font-family="sans-serif">③A社残業</text>
+                            <rect x="265" y="150" width="12" height="9" fill="#e8a33d" rx="1"/>
+                            <text x="280" y="158" font-size="9" fill="#555" font-family="sans-serif">②B社所定</text>
+                            <rect x="355" y="150" width="12" height="9" fill="#fde8c0" stroke="#d64545" stroke-width="1.5" rx="1"/>
+                            <text x="370" y="158" font-size="9" fill="#d64545" font-family="sans-serif">④B社残業（法定時間外）</text>
+                        </svg>
+                        <div class="tl-caption">※ スマートフォンは横スクロール可 ／ 通算順序①→②→③→④ ／ 赤枠＝法定時間外</div>
+                    </div>
+
+                    <div class="result-box">
+                        <div class="result-label">✅ 結論：①＋②＋③で8時間に到達 → ④（B社の残業1時間）が法定時間外。B社が支払う</div>
+                        所定は契約順（①A社3h→②B社3h）、所定外は発生順（③A社残業2h→④B社残業1h）で積み上げます。①+②+③=8時間で法定時間に到達するため、④B社の残業1時間（18:00〜19:00）が法定時間外となり、B社が割増賃金を支払います。
+                    </div>
+
+                    <div class="genkyo">
+                        <div class="genkyo-label">根拠｜厚生労働省「副業・兼業の促進に関するガイドライン わかりやすい解説」（2025.3）STEP5 P.22 例1</div>
+                        <blockquote>
+                            「①＋②＋③で法定労働時間に達するので、企業Bで行う1時間の所定外労働は法定時間外労働となり、企業Bはその1時間について割増賃金を支払う必要があります。」
+                        </blockquote>
+                    </div>
+
+                    <!-- §7 早見表 -->
+                    <h2 id="section7">割増賃金の支払義務者 早見表</h2>
+
+                    <p>3ケースをひとつの表で整理します。</p>
+
+                    <div style="overflow-x: auto;">
+                        <table class="summary-table">
+                            <thead>
+                                <tr>
+                                    <th>区分</th>
+                                    <th>契約時点の所定（2社合計）</th>
+                                    <th>判定の考え方</th>
+                                    <th>支払う会社</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="r1">
+                                    <td><span class="case-tag t1">ケース①</span></td>
+                                    <td>8時間を<strong>超える</strong></td>
+                                    <td>所定の段階で超過。所定は契約の先→後の順で通算</td>
+                                    <td><strong>後から契約した会社</strong></td>
+                                </tr>
+                                <tr class="r2">
+                                    <td><span class="case-tag t2">ケース②</span></td>
+                                    <td>ちょうど<strong>8時間</strong></td>
+                                    <td>所定では超過なし。以後の残業を発生順に通算</td>
+                                    <td><strong>超過時に残業していた会社</strong></td>
+                                </tr>
+                                <tr class="r3">
+                                    <td><span class="case-tag t3">ケース③</span></td>
+                                    <td>8時間<strong>未満</strong></td>
+                                    <td>所定を契約順で積上げ→残業を発生順で通算</td>
+                                    <td><strong>超過時に残業していた会社</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="box-note">
+                        ②と③は同じ仕組みです。所定＝契約順／所定外（残業）＝発生順で通算し、通算8時間（週40時間）を超えた時間に実際に労働させていた会社が割増賃金を支払います。
+                    </div>
+
+                    <!-- §8 実務留意点 -->
+                    <h2 id="section8">実務上の留意点</h2>
+
+                    <!-- [図H] 4枚アイコンカード -->
+                    <div class="point-cards">
+                        <div class="point-card">
+                            <div class="point-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <h4>週40時間も同じく通算</h4>
+                            <p>1日8時間だけでなく、週40時間の法定労働時間も2社分を通算して判定します。1週間の合計が40時間を超えた部分は時間外労働となり、当該時間に労働させていた会社が割増賃金を支払います。</p>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <h4>副業先の労働時間は「申告」で把握</h4>
+                            <p>使用者は労働者からの申告等により副業・兼業先の労働時間を把握します。届出制を設け、契約締結日・所定労働時間・所定外労働の見込み等を確認する運用が推奨されています（ガイドライン P.9 届出様式例参照）。</p>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="21" x2="9" y2="9"/>
+                                </svg>
+                            </div>
+                            <h4>限度時間・36協定は「事業場ごと」</h4>
+                            <p>月45時間・年360時間の時間外労働の限度時間や36協定の延長時間は通算されません。一方、過労死認定基準となる「単月100時間未満・複数月平均80時間以内」は2社分の時間外労働を通算して判定します（ガイドライン P.19）。</p>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <h4>簡便な「管理モデル」も選択可能</h4>
+                            <p>各社が自社の労働時間上限をあらかじめ設定する「管理モデル」を選択することもできます。A社は自社の法定外労働に対して割増賃金を支払い、B社は労働時間の上限内でのみ働かせる形で、通算管理の負担を軽減できます（ガイドライン P.17-18・P.34）。</p>
+                        </div>
+                    </div>
+
+                    <!-- §9 まとめ -->
+                    <h2 id="section9">まとめ</h2>
+                    <p>副業・兼業における割増賃金の支払義務者は、次の3点を押さえることで判定できます。</p>
+                    <ul>
+                        <li><strong>通算の大原則</strong>：2社の労働時間は必ず合算して1日8時間・週40時間を判定する（労基法第38条第1項）</li>
+                        <li><strong>2ステップの順序</strong>：所定は契約を結んだ順、所定外（残業）は実際に発生した順で通算する</li>
+                        <li><strong>3ケース振り分け</strong>：所定合計が「8h超→後契約会社が払う」「8h以下→残業発生会社が払う」</li>
+                    </ul>
+                    <p>
+                        実務では届出制の整備・労働時間の申告・36協定の確認など、運用面の準備も欠かせません。「自社のケースがどれに当たるか」「管理モデルを活用できるか」など、ご不明な点は初回無料でご相談いただけます。
+                    </p>
+
+                    <!-- 出典 -->
+                    <div class="box-info">
+                        <strong>出典・参考法令</strong><br>
+                        ・労働基準法 第38条第1項 ／ 第37条<br>
+                        ・昭和23年5月14日 基発第769号<br>
+                        ・令和2年9月1日付け 基発0901第3号（労基法第38条第1項の解釈等について）<br>
+                        ・厚生労働省「副業・兼業の促進に関するガイドライン わかりやすい解説」（2025.3）<br>
+                        　（STEP4 P.16 ／ STEP5 P.22 ／ 上限規制対応 P.19 ／ 割増賃金 P.33 ／ 届出様式例 P.9 ／ 合意書様式例 P.13-15 ／ 管理モデル P.17-18・P.34）<br>
+                        ・厚生労働省 副業・兼業 特設ページ：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000192188.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/stf/…/0000192188.html</a><br>
+                        <br>
+                        ※ 実際の支払義務者の判定は、各社の契約締結時期・所定労働時間・実際の労働順序により個別に確認が必要です。
+                    </div>
+
+                </article>
+
+                <!-- 著者ボックス -->
+                <div class="author-box">
+                    <div class="author-icon">今</div>
+                    <div class="author-info">
+                        <div class="author-name">今井 久一郎</div>
+                        <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                        <div class="author-bio">
+                            社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 記事間ナビゲーション -->
+                <div class="article-nav">
+                    <a href="36kyotei-guide.html">
+                        <div class="nav-label">← 前の記事</div>
+                        36協定とは？中小企業が最初に知っておくべき基本と届出の手順
+                    </a>
+                </div>
+                <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+            </div>
+
+            <!-- サイドバー -->
+            <aside>
+                <div class="toc" id="toc-desktop">
+                    <div class="toc-title">📋 この記事の目次</div>
+                    <ol>
+                        <li><a href="#section1">大原則：2社の労働時間は「通算」する</a></li>
+                        <li><a href="#section2">2つのステップと通算の順序ルール</a></li>
+                        <li><a href="#section3">3ケースの振り分け早見</a></li>
+                        <li><a href="#section4">ケース①：所定の合計が8時間を超える場合</a></li>
+                        <li><a href="#section5">ケース②：所定の合計がちょうど8時間の場合</a></li>
+                        <li><a href="#section6">ケース③：所定の合計が8時間未満の場合</a></li>
+                        <li><a href="#section7">割増賃金の支払義務者 早見表</a></li>
+                        <li><a href="#section8">実務上の留意点</a></li>
+                        <li><a href="#section9">まとめ</a></li>
+                    </ol>
+                </div>
+
+                <div class="related-articles">
+                    <div class="related-title">関連コラム</div>
+                    <div class="related-item">
+                        <div class="related-cat">労務手続き</div>
+                        <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                    </div>
+                    <div class="related-item">
+                        <div class="related-cat">労務手続き</div>
+                        <a href="shakaihoken-2026.html">【2026年10月】社会保険の「106万円の壁」が撤廃へ</a>
+                    </div>
+                    <div class="related-item">
+                        <div class="related-cat">就業規則</div>
+                        <a href="shugyo-kisoku-guide.html">就業規則はいつ作る？10人未満でも整備すべき理由と作成の流れ</a>
+                    </div>
+                </div>
+            </aside>
+
+        </div><!-- /.content-layout -->
+    </div><!-- /.container -->
+
+    <div class="cta-section">
+        <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+        <p>「うちの場合はどのケース？」という個別のご相談も、初回無料で承っています。</p>
+        <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+        <p>CSI&LC IMAI - Cloud System Integration &amp; Labor Consulting</p>
+        <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+        <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function adjustToc() {
+        const isMobile = window.innerWidth <= 768;
+        document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+        document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+    }
+    adjustToc();
+    window.addEventListener('resize', adjustToc);
+</script>
+</body>
+</html>
