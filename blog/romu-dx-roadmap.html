@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+
+    <meta name="description" content="中小企業の労務DXは何から始めるべきか。SE歴25年の社労士が、勤怠管理から始める4ステップのロードマップと、業務改善助成金を活用したシステム導入のポイントを図解で解説します。">
+    <title>中小企業の労務DXロードマップ ― 何から手をつけるか | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge {
+            font-size: 0.78rem; font-weight: bold; padding: 4px 14px;
+            border-radius: 50px; color: var(--white); background: var(--primary-blue);
+        }
+        .cat-badge.romu-dx { background: var(--accent-sky); }
+        .cat-badge.助成金 { background: #27ae60; }
+        .cat-badge.労務手続き { background: #8e44ad; }
+        .cat-badge.就業規則 { background: #c0392b; }
+        .cat-badge.よくある質問 { background: var(--accent-orange); }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .article-title { font-size: 1.8rem; color: var(--primary-blue); line-height: 1.45; margin: 0 0 20px; }
+        .article-lead {
+            font-size: 1rem; color: var(--text-gray); background: var(--bg-soft);
+            border-left: 4px solid var(--accent-orange); padding: 14px 18px;
+            border-radius: 0 8px 8px 0; line-height: 1.8; margin: 0;
+        }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid; grid-template-columns: 1fr 260px;
+            gap: 40px; padding: 40px 0 80px; align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft); border-radius: 12px; padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue); position: sticky; top: 90px;
+        }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem; color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue); border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px; margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent); border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 { font-size: 1.1rem; color: var(--text-dark); border-left: 3px solid var(--accent-orange); padding-left: 12px; margin: 32px 0 14px; }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 注意・補足ボックス */
+        .box-note { background: #fff8e8; border: 1px solid #ffe0a0; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+        .box-caution { background: #fff0f0; border: 1px solid #ffb3b3; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+        .box-info { background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92rem; }
+        .article-body th { background: var(--primary-blue); color: var(--white); padding: 10px 14px; text-align: left; }
+        .article-body td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* ============================================
+           図・ビジュアルコンポーネント
+           ============================================ */
+
+        /* 図のラベル共通 */
+        .fig-label {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .fig-caption {
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* 【図1】緊急度カード — 3列グリッド */
+        .urgency-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 24px 0;
+        }
+        .urgency-card {
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+            border-top: 4px solid;
+        }
+        .urgency-card.red   { background: #fff4f4; border-color: #e74c3c; }
+        .urgency-card.orange{ background: #fff8ee; border-color: var(--accent-orange); }
+        .urgency-card.blue  { background: #f0f7ff; border-color: var(--primary-blue); }
+        .urgency-card .u-icon { font-size: 2rem; margin-bottom: 8px; }
+        .urgency-card .u-title { font-size: 0.82rem; font-weight: bold; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
+        .urgency-card .u-desc { font-size: 0.78rem; color: var(--text-gray); line-height: 1.5; }
+
+        /* 【図2】ロードマップ フロー */
+        .roadmap-flow {
+            margin: 24px 0;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 28px 24px;
+            border: 1px solid #dce8ff;
+        }
+        .roadmap-steps {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+        }
+        .rm-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .rm-step + .rm-step::before {
+            content: "▶";
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            color: var(--accent-orange);
+            z-index: 1;
+        }
+        .rm-badge {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: var(--white);
+            background: var(--primary-blue);
+            padding: 3px 10px;
+            border-radius: 50px;
+            margin-bottom: 8px;
+        }
+        .rm-box {
+            width: 100%;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 14px 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-bottom: 3px solid;
+            flex: 1;
+        }
+        .rm-box.s1 { border-color: #95a5a6; }
+        .rm-box.s2 { border-color: var(--accent-sky); }
+        .rm-box.s3 { border-color: #8e44ad; }
+        .rm-box.s4 { border-color: #27ae60; }
+        .rm-box .rm-icon { font-size: 1.6rem; margin-bottom: 6px; }
+        .rm-box .rm-title { font-size: 0.82rem; font-weight: bold; color: var(--text-dark); line-height: 1.4; margin-bottom: 4px; }
+        .rm-box .rm-sub { font-size: 0.72rem; color: var(--text-gray); line-height: 1.4; }
+        .rm-note {
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            text-align: center;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 8px 14px;
+            border: 1px dashed #ccc;
+        }
+
+        /* 【図3】勤怠データ 上流・下流図 */
+        .data-flow {
+            margin: 24px 0;
+            background: #f0f7ff;
+            border-radius: 12px;
+            padding: 24px 20px;
+        }
+        .data-flow-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .df-source {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 10px;
+            padding: 16px 20px;
+            text-align: center;
+            min-width: 110px;
+        }
+        .df-source .df-icon { font-size: 1.6rem; margin-bottom: 4px; }
+        .df-source .df-label { font-size: 0.82rem; font-weight: bold; }
+        .df-arrow {
+            font-size: 1.4rem;
+            color: var(--accent-orange);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .df-targets {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .df-target {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            border-left: 4px solid;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .df-target.t1 { border-color: var(--accent-orange); }
+        .df-target.t2 { border-color: #8e44ad; }
+        .df-target.t3 { border-color: #27ae60; }
+
+        /* 【図4】Before / After 比較 */
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .ba-col { border-radius: 12px; overflow: hidden; }
+        .ba-header {
+            padding: 12px 16px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            color: var(--white);
+        }
+        .ba-header.before { background: #7f8c8d; }
+        .ba-header.after  { background: var(--primary-blue); }
+        .ba-body { background: var(--bg-soft); padding: 16px; }
+        .ba-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .ba-item:last-child { border-bottom: none; }
+        .ba-item .ba-dot { flex-shrink: 0; margin-top: 3px; }
+
+        /* 【図5】業務改善助成金 概要ボード */
+        .josekin-board {
+            background: linear-gradient(135deg, #eafaf1, #d5f5e3);
+            border: 2px solid #27ae60;
+            border-radius: 14px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .josekin-board .jb-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #1e8449;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .jb-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .jb-item {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .jb-item .jb-key { font-size: 0.72rem; color: #27ae60; font-weight: bold; margin-bottom: 4px; }
+        .jb-item .jb-val { font-size: 0.9rem; font-weight: bold; color: var(--text-dark); line-height: 1.5; }
+        .jb-flow {
+            margin-top: 14px;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+        .jb-flow .jb-flow-title { font-weight: bold; color: #1e8449; margin-bottom: 8px; font-size: 0.82rem; }
+        .jb-flow-steps {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .jbfs { background: #eafaf1; border-radius: 6px; padding: 4px 10px; font-size: 0.78rem; font-weight: bold; color: #1e8449; white-space: nowrap; }
+        .jbfa { font-size: 0.9rem; color: #27ae60; }
+
+        /* 【図6】失敗パターン カード */
+        .failure-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 24px 0;
+        }
+        .failure-card {
+            background: #fff4f4;
+            border: 1px solid #ffb3b3;
+            border-radius: 12px;
+            padding: 18px 16px;
+            position: relative;
+        }
+        .failure-card .fc-num {
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background: #e74c3c;
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: bold;
+            padding: 2px 10px;
+            border-radius: 50px;
+        }
+        .failure-card .fc-icon { font-size: 1.6rem; margin-bottom: 8px; }
+        .failure-card .fc-title { font-size: 0.88rem; font-weight: bold; color: #c0392b; margin-bottom: 8px; line-height: 1.4; }
+        .failure-card .fc-desc { font-size: 0.80rem; color: var(--text-gray); line-height: 1.6; }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex; gap: 20px; align-items: flex-start;
+            background: var(--bg-soft); border-radius: 14px; padding: 24px;
+            margin-top: 48px; border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: var(--primary-blue); color: var(--white);
+            font-size: 1.4rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a { flex: 1; display: block; padding: 14px 18px; background: var(--bg-soft); border-radius: 10px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white); border-radius: 14px; padding: 28px; text-align: center; margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block; background: var(--accent-orange); color: var(--white);
+            padding: 12px 32px; border-radius: 50px; font-weight: bold; font-size: 0.95rem; transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- フッターCTA --- */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn { display: inline-block; background: var(--white); color: var(--primary-blue); padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- 免責事項 --- */
+        .disclaimer {
+            background: var(--bg-soft); border: 1px solid #ddd; border-radius: 8px;
+            padding: 16px 20px; font-size: 0.85rem; color: var(--text-gray); line-height: 1.8; margin-top: 40px;
+        }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .urgency-grid { grid-template-columns: 1fr; }
+            .roadmap-steps { flex-direction: column; gap: 8px; }
+            .rm-step + .rm-step::before { content: "▼"; left: 50%; top: -16px; transform: translateX(-50%); }
+            .before-after { grid-template-columns: 1fr; }
+            .jb-grid { grid-template-columns: 1fr; }
+            .failure-grid { grid-template-columns: 1fr; }
+            .data-flow-inner { flex-direction: column; }
+            .df-arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            中小企業の労務DXロードマップ
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <!-- 記事ヘッダー -->
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge">労務管理・DX</span>
+                    <span class="article-date">2026年7月2日</span>
+                    <span class="read-time">📖 約5分</span>
+                </div>
+                <h1 class="article-title">中小企業の労務DXロードマップ ― 何から手をつけるか</h1>
+                <p class="article-lead">
+                    「労務のDXが必要なのは分かっている。でも、何から手をつければいいか分からない」。本記事では、勤怠管理システムの開発・導入に25年携わったSE出身の社労士の視点から、中小企業が労務DXを進めるための<strong>4ステップのロードマップ</strong>を図解で解説します。ツールの機能比較ではなく、「着手する順番」に焦点を当てます。
+                </p>
+            </div>
+
+            <!-- 2カラムレイアウト -->
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイルでは本文の先頭に表示） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">なぜ今、労務DXなのか</a></li>
+                            <li><a href="#section2">労務DXロードマップ ― 4つのステップ</a>
+                                <ol>
+                                    <li><a href="#step1">STEP 1：現状の棚卸し</a></li>
+                                    <li><a href="#step2">STEP 2：勤怠管理の電子化</a></li>
+                                    <li><a href="#step3">STEP 3：給与計算・社会保険手続の電子化</a></li>
+                                    <li><a href="#step4">STEP 4：入退社手続・労務書類のペーパーレス化</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">費用の壁は「業務改善助成金」で越える</a></li>
+                            <li><a href="#section4">よくある失敗パターン3選</a></li>
+                            <li><a href="#section5">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 記事本文 -->
+                    <article class="article-body">
+
+                        <p>
+                            「勤怠はタイムカードをExcelに手入力、給与明細は紙で配布、入社手続きは手書きの書類を年金事務所に郵送」──。中小企業の総務・労務の現場では、いまだにこうした光景が珍しくありません。
+                        </p>
+                        <p>
+                            「必要性は分かっている。でも、何から手をつければいいか分からない」。これが、多くの経営者・総務担当者に共通する最大の壁です。本記事では、<strong>着手する順番</strong>に絞って解説します。
+                        </p>
+
+                        <!-- ============================================ -->
+                        <h2 id="section1">第1章：なぜ今、労務DXなのか</h2>
+                        <!-- ============================================ -->
+                        <p>
+                            労務DXは「余裕があればやる改善」ではなく、法改正・制度変更によって<strong>対応を迫られる局面</strong>が増えています。
+                        </p>
+
+                        <!-- 【図1】緊急度カード -->
+                        <span class="fig-label">図1｜労務DXを急ぐ3つの理由</span>
+                        <div class="urgency-grid">
+                            <div class="urgency-card red">
+                                <div class="u-icon">🏛️</div>
+                                <div class="u-title">社会保険<br>適用拡大<br>2026年10月</div>
+                                <div class="u-desc">8.8万円要件廃止。パート・アルバイトの資格管理が複雑化し、手作業では対応困難に。</div>
+                            </div>
+                            <div class="urgency-card orange">
+                                <div class="u-icon">📄</div>
+                                <div class="u-title">労働条件<br>明示ルール改正<br>2024年4月～</div>
+                                <div class="u-desc">「変更の範囲」明示が義務化。有期契約の更新上限など記載項目が増え、紙管理の限界に。</div>
+                            </div>
+                            <div class="urgency-card blue">
+                                <div class="u-icon">👤</div>
+                                <div class="u-title">属人化<br>による<br>業務停止リスク</div>
+                                <div class="u-desc">「あの人しか分からない」手作業は、担当者の退職が即、業務停止リスクに直結する。</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">出典：厚生労働省「社会保険適用拡大特設サイト」／「令和6年4月からの労働条件明示ルール」より</p>
+
+                        <p>
+                            とくに<a href="shakaihoken-2026.html">社会保険の適用拡大（2026年10月）</a>は、パート・アルバイトの労働時間・賃金を毎月正確に把握しなければならず、Excelや手作業での管理は現実的に困難になります。
+                        </p>
+
+                        <!-- ============================================ -->
+                        <h2 id="section2">第2章：労務DXロードマップ ― 4つのステップ</h2>
+                        <!-- ============================================ -->
+                        <p>
+                            ではどこから手をつけるか。下図が全体像です。順番を守ることが成功の鍵です。
+                        </p>
+
+                        <!-- 【図2】ロードマップ フロー -->
+                        <span class="fig-label">図2｜労務DX ロードマップ（推奨順序）</span>
+                        <div class="roadmap-flow">
+                            <div class="roadmap-steps">
+                                <div class="rm-step">
+                                    <div class="rm-badge">STEP 1</div>
+                                    <div class="rm-box s1">
+                                        <div class="rm-icon">🔍</div>
+                                        <div class="rm-title">現状の<br>棚卸し</div>
+                                        <div class="rm-sub">工数・依存度を見える化</div>
+                                    </div>
+                                </div>
+                                <div class="rm-step">
+                                    <div class="rm-badge">STEP 2</div>
+                                    <div class="rm-box s2">
+                                        <div class="rm-icon">⏱️</div>
+                                        <div class="rm-title">勤怠管理<br>の電子化</div>
+                                        <div class="rm-sub">最優先・全業務の上流</div>
+                                    </div>
+                                </div>
+                                <div class="rm-step">
+                                    <div class="rm-badge">STEP 3</div>
+                                    <div class="rm-box s3">
+                                        <div class="rm-icon">💴</div>
+                                        <div class="rm-title">給与計算・<br>社保手続の電子化</div>
+                                        <div class="rm-sub">データ連携・e-Gov申請</div>
+                                    </div>
+                                </div>
+                                <div class="rm-step">
+                                    <div class="rm-badge">STEP 4</div>
+                                    <div class="rm-box s4">
+                                        <div class="rm-icon">📁</div>
+                                        <div class="rm-title">入退社手続・<br>書類ペーパーレス化</div>
+                                        <div class="rm-sub">一気通貫デジタル化の完成</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rm-note">⚠️ ツールの購入より先に「STEP 1（棚卸し）」を必ず行うこと。順序を間違えると導入が頓挫します。</div>
+                        </div>
+
+                        <!-- ---- STEP 1 ---- -->
+                        <h3 id="step1">STEP 1：現状の棚卸し ― いきなりツールを買わない</h3>
+                        <p>
+                            最初にやるべきことは、システムの資料請求ではなく<strong>現状業務の棚卸し</strong>です。労務業務を5つに分解し、それぞれの「月あたり作業時間」と「紙・Excel依存度」を書き出してください。
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>業務カテゴリ</th>
+                                    <th>月あたり作業時間（目安）</th>
+                                    <th>紙・Excel依存度</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>勤怠管理</td>
+                                    <td>（自社で記入）</td>
+                                    <td>高 ／ 中 ／ 低</td>
+                                </tr>
+                                <tr>
+                                    <td>給与計算</td>
+                                    <td>（自社で記入）</td>
+                                    <td>高 ／ 中 ／ 低</td>
+                                </tr>
+                                <tr>
+                                    <td>入退社手続</td>
+                                    <td>（自社で記入）</td>
+                                    <td>高 ／ 中 ／ 低</td>
+                                </tr>
+                                <tr>
+                                    <td>年末調整</td>
+                                    <td>（自社で記入）</td>
+                                    <td>高 ／ 中 ／ 低</td>
+                                </tr>
+                                <tr>
+                                    <td>安全衛生・健康管理</td>
+                                    <td>（自社で記入）</td>
+                                    <td>高 ／ 中 ／ 低</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-note">
+                            <strong>SE視点の一言</strong>：25年間のシステム導入現場で、失敗の最大原因は「現行業務を整理しないままツールを導入すること」でした。棚卸しをすると「実はここが一番時間を食っていた」という意外な発見が必ずあります。
+                        </div>
+
+                        <!-- ---- STEP 2 ---- -->
+                        <h3 id="step2">STEP 2：最初の一手は「勤怠管理」から</h3>
+                        <p>
+                            棚卸しが終わったら、最初に電子化すべきは<strong>勤怠管理</strong>です。理由を図で整理します。
+                        </p>
+
+                        <!-- 【図3】勤怠データ 上流・下流図 -->
+                        <span class="fig-label">図3｜勤怠データは全業務の「上流」</span>
+                        <div class="data-flow">
+                            <div class="data-flow-inner">
+                                <div class="df-source">
+                                    <div class="df-icon">⏱️</div>
+                                    <div class="df-label">勤怠データ<br>（上流）</div>
+                                </div>
+                                <div class="df-arrow">▶</div>
+                                <div class="df-targets">
+                                    <div class="df-target t1">💴 給与計算（割増賃金の計算）</div>
+                                    <div class="df-target t2">📋 <a href="36kyotei-guide.html" style="color:var(--text-dark);">36協定の上限管理</a></div>
+                                    <div class="df-target t3">🌿 年次有給休暇の取得管理</div>
+                                </div>
+                            </div>
+                            <p style="font-size:0.8rem;color:var(--text-gray);text-align:center;margin:12px 0 0;">
+                                上流を電子化すれば下流3業務が連鎖的に楽になる。給与ソフトだけ先に入れても勤怠が紙のままでは転記作業は残る。
+                            </p>
+                        </div>
+
+                        <p>加えて、<strong>法令リスク</strong>の観点でも勤怠管理が最優先です。労働安全衛生法第66条の8の3は、事業者に対して労働時間の状況を「客観的な方法」で把握する義務を課しています。タイムカードの目視集計や自己申告のみの運用は、未払い残業代リスクと労働基準監督署対応リスクを常に抱えることになります。</p>
+
+                        <!-- 【図4】Before / After -->
+                        <span class="fig-label">図4｜勤怠管理 電子化 Before / After</span>
+                        <div class="before-after">
+                            <div class="ba-col">
+                                <div class="ba-header before">⚠ Before（紙・Excel運用）</div>
+                                <div class="ba-body">
+                                    <div class="ba-item"><span class="ba-dot">🔴</span>タイムカードを月末に目視集計（約20時間/月）</div>
+                                    <div class="ba-item"><span class="ba-dot">🔴</span>Excelへ手入力 → 転記ミスが発生</div>
+                                    <div class="ba-item"><span class="ba-dot">🔴</span>36協定の上限超過に気づかず発覚</div>
+                                    <div class="ba-item"><span class="ba-dot">🔴</span>有給残数の管理が担当者の記憶に依存</div>
+                                    <div class="ba-item"><span class="ba-dot">🔴</span>労基署調査時に打刻記録の根拠が薄い</div>
+                                </div>
+                            </div>
+                            <div class="ba-col">
+                                <div class="ba-header after">✅ After（クラウド勤怠システム導入後）</div>
+                                <div class="ba-body">
+                                    <div class="ba-item"><span class="ba-dot">🟢</span>集計は自動処理（月末作業が2時間以下に）</div>
+                                    <div class="ba-item"><span class="ba-dot">🟢</span>給与計算ソフトへデータ連携で転記ゼロ</div>
+                                    <div class="ba-item"><span class="ba-dot">🟢</span>36協定のアラートがリアルタイムで通知</div>
+                                    <div class="ba-item"><span class="ba-dot">🟢</span>有給残数はシステムで全員分を一元管理</div>
+                                    <div class="ba-item"><span class="ba-dot">🟢</span>客観的記録が労基署対応の証拠に</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ---- STEP 3 ---- -->
+                        <h3 id="step3">STEP 3：給与計算・社会保険手続の電子化</h3>
+                        <p>
+                            勤怠が電子化されたら、次は<strong>給与計算ソフトとのデータ連携</strong>です。勤怠→給与の転記作業をなくすことで、計算ミス・支給ミスを構造的に防ぎます。
+                        </p>
+                        <p>
+                            社会保険手続については<strong>e-Gov電子申請</strong>の活用を進めましょう。算定基礎届・賞与支払届・資格取得届といった定型手続こそ効果が大きく、郵送・窓口持参の往復時間がゼロになります。
+                        </p>
+
+                        <!-- 中途CTA -->
+                        <div class="inline-cta">
+                            <p>「何から始めればいいか分からない」という段階のご相談も歓迎しています。<br>SE×社労士の視点で、貴社の状況に合ったロードマップをご一緒に考えます。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <!-- ---- STEP 4 ---- -->
+                        <h3 id="step4">STEP 4：入退社手続・労務書類のペーパーレス化</h3>
+                        <p>
+                            最後のステップは、雇用契約書・労働条件通知書の電子化です。労働条件の明示は、<strong>労働者が希望した場合</strong>にはFAXや電子メール等による明示が認められています（労働基準法施行規則第5条第4項）。「労働者の希望」が要件である点には注意が必要です。
+                        </p>
+                        <p>
+                            年末調整の電子化、マイナンバーの一元管理まで進めば、<strong>入社から退職までの労務手続が一気通貫でデジタル化</strong>された状態になります。
+                        </p>
+
+                        <!-- ============================================ -->
+                        <h2 id="section3">第3章：費用の壁は「業務改善助成金」で越える</h2>
+                        <!-- ============================================ -->
+                        <p>
+                            「必要性は分かったが、費用が…」という企業に活用してほしいのが、厚生労働省の<strong>業務改善助成金</strong>です。事業場内最低賃金（事業場で最も低い時間給）を<strong>50円以上引き上げる</strong>ことと併せて、生産性向上に資する設備投資等（勤怠管理システム・給与計算ソフトの導入等）を行った場合に、その費用の一部が助成されます。雇用保険法に基づく厚生労働省所管の助成金であり、<strong>社労士が申請書類の作成・提出代行をサポートできる</strong>助成金です。
+                        </p>
+
+                        <!-- 【図5】業務改善助成金 概要（令和8年度） -->
+                        <figure class="article-figure" id="fig5">
+                            <span class="fig-label">図5｜業務改善助成金 概要（令和8年度）</span>
+
+                            <div style="border:2px solid #2e9e5b; border-radius:12px; background:#eef9f1; padding:20px; margin-top:10px;">
+                                <p style="font-weight:bold; margin:0 0 16px; font-size:1rem;">💰 業務改善助成金（厚生労働省）</p>
+
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                    <div style="background:#fff; border-radius:8px; padding:14px;">
+                                        <p style="color:#2e9e5b; font-size:0.85em; font-weight:bold; margin:0 0 6px;">目的</p>
+                                        <p style="margin:0; font-size:0.92rem; line-height:1.7;">事業場内最低賃金を<strong>50円以上引き上げる</strong>ことと併せて行う、生産性向上のための設備投資等を支援</p>
+                                    </div>
+                                    <div style="background:#fff; border-radius:8px; padding:14px;">
+                                        <p style="color:#2e9e5b; font-size:0.85em; font-weight:bold; margin:0 0 6px;">対象企業</p>
+                                        <p style="margin:0; font-size:0.92rem; line-height:1.7;">事業場内最低賃金が<strong>令和8年度の地域別最低賃金額未満</strong>である中小企業・小規模事業者</p>
+                                    </div>
+                                    <div style="background:#fff; border-radius:8px; padding:14px;">
+                                        <p style="color:#2e9e5b; font-size:0.85em; font-weight:bold; margin:0 0 6px;">助成率</p>
+                                        <p style="margin:0; font-size:0.92rem; line-height:1.7;">引上げ前の事業場内最低賃金が<br><strong>1,050円未満：4/5</strong> ／ <strong>1,050円以上：3/4</strong></p>
+                                    </div>
+                                    <div style="background:#fff; border-radius:8px; padding:14px;">
+                                        <p style="color:#2e9e5b; font-size:0.85em; font-weight:bold; margin:0 0 6px;">上限額</p>
+                                        <p style="margin:0; font-size:0.92rem; line-height:1.7;">賃上げコース（50円・70円・90円）と引き上げる労働者数により <strong>30万円〜600万円</strong><br><span style="font-size:0.82em; color:#636e72;">※最大600万円は特例事業者が10人以上の賃金を引き上げる場合</span></p>
+                                    </div>
+                                </div>
+
+                                <div style="background:#fff; border-radius:8px; padding:14px; margin-top:12px;">
+                                    <p style="color:#2e9e5b; font-size:0.85em; font-weight:bold; margin:0 0 8px;">✅ 労務DXで活用できる対象経費の例</p>
+                                    <p style="margin:0;">
+                                        <span style="background:#eef9f1; border-radius:6px; padding:4px 10px; display:inline-block; margin:2px; font-size:0.85rem;">⏱ 勤怠管理システム</span>
+                                        <span style="background:#eef9f1; border-radius:6px; padding:4px 10px; display:inline-block; margin:2px; font-size:0.85rem;">🧾 給与計算ソフト</span>
+                                        <span style="background:#eef9f1; border-radius:6px; padding:4px 10px; display:inline-block; margin:2px; font-size:0.85rem;">📝 業務フロー見直しのコンサルティング</span>
+                                    </p>
+                                    <p style="font-size:0.83em; margin:10px 0 0; color:#636e72; line-height:1.7;">※ PC・スマホ・タブレット等の端末は通常は対象外。<strong style="color:#2d3436;">物価高騰等要件を満たす特例事業者</strong>（申請前6か月間平均の利益率が前年度比3%ポイント以上低下）に該当する場合の<strong style="color:#2d3436;">新規導入に限り</strong>対象となります。</p>
+                                </div>
+                            </div>
+
+                            <div class="box-caution" style="margin-top:16px;">
+                                <strong>申請の要件を必ず確認してください</strong><br>
+                                ① 賃金の引き上げ（50円以上）が大前提の助成金です。設備投資のみでは受給できません。賃上げ対象は<strong>週所定労働時間20時間以上の雇用保険被保険者で、雇入れ後6か月を経過した労働者</strong>です。<br>
+                                ② <strong>交付決定前に設備の導入（契約・納品・支払）を行うと助成対象外</strong>になります。必ず労働局の交付決定後に実施してください。<br>
+                                ③ 要件・上限額・申請期限は年度によって異なります。令和8年度の申請受付は<strong>令和8年9月1日から、地域別最低賃金の発効日の前日まで</strong>です。申請前に必ず最新の<strong>交付要綱・要領</strong>（厚生労働省）をご確認ください。<br>
+                                ④ 当事務所では申請要件の確認から書類作成・提出代行まで一貫してサポートしています。
+                            </div>
+
+                            <p class="fig-caption">出典：<a href="https://www.mhlw.go.jp/content/11200000/001693416.pdf" target="_blank" rel="noopener noreferrer">厚生労働省「令和8年度業務改善助成金リーフレット」（R8.4版）</a>／<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html" target="_blank" rel="noopener noreferrer">業務改善助成金 公式ページ（厚生労働省）</a></p>
+                        </figure>
+
+                        <p>
+                            令和8年度のポイントは3つです。
+                        </p>
+                        <ol>
+                            <li><strong>対象企業の拡大</strong>：従来あった「地域別最低賃金との差額30円以内」要件が廃止され、事業場内最低賃金が令和8年度の地域別最低賃金額未満であれば対象になりました。最低賃金より数十円高く支払っている企業も対象になり得ます。</li>
+                            <li><strong>助成率は賃金水準で決まる</strong>：引上げ前の事業場内最低賃金が1,050円未満なら4/5、1,050円以上なら3/4です。事業者の規模（小規模かどうか）では決まらない点にご注意ください。</li>
+                            <li><strong>手順が命</strong>：賃上げも設備導入も「交付決定後」に実施するのが大原則です。順番を間違えると1円も支給されません。</li>
+                        </ol>
+                        <p>
+                            賃上げと労務DXを同時に進める中小企業にとって、勤怠管理システムの導入費用を賄える有力な選択肢です。自社の状況でどの助成金が使えるかは個別の確認が必要ですので、お気軽にご相談ください。
+                        </p>
+
+                        <div class="box-info">
+                            <strong>根拠資料</strong>：厚生労働省「<a href="https://www.mhlw.go.jp/content/11200000/001693416.pdf" target="_blank" rel="noopener noreferrer">令和8年度業務改善助成金リーフレット</a>」（R8.4版）／<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/shienjigyou/03.html" target="_blank" rel="noopener noreferrer">業務改善助成金 公式ページ（厚生労働省）</a><br>
+                            ※助成率・上限額・申請期限は変更される場合があります。申請前に必ず最新の交付要綱・要領をご確認ください。
+                        </div>
+
+                        <!-- ============================================ -->
+                        <h2 id="section4">第4章：よくある失敗パターン3選</h2>
+                        <!-- ============================================ -->
+                        <p>
+                            ロードマップと逆のことをすると、労務DXは高い確率で頓挫します。
+                        </p>
+
+                        <!-- 【図6】失敗パターン カード -->
+                        <span class="fig-label">図6｜よくある失敗パターン</span>
+                        <div class="failure-grid">
+                            <div class="failure-card">
+                                <span class="fc-num">失敗①</span>
+                                <div class="fc-icon">💸</div>
+                                <div class="fc-title">最初から多機能な<br>高額システムを入れる</div>
+                                <div class="fc-desc">「せっかくなら全部できるものを」と大規模システムを導入した結果、機能の1割しか使われず塩漬けに。まずは勤怠管理単機能から小さく始めるのが鉄則。</div>
+                            </div>
+                            <div class="failure-card">
+                                <span class="fc-num">失敗②</span>
+                                <div class="fc-icon">⚖️</div>
+                                <div class="fc-title">法令要件の確認を<br>怠る</div>
+                                <div class="fc-desc">打刻ルールが<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/roudouzikan/070614-2.html" target="_blank" rel="noopener noreferrer" style="color:var(--primary-blue);">労働時間適正把握ガイドライン</a>に非適合、電子契約の運用が明示義務を満たしていない──ツールを入れてもリスクは残ったまま。</div>
+                            </div>
+                            <div class="failure-card">
+                                <span class="fc-num">失敗③</span>
+                                <div class="fc-icon">🚧</div>
+                                <div class="fc-title">担当者任せで<br>経営者が関与しない</div>
+                                <div class="fc-desc">承認ルートや締め日の変更など、経営判断が必要な場面で決裁が止まりプロジェクトが空中分解。経営者自身がロードマップのオーナーになることが必須。</div>
+                            </div>
+                        </div>
+
+                        <!-- ============================================ -->
+                        <h2 id="section5">まとめ：順番を間違えなければ、労務DXは怖くない</h2>
+                        <!-- ============================================ -->
+                        <p>
+                            労務DXのロードマップを再掲します。
+                        </p>
+                        <ol>
+                            <li><strong>現状の棚卸し</strong>（いきなりツールを買わない）</li>
+                            <li><strong>勤怠管理の電子化</strong>（法令リスクが最大・全業務の上流データ）</li>
+                            <li><strong>給与計算・社会保険手続の電子化</strong>（データ連携とe-Gov申請）</li>
+                            <li><strong>入退社手続・労務書類のペーパーレス化</strong>（一気通貫デジタル化の完成）</li>
+                        </ol>
+                        <p>
+                            重要なのは、ツールの機能比較よりも「着手する順番」と「法令に適合した運用設計」です。そして初期費用は<strong>業務改善助成金</strong>を活用することで、大幅に軽減できます。
+                        </p>
+                        <p>
+                            当事務所では、勤怠管理システムの開発・導入に25年携わったSE経験を活かし、<strong>中立的な立場でのシステム選定サポート、法令適合性のチェック、業務改善助成金の申請支援まで一気通貫</strong>でサポートしています。「うちは何から始めるべきか」という段階のご相談も歓迎です。お気軽にお問い合わせください。
+                        </p>
+
+                        <!-- 免責事項 -->
+                        <div class="disclaimer">
+                            <strong>免責事項</strong>：本記事は2026年7月時点の法令・公表情報に基づいて作成しています。助成金の要件・金額・申請期限は変更される場合がありますので、申請の際は必ず厚生労働省の最新情報をご確認ください。個別の事案については、専門家にご相談ください。<br>
+                            <strong>根拠資料</strong>：厚生労働省「<a href="https://www.mhlw.go.jp/tekiyoukakudai/" target="_blank" rel="noopener noreferrer">社会保険適用拡大特設サイト</a>」／「<a href="https://www.mhlw.go.jp/stf/newpage_32105.html" target="_blank" rel="noopener noreferrer">令和6年4月からの労働条件明示ルール</a>」／「<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/roudouzikan/070614-2.html" target="_blank" rel="noopener noreferrer">労働時間の適正な把握のためのガイドライン</a>」<br>
+                            <strong>執筆</strong>：今井久一郎 社会保険労務士事務所（CSI&amp;LC IMAI）
+                        </div>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="hokenryo-chosei.html">
+                            <div class="nav-label">← 前の記事</div>
+                            社保適用拡大と保険料調整制度の仕組み
+                        </a>
+                        <a href="index.html" style="text-align: right;">
+                            <div class="nav-label">コラム一覧 →</div>
+                            お役立ちコラム一覧へ
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC表示） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">なぜ今、労務DXなのか</a></li>
+                            <li><a href="#section2">労務DXロードマップ</a>
+                                <ol>
+                                    <li><a href="#step1">STEP 1：現状の棚卸し</a></li>
+                                    <li><a href="#step2">STEP 2：勤怠管理の電子化</a></li>
+                                    <li><a href="#step3">STEP 3：給与計算・社保の電子化</a></li>
+                                    <li><a href="#step4">STEP 4：ペーパーレス化</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">業務改善助成金の活用</a></li>
+                            <li><a href="#section4">よくある失敗パターン3選</a></li>
+                            <li><a href="#section5">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="shakaihoken-2026.html">【2026年10月】社会保険の「106万円の壁」が撤廃へ｜中小企業が今すぐ準備すべきこと</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方｜失敗しないポイントを解説</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="josekin-2026.html">2026年版｜中小企業が今すぐ使える助成金まとめ</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちは何から始めるべきか」という段階のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&amp;LC IMAI - Cloud System Integration &amp; Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルでは目次をサイドバーから本文先頭に移動
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>

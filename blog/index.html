@@ -149,7 +149,7 @@
             background: var(--primary-blue);
             color: var(--white);
         }
-        .tab-btn[data-cat="勤怠システム"].active { background: var(--accent-sky); border-color: var(--accent-sky); }
+        .tab-btn[data-cat="労務管理・DX"].active { background: var(--accent-sky); border-color: var(--accent-sky); }
         .tab-btn[data-cat="助成金"].active { background: #27ae60; border-color: #27ae60; }
         .tab-btn[data-cat="労務手続き"].active { background: #8e44ad; border-color: #8e44ad; }
         .tab-btn[data-cat="就業規則"].active { background: #c0392b; border-color: #c0392b; }
@@ -181,7 +181,7 @@
             border-top: 4px solid var(--primary-blue);
         }
         .article-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-        .article-card[data-cat="勤怠システム"] { border-top-color: var(--accent-sky); }
+        .article-card[data-cat="労務管理・DX"] { border-top-color: var(--accent-sky); }
         .article-card[data-cat="助成金"] { border-top-color: #27ae60; }
         .article-card[data-cat="労務手続き"] { border-top-color: #8e44ad; }
         .article-card[data-cat="就業規則"] { border-top-color: #c0392b; }
@@ -205,7 +205,7 @@
             background: var(--primary-blue);
             white-space: nowrap;
         }
-        .cat-badge.勤怠システム { background: var(--accent-sky); }
+        .cat-badge.romu-dx { background: var(--accent-sky); }
         .cat-badge.助成金 { background: #27ae60; }
         .cat-badge.労務手続き { background: #8e44ad; }
         .cat-badge.就業規則 { background: #c0392b; }
@@ -387,7 +387,7 @@
             <div class="category-tabs">
                 <ul class="tab-list">
                     <li><button class="tab-btn active" data-cat="すべて">すべて</button></li>
-                    <li><button class="tab-btn" data-cat="勤怠システム">勤怠システム</button></li>
+                    <li><button class="tab-btn" data-cat="労務管理・DX">労務管理・DX</button></li>
                     <li><button class="tab-btn" data-cat="助成金">助成金</button></li>
                     <li><button class="tab-btn" data-cat="労務手続き">労務手続き</button></li>
                     <li><button class="tab-btn" data-cat="就業規則">就業規則</button></li>
@@ -397,8 +397,24 @@
 
             <!-- 記事一覧 -->
             <div class="blog-section">
-                <p class="article-count">全 <strong id="article-count">7</strong> 件</p>
+                <p class="article-count">全 <strong id="article-count">8</strong> 件</p>
                 <div class="article-grid" id="article-grid">
+
+                    <!-- 記事⑧：労務DXロードマップ -->
+                    <div class="article-card" data-cat="労務管理・DX">
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="cat-badge romu-dx">労務管理・DX</span>
+                                <span class="card-date">2026.07.02</span>
+                            </div>
+                            <p class="card-title">中小企業の労務DXロードマップ ― 何から手をつけるか</p>
+                            <p class="card-excerpt">中小企業の労務DXは何から始めるべきか。SE歴25年の社労士が、勤怠管理から始める4ステップのロードマップと、業務改善助成金を活用したシステム導入のポイントを図解で解説します。</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="read-time">📖 約5分</span>
+                            <a href="romu-dx-roadmap.html" class="read-more">続きを読む →</a>
+                        </div>
+                    </div>
 
                     <!-- 記事⑦：保険料調整制度 -->
                     <div class="article-card" data-cat="労務手続き">
@@ -417,10 +433,10 @@
                     </div>
 
                     <!-- 記事⑥：副業・兼業の労働時間管理 -->
-                    <div class="article-card" data-cat="勤怠システム">
+                    <div class="article-card" data-cat="労務管理・DX">
                         <div class="card-body">
                             <div class="card-meta">
-                                <span class="cat-badge 勤怠システム">勤怠システム</span>
+                                <span class="cat-badge romu-dx">労務管理・DX</span>
                                 <span class="card-date">2026.06.20</span>
                             </div>
                             <p class="card-title">副業・兼業の労働時間管理ガイド｜割増賃金はどちらの会社が払う？【図解3ケース】</p>
@@ -448,11 +464,11 @@
                         </div>
                     </div>
 
-                    <!-- 記事②：勤怠システム -->
-                    <div class="article-card" data-cat="勤怠システム">
+                    <!-- 記事②：労務管理・DX -->
+                    <div class="article-card" data-cat="労務管理・DX">
                         <div class="card-body">
                             <div class="card-meta">
-                                <span class="cat-badge 勤怠システム">勤怠システム</span>
+                                <span class="cat-badge romu-dx">労務管理・DX</span>
                                 <span class="card-date">2026.06.10</span>
                             </div>
                             <p class="card-title">クラウド勤怠管理システムの選び方｜失敗しないポイントを解説</p>
