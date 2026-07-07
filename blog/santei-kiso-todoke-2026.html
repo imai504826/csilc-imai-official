@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+
+    <meta name="description" content="令和8年度の算定基礎届の提出期限は7月10日（金）です。日本年金機構の公式情報に基づき、定時決定の仕組み、支払基礎日数の取扱い、短時間就労者・短時間労働者の算定方法を社労士が解説します。">
+    <title>算定基礎届の基本と実務ポイント（令和8年度）｜今井久一郎社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+            --danger: #e74c3c;
+            --success: #27ae60;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0; padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* ヘッダー */
+        header {
+            background: var(--white); padding: 15px 0;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* パンくず */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* 記事ヘッダー */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge {
+            font-size: 0.78rem; font-weight: bold; padding: 4px 14px;
+            border-radius: 50px; color: var(--white); background: #8e44ad;
+        }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .article-title { font-size: 1.8rem; color: var(--primary-blue); line-height: 1.45; margin: 0 0 20px; }
+        .article-lead {
+            font-size: 1rem; color: var(--text-gray);
+            background: var(--bg-soft); border-left: 4px solid var(--accent-orange);
+            padding: 14px 18px; border-radius: 0 8px 8px 0; line-height: 1.8; margin: 0;
+        }
+
+        /* 2カラムレイアウト */
+        .content-layout {
+            display: grid; grid-template-columns: 1fr 260px;
+            gap: 40px; padding: 40px 0 80px; align-items: start;
+        }
+
+        /* 目次 */
+        .toc {
+            background: var(--bg-soft); border-radius: 12px;
+            padding: 22px 24px; border-top: 4px solid var(--primary-blue);
+            position: sticky; top: 90px;
+        }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* 記事本文 */
+        .article-body h2 {
+            font-size: 1.35rem; color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue); border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px; margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem; color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px; margin: 32px 0 14px;
+        }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 引用 */
+        .article-body blockquote {
+            margin: 16px 0; padding: 16px 20px 16px 24px;
+            background: #f0f4ff; border-left: 5px solid var(--primary-blue);
+            border-radius: 0 8px 8px 0; font-size: 0.95rem; line-height: 1.9; color: var(--text-dark);
+        }
+        .article-body blockquote p { margin-bottom: 0; }
+        .cite-link { display: block; font-size: 0.8rem; color: var(--text-gray); margin-top: 6px; margin-bottom: 16px; }
+        .cite-link a { font-size: 0.8rem; color: var(--primary-blue); }
+
+        /* ===== ビジュアルコンポーネント ===== */
+
+        /* 緊急アラートボックス */
+        .alert-deadline {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            color: #fff; border-radius: 14px; padding: 24px 28px;
+            margin: 24px 0; display: flex; align-items: center; gap: 20px;
+        }
+        .alert-deadline .alert-icon { font-size: 2.8rem; flex-shrink: 0; }
+        .alert-deadline .alert-body {}
+        .alert-deadline .alert-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 6px; }
+        .alert-deadline .alert-text { font-size: 0.92rem; opacity: 0.92; line-height: 1.7; }
+
+        /* タイムライン */
+        .timeline {
+            display: flex; align-items: stretch; gap: 0;
+            margin: 28px 0; overflow-x: auto;
+        }
+        .tl-item {
+            flex: 1; min-width: 100px;
+            display: flex; flex-direction: column; align-items: center; gap: 0;
+        }
+        .tl-box {
+            width: 100%; text-align: center; padding: 12px 8px;
+            font-size: 0.82rem; font-weight: bold; border-radius: 8px 8px 0 0;
+            line-height: 1.4;
+        }
+        .tl-arrow {
+            font-size: 1.4rem; color: var(--primary-blue); padding: 0 4px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 14px;
+        }
+        .tl-sub { font-size: 0.78rem; color: var(--text-gray); text-align: center; padding: 6px 4px 0; line-height: 1.4; }
+        .tl-blue { background: var(--primary-blue); color: #fff; }
+        .tl-sky { background: var(--accent-sky); color: #fff; }
+        .tl-orange { background: var(--accent-orange); color: #fff; }
+        .tl-green { background: var(--success); color: #fff; }
+        .tl-gray { background: #95a5a6; color: #fff; }
+
+        /* タイムラインのラッパー（矢印付き） */
+        .timeline-wrapper { display: flex; align-items: center; gap: 0; margin: 28px 0; overflow-x: auto; }
+        .tl-step {
+            flex: 1; min-width: 90px; text-align: center;
+        }
+        .tl-step .tl-label {
+            font-size: 0.75rem; color: var(--text-gray); margin-bottom: 6px;
+        }
+        .tl-step .tl-card {
+            padding: 14px 8px; border-radius: 10px;
+            font-size: 0.88rem; font-weight: bold; line-height: 1.4;
+            border: 2px solid transparent;
+        }
+        .tl-step .tl-note {
+            font-size: 0.72rem; color: var(--text-gray); margin-top: 6px; line-height: 1.3;
+        }
+        .tl-arrow-r { color: var(--primary-blue); font-size: 1.4rem; padding: 0 4px; flex-shrink: 0; margin-top: 10px; }
+
+        /* 数字ハイライト */
+        .num-highlights { display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; }
+        .num-box {
+            flex: 1; min-width: 100px; text-align: center;
+            background: var(--bg-soft); border-radius: 14px;
+            padding: 18px 12px; border-top: 4px solid var(--primary-blue);
+        }
+        .num-box .num-val { font-size: 2.4rem; font-weight: bold; color: var(--primary-blue); line-height: 1; }
+        .num-box .num-unit { font-size: 0.9rem; color: var(--text-gray); }
+        .num-box .num-label { font-size: 0.78rem; color: var(--text-gray); margin-top: 8px; line-height: 1.4; }
+        .num-box.orange { border-top-color: var(--accent-orange); }
+        .num-box.orange .num-val { color: var(--accent-orange); }
+        .num-box.sky { border-top-color: var(--accent-sky); }
+        .num-box.sky .num-val { color: var(--accent-sky); }
+        .num-box.green { border-top-color: var(--success); }
+        .num-box.green .num-val { color: var(--success); }
+
+        /* ステップバッジ */
+        .step-list { margin: 20px 0; }
+        .step-item { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+        .step-badge {
+            width: 36px; height: 36px; background: var(--primary-blue); color: #fff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 0.95rem; font-weight: bold; flex-shrink: 0; margin-top: 2px;
+        }
+        .step-content { flex: 1; }
+        .step-title { font-weight: bold; color: var(--primary-blue); font-size: 0.97rem; margin-bottom: 4px; }
+        .step-desc { font-size: 0.92rem; color: var(--text-dark); line-height: 1.7; }
+
+        /* ボックス */
+        .box-note {
+            background: #fff8e8; border: 1px solid #ffe0a0; border-radius: 8px;
+            padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+        .box-caution {
+            background: #fff0f0; border: 1px solid #ffb3b3; border-radius: 8px;
+            padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+        .box-info {
+            background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 8px;
+            padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+        .box-new {
+            background: #f0fff4; border: 1px solid #a8e6bc; border-radius: 8px;
+            padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0;
+        }
+        .box-new::before { content: "🆕 令和8年度の改正点"; display: block; font-weight: bold; color: var(--success); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table {
+            width: 100%; border-collapse: collapse;
+            margin: 20px 0; font-size: 0.92rem;
+        }
+        .article-body th {
+            background: var(--primary-blue); color: var(--white);
+            padding: 10px 14px; text-align: left;
+        }
+        .article-body td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+        .table-green th { background: var(--success) !important; }
+        .table-orange th { background: var(--accent-orange) !important; }
+        .td-center { text-align: center; }
+
+        /* 報酬一覧テーブル */
+        .remuneration-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
+        .remuneration-table th { background: var(--primary-blue); color: #fff; padding: 10px 14px; text-align: center; }
+        .remuneration-table td { padding: 10px 14px; border: 1px solid #dde; vertical-align: top; }
+        .remuneration-table .row-header { background: #e8eeff; font-weight: bold; font-size: 0.88rem; width: 100px; text-align: center; vertical-align: middle; }
+        .remuneration-table .row-header.ng { background: #ffeeee; }
+        .ok-color { background: #f0fff4; }
+        .ng-color { background: #fff6f6; }
+
+        /* チェックリスト */
+        .checklist { list-style: none !important; padding-left: 0 !important; }
+        .checklist li { padding: 8px 8px 8px 36px; position: relative; border-bottom: 1px dashed #eee; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li::before { content: "☐"; position: absolute; left: 8px; color: var(--primary-blue); font-size: 1.1rem; }
+
+        /* FAQ */
+        .faq-list { margin: 20px 0; }
+        .faq-item { margin-bottom: 16px; border: 1px solid #dde8ff; border-radius: 10px; overflow: hidden; }
+        .faq-q {
+            background: #eef4ff; padding: 14px 18px; font-size: 0.95rem;
+            font-weight: bold; color: var(--primary-blue); display: flex; align-items: flex-start; gap: 10px;
+        }
+        .faq-q .faq-icon { color: var(--accent-orange); font-weight: bold; font-size: 1rem; flex-shrink: 0; }
+        .faq-a { padding: 14px 18px; font-size: 0.92rem; line-height: 1.8; background: #fff; }
+        .faq-a .a-icon { color: var(--success); font-weight: bold; margin-right: 6px; }
+
+        /* 区切り線 */
+        .article-body hr { margin: 40px 0; border: none; border-top: 1px solid #eee; }
+
+        /* 出典リスト */
+        .source-list { list-style: decimal !important; padding-left: 22px !important; margin: 16px 0; }
+        .source-list li { font-size: 0.88rem; color: var(--text-gray); margin-bottom: 8px; line-height: 1.6; }
+        .source-list a { font-size: 0.88rem; }
+
+        /* 著者ボックス */
+        .author-box {
+            display: flex; gap: 20px; align-items: flex-start;
+            background: var(--bg-soft); border-radius: 14px;
+            padding: 24px; margin-top: 48px; border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: var(--primary-blue); color: var(--white);
+            font-size: 1.4rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* 記事ナビ */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a { flex: 1; display: block; padding: 14px 18px; background: var(--bg-soft); border-radius: 10px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* 関連記事 */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* 記事内CTA */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white); border-radius: 14px; padding: 28px; text-align: center; margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a { display: inline-block; background: var(--accent-orange); color: var(--white); padding: 12px 32px; border-radius: 50px; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* フッターCTA */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn { display: inline-block; background: var(--white); color: var(--primary-blue); padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* フッター */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* 対象外バッジ */
+        .badge-ok { display: inline-block; background: #27ae60; color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; margin-right: 4px; }
+        .badge-ng { display: inline-block; background: #c0392b; color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; margin-right: 4px; }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .article-body table { display: block; overflow-x: auto; }
+            .num-highlights { gap: 10px; }
+            .num-box { min-width: 80px; }
+            .alert-deadline { flex-direction: column; gap: 10px; }
+            .timeline-wrapper { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            算定基礎届の基本と実務ポイント（令和8年度）
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge">労務手続き</span>
+                    <span class="article-date">2026年7月7日</span>
+                    <span class="read-time">📖 約6分</span>
+                </div>
+                <h1 class="article-title">算定基礎届の基本と実務ポイント（令和8年度）</h1>
+                <p class="article-lead">
+                    令和8年度の算定基礎届の提出期限は<strong>7月10日（金）</strong>です。本記事では、定時決定の仕組みから支払基礎日数の計算方法・報酬の範囲・パートタイマーと短時間労働者の違いまで、実務でつまずきやすいポイントを図解付きで解説します。
+                </p>
+            </div>
+
+            <div class="content-layout">
+
+                <!-- 本文 -->
+                <div>
+                    <!-- モバイル目次 -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">令和8年度の提出期限</a></li>
+                            <li><a href="#section2">定時決定とは何か</a></li>
+                            <li><a href="#section3">提出対象者と提出不要な方</a></li>
+                            <li><a href="#section4">標準報酬月額の決め方</a>
+                                <ol>
+                                    <li><a href="#section4-1">支払基礎日数とは</a></li>
+                                    <li><a href="#section4-2">給与形態別の数え方</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section5">報酬に含まれるもの・含まれないもの</a></li>
+                            <li><a href="#section6">短時間就労者・短時間労働者の取扱い</a></li>
+                            <li><a href="#section7">年間平均による保険者算定</a></li>
+                            <li><a href="#section8">提出方法</a></li>
+                            <li><a href="#section9">よくある実務の落とし穴Q&A</a></li>
+                            <li><a href="#section10">提出前チェックリスト</a></li>
+                            <li><a href="#sources">出典</a></li>
+                        </ol>
+                    </div>
+
+                    <article class="article-body">
+
+                        <!-- ===== Section 1 ===== -->
+                        <h2 id="section1">1. 令和8年度の提出期限</h2>
+
+                        <div class="alert-deadline">
+                            <div class="alert-icon">🗓️</div>
+                            <div class="alert-body">
+                                <div class="alert-title">提出期限：令和8年7月10日（金曜）</div>
+                                <div class="alert-text">提出受付は7月1日（水）から。本記事公開日（7月7日）は提出期間中です。残り3日です。お早めの対応をおすすめします。</div>
+                            </div>
+                        </div>
+
+                        <p><strong>【引用】</strong>（日本年金機構「【事業主の皆さまへ】令和8年度の算定基礎届のご提出について」より）</p>
+                        <blockquote>
+                            <p>令和8年度の算定基礎届の提出期限は7月10日（金曜）です。 6月中旬より順次様式等を送付されますので、令和8年7月1日（水曜）から令和8年7月10日（金曜）までにご提出となります。</p>
+                        </blockquote>
+                        <span class="cite-link">出典：<a href="https://www.nenkin.go.jp/tokusetsu/santei.html" target="_blank" rel="noopener">日本年金機構「【事業主の皆さまへ】令和8年度の算定基礎届のご提出について」</a>（2026年7月7日確認）</span>
+
+
+                        <!-- ===== Section 2 ===== -->
+                        <h2 id="section2">2. 定時決定（算定基礎届）とは何か</h2>
+
+                        <p><strong>【引用】</strong>（日本年金機構「定時決定（算定基礎届）」より）</p>
+                        <blockquote>
+                            <p>健康保険・厚生年金保険の被保険者および70歳以上被用者の実際の報酬と標準報酬月額との間に大きな差が生じないように、事業主は、7月1日現在で使用している全被保険者の3カ月間（4月、5月、6月）の報酬月額を算定基礎届により届出し、厚生労働大臣はこの届出内容に基づき、毎年1回標準報酬月額を決定し直します。これを定時決定といいます。 決定し直された標準報酬月額は、9月から翌年8月までの各月に適用されます。</p>
+                        </blockquote>
+                        <span class="cite-link">出典：<a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20121017.html" target="_blank" rel="noopener">日本年金機構「定時決定（算定基礎届）」</a>（更新日：2026年5月21日、2026年7月7日確認）</span>
+
+                        <p><strong>【解説】</strong> 標準報酬月額は向こう1年間（9月〜翌年8月）の保険料・給付額の計算基準になります。フローで整理すると次のとおりです。</p>
+
+                        <!-- タイムライン -->
+                        <div class="timeline-wrapper">
+                            <div class="tl-step">
+                                <div class="tl-label">算定期間</div>
+                                <div class="tl-card tl-blue" style="background:#1a4a93;color:#fff;border-radius:10px;">4月・5月・6月<br>の給与を集計</div>
+                            </div>
+                            <div class="tl-arrow-r">→</div>
+                            <div class="tl-step">
+                                <div class="tl-label">届出</div>
+                                <div class="tl-card" style="background:#8e44ad;color:#fff;border-radius:10px;">7月1日〜10日<br>算定基礎届を提出</div>
+                            </div>
+                            <div class="tl-arrow-r">→</div>
+                            <div class="tl-step">
+                                <div class="tl-label">決定</div>
+                                <div class="tl-card" style="background:#00a0e9;color:#fff;border-radius:10px;">厚生労働大臣が<br>標準報酬月額を決定</div>
+                            </div>
+                            <div class="tl-arrow-r">→</div>
+                            <div class="tl-step">
+                                <div class="tl-label">適用期間</div>
+                                <div class="tl-card" style="background:#f39800;color:#fff;border-radius:10px;">9月〜翌年8月<br>（1年間）適用</div>
+                            </div>
+                        </div>
+
+                        <div class="box-note">
+                            標準報酬月額は健康保険料・厚生年金保険料の計算基準であるだけでなく、傷病手当金・出産手当金・老齢年金の給付額にも影響します。毎年1回の届出ですが、1年分の保険料と給付の基準を決める重要な手続きです。
+                        </div>
+
+
+                        <!-- ===== Section 3 ===== -->
+                        <h2 id="section3">3. 提出対象者と、提出が不要な方</h2>
+
+                        <p><strong>【解説（公式ページ「定時決定（算定基礎届）」の内容を要約）】</strong></p>
+
+                        <p>提出の対象は<strong>7月1日現在のすべての被保険者および70歳以上被用者</strong>です。ただし、以下の4区分に当てはまる方は提出が不要とされています。</p>
+
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-badge">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">6月1日以降に資格取得した方</div>
+                                    <div class="step-desc">取得時に決定した標準報酬月額がそのまま適用されるため、算定基礎届の提出対象外です。</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">6月30日以前に退職した方</div>
+                                    <div class="step-desc">7月1日時点で在籍していないため提出不要です。</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">7月改定の月額変更届を提出する方</div>
+                                    <div class="step-desc">月額変更届の対象となるため算定基礎届は不要ですが、<strong>紙の届出では報酬月額欄を空欄のまま、備考欄「3. 月額変更予定」を○で囲んで提出</strong>します。電子申請・電子媒体では対象者を除いて作成します。</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">4</div>
+                                <div class="step-content">
+                                    <div class="step-title">8月または9月に随時改定が予定されている旨の申し出を行った方</div>
+                                    <div class="step-desc">3と同様に、紙の届出では備考欄を○で囲んだうえで空欄提出。電子申請等では対象者を除いて作成します。なお、随時改定の要件に該当しないことが判明した場合は、速やかに算定基礎届を提出してください。</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- ===== Section 4 ===== -->
+                        <h2 id="section4">4. 標準報酬月額の決め方──支払基礎日数がカギ</h2>
+
+                        <h3 id="section4-1">（1）支払基礎日数とは</h3>
+
+                        <p><strong>支払基礎日数</strong>とは、「その報酬の支払い対象となった日数」のことです。給与形態によって計算方法が異なります。</p>
+
+                        <table class="table-green">
+                            <thead>
+                                <tr>
+                                    <th>給与形態</th>
+                                    <th>支払基礎日数の数え方</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>月給制・週給制</strong></td>
+                                    <td>出勤日数に関係なく<strong>暦日数</strong>（4月＝30日、5月＝31日、6月＝30日など）。ただし欠勤日数分だけ給料が差し引かれる場合は、暦日数から欠勤日数を差し引いた日数。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>日給制・時給制</strong></td>
+                                    <td>実際の<strong>出勤日数（有給休暇を含む）</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>時給制（変形労働時間制あり）</strong></td>
+                                    <td>各月の総労働時間を事業所の所定労働時間で割って得た日数</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-caution">
+                            月給制の場合、欠勤がなければ暦日数がそのまま支払基礎日数になります。5月は31日、4月・6月は30日です。給与計算ソフトが自動集計している場合でも、設定が正しいか確認しましょう。
+                        </div>
+
+                        <h3 id="section4-2">（2）一般的な被保険者の標準報酬月額の決定ルール</h3>
+
+                        <!-- 数字ハイライト -->
+                        <div class="num-highlights">
+                            <div class="num-box">
+                                <div class="num-val">17</div>
+                                <div class="num-unit">日以上</div>
+                                <div class="num-label">一般の被保険者の<br>算定対象月の基準</div>
+                            </div>
+                            <div class="num-box sky">
+                                <div class="num-val">11</div>
+                                <div class="num-unit">日以上</div>
+                                <div class="num-label">短時間労働者の<br>算定対象月の基準</div>
+                            </div>
+                            <div class="num-box orange">
+                                <div class="num-val">15</div>
+                                <div class="num-unit">日以上</div>
+                                <div class="num-label">短時間就労者の<br>次段階の基準</div>
+                            </div>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>4月・5月・6月の支払基礎日数</th>
+                                    <th>標準報酬月額の決定方法</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3カ月とも<strong>17日以上</strong></td>
+                                    <td>3カ月の報酬月額の<strong>平均額</strong>をもとに決定</td>
+                                </tr>
+                                <tr>
+                                    <td>1カ月または2カ月が<strong>17日以上</strong>で、他は17日未満</td>
+                                    <td>17日以上の月の報酬月額の<strong>平均額</strong>をもとに決定</td>
+                                </tr>
+                                <tr>
+                                    <td>3カ月とも<strong>17日未満</strong>の場合、または病気欠勤等により4〜6月の報酬がまったくない場合</td>
+                                    <td><strong>従前の標準報酬月額</strong>で決定</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-info">
+                            報酬月額の計算例（一般的なケース）：4月671,000円、5月671,000円、6月671,000円の場合、報酬月額＝（671,000＋671,000＋671,000）÷3＝671,000円。報酬月額の算出にあたり、1円未満は切り捨てます（ガイドブック ケース①より）。
+                        </div>
+
+
+                        <!-- ===== Section 5 ===== -->
+                        <h2 id="section5">5. 報酬に含まれるもの・含まれないもの</h2>
+
+                        <p>標準報酬月額の対象となる報酬は、賃金・給料・俸給・手当・賞与など名称を問わず、<strong>労働者が労働の対償として受けるすべてのもの</strong>を含みます。</p>
+
+                        <!-- 報酬一覧テーブル -->
+                        <table class="remuneration-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:100px;"></th>
+                                    <th>金銭（通貨）で支給されるもの</th>
+                                    <th>現物で支給されるもの</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="row-header ok-color">✅ 報酬に<br>なるもの</td>
+                                    <td class="ok-color">基本給（月給・週給・日給等）、能率給、奨励給、役付手当、職階手当、特別勤務手当、勤務地手当、物価手当、日直手当、宿直手当、<strong>家族手当</strong>、扶養手当、休職手当、<strong>通勤手当</strong>、<strong>住宅手当</strong>、別居手当、<strong>早出残業手当</strong>、継続支給する見舞金、<strong>年4回以上の賞与（※）</strong></td>
+                                    <td class="ok-color">通勤定期券、回数券、食事、食券、社宅・寮、被服（勤務服でないもの）、自社製品　など</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header ng-color">❌ 報酬に<br>ならないもの</td>
+                                    <td class="ng-color">大入袋、見舞金、解雇予告手当、退職手当、出張旅費、交際費、慶弔費、<strong>傷病手当金</strong>、労災保険の休業補償給付、<strong>年3回以下の賞与（※）</strong></td>
+                                    <td class="ng-color">制服・作業着（業務に要するもの）、見舞品、食事（本人の負担額が厚生労働大臣が定める価額の2/3以上の場合）　など</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size:0.8rem;color:var(--text-gray);">（※）年4回以上支給される賞与は標準報酬月額の対象。年3回以下の賞与は標準賞与額（賞与支払届）の対象。</p>
+
+                        <div class="box-caution">
+                            <strong>通勤手当は「所得税で非課税でも報酬に含まれる」</strong>──実務で特に誤りが多いポイントです。6カ月定期券を一括支給している場合は、6で割った1カ月分の金額を各月の報酬月額に算入してください（ガイドブック Q13参照）。
+                        </div>
+
+                        <div class="box-new">
+                            <strong>令和8年4月から現物給与の価額が改正されています。</strong>食事による現物給与の価額は令和8年4月1日から、住宅による現物給与の価額は令和8年10月1日から改正適用となります。現物給与（食事・社宅等）を提供している事業所は、算定基礎届の作成前に最新の「全国現物給与価額一覧表」で価額を確認してください。
+                        </div>
+
+                        <!-- 社会保険適用促進手当 -->
+                        <h3>「社会保険適用促進手当」の取り扱い（令和8年度の注意点）</h3>
+                        <p>短時間労働者への社会保険適用を促進する目的で事業主が支給する「社会保険適用促進手当」は、一定の要件のもと<strong>標準報酬月額・標準賞与額の算定から除外</strong>できます。</p>
+                        <ul>
+                            <li>対象者：標準報酬月額が <strong>10.4万円以下</strong>の者</li>
+                            <li>除外できる上限額：被用者保険適用にともない新たに発生した<strong>本人負担分の保険料相当額</strong></li>
+                            <li>期間の上限：最大<strong>2年間</strong></li>
+                        </ul>
+                        <div class="box-caution">
+                            標準報酬月額が月額変更等によって10.4万円を超えた場合、超えた月から社会保険適用促進手当を標準報酬月額の算定に<strong>含める</strong>こととなります（含めることは固定的賃金の変動にあたるため、月額変更届の要件に該当する場合があります）。
+                        </div>
+
+
+                        <!-- CTA挿入 -->
+                        <div class="inline-cta">
+                            <p>「通勤手当や社保促進手当の取り扱いが自社の場合でどうなるか確認したい」</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+
+                        <!-- ===== Section 6 ===== -->
+                        <h2 id="section6">6. パートタイマー等の短時間就労者・短時間労働者の取扱い</h2>
+
+                        <p>働き方の区分によって算定基準となる支払基礎日数が異なります。まずは従業員がどちらの区分に当たるかを確認することが重要です。</p>
+
+                        <h3 id="section6-1">（1）短時間就労者（パートタイマー等）</h3>
+
+                        <p>短時間就労者とは、<strong>1週間の所定労働時間および1カ月の所定労働日数が、通常の労働者と比較して4分の3以上である</strong>被保険者のことです。</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>4〜6月の支払基礎日数</th>
+                                    <th>標準報酬月額の決定方法</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge-ok">対象</span>17日以上の月が1カ月以上ある</td>
+                                    <td>17日以上の月の報酬総額の平均で決定</td>
+                                </tr>
+                                <tr>
+                                    <td>いずれも17日未満<br>→ <span class="badge-ok">次の基準</span>15日以上17日未満の月がある</td>
+                                    <td>15日以上17日未満の月の報酬総額の平均で決定</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-ng">全月対象外</span>いずれも15日未満</td>
+                                    <td>従前の標準報酬月額で決定</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 id="section6-2">（2）短時間労働者（特定適用事業所等に勤務する方）</h3>
+
+                        <p>短時間労働者（社会保険の被保険者）とは、次の<strong>すべての要件</strong>を満たす方が該当します。</p>
+
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-badge" style="background:var(--accent-sky);">①</div>
+                                <div class="step-content">
+                                    <div class="step-title">週の所定労働時間が20時間以上あること</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge" style="background:var(--accent-sky);">②</div>
+                                <div class="step-content">
+                                    <div class="step-title">雇用期間が継続して2カ月を超えて見込まれること</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge" style="background:var(--accent-sky);">③</div>
+                                <div class="step-content">
+                                    <div class="step-title">賃金の月額が88,000円以上であること</div>
+                                    <div class="step-desc" style="color:var(--danger);font-weight:bold;">⚠️ この要件は令和8年10月に撤廃予定です。</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge" style="background:var(--accent-sky);">④</div>
+                                <div class="step-content">
+                                    <div class="step-title">学生でないこと</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge" style="background:var(--accent-sky);">⑤</div>
+                                <div class="step-content">
+                                    <div class="step-title">特定適用事業所または国・地方公共団体に属する事業所に勤めていること</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p><strong>【引用】</strong>（日本年金機構「定時決定（算定基礎届）」より）</p>
+                        <blockquote>
+                            <p>短時間労働者※3の定時決定は、4月、5月、6月のいずれも支払基礎日数が11日以上で算定することとなります。 1カ月または2カ月は支払基礎日数が11日以上で、他は11日未満の場合は、11日以上の月の報酬月額の平均額をもとに決定します。 3カ月とも支払基礎日数が11日未満の場合は、従前の標準報酬月額で決定します。</p>
+                        </blockquote>
+                        <span class="cite-link">出典：<a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20121017.html" target="_blank" rel="noopener">日本年金機構「定時決定（算定基礎届）」</a>（更新日：2026年5月21日、2026年7月7日確認）</span>
+
+                        <table class="table-orange">
+                            <thead>
+                                <tr>
+                                    <th>4〜6月の支払基礎日数</th>
+                                    <th>標準報酬月額の決定方法</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3カ月とも<strong>11日以上</strong></td>
+                                    <td>3カ月の報酬月額の平均額をもとに決定</td>
+                                </tr>
+                                <tr>
+                                    <td>1カ月または2カ月が<strong>11日以上</strong>で、他は11日未満</td>
+                                    <td>11日以上の月の報酬月額の平均額をもとに決定</td>
+                                </tr>
+                                <tr>
+                                    <td>3カ月とも<strong>11日未満</strong></td>
+                                    <td>従前の標準報酬月額で決定</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-note">
+                            月によって「短時間労働者」と「一般の被保険者」の区分が変わる場合は、<strong>各月の給与計算期間の末日時点の被保険者区分</strong>に応じた支払基礎日数で算定対象月を判断します。パート従業員が多い事業所では、区分の確認が特に重要です。
+                        </div>
+
+
+                        <!-- ===== Section 7 ===== -->
+                        <h2 id="section7">7. 年間平均による保険者算定（該当する場合の選択肢）</h2>
+
+                        <p>次の条件をすべて満たす場合、年間平均による算定を申し立てることができます。</p>
+
+                        <div class="num-highlights">
+                            <div class="num-box" style="min-width:140px;">
+                                <div class="num-val" style="font-size:1.8rem;">2等級以上</div>
+                                <div class="num-label">4〜6月の月平均と<br>前年7月〜当年6月の<br>年間月平均の差</div>
+                            </div>
+                            <div class="num-box orange" style="min-width:140px;">
+                                <div class="num-val" style="font-size:1.2rem;">例年</div>
+                                <div class="num-unit">発生することが</div>
+                                <div class="num-label">業務の性質上、毎年<br>繁忙期などで発生する<br>ことが見込まれること</div>
+                            </div>
+                        </div>
+
+                        <p>申し立てる場合は、<strong>「年間報酬の平均で算定することの申立書」および「被保険者の同意書」等の添付</strong>が必要です。</p>
+
+                        <div class="box-info">
+                            年間平均申立書の提出様式は日本年金機構ホームページ（「定時決定のため、4月〜6月の報酬月額の届出を行う際、年間報酬の平均で算定するとき」）で確認できます。要件に該当するかどうかの判断は複雑なため、お気軽にご相談ください。
+                        </div>
+
+
+                        <!-- ===== Section 8 ===== -->
+                        <h2 id="section8">8. 提出方法</h2>
+
+                        <div class="num-highlights">
+                            <div class="num-box" style="flex-direction:column;text-align:center;padding:14px 8px;">
+                                <div style="font-size:1.8rem;">💻</div>
+                                <div style="font-weight:bold;font-size:0.9rem;margin-top:6px;color:var(--primary-blue);">電子申請<br>（推奨）</div>
+                                <div style="font-size:0.75rem;color:var(--text-gray);margin-top:4px;">e-Gov経由<br>CSVファイルで提出</div>
+                            </div>
+                            <div class="num-box sky" style="flex-direction:column;text-align:center;padding:14px 8px;">
+                                <div style="font-size:1.8rem;">💿</div>
+                                <div style="font-weight:bold;font-size:0.9rem;margin-top:6px;color:var(--accent-sky);">電子媒体</div>
+                                <div style="font-size:0.75rem;color:var(--text-gray);margin-top:4px;">CDまたはDVD<br>+ 電子媒体届書総括票</div>
+                            </div>
+                            <div class="num-box orange" style="flex-direction:column;text-align:center;padding:14px 8px;">
+                                <div style="font-size:1.8rem;">✉️</div>
+                                <div style="font-weight:bold;font-size:0.9rem;margin-top:6px;color:var(--accent-orange);">郵送</div>
+                                <div style="font-size:0.75rem;color:var(--text-gray);margin-top:4px;">返信用封筒で<br>事務センターへ</div>
+                            </div>
+                            <div class="num-box green" style="flex-direction:column;text-align:center;padding:14px 8px;">
+                                <div style="font-size:1.8rem;">🏢</div>
+                                <div style="font-weight:bold;font-size:0.9rem;margin-top:6px;color:var(--success);">窓口持参</div>
+                                <div style="font-size:0.75rem;color:var(--text-gray);margin-top:4px;">管轄の年金事務所<br>担当窓口へ</div>
+                            </div>
+                        </div>
+
+                        <p>日本年金機構は<strong>電子申請</strong>を推奨しています。処理が早く、決定通知書を早く受け取ることができます。電子申請の詳細はe-Gov（<a href="https://www.e-gov.go.jp/" target="_blank" rel="noopener">https://www.e-gov.go.jp/</a>）をご確認ください。</p>
+
+
+                        <!-- ===== Section 9 ===== -->
+                        <h2 id="section9">9. よくある実務の落とし穴 Q&amp;A</h2>
+
+                        <p>ガイドブック「算定基礎届（定時決定）におけるよくあるご質問と回答（令和8年度）」より、実務でよく聞かれる疑問をピックアップしました。</p>
+
+                        <div class="faq-list">
+
+                            <div class="faq-item">
+                                <div class="faq-q">
+                                    <span class="faq-icon">Q</span>
+                                    期限（7月10日）を過ぎても提出できますか？
+                                </div>
+                                <div class="faq-a">
+                                    <span class="a-icon">A</span>
+                                    期限を過ぎても提出は可能ですが、できる限り期限内の提出をお願いします。電子申請でシステム障害等により期限内提出が困難な場合は、紙または電子媒体への変更でなく、システム復旧後に電子申請を行ってください（ガイドブック Q2より）。
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-q">
+                                    <span class="faq-icon">Q</span>
+                                    1時間だけ勤務した日（給与支給あり）は支払基礎日数に含めますか？
+                                </div>
+                                <div class="faq-a">
+                                    <span class="a-icon">A</span>
+                                    含めます。支払基礎日数は「報酬の支払い対象となった日数」です。1時間の勤務でも給与（報酬）の支払い対象になっていれば1日としてカウントします（ガイドブック Q11より）。
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-q">
+                                    <span class="faq-icon">Q</span>
+                                    6カ月単位で支給した通勤定期代は報酬月額に含めますか？
+                                </div>
+                                <div class="faq-a">
+                                    <span class="a-icon">A</span>
+                                    含めます。6カ月分の定期代を6で割って、1カ月あたりの金額を算出し、各月の報酬月額に算入してください。通勤手当は所得税の非課税扱いに関係なく、社会保険の報酬に含まれます（ガイドブック Q13より）。
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-q">
+                                    <span class="faq-icon">Q</span>
+                                    今年は業績が良く4回目の賞与を支払いましたが、算定基礎届の記入はどうなりますか？
+                                </div>
+                                <div class="faq-a">
+                                    <span class="a-icon">A</span>
+                                    年4回以上支給の賞与は報酬に含めて算定します。前年7月1日前の1年間に受けた4回以上の賞与合計額を12で割った金額を各月の報酬月額に加えて届出してください。ただし、当該賞与がその年限りと明らかな場合は、年間の賞与支給回数に含めずに賞与支払届の対象として取り扱います（ガイドブック Q24より）。
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-q">
+                                    <span class="faq-icon">Q</span>
+                                    業務の性質上、毎年4〜6月が繁忙期で報酬が高い。年間平均申請はどうすればよいですか？
+                                </div>
+                                <div class="faq-a">
+                                    <span class="a-icon">A</span>
+                                    算定基礎届の備考欄「8. 年間平均」を○で囲み、「年間報酬の平均で算定することの申立書」および「保険者算定申立に係る例年の状況、標準報酬月額の比較及び被保険者の同意等」を添付して提出します。修正平均額（前年7月〜当年6月の年間平均）を「⑯修正平均額」欄に記入してください（ガイドブック Q28より）。
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-q">
+                                    <span class="faq-icon">Q</span>
+                                    病気療養で4・5・6月ともに報酬の支払いがない被保険者も提出が必要ですか？
+                                </div>
+                                <div class="faq-a">
+                                    <span class="a-icon">A</span>
+                                    提出は必要です。3カ月とも報酬の支払いがない場合は従前の標準報酬月額で決定されます。算定基礎届には備考欄「5. 病休・育休・休職等」を○で囲み、「○年○月○日から休職」等と記入して提出してください（ガイドブック Q25より）。
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ===== Section 10 ===== -->
+                        <h2 id="section10">10. 提出前チェックリスト</h2>
+
+                        <ul class="checklist">
+                            <li>7月1日現在の被保険者・70歳以上被用者が漏れなく対象になっているか</li>
+                            <li>提出不要な方（①6月1日以降取得 ②6月30日以前退職 ③7月月変 ④8・9月随時改定予定）を正しく除外・処理しているか</li>
+                            <li>支払基礎日数の数え方が給与形態（月給・日給・時給）に合っているか</li>
+                            <li>通勤手当（6カ月定期を含む）を報酬に含めているか</li>
+                            <li>年4回以上の賞与を報酬に算入しているか</li>
+                            <li>社会保険適用促進手当がある場合、除外上限額を正しく処理しているか</li>
+                            <li>現物給与（食事・社宅等）を最新の全国現物給与価額一覧表で換算しているか（令和8年度改正対応）</li>
+                            <li>短時間就労者と短時間労働者を正しく区分し、それぞれの日数基準で処理しているか</li>
+                            <li>年間平均申立の要件（2等級以上の差・例年発生）を確認したか（該当する場合）</li>
+                            <li>電子申請または提出先（事務センター）を確認したか</li>
+                        </ul>
+
+                        <hr>
+
+                        <h2 id="sources">おわりに・出典</h2>
+
+                        <p>算定基礎届は、給与データの集計と制度上の判断が交わる手続きです。給与計算システムの設定によって支払基礎日数や報酬額の集計が変わることもあります。当事務所は勤怠・給与分野のシステム開発に長く携わった経験を持つ社会保険労務士事務所として、システムの設定確認から届出書類の作成・電子申請まで対応しています。ご不明な点はお気軽にお問い合わせください。</p>
+
+                        <ol class="source-list">
+                            <li>日本年金機構「【事業主の皆さまへ】令和8年度の算定基礎届のご提出について」<br>
+                                <a href="https://www.nenkin.go.jp/tokusetsu/santei.html" target="_blank" rel="noopener">https://www.nenkin.go.jp/tokusetsu/santei.html</a></li>
+                            <li>日本年金機構「定時決定（算定基礎届）」（更新日：2026年5月21日）<br>
+                                <a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20121017.html" target="_blank" rel="noopener">https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20121017.html</a></li>
+                            <li>日本年金機構「保険者決定」<br>
+                                <a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20120524.html" target="_blank" rel="noopener">https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20120524.html</a></li>
+                            <li>日本年金機構「厚生年金保険の保険料」<br>
+                                <a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html" target="_blank" rel="noopener">https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html</a></li>
+                            <li>日本年金機構「算定基礎届の記入・提出ガイドブック（令和8年度）」（PDF）<br>
+                                ※出典2のページ内リンクから取得できます</li>
+                        </ol>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎（イマイ　ヒサイチロウ）</div>
+                            <div class="author-title">社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。算定基礎届の作成・電子申請から給与計算システムの設定確認まで、一体でサポートします。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビ -->
+                    <div class="article-nav">
+                        <a href="romu-dx-roadmap.html">
+                            <div class="nav-label">← 前の記事</div>
+                            中小企業の労務DXロードマップ ― 何から手をつけるか
+                        </a>
+                        <span style="flex:1;"></span>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">令和8年度の提出期限</a></li>
+                            <li><a href="#section2">定時決定とは何か</a></li>
+                            <li><a href="#section3">提出対象者と提出不要な方</a></li>
+                            <li><a href="#section4">標準報酬月額の決め方</a>
+                                <ol>
+                                    <li><a href="#section4-1">支払基礎日数とは</a></li>
+                                    <li><a href="#section4-2">一般的な決定ルール</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section5">報酬に含まれるもの</a></li>
+                            <li><a href="#section6">短時間就労者・労働者</a></li>
+                            <li><a href="#section7">年間平均による保険者算定</a></li>
+                            <li><a href="#section8">提出方法</a></li>
+                            <li><a href="#section9">よくある実務の落とし穴</a></li>
+                            <li><a href="#section10">提出前チェックリスト</a></li>
+                            <li><a href="#sources">おわりに・出典</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="hokenryo-chosei.html">社保適用拡大と保険料調整制度の仕組み</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="shakaihoken-2026.html">【2026年10月】社会保険の「106万円の壁」が撤廃へ</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>
