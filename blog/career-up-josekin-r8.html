@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+
+    <meta name="description" content="令和8年4月8日改定のキャリアアップ助成金（令和8年度版）を社労士が解説。正社員化コースへの「情報公表加算」新設（最大20万円）と、令和8年10月以降の賃金比較における確定拠出年金の取扱い変更を、厚生労働省一次資料に基づき整理します。">
+    <title>令和8年度 キャリアアップ助成金｜情報公表加算の新設と賃金比較の見直し | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header {
+            padding: 40px 0 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 50px;
+            color: var(--white);
+            background: var(--primary-blue);
+        }
+        .cat-badge.助成金 { background: #27ae60; }
+
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            line-height: 1.45;
+            margin: 0 0 20px;
+        }
+        .article-lead {
+            font-size: 1rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-left: 4px solid var(--accent-orange);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            padding: 40px 0 80px;
+            align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue);
+            position: sticky;
+            top: 90px;
+        }
+        .toc-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc ol {
+            list-style: decimal;
+            padding-left: 18px;
+            margin: 0;
+        }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px;
+            margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+        .article-body p {
+            font-size: 0.97rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .article-body ul, .article-body ol {
+            list-style: revert;
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 注意・補足ボックス */
+        .box-note {
+            background: #fff8e8;
+            border: 1px solid #ffe0a0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+
+        .box-caution {
+            background: #fff0f0;
+            border: 1px solid #ffb3b3;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+
+        .box-info {
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-info::before { content: "💡 実務メモ"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+        .article-body th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 14px;
+            text-align: left;
+        }
+        .article-body td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 48px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .article-nav a {
+            flex: 1;
+            display: block;
+            padding: 14px 18px;
+            background: var(--bg-soft);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            margin-top: 16px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white);
+            border-radius: 14px;
+            padding: 28px 28px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- フッターCTA --- */
+        .cta-section {
+            background: var(--primary-blue);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            キャリアアップ助成金（令和8年度版）
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <!-- 記事ヘッダー -->
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge 助成金">助成金</span>
+                    <span class="article-date">2026年7月14日</span>
+                    <span class="read-time">📖 約8分</span>
+                </div>
+                <h1 class="article-title">令和8年度 キャリアアップ助成金｜情報公表加算の新設と賃金比較の見直し</h1>
+                <p class="article-lead">
+                    令和8年度（令和8年4月8日改定）のキャリアアップ助成金について、正社員化コースへの「<strong>情報公表加算（中小企業20万円・大企業15万円）</strong>」の新設と、令和8年10月以降の転換分から適用される<strong>賃金比較における企業型確定拠出年金の取扱い変更</strong>を中心に、厚生労働省の一次資料（令和8年度版パンフレット・Q&A）に基づいて社労士が整理します。
+                </p>
+            </div>
+
+            <!-- 2カラムレイアウト -->
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイルでは本文の先頭に表示） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#scope">本コラムの説明範囲</a></li>
+                            <li><a href="#overview">キャリアアップ助成金とは</a></li>
+                            <li><a href="#change1">【変更点①】情報公表加算の新設</a>
+                                <ol>
+                                    <li><a href="#change1-summary">制度の概要</a></li>
+                                    <li><a href="#change1-req">公表の要件</a></li>
+                                    <li><a href="#change1-content">公表内容</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#change2">【変更点②】企業型DC（選択型）の取扱い変更</a></li>
+                            <li><a href="#courses">各コースの内容（令和8年度版）</a></li>
+                            <li><a href="#checklist">実務チェックポイント</a></li>
+                            <li><a href="#sources">出典（一次資料）</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 記事本文 -->
+                    <article class="article-body">
+
+                        <h2 id="scope">本コラムの説明範囲</h2>
+                        <p>
+                            正確性を担保するため、本コラムが扱う範囲と扱わない範囲を最初に明示します。
+                        </p>
+                        <p><strong>■ 説明する範囲（今回）</strong></p>
+                        <ul>
+                            <li><strong>対象資料</strong>：厚生労働省「キャリアアップ助成金のご案内（令和8年度版）」パンフレットおよび「Q&amp;A（令和8年度版）」の2点</li>
+                            <li><strong>対象コース</strong>：正社員化コース／賃金規定等改定コース／賃金規定等共通化コース／賞与・退職金制度導入コース／短時間労働者労働時間延長支援コースの5コース</li>
+                            <li><strong>令和8年度の変更点</strong>：① 情報公表加算の新設、② 賃金比較における企業型確定拠出年金の取扱い（令和8年10月以降の転換分）</li>
+                        </ul>
+                        <div class="box-note">
+                            出典：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/jigyounushi/career.html" target="_blank" rel="noopener">厚生労働省「キャリアアップ助成金」ページ</a>
+                        </div>
+
+                        <h2 id="overview">1. キャリアアップ助成金とは</h2>
+                        <p>
+                            有期雇用労働者、短時間労働者、派遣労働者といった、いわゆる非正規雇用労働者の企業内でのキャリアアップを促進するため、正社員転換・処遇改善の取組を実施した事業主に対して助成する制度です。
+                        </p>
+                        <p>
+                            本パンフレット（令和8年度版）が取り扱うのは、次の<strong>5コース</strong>です。
+                        </p>
+                        <ul>
+                            <li><strong>正社員化支援</strong>：正社員化コース</li>
+                            <li><strong>処遇改善支援</strong>：賃金規定等改定コース／賃金規定等共通化コース／賞与・退職金制度導入コース／短時間労働者労働時間延長支援コース</li>
+                        </ul>
+                        <div class="box-caution">
+                            各コースの<strong>実施日の前日まで</strong>に「キャリアアップ計画」の提出が必要です。取組を開始してからでは対象になりません。
+                        </div>
+
+                        <h2 id="change1">2. 【令和8年度の変更点①】正社員化コースに「情報公表加算」を新設</h2>
+                        <p>
+                            令和8年4月8日に新設された加算制度です。厚生労働省Q&amp;AのQ-1でも、同日からの変更として案内されています。
+                        </p>
+
+                        <h3 id="change1-summary">制度の概要</h3>
+                        <p>
+                            正社員転換等に係る所定の情報を、<strong>自ら管理するウェブサイト</strong>または<strong>職場情報総合サイト「しょくばらぼ」</strong>に公表した場合に、支給額を加算する措置です。
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>加算額</td>
+                                    <td><strong>20万円（大企業は15万円）</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>回数</td>
+                                    <td><strong>1事業所当たり1回のみ</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>対象時期</td>
+                                    <td><strong>令和8年4月8日以降</strong>に対象労働者を転換等する場合</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="box-note">
+                            出典：<a href="https://www.mhlw.go.jp/content/11910500/001683860.pdf" target="_blank" rel="noopener">キャリアアップ助成金のご案内（令和8年度版）</a>／<a href="https://www.mhlw.go.jp/content/11910500/001684537.pdf" target="_blank" rel="noopener">キャリアアップ助成金Q&amp;A（令和8年度版）</a>（Q-1・Q-2）
+                        </div>
+
+                        <h3 id="change1-req">公表の要件</h3>
+                        <ul>
+                            <li><strong>公表を行う日</strong>：ウェブサイトへの公表日が、キャリアアップ計画期間中かつ支給申請日までであること。</li>
+                            <li><strong>公表期間</strong>：支給申請日から、少なくとも支給申請事業年度の終了までは公表を継続することに同意すること。</li>
+                            <li><strong>公表場所</strong>：次の①②のいずれか。
+                                <ol>
+                                    <li>① <strong>自ら管理するウェブサイト</strong>（編集・公開・削除等の管理権限を事業主が有し、一般公開されているもの）</li>
+                                    <li>② <strong>職場情報総合サイト「しょくばらぼ」</strong>（<a href="https://shokuba.mhlw.go.jp/" target="_blank" rel="noopener">https://shokuba.mhlw.go.jp/</a>）</li>
+                                </ol>
+                            </li>
+                        </ul>
+                        <div class="box-caution">
+                            <strong>公表場所として認められないサイトの例</strong><br>
+                            社内ポータルサイトや会員登録が必要な非公開サイト、求人サイト・転職プラットフォームの企業ページ（管理権限を事業主が有さないもの）は対象外です。
+                        </div>
+
+                        <h3 id="change1-content">公表内容（①〜③すべての公表が必要）</h3>
+                        <p>
+                            就業規則等に規定されている、有期雇用労働者等の正社員への転換（または派遣労働者の直接雇用）に関する<strong>全ての制度</strong>について、以下の3点をすべて公表する必要があります。
+                        </p>
+                        <ol>
+                            <li><strong>転換・直接雇用制度の概要</strong>（手続き／転換の要件／実施時期）</li>
+                            <li><strong>直近3事業年度の転換・直接雇用の実績人数</strong></li>
+                            <li><strong>雇入日から転換等までに要した平均期間および最短期間</strong>（直近3事業年度）</li>
+                        </ol>
+                        <div class="box-info">
+                            <strong>社労士＋システムエンジニアの視点</strong><br>
+                            しょくばらぼへの掲載は、「企業利用者申請」と「企業独自情報入力」の審査にそれぞれ数営業日を要します。公表日が計画期間中かつ支給申請日までである必要があるため、<strong>申請スケジュールから逆算した早めの登録</strong>が実務上のポイントです。自社サイトで対応する場合は、CMS上で公開日時や掲載継続の記録を証跡として残しておくと、公表期間の要件を説明しやすくなります。
+                        </div>
+
+                        <!-- 記事中途のCTA -->
+                        <div class="inline-cta">
+                            <p>「情報公表加算の要件を満たしているか確認したい」「キャリアアップ計画の提出タイミングがわからない」など、個別のご相談は初回無料で承っています。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <h2 id="change2">3. 【令和8年度の変更点②】賃金比較における企業型確定拠出年金（選択型）の取扱い変更</h2>
+                        <p>
+                            正社員化コースでは、転換後6か月分の賃金を転換前6か月分と比較して<strong>3％以上増額</strong>していることが要件です。このうち、<strong>正社員転換後に生涯設計手当（基本給の一部を組み替えて支給）を設けており、その一部を企業型確定拠出年金（選択型）へ運用しているケース</strong>の賃金算定方法について、<strong>令和8年10月1日以降に転換を行った場合から取扱いが変わります</strong>（Q&amp;A Q-6）。
+                        </p>
+
+                        <h3>対象となるケースの賃金構造</h3>
+                        <p>転換後、基本給の一部を「生涯設計手当」として支給し、その中から従業員が企業型確定拠出年金（選択型）へ運用する場合、生涯設計手当は次の2つに分かれます。</p>
+
+                        <!-- 転換後の賃金構造 図解 -->
+                        <div style="border: 2px solid #dce8ff; border-radius: 10px; padding: 20px 24px; margin: 20px 0; background: #f8fafc;">
+                            <p style="font-size: 0.82rem; font-weight: bold; color: #1a4a93; margin: 0 0 14px;">転換後の賃金構造（イメージ）</p>
+                            <div style="display: flex; gap: 8px; align-items: stretch; flex-wrap: wrap;">
+                                <div style="background: #1a4a93; color: #fff; padding: 14px 18px; border-radius: 6px; font-size: 0.88rem; font-weight: bold; text-align: center; display: flex; align-items: center;">基本給</div>
+                                <div style="font-size: 1.2rem; display: flex; align-items: center; color: #636e72; padding: 0 4px;">＋</div>
+                                <div style="border: 2px solid #00a0e9; border-radius: 8px; overflow: hidden; display: flex; flex: 1; min-width: 260px;">
+                                    <div style="background: #fff0f0; padding: 14px 16px; font-size: 0.82rem; text-align: center; flex: 1; border-right: 1px dashed #aaa;">
+                                        <div style="font-weight: bold; color: #c0392b; margin-bottom: 4px;">運用額（A）</div>
+                                        <div style="font-size: 0.78rem; color: #636e72;">企業型DC（選択型）<br>へ運用される額</div>
+                                    </div>
+                                    <div style="background: #f0fff0; padding: 14px 16px; font-size: 0.82rem; text-align: center; flex: 1;">
+                                        <div style="font-weight: bold; color: #27ae60; margin-bottom: 4px;">運用額以外（B）</div>
+                                        <div style="font-size: 0.78rem; color: #636e72;">給与として<br>支払われる額</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 6px; text-align: right; font-size: 0.78rem; color: #00a0e9;">└ 生涯設計手当の内訳</div>
+                        </div>
+
+                        <h3>前提：生涯設計手当の原資が「退職金の前払い」の場合</h3>
+                        <p>
+                            生涯設計手当の原資が退職金の前払いである場合、（A）・（B）ともに原則として賃金比較の算定対象外となります（本来退職後に受け取るはずの退職金を前払いしているにすぎないため）。<br>
+                            ただし、<strong>条件ア～ウをすべて満たす場合</strong>は例外的に算定対象となり得ます。この「例外の範囲」が変更前後で異なります。
+                        </p>
+                        <p><strong>条件ア～ウ（すべて該当する場合に例外的な算定対象となり得る）</strong></p>
+                        <ul>
+                            <li><strong>ア</strong>：給与所得として課税対象（所得税・住民税）となっており、社会保険料の標準報酬月額の算定に含まれ、かつ雇用保険法上も賃金として取り扱われていること</li>
+                            <li><strong>イ</strong>：昇給額・残業代・賞与・退職金等の算出基礎額になることが就業規則等に明記されていること</li>
+                            <li><strong>ウ</strong>：実費補填や毎月変動する性質の手当ではないこと</li>
+                        </ul>
+
+                        <h3>変更前後の取扱い比較</h3>
+
+                        <!-- 変更前後の比較表 -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>転換日</th>
+                                    <th>条件ア～ウを<br>満たさない場合</th>
+                                    <th>条件ア～ウを<br>すべて満たす場合</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>R8.9.30以前<br>（変更前）</strong></td>
+                                    <td>（A）・（B）とも算定対象外</td>
+                                    <td><strong>（A）＋（B）の合計</strong>を算定対象にできる</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>R8.10.1以降<br>（変更後）</strong></td>
+                                    <td>（A）・（B）とも算定対象外</td>
+                                    <td><strong>（B）のみ</strong>算定対象にできる<br><span style="color:#c0392b;">（A）は条件を満たしても常に算定対象外</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="font-size: 0.85rem; color: var(--text-gray);">
+                            ※変更前（R8.9.30以前の転換）は、条件ア・イ・ウの記述が「B が給与所得として…」「A及びBの合計額が算出基礎額に…」と変更後とは若干異なります。詳細はQ&amp;A Q-6をご参照ください。
+                        </p>
+
+                        <div class="box-caution">
+                            <strong>実務上の影響</strong><br>
+                            条件ア～ウをすべて満たしている企業でも、R8.10.1以降の転換ではDC掛金運用額（A）を賃金比較に含められなくなります。（A）を含めて計算していた場合は3％以上増額の要件を満たせなくなる可能性があるため、秋以降の転換を予定している場合は、（A）を除いた計算でシミュレーションを行ってください。
+                        </div>
+
+                        <div class="box-info">
+                            <strong>転換前後で同じDC制度を継続利用しており、手当の総額に大きな変動がないケース</strong><br>
+                            転換前後で同様の企業型DC（選択型）を継続利用しており、生涯設計手当の総額に大きな変動がなく、（A）・（B）の内訳のみが従業員の選択等により変動しているケースでは、その内訳の変動だけで「3％以上増額」の達成・未達成が左右されることを防ぐため、<strong>生涯設計手当を除外して転換前後の賃金を比較します</strong>（Q&amp;A Q-6 注書き）。
+                        </div>
+
+                        <div class="box-note">
+                            <strong>見直し理由（Q&amp;A Q-6より）</strong>：企業型DC（選択型）の掛金運用額は労働基準法・雇用保険法等において賃金に該当しないこと、および他制度における取扱いとの整合性を図るため、取扱いが見直されました。<br><br>
+                            出典：<a href="https://www.mhlw.go.jp/content/11910500/001683860.pdf" target="_blank" rel="noopener">キャリアアップ助成金のご案内（令和8年度版）</a>／<a href="https://www.mhlw.go.jp/content/11910500/001684537.pdf" target="_blank" rel="noopener">キャリアアップ助成金Q&amp;A（令和8年度版）</a>（Q-6）
+                        </div>
+
+                        <h2 id="courses">4. 各コースの内容（令和8年度版）</h2>
+                        <p>
+                            ここからは変更点ではなく、<strong>あらためて確認しておきたい各コースの現行内容</strong>です。以下はいずれも厚生労働省パンフレット（令和8年度版）に基づく金額です。
+                        </p>
+
+                        <h3>① 正社員化コース</h3>
+                        <p>有期雇用労働者等を正社員転換した場合に助成します。<strong>支給額は1人当たり</strong>、企業規模・転換前の雇用形態・対象者区分により異なります。</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>対象者・企業規模</th>
+                                    <th>有期雇用→正規</th>
+                                    <th>無期雇用→正規</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>重点支援対象者・中小企業</td>
+                                    <td><strong>80万円</strong>（40万円×2期）</td>
+                                    <td>40万円（20万円×2期）</td>
+                                </tr>
+                                <tr>
+                                    <td>重点支援対象者・大企業</td>
+                                    <td>60万円（30万円×2期）</td>
+                                    <td>30万円（15万円×2期）</td>
+                                </tr>
+                                <tr>
+                                    <td>上記以外・中小企業</td>
+                                    <td>40万円（40万円×1期）</td>
+                                    <td>20万円（20万円×1期）</td>
+                                </tr>
+                                <tr>
+                                    <td>上記以外・大企業</td>
+                                    <td>30万円（30万円×1期）</td>
+                                    <td>15万円（15万円×1期）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>加算額（1事業所当たり・各1回のみ）</strong></p>
+                        <ul>
+                            <li>① 正社員転換制度を新たに規定：<strong>20万円</strong>（大企業15万円）</li>
+                            <li>② 多様な正社員制度（勤務地限定・職務限定・短時間正社員のいずれか）を新たに規定：<strong>40万円</strong>（大企業30万円）</li>
+                            <li>③ <strong>情報公表加算</strong>（令和8年度新設）：<strong>20万円</strong>（大企業15万円）</li>
+                        </ul>
+                        <div class="box-note">
+                            「重点支援対象者」の考え方は令和7年度の改正で導入されたもので、令和8年度の変更点ではありません。現行制度の区分として表に含めています。<br>
+                            出典：<a href="https://www.mhlw.go.jp/content/11910500/001683860.pdf" target="_blank" rel="noopener">キャリアアップ助成金のご案内（令和8年度版）</a>（1年度1事業所当たりの支給申請上限人数20名）
+                        </div>
+
+                        <h3>② 賃金規定等改定コース</h3>
+                        <p>有期雇用労働者等の基本給の賃金規定等を<strong>3％以上増額改定</strong>し、適用した場合に助成します。<strong>支給額は1人当たり</strong>、賃金引上げ率に応じて次のとおりです。</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>賃金引上げ率</th>
+                                    <th>中小企業</th>
+                                    <th>大企業</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3％以上4％未満</td>
+                                    <td>4万円</td>
+                                    <td>2.6万円</td>
+                                </tr>
+                                <tr>
+                                    <td>4％以上5％未満</td>
+                                    <td>5万円</td>
+                                    <td>3.3万円</td>
+                                </tr>
+                                <tr>
+                                    <td>5％以上6％未満</td>
+                                    <td>6.5万円</td>
+                                    <td>4.3万円</td>
+                                </tr>
+                                <tr>
+                                    <td>6％以上</td>
+                                    <td>7万円</td>
+                                    <td>4.6万円</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>加算額（1事業所当たり・1回のみ）：職務評価の手法の活用による増額改定／昇給制度の新規規定に対し、各20万円（大企業15万円）</p>
+                        <div class="box-note">
+                            出典：<a href="https://www.mhlw.go.jp/content/11910500/001683860.pdf" target="_blank" rel="noopener">キャリアアップ助成金のご案内（令和8年度版）</a>（1年度1事業所当たりの支給申請上限人数100名）
+                        </div>
+
+                        <h3>③ 賃金規定等共通化コース</h3>
+                        <p>すべての有期雇用労働者等に、正規雇用労働者と共通の職務等に応じた賃金規定等を新たに作成・適用した場合に助成します。</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>企業規模</th>
+                                    <th>支給額（1事業所当たり・1回のみ）</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>中小企業</td>
+                                    <td><strong>60万円</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>大企業</td>
+                                    <td>45万円</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>④ 賞与・退職金制度導入コース</h3>
+                        <p>すべての有期雇用労働者等に関して、賞与・退職金制度を新たに設け、支給または積立てを実施した場合に助成します。</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>企業規模</th>
+                                    <th>いずれかを導入</th>
+                                    <th>賞与・退職金を同時導入</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>中小企業</td>
+                                    <td>40万円</td>
+                                    <td><strong>56万8,000円</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>大企業</td>
+                                    <td>30万円</td>
+                                    <td>42万6,000円</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>⑤ 短時間労働者労働時間延長支援コース</h3>
+                        <p>※当分の間の暫定措置</p>
+                        <p>
+                            短時間労働者を新たに社会保険に加入させ、労働時間の延長等の取組を行った場合に助成します（「年収の壁」対応として設けられたコース）。
+                        </p>
+                        <ul>
+                            <li><strong>1年目の取組（1人当たり）</strong>：小規模企業50万円／中小企業40万円／大企業30万円</li>
+                            <li><strong>2年目の取組（1人当たり）</strong>：小規模企業25万円／中小企業20万円／大企業15万円</li>
+                        </ul>
+                        <div class="box-note">
+                            出典：<a href="https://www.mhlw.go.jp/content/11910500/001683860.pdf" target="_blank" rel="noopener">キャリアアップ助成金のご案内（令和8年度版）</a>
+                        </div>
+
+                        <h2 id="checklist">5. 申請にあたっての実務チェックポイント</h2>
+                        <ul>
+                            <li><strong>キャリアアップ計画は「実施日の前日まで」に提出</strong>。取組開始後の提出では対象になりません。</li>
+                            <li><strong>情報公表加算</strong>を狙う場合は、公表のタイミング（計画期間中かつ支給申請日まで）と掲載継続の同意を満たすこと。しょくばらぼ利用時は審査日数を見込んで早めに登録を。</li>
+                            <li><strong>賃金3％以上増額</strong>の判定では、通勤手当・住宅手当等の実費補填や賞与等は算定に含められません。令和8年10月以降の転換は、企業型確定拠出年金の事業主掛金の取扱い変更にも注意。</li>
+                            <li>支給要件の詳細・助成上限（人数・回数等）は、必ず厚生労働省ウェブサイトおよび最寄りの労働局・ハローワークで最新情報を確認してください。</li>
+                        </ul>
+                        <div class="box-caution">
+                            <strong>助成金の勧誘にご注意</strong><br>
+                            「100％助成金が受けられます」等の謳い文句による勧誘の情報が寄せられていますが、支給要件を満たしていないと判断された場合は受給できません。厚生労働省・労働局・ハローワークがこうした勧誘に関与している事実はありません。
+                        </div>
+
+                        <h2 id="sources">6. 出典（一次資料・URL）</h2>
+                        <p>本コラムは、以下の厚生労働省の一次資料（いずれも令和8年度版）に基づいて作成しています。</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>資料名</th>
+                                    <th>URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>キャリアアップ助成金のご案内（令和8年度版）パンフレット</td>
+                                    <td><a href="https://www.mhlw.go.jp/content/11910500/001683860.pdf" target="_blank" rel="noopener">PDFを開く</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>キャリアアップ助成金（障害者正社員化コース以外）Q&amp;A（令和8年度版）</td>
+                                    <td><a href="https://www.mhlw.go.jp/content/11910500/001684537.pdf" target="_blank" rel="noopener">PDFを開く</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>厚生労働省「キャリアアップ助成金」ページ</td>
+                                    <td><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/jigyounushi/career.html" target="_blank" rel="noopener">ページを開く</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 0.88rem; color: var(--text-gray);">
+                            ※本記事は令和8年4月8日現在の情報に基づく一般的な解説です。個別の適用可否・支給要件の判断は、最新の厚生労働省資料および管轄労働局・ハローワークへの確認、または専門家へのご相談をお願いいたします。
+                        </p>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="santei-kiso-todoke-2026.html">
+                            <div class="nav-label">← 前の記事</div>
+                            算定基礎届の基本と実務ポイント（令和8年度）
+                        </a>
+                        <span style="flex:1;"></span>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC表示） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#scope">本コラムの説明範囲</a></li>
+                            <li><a href="#overview">キャリアアップ助成金とは</a></li>
+                            <li><a href="#change1">【変更点①】情報公表加算の新設</a>
+                                <ol>
+                                    <li><a href="#change1-summary">制度の概要</a></li>
+                                    <li><a href="#change1-req">公表の要件</a></li>
+                                    <li><a href="#change1-content">公表内容</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#change2">【変更点②】企業型DC（選択型）の取扱い変更</a></li>
+                            <li><a href="#courses">各コースの内容</a></li>
+                            <li><a href="#checklist">実務チェックポイント</a></li>
+                            <li><a href="#sources">出典（一次資料）</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="josekin-2026.html">2026年版｜中小企業が今すぐ使える助成金まとめ（申請期限付き）</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="santei-kiso-todoke-2026.html">算定基礎届の基本と実務ポイント（令和8年度）</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">就業規則</div>
+                            <a href="shugyo-kisoku-guide.html">就業規則はいつ作る？10人未満でも整備すべき理由と作成の流れ</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration &amp; Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルでは目次をサイドバーから本文先頭に移動
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>
