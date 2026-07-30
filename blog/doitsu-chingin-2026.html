@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+
+    <meta name="description" content="令和8年10月1日施行。パートタイム・有期雇用労働法施行規則・雇用管理指針・同一労働同一賃金ガイドラインの改正内容と、事業主が期日までに行うべき点検事項を、厚生労働省の一次資料に基づいて整理します。">
+    <title>同一労働同一賃金 ― 説明義務と待遇差の点検（2026年版） | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header {
+            padding: 40px 0 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 50px;
+            color: var(--white);
+            background: var(--primary-blue);
+        }
+        .cat-badge.romu-dx { background: var(--accent-sky); }
+        .cat-badge.助成金 { background: #27ae60; }
+        .cat-badge.労務手続き { background: #8e44ad; }
+        .cat-badge.就業規則 { background: #c0392b; }
+        .cat-badge.よくある質問 { background: var(--accent-orange); }
+
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            line-height: 1.45;
+            margin: 0 0 20px;
+        }
+        .article-lead {
+            font-size: 1rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-left: 4px solid var(--accent-orange);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            padding: 40px 0 80px;
+            align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue);
+            position: sticky;
+            top: 90px;
+        }
+        .toc-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc ol {
+            list-style: decimal;
+            padding-left: 18px;
+            margin: 0;
+        }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px;
+            margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+        .article-body p {
+            font-size: 0.97rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .article-body ul, .article-body ol {
+            list-style: revert;
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 注意・補足ボックス */
+        .box-note {
+            background: #fff8e8;
+            border: 1px solid #ffe0a0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+
+        .box-caution {
+            background: #fff0f0;
+            border: 1px solid #ffb3b3;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+
+        .box-info {
+            background: #f0f9ff;
+            border: 1px solid #b3d9f7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+        .article-body th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 14px;
+            text-align: left;
+        }
+        .article-body td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 48px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .author-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .article-nav a {
+            flex: 1;
+            display: block;
+            padding: 14px 18px;
+            background: var(--bg-soft);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            margin-top: 16px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white);
+            border-radius: 14px;
+            padding: 28px 28px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- フッターCTA --- */
+        .cta-section {
+            background: var(--primary-blue);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+        }
+    </style>
+
+    <!-- 記事固有スタイル: doitsu-chingin-2026 -->
+    <style>
+        /* 追加CSS変数（テンプレート未定義分を追加） */
+        :root {
+            --bg-quote: #F5FAFD;
+            --bg-caution: #FFF7EA;
+            --bg-point: #F3F6FB;
+            --bg-zebra: #FAFBFC;
+            --rule: #DDDDDD;
+        }
+
+        /* 公式引用ブロック */
+        blockquote.quote-official {
+            border-left: 4px solid var(--accent-sky);
+            background: var(--bg-quote);
+            padding: 16px 20px;
+            margin: 0 0 16px 0;
+            font-size: .95em;
+            line-height: 1.9;
+            border-radius: 0 8px 8px 0;
+        }
+        cite.quote-source {
+            display: block;
+            text-align: right;
+            font-size: .85em;
+            color: var(--text-gray);
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        /* 注意コールアウト */
+        .callout-caution {
+            border: 2px solid var(--accent-orange);
+            background: var(--bg-caution);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+        .callout-title {
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            font-size: 0.97rem;
+        }
+        .callout-caution .callout-title { color: var(--accent-orange); }
+
+        /* 実務ポイントコールアウト */
+        .callout-point {
+            border-left: 4px solid var(--primary-blue);
+            background: var(--bg-point);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+        .callout-point .callout-title { color: var(--primary-blue); }
+
+        /* 比較表ラッパー */
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 16px 0;
+        }
+
+        /* 比較表 */
+        .table-compare {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .table-compare caption {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .table-compare th {
+            background: var(--primary-blue);
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 12px;
+            border: 1px solid var(--rule);
+            text-align: left;
+            vertical-align: top;
+        }
+        .table-compare td {
+            padding: 10px 12px;
+            border: 1px solid var(--rule);
+            vertical-align: top;
+            line-height: 1.7;
+            font-size: 0.92rem;
+        }
+        .table-compare tr:nth-child(even) td { background: var(--bg-zebra); }
+
+        /* h3直後の余白統一 */
+        .article-body h3 + .table-wrap,
+        .article-body h3 + blockquote.quote-official,
+        .article-body h3 + .callout-caution,
+        .article-body h3 + .callout-point {
+            margin-top: 14px;
+        }
+
+        /* タイムライン */
+        .article-body ol.timeline {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 18px;
+        }
+        .article-body ol.timeline li {
+            padding: 8px 0 8px 20px;
+            border-left: 3px solid var(--accent-sky);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* チェックリスト */
+        .article-body ul.checklist {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 18px;
+        }
+        .article-body ul.checklist li {
+            position: relative;
+            padding: 7px 0 7px 28px;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .article-body ul.checklist li:last-child { border-bottom: none; }
+        .article-body ul.checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        /* チェックリストグループラベル */
+        .checklist-group {
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-size: 0.97rem;
+            margin: 24px 0 8px;
+            padding: 6px 12px;
+            border-left: 4px solid var(--accent-orange);
+            background: var(--bg-soft);
+        }
+
+        /* 根拠資料一覧 */
+        .article-body ol.source-list {
+            list-style: decimal;
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .article-body ol.source-list li {
+            margin-bottom: 14px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+        .source-url {
+            word-break: break-all;
+            font-size: 0.85em;
+            color: var(--text-gray);
+        }
+
+        /* nowrap */
+        .nowrap { white-space: nowrap; }
+
+        /* visually-hidden */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* フォーカスリング */
+        :focus-visible {
+            outline: 2px solid var(--accent-sky);
+            outline-offset: 2px;
+        }
+
+        /* 基準日注記 */
+        .article-note {
+            font-size: 0.88rem;
+            color: var(--text-gray);
+            border-top: 1px solid var(--rule);
+            padding-top: 12px;
+            margin-top: 32px;
+        }
+
+        /* モバイル追加対応 */
+        @media (max-width: 480px) {
+            blockquote.quote-official { padding: 12px 14px; font-size: 0.92em; }
+            .callout-caution, .callout-point { padding: 12px 14px; }
+            .table-compare td, .table-compare th { font-size: 0.85rem; padding: 8px 10px; }
+        }
+
+        /* ===== ビジュアル強化パーツ ===== */
+
+        /* 改正3点カード */
+        .kaisei-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 20px 0 28px;
+        }
+        @media (max-width: 600px) { .kaisei-cards { grid-template-columns: 1fr; } }
+        .kaisei-card {
+            border-radius: 10px;
+            padding: 18px 14px;
+            text-align: center;
+            border-top: 5px solid;
+        }
+        .kaisei-card.kc1 { border-color: var(--primary-blue); background: #EEF3FC; }
+        .kaisei-card.kc2 { border-color: #8e44ad; background: #F8F0FD; }
+        .kaisei-card.kc3 { border-color: var(--accent-sky); background: #EAF7FD; }
+        .kaisei-card-num { font-size: 2rem; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+        .kc1 .kaisei-card-num { color: var(--primary-blue); }
+        .kc2 .kaisei-card-num { color: #8e44ad; }
+        .kc3 .kaisei-card-num { color: var(--accent-sky); }
+        .kaisei-card-law { font-size: 0.72em; color: var(--text-gray); margin-bottom: 6px; line-height: 1.4; }
+        .kaisei-card-title { font-size: 0.9em; font-weight: bold; line-height: 1.5; }
+
+        /* 強調スタット */
+        .stat-highlight {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: #FFF3E0;
+            border: 2px solid var(--accent-orange);
+            border-radius: 10px;
+            padding: 12px 24px;
+            margin: 0 auto 16px;
+            text-align: center;
+        }
+        .stat-highlight-wrap { text-align: center; margin: 10px 0 4px; }
+        .stat-num { font-size: 2rem; font-weight: 900; color: var(--accent-orange); line-height: 1; }
+        .stat-label { font-size: 0.78em; color: var(--text-gray); margin-top: 4px; }
+
+        /* 説明義務ステップ */
+        .obligation-steps { display: flex; flex-direction: column; gap: 6px; margin: 16px 0 20px; }
+        .obl-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            background: var(--bg-soft);
+            border-left: 5px solid;
+        }
+        .obl-step:nth-child(1) { border-color: var(--accent-sky); }
+        .obl-step:nth-child(2) { border-color: var(--primary-blue); }
+        .obl-step:nth-child(3) { border-color: var(--accent-orange); }
+        .obl-step:nth-child(4) { border-color: #c0392b; }
+        .obl-law {
+            font-size: 0.75em; font-weight: bold; color: var(--text-gray);
+            white-space: nowrap; flex-shrink: 0; min-width: 76px; padding-top: 2px; line-height: 1.5;
+        }
+        .obl-body { font-size: 0.9em; line-height: 1.6; }
+        .obl-trigger { font-size: 0.78em; color: var(--text-gray); margin-top: 3px; }
+        @media (max-width: 480px) { .obl-step { flex-direction: column; gap: 4px; } .obl-law { min-width: unset; } }
+
+        /* 義務強度バッジ行 */
+        .strength-rows { margin: 12px 0 20px; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+        .str-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--rule);
+            background: var(--white);
+        }
+        .str-row:last-child { border-bottom: none; }
+        .str-row:nth-child(odd) { background: var(--bg-soft); }
+        .str-badge {
+            font-size: 0.72em; font-weight: bold; padding: 4px 10px;
+            border-radius: 50px; white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+        }
+        .str-badge.must { background: #c0392b; color: #fff; }
+        .str-badge.rec { background: var(--accent-orange); color: #fff; }
+        .str-badge.effort { background: #636e72; color: #fff; }
+        .str-text { font-size: 0.9em; line-height: 1.6; }
+
+        /* 待遇カードグリッド */
+        .taiguu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+            margin: 16px 0 24px;
+        }
+        @media (max-width: 480px) { .taiguu-grid { grid-template-columns: repeat(2, 1fr); } }
+        .taiguu-card {
+            border: 1px solid var(--rule);
+            border-radius: 8px;
+            padding: 12px;
+            background: var(--white);
+        }
+        .taiguu-label {
+            font-size: 0.68em; font-weight: bold; padding: 2px 8px;
+            border-radius: 50px; display: inline-block; margin-bottom: 6px;
+        }
+        .taiguu-label.new { background: #e74c3c; color: #fff; }
+        .taiguu-label.enhanced { background: var(--primary-blue); color: #fff; }
+        .taiguu-name { font-size: 0.88em; font-weight: bold; line-height: 1.4; }
+        .taiguu-case { font-size: 0.75em; color: var(--text-gray); margin-top: 4px; }
+
+        /* ポイント丸番号ヘッダー */
+        .point-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin: 28px 0 10px;
+        }
+        .point-circle {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--primary-blue); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.05em; font-weight: 900; flex-shrink: 0;
+        }
+        .point-text { font-size: 1em; font-weight: bold; line-height: 1.5; padding-top: 6px; }
+
+        /* 無期転換フロー */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 16px 0 20px;
+            overflow-x: auto;
+        }
+        .flow-box {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 0.82em;
+            font-weight: bold;
+            line-height: 1.5;
+            border: 2px solid;
+            border-radius: 8px;
+        }
+        .flow-box.fb1 { background: #EAF6FD; border-color: var(--accent-sky); }
+        .flow-box.fb2 { background: #FFF7EA; border-color: var(--accent-orange); }
+        .flow-box.fb3 { background: #FFF0F0; border-color: #c0392b; color: #c0392b; }
+        .flow-box.fb4 { background: #EEF3FC; border-color: var(--primary-blue); }
+        .flow-box.fb5 { background: #F0FAF0; border-color: #27ae60; color: #27ae60; }
+        .flow-arrow { padding: 0 2px; color: var(--accent-sky); font-size: 1.3em; flex-shrink: 0; }
+        @media (max-width: 600px) {
+            .flow-diagram { flex-direction: column; align-items: stretch; gap: 2px; }
+            .flow-box { min-width: unset; }
+            .flow-arrow { transform: rotate(90deg); align-self: center; font-size: 1em; }
+        }
+
+        /* その他改正 グリッド */
+        .kaisei-list-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 16px 0 20px;
+        }
+        @media (max-width: 600px) { .kaisei-list-grid { grid-template-columns: 1fr; } }
+        .kaisei-list-item {
+            background: var(--bg-soft);
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 0.88em;
+            line-height: 1.6;
+            border-left: 3px solid var(--accent-sky);
+        }
+        .kaisei-list-item strong { color: var(--primary-blue); display: block; margin-bottom: 4px; }
+
+        /* 印刷 */
+        @media print {
+            .toc, .cta-section, .inline-cta, .article-nav,
+            .back-to-list, .related-articles { display: none !important; }
+            .table-wrap { overflow: visible !important; }
+            .article-body a[href]::after {
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+                color: #666;
+            }
+            .logo-area { display: flex !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="今井久一郎社会保険労務士事務所">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            同一労働同一賃金（2026年版）
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <!-- 記事ヘッダー -->
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge 就業規則">就業規則</span>
+                    <span class="article-date">2026年7月30日</span>
+                    <span class="read-time">📖 約15分</span>
+                </div>
+                <h1 class="article-title">同一労働同一賃金 ― 説明義務と待遇差の点検（2026年版）</h1>
+                <p class="article-lead">
+                    <span class="nowrap">令和８年10月１日</span>施行。パートタイム・有期雇用労働法施行規則・雇用管理指針・同一労働同一賃金ガイドラインの改正内容と、事業主が期日までに行うべき点検事項を、厚生労働省の一次資料に基づいて整理します。
+                </p>
+            </div>
+
+            <!-- 2カラムレイアウト -->
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイルでは本文の先頭に表示） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#overview">令和8年10月改正の全体像</a></li>
+                            <li><a href="#meiji">【改正①】雇い入れ時の労働条件明示事項が追加されます</a></li>
+                            <li><a href="#setsumei-kouzou">整理：説明義務はどう構成されているか</a></li>
+                            <li><a href="#shishin">【改正②】説明の「方法」が具体化されました</a></li>
+                            <li><a href="#guideline">【改正③】同一労働同一賃金ガイドラインの改正</a></li>
+                            <li><a href="#handan">待遇差の判断で押さえるべき5つのポイント</a></li>
+                            <li><a href="#dai6">無期雇用フルタイム労働者・多様な正社員への波及</a></li>
+                            <li><a href="#checklist">令和8年10月1日までの実務点検チェックリスト</a></li>
+                            <li><a href="#closing">おわりに</a></li>
+                            <li><a href="#sources">根拠資料一覧</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 記事本文 -->
+                    <article class="article-body">
+
+                        <!-- ===== LEAD ===== -->
+                        <div id="lead">
+                            <p>
+                                <span class="nowrap">令和８年４月28日</span>、同一労働同一賃金に関する省令１本・告示２本が公布されました。施行・適用日は<span class="nowrap">令和８年10月１日</span>。同一労働同一賃金の施行から５年が経過したことを踏まえた見直しであり、この間に示された複数の最高裁判決を反映した内容となっています。
+                            </p>
+                            <p>
+                                労働条件通知書の様式改訂は施行日までに完了させる必要があります。また、具体的な解釈等については、本記事作成時点で通達等による公表はなく、施行・適用前に示される予定です。
+                            </p>
+                            <div class="callout-caution">
+                                <p class="callout-title">⚠ ご注意</p>
+                                <blockquote class="quote-official">
+                                    改正省令・告示は令和８年10月１日から施行・適用することとされています。改正省令・告示等の具体的な解釈等については、施行・適用前に通達等で示す予定です。
+                                    <cite class="quote-source">出典①：改正省令及び告示の周知に係るＱ＆Ａ（問4 答）</cite>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <!-- ===== SECTION 1: OVERVIEW ===== -->
+                        <h2 id="overview">令和8年10月改正の全体像</h2>
+
+                        <p>今回の改正で変わるのは、次の3つのルールです。</p>
+
+                        <div class="kaisei-cards">
+                            <div class="kaisei-card kc1">
+                                <div class="kaisei-card-num">①</div>
+                                <div class="kaisei-card-law">令和8年厚生労働省令第87号</div>
+                                <div class="kaisei-card-title">パート・有期法<br>施行規則の改正</div>
+                                <div class="kaisei-card-law" style="margin-top:6px;">雇い入れ時の<br>労働条件明示事項追加</div>
+                            </div>
+                            <div class="kaisei-card kc2">
+                                <div class="kaisei-card-num">②</div>
+                                <div class="kaisei-card-law">令和8年厚生労働省告示第202号</div>
+                                <div class="kaisei-card-title">雇用管理指針<br>の改正</div>
+                                <div class="kaisei-card-law" style="margin-top:6px;">説明の方法・手続の<br>具体化</div>
+                            </div>
+                            <div class="kaisei-card kc3">
+                                <div class="kaisei-card-num">③</div>
+                                <div class="kaisei-card-law">令和8年厚生労働省告示第203号</div>
+                                <div class="kaisei-card-title">同一労働同一賃金<br>ガイドラインの改正</div>
+                                <div class="kaisei-card-law" style="margin-top:6px;">待遇の記載追加・<br>明確化</div>
+                            </div>
+                        </div>
+
+                        <div class="table-wrap">
+                            <table class="table-compare" style="min-width:600px;">
+                                <caption class="visually-hidden">表①：改正された3つのルール</caption>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>改正対象</th>
+                                        <th>法令番号</th>
+                                        <th>主な内容</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>①</td>
+                                        <td>パートタイム・有期雇用労働法施行規則<br>（平成５年労働省令第34号）</td>
+                                        <td><span class="nowrap">令和８年厚生労働省令第87号</span></td>
+                                        <td>雇い入れ時の労働条件明示事項の追加</td>
+                                    </tr>
+                                    <tr>
+                                        <td>②</td>
+                                        <td>雇用管理指針<br>（平成19年厚生労働省告示第326号）</td>
+                                        <td><span class="nowrap">令和８年厚生労働省告示第202号</span></td>
+                                        <td>事業主が講ずべき措置内容の改正</td>
+                                    </tr>
+                                    <tr>
+                                        <td>③</td>
+                                        <td>同一労働同一賃金ガイドライン<br>（平成30年厚生労働省告示第430号）</td>
+                                        <td><span class="nowrap">令和８年厚生労働省告示第203号</span></td>
+                                        <td>待遇に関する記載の追加・明確化</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p style="font-size:0.88rem; color:var(--text-gray); margin-top:-4px;">
+                            ※施行通達：<span class="nowrap">令和８年４月28日</span> <span class="nowrap">職発0428第９号</span>・<span class="nowrap">雇均発0428第１号</span>
+                        </p>
+
+                        <h3>改正の経緯</h3>
+                        <ol class="timeline">
+                            <li><strong>働き方改革関連法 附則第12条</strong>の検討規定（施行後5年を目途とする検討）</li>
+                            <li><strong>令和７年２月〜</strong>　労働政策審議会 職業安定分科会 雇用環境・均等分科会 同一労働同一賃金部会 開催</li>
+                            <li><strong>令和７年12月</strong>　同部会報告</li>
+                            <li><strong>令和８年３月</strong>　労働政策審議会への諮問・答申</li>
+                            <li><strong><span class="nowrap">令和８年４月28日</span></strong>　公布</li>
+                            <li><strong><span class="nowrap">令和８年10月１日</span></strong>　施行・適用</li>
+                        </ol>
+
+                        <h3>なぜ見直されたのか</h3>
+                        <blockquote class="quote-official">
+                            同部会報告では、いわゆる同一労働同一賃金に係る規定について、その施行から５年が経過し、非正規雇用労働者の待遇改善の取組は着実に進められてきましたが、正規雇用労働者と非正規雇用労働者との間には依然として賃金格差があるなど、更なる取組が求められる状況にあるとされています。
+                            <cite class="quote-source">出典①：改正省令及び告示の周知に係るＱ＆Ａ（問1 答2）</cite>
+                        </blockquote>
+
+                        <!-- ===== SECTION 2: MEIJI ===== -->
+                        <h2 id="meiji">【改正①】雇い入れ時の労働条件明示事項が追加されます</h2>
+
+                        <p>
+                            パート・有期法<span class="nowrap">第６条第１項</span>の労働条件明示事項に、<strong>事業主に法<span class="nowrap">第14条第２項</span>の規定による説明を求めることができる旨</strong>が新たに追加されます。
+                        </p>
+
+                        <div class="table-wrap">
+                            <table class="table-compare">
+                                <caption class="visually-hidden">表②：明示事項の新旧</caption>
+                                <thead>
+                                    <tr>
+                                        <th>区分</th>
+                                        <th>明示事項</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>現行の明示事項</td>
+                                        <td>昇給の有無／退職手当の有無／賞与の有無／相談窓口</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="nowrap">令和８年10月１日</span>から追加</td>
+                                        <td>待遇の相違等に関する説明を求めることができる旨</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="callout-caution">
+                            <p class="callout-title">⚠ ご注意（過料）</p>
+                            <blockquote class="quote-official">
+                                パートタイム・有期雇用労働者を雇い入れた時の労働条件明示事項として、現行の明示事項に加え、新たに「待遇の相違の内容・理由等に関する説明を求めることができる」旨の明示が必要となります（違反した者は10万円以下の過料に処されます）。
+                                <cite class="quote-source">出典②：リーフレット「パートタイム・有期雇用労働者に関するルールが変わります」（令和８年４月作成 リーフレットNo.11）1ページ</cite>
+                            </blockquote>
+                        </div>
+
+                        <h3>いつ雇い入れた労働者が対象か</h3>
+                        <blockquote class="quote-official">
+                            改正省令の施行日以降、新たにパートタイム・有期雇用労働者を雇い入れた時は、雇い入れ時の労働条件明示事項として、「パートタイム・有期雇用労働法第14条第２項の規定による説明を求めることができる旨」を書面の交付等により明示する必要があります。
+                            <cite class="quote-source">出典①：改正省令及び告示の周知に係るＱ＆Ａ（問3 答1）</cite>
+                        </blockquote>
+                        <p style="font-size:0.9rem; color:var(--text-gray); border-left:3px solid #ddd; padding-left:12px; margin-top:0;">
+                            ※既に雇用しているパートタイム・有期雇用労働者への取扱いについては、本記事作成時点で公表されている資料に明記がありません。施行通達の公表を待って確認が必要です。
+                        </p>
+
+                        <h3>モデル労働条件通知書の記載例</h3>
+                        <blockquote class="quote-official">
+                            次の窓口に対して通常の労働者との間の待遇の相違（内容・理由）等について説明を求めることができる。
+                            <cite class="quote-source">出典②：リーフレット「パートタイム・有期雇用労働者に関するルールが変わります」（令和８年４月作成 リーフレットNo.11）労働条件通知書の記載例</cite>
+                        </blockquote>
+                        <p style="font-size:0.9rem; color:var(--text-gray);">
+                            ※「通常の労働者」は自社における呼称に置き換えて記載することも可能です（出典②）。
+                        </p>
+
+                        <div class="callout-point">
+                            <p class="callout-title">実務ポイント</p>
+                            <p>窓口欄（部署名・担当者職氏名・連絡先）を空欄のまま交付しないようにしてください。様式管理・入社手続の運用に、窓口情報の記入を必須ステップとして組み込むことが重要です。</p>
+                        </div>
+
+                        <!-- ===== SECTION 3: SETSUMEI-KOUZOU ===== -->
+                        <h2 id="setsumei-kouzou">整理：説明義務はどう構成されているか</h2>
+
+                        <p>パート・有期法における説明義務は、次の4層構造になっています。</p>
+
+                        <div class="obligation-steps">
+                            <div class="obl-step">
+                                <div class="obl-law">第６条<br>第１項</div>
+                                <div class="obl-body">
+                                    <strong>労働条件の文書交付等による明示</strong>
+                                    <div class="obl-trigger">▶ 発動：雇い入れ時（常時）</div>
+                                </div>
+                            </div>
+                            <div class="obl-step">
+                                <div class="obl-law">第14条<br>第１項</div>
+                                <div class="obl-body">
+                                    <strong>講ずることとしている措置の内容の説明</strong>
+                                    <div class="obl-trigger">▶ 発動：雇い入れたとき（求めがなくても、速やかに）</div>
+                                </div>
+                            </div>
+                            <div class="obl-step">
+                                <div class="obl-law">第14条<br>第２項</div>
+                                <div class="obl-body">
+                                    <strong>待遇の相違の内容・理由、措置決定の考慮事項の説明</strong>
+                                    <div class="obl-trigger">▶ 発動：労働者から求めがあったとき</div>
+                                </div>
+                            </div>
+                            <div class="obl-step">
+                                <div class="obl-law">第14条<br>第３項</div>
+                                <div class="obl-body">
+                                    <strong>求めを理由とする不利益取扱いの禁止</strong>
+                                    <div class="obl-trigger">▶ 発動：常時</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>法律の条文は以下のとおりです（<span class="nowrap">第14条第２項</span>・同第３項）。</p>
+
+                        <blockquote class="quote-official">
+                            事業主は、その雇用する短時間・有期雇用労働者から求めがあったときは、当該短時間・有期雇用労働者と通常の労働者との間の待遇の相違の内容及び理由並びに第六条から前条までの規定により措置を講ずべきこととされている事項に関する決定をするに当たって考慮した事項について、当該短時間・有期雇用労働者に説明しなければならない。
+                            <cite class="quote-source">出典⑤：短時間労働者及び有期雇用労働者の雇用管理の改善等に関する法律（平成５年法律第76号）<span class="nowrap">第14条第２項</span></cite>
+                        </blockquote>
+
+                        <blockquote class="quote-official">
+                            事業主は、短時間・有期雇用労働者が前項の求めをしたことを理由として、当該短時間・有期雇用労働者に対して解雇その他不利益な取扱いをしてはならない。
+                            <cite class="quote-source">出典⑤：短時間労働者及び有期雇用労働者の雇用管理の改善等に関する法律（平成５年法律第76号）第14条第３項</cite>
+                        </blockquote>
+
+                        <p>
+                            <span class="nowrap">第14条第２項</span>の説明を求める権利そのものは従前から存在しています。今回の改正は、①その権利を雇入れ時に本人へ明示すること（<span class="nowrap">第６条第１項</span>への追加）、②説明の方法を指針で具体化すること、の2点を加えたものです。
+                        </p>
+
+                        <!-- ===== SECTION 4: SHISHIN ===== -->
+                        <h2 id="shishin">【改正②】説明の「方法」が具体化されました</h2>
+
+                        <h3>説明の方法（第３の５⑷）</h3>
+                        <blockquote class="quote-official">
+                            パートタイム・有期雇用労働者に待遇の相違の内容等を説明するに当たっては、「資料を活用し、口頭により説明する方法」又は「説明すべき事項を全て記載した短時間・有期雇用労働者が容易に理解できる内容の資料を交付する等の方法」によるものとすること。また、資料を活用し、口頭により説明する場合には、説明に活用した資料等を交付することが望ましいこと。さらに、交付することが困難な場合であっても、パートタイム・有期雇用労働者から事後に求めがあったときは当該資料を閲覧させる等の工夫をするように努めるものとすること。
+                            <cite class="quote-source">出典③：令和８年改正の概要（雇用管理指針 第３の５⑷）</cite>
+                        </blockquote>
+
+                        <p>この規定における義務の強さの違いを整理すると、次のとおりです。</p>
+
+                        <div class="strength-rows">
+                            <div class="str-row">
+                                <span class="str-badge must">講ずべき措置</span>
+                                <span class="str-text">「資料を活用し、口頭により説明する方法」又は「説明すべき事項を全て記載した短時間・有期雇用労働者が容易に理解できる内容の資料を交付する等の方法」による<br><small style="color:var(--text-gray);">指針の表現：「によるものとすること」</small></span>
+                            </div>
+                            <div class="str-row">
+                                <span class="str-badge rec">　　推奨　　</span>
+                                <span class="str-text">口頭説明の場合、説明に活用した資料等を交付する<br><small style="color:var(--text-gray);">指針の表現：「望ましいこと」</small></span>
+                            </div>
+                            <div class="str-row">
+                                <span class="str-badge effort">　努力義務　</span>
+                                <span class="str-text">交付が困難な場合、事後の求めに応じ資料を閲覧させる等の工夫をする<br><small style="color:var(--text-gray);">指針の表現：「努めるものとすること」</small></span>
+                            </div>
+                        </div>
+
+                        <h3>求めがない場合の対応（第３の５⑸）</h3>
+                        <blockquote class="quote-official">
+                            法第14条第２項の規定による説明の求めがない場合であっても、労働契約の更新の際等に、待遇の相違の内容等について容易に理解できる内容の資料を交付することや、待遇の相違の内容等について説明を求めることができることを周知すること等が望ましいこと。
+                            <cite class="quote-source">出典③：令和８年改正の概要（雇用管理指針 第３の５⑸）</cite>
+                        </blockquote>
+
+                        <h3>その他の改正事項</h3>
+                        <div class="kaisei-list-grid">
+                            <div class="kaisei-list-item">
+                                <strong>職業能力開発促進法の適用遵守（第２の１）</strong>
+                                パートタイム・有期雇用労働者にも職業能力開発促進法が適用されることを認識し遵守しなければならない
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>公正評価に基づく賃金決定（第２の３）</strong>
+                                職務の内容や成果等を公正に評価して昇給に反映する等、公正な評価に基づき賃金を決定することが望ましい
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>パ有過半数代表の選出要件（第３の１⑴）</strong>
+                                ①管理監督の地位にある者でないこと ②投票・挙手等の手続により選出され、事業主の意向に基づかないこと
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>不利益取扱いの禁止が強化（第３の１⑵）</strong>
+                                「しないようにするものとする」→<strong style="color:#c0392b;">「しなければならない」</strong>へ改正（義務の強化）
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>パ有過半数代表への配慮義務（第３の１⑶）</strong>
+                                事務スペース・事務機器の提供等、円滑な事務遂行のための必要な配慮を行わなければならない
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>福利厚生施設の利用便宜（第３の３）</strong>
+                                物品販売所・病院・保育所・駐車場等の施設利用について便宜の供与措置を講ずるよう配慮しなければならない
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>正社員転換推進措置の強化（第３の４）</strong>
+                                複数措置を講ずることが望ましく、面談・メール等による意向確認と配慮が義務となった
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>意見聴取機会の設置努力（第３の６）</strong>
+                                話合い・アンケート等による意見聴取機会の設け方を工夫するよう努めなければならない
+                            </div>
+                            <div class="kaisei-list-item">
+                                <strong>転換制度情報の公表（第３の８）</strong>
+                                転換制度の内容・実績等を公的機関ウェブサイト等に定期的に公表することが望ましい
+                            </div>
+                        </div>
+
+                        <!-- 記事中途のCTA -->
+                        <div class="inline-cta">
+                            <p>「自社の労働条件通知書の見直しはどこから手をつければよいか？」<br>個別のご状況に合わせたご相談は専門家への相談が確実です。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <!-- ===== SECTION 5: GUIDELINE ===== -->
+                        <h2 id="guideline">【改正③】同一労働同一賃金ガイドラインの改正</h2>
+
+                        <h3>目次構造そのものが変わりました</h3>
+
+                        <div class="table-wrap">
+                            <table class="table-compare">
+                                <caption class="visually-hidden">表⑤：ガイドライン目次構造の改正</caption>
+                                <thead>
+                                    <tr>
+                                        <th>改正前</th>
+                                        <th>改正後</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>２ 賞与／３ 手当</td>
+                                        <td>２ 賞与／<strong>３ 退職手当</strong>／<strong>４ 各種手当（退職手当を除く。）</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>４ 福利厚生／５ その他</td>
+                                        <td>５ 福利厚生／６ その他</td>
+                                    </tr>
+                                    <tr>
+                                        <td>（新設）</td>
+                                        <td><strong>第６　所定労働時間が通常の労働者と同一であり、かつ、事業主と期間の定めのない労働契約を締結している労働者等</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>追加・充実された待遇と根拠となった裁判例</h3>
+
+                        <div class="table-wrap">
+                            <table class="table-compare" style="min-width:720px;">
+                                <caption class="visually-hidden">表⑥：追加・充実された待遇と根拠となった裁判例</caption>
+                                <thead>
+                                    <tr>
+                                        <th>待遇</th>
+                                        <th>改正区分</th>
+                                        <th>ガイドライン上の位置</th>
+                                        <th>根拠とされた裁判例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>賞与</td>
+                                        <td>記載の充実（注を新設）</td>
+                                        <td>第３の２（注）</td>
+                                        <td><span class="nowrap">長澤運輸事件</span>最高裁判決</td>
+                                    </tr>
+                                    <tr>
+                                        <td>退職手当</td>
+                                        <td>新規追加</td>
+                                        <td>第３の３</td>
+                                        <td><span class="nowrap">メトロコマース事件</span>最高裁判決</td>
+                                    </tr>
+                                    <tr>
+                                        <td>無事故手当</td>
+                                        <td>新規追加</td>
+                                        <td>第３の４⑺</td>
+                                        <td><span class="nowrap">ハマキョウレックス事件</span>最高裁判決</td>
+                                    </tr>
+                                    <tr>
+                                        <td>家族手当</td>
+                                        <td>新規追加</td>
+                                        <td>第３の４⑼</td>
+                                        <td><span class="nowrap">日本郵便（大阪）事件</span>最高裁判決</td>
+                                    </tr>
+                                    <tr>
+                                        <td>住宅手当（転居を伴う配置の変更の有無に応じて支給されるもの）</td>
+                                        <td>新規追加</td>
+                                        <td>第３の４⑽</td>
+                                        <td><span class="nowrap">ハマキョウレックス事件</span>最高裁判決等</td>
+                                    </tr>
+                                    <tr>
+                                        <td>病気休職・病気休暇期間に係る給与の保障</td>
+                                        <td>記載の充実</td>
+                                        <td>第３の５⑷</td>
+                                        <td><span class="nowrap">日本郵便（東京）事件</span>最高裁判決</td>
+                                    </tr>
+                                    <tr>
+                                        <td>夏季冬季休暇</td>
+                                        <td>新規追加</td>
+                                        <td>第３の５⑸</td>
+                                        <td><span class="nowrap">日本郵便（佐賀）事件</span>最高裁判決</td>
+                                    </tr>
+                                    <tr>
+                                        <td>褒賞（一定の期間勤続した労働者に付与するもの）</td>
+                                        <td>新規追加</td>
+                                        <td>第３の５⑺</td>
+                                        <td>―</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>追加・充実された待遇ひと目でわかる一覧</h3>
+                        <div class="taiguu-grid">
+                            <div class="taiguu-card">
+                                <span class="taiguu-label enhanced">記載の充実</span>
+                                <div class="taiguu-name">賞与</div>
+                                <div class="taiguu-case">長澤運輸事件 最高裁判決</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label new">新規追加</span>
+                                <div class="taiguu-name">退職手当</div>
+                                <div class="taiguu-case">メトロコマース事件 最高裁判決</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label new">新規追加</span>
+                                <div class="taiguu-name">無事故手当</div>
+                                <div class="taiguu-case">ハマキョウレックス事件 最高裁判決</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label new">新規追加</span>
+                                <div class="taiguu-name">家族手当</div>
+                                <div class="taiguu-case">日本郵便（大阪）事件 最高裁判決</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label new">新規追加</span>
+                                <div class="taiguu-name">住宅手当</div>
+                                <div class="taiguu-case">ハマキョウレックス事件判決等</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label enhanced">記載の充実</span>
+                                <div class="taiguu-name">病気休職・休暇<br>給与保障</div>
+                                <div class="taiguu-case">日本郵便（東京）事件 最高裁判決</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label new">新規追加</span>
+                                <div class="taiguu-name">夏季冬季休暇</div>
+                                <div class="taiguu-case">日本郵便（佐賀）事件 最高裁判決</div>
+                            </div>
+                            <div class="taiguu-card">
+                                <span class="taiguu-label new">新規追加</span>
+                                <div class="taiguu-name">褒賞</div>
+                                <div class="taiguu-case">―</div>
+                            </div>
+                        </div>
+
+                        <h3>原則となる考え方（原文）</h3>
+
+                        <p><strong>賞与</strong></p>
+                        <blockquote class="quote-official">
+                            賞与については、当該待遇の性質及び当該待遇を行う目的として、労務の対価の後払い、功労報償、生活費の補助、労働者の労働意欲の向上等の様々な性質及び目的が含まれうるものであるが、通常の労働者と同様に短時間・有期雇用労働者にも当該待遇の性質及び当該待遇を行う目的が妥当するにもかかわらず、短時間・有期雇用労働者に対し、通常の労働者との間の職務の内容、当該職務の内容及び配置の変更の範囲その他の事情のうち、当該待遇の性質及び当該待遇を行う目的に照らして適切と認められるものの相違に応じた均衡のとれた内容の賞与を支給せず、かつ、その見合いとして、労使交渉を経て、当該待遇の性質及び当該待遇を行う目的が妥当しない他の短時間・有期雇用労働者に比べ基本給を高く支給している等の事情もない場合、当該賞与の相違は不合理と認められるものに当たりうることに留意すべきである。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の２（注）・新設</cite>
+                        </blockquote>
+
+                        <p><strong>退職手当</strong></p>
+                        <blockquote class="quote-official">
+                            退職手当については、当該待遇の性質及び当該待遇を行う目的として、労務の対価の後払い、功労報償等の様々な性質及び目的が含まれうるものであるが、通常の労働者と同様に短時間・有期雇用労働者にも当該待遇の性質及び当該待遇を行う目的が妥当するにもかかわらず、短時間・有期雇用労働者に対し、通常の労働者との間の職務の内容、当該職務の内容及び配置の変更の範囲その他の事情のうち、当該待遇の性質及び当該待遇を行う目的に照らして適切と認められるものの相違に応じた均衡のとれた内容の退職手当を支給せず、かつ、その見合いとして、労使交渉を経て、当該待遇の性質及び当該待遇を行う目的が妥当しない他の短時間・有期雇用労働者に比べ基本給を高く支給している等の事情もない場合、当該退職手当の相違は不合理と認められるものに当たりうることに留意すべきである。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の３・新設</cite>
+                        </blockquote>
+
+                        <h3>賞与・退職手当の記載の読み方</h3>
+                        <div class="callout-point">
+                            <p class="callout-title">実務ポイント</p>
+                            <p>賞与・退職手当は、他の手当のように「支給しなければならない」という形式ではなく、<strong>「不合理と認められるものに当たりうることに留意すべきである」</strong>という留意事項の形式で記載されています。この表現の違いを正確に押さえてください。</p>
+                        </div>
+
+                        <p><strong>無事故手当</strong></p>
+                        <blockquote class="quote-official">
+                            通常の労働者と業務の内容が同一の短時間・有期雇用労働者には、通常の労働者と同一の無事故手当を支給しなければならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の４⑺・新設</cite>
+                        </blockquote>
+
+                        <p><strong>家族手当</strong></p>
+                        <blockquote class="quote-official">
+                            労働契約の更新を繰り返している等、相応に継続的な勤務が見込まれる短時間・有期雇用労働者には、通常の労働者と同一の家族手当を支給しなければならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の４⑼・新設</cite>
+                        </blockquote>
+
+                        <p><strong>住宅手当</strong></p>
+                        <blockquote class="quote-official">
+                            住宅手当であって、転居を伴う配置の変更の有無に応じて支給されるものについて、通常の労働者と同一の転居を伴う配置の変更がある短時間・有期雇用労働者には、通常の労働者と同一の住宅手当を支給しなければならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の４⑽・新設</cite>
+                        </blockquote>
+
+                        <p><strong>病気休職・病気休暇期間に係る給与の保障</strong></p>
+                        <blockquote class="quote-official">
+                            さらに、通常の労働者に病気休職期間に係る給与の保障を行う場合には、労働契約の更新を繰り返している等、相応に継続的な勤務が見込まれる短時間・有期雇用労働者にも、通常の労働者と同一の給与の保障を行わなければならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の５⑷</cite>
+                        </blockquote>
+
+                        <p><strong>夏季冬季休暇</strong></p>
+                        <blockquote class="quote-official">
+                            短時間・有期雇用労働者にも、通常の労働者と同一の夏季冬季休暇を付与しなければならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の５⑸・新設</cite>
+                        </blockquote>
+
+                        <h3>福利厚生施設</h3>
+                        <blockquote class="quote-official">
+                            また、福利厚生施設の利用料金・割引率等の利用条件についても短時間・有期雇用労働法第８条の適用を受けるものであり、通常の労働者と短時間・有期雇用労働者の職務の内容、当該職務の内容及び配置の変更の範囲その他の事情のうち、当該待遇の性質及び当該待遇を行う目的に照らして適切と認められるものを考慮して、不合理と認められる相違を設けてはならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の５⑴</cite>
+                        </blockquote>
+
+                        <h3>配偶者手当についての注記</h3>
+                        <blockquote class="quote-official">
+                            配偶者の収入要件があるいわゆる「配偶者手当」については、特に女性の短時間労働者の就業調整の要因となっていると指摘されていることから、各事業主において、労使の話合いによって、働き方に中立的な制度となるよう見直しを進めることが望まれる。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３の４⑼（注）</cite>
+                        </blockquote>
+
+                        <!-- ===== SECTION 6: HANDAN ===== -->
+                        <h2 id="handan">待遇差の判断で押さえるべき5つのポイント</h2>
+
+                        <div class="callout-point">
+                            <p class="callout-title">本章のポイント</p>
+                            <p>待遇差の点検と説明義務は別個の課題ではありません。<strong>説明の十分性が待遇差の評価そのものに影響する</strong>構造になっていることを押さえてください。</p>
+                        </div>
+
+                        <div class="point-header">
+                            <div class="point-circle">①</div>
+                            <div class="point-text">説明が不十分であること自体が「その他の事情」になります</div>
+                        </div>
+                        <p>
+                            短時間・有期雇用労働法第８条における「その他の事情」の具体例について、従来は行政通達で示されていた内容が、今回の改正でガイドライン本体に記載されました。
+                        </p>
+                        <blockquote class="quote-official">
+                            短時間・有期雇用労働法第８条におけるその他の事情については、職務の内容、当該職務の内容及び配置の変更の範囲に関連する事情に限定されるものではない。職務の成果、能力、経験、合理的な労使の慣行、事業主と労働組合や過半数代表者等との間の交渉といった労使交渉の経緯や結果等の諸事情がその他の事情として想定されるものであり、考慮すべきその他の事情があるときに考慮すべきものである。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３（注）１・新設</cite>
+                        </blockquote>
+                        <blockquote class="quote-official">
+                            また、事業主が短時間・有期雇用労働法第14条第２項の規定に基づき通常の労働者と短時間・有期雇用労働者との間の待遇の相違の内容及び理由について十分な説明を行わなかったと認められる場合や、事業主が待遇の体系に係る議論において短時間・有期雇用労働者の意向を十分に考慮せず一方的に短時間・有期雇用労働者の待遇を決定した場合には、当該事実も短時間・有期雇用労働法第８条におけるその他の事情に含まれ、通常の労働者と短時間・有期雇用労働者との間の待遇の相違が不合理と認められることを基礎付ける事情として考慮されうる。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３（注）１・新設</cite>
+                        </blockquote>
+
+                        <div class="point-header">
+                            <div class="point-circle">②</div>
+                            <div class="point-text">いわゆる「正社員人材確保論」</div>
+                        </div>
+                        <blockquote class="quote-official">
+                            通常の労働者と短時間・有期雇用労働者との間に基本給、賞与、各種手当等の待遇に相違がある場合において、その要因として当該待遇を行う目的に「通常の労働者としての職務を遂行しうる人材の確保及びその定着を図る」等の目的があったとしても、当該待遇の相違が不合理と認められるか否かは、通常の労働者と短時間・有期雇用労働者の職務の内容、当該職務の内容及び配置の変更の範囲その他の事情のうち、当該待遇の他の性質及び当該待遇を行う他の目的にも照らして適切と認められるものの客観的及び具体的な実態に照らして判断されるものであり、「通常の労働者としての職務を遂行しうる人材の確保及びその定着を図る」等の目的があることのみをもって直ちに当該待遇の相違が不合理ではないと当然に認められるものではない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３（注）３・新設</cite>
+                        </blockquote>
+
+                        <div class="point-header">
+                            <div class="point-circle">③</div>
+                            <div class="point-text">定年後に継続雇用された有期雇用労働者</div>
+                        </div>
+                        <blockquote class="quote-official">
+                            したがって、当該有期雇用労働者が定年に達した後に継続雇用された者であることのみをもって、直ちに通常の労働者と当該有期雇用労働者との間の待遇の相違が不合理ではないと認められるものではない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第３（注）２</cite>
+                        </blockquote>
+
+                        <div class="point-header">
+                            <div class="point-circle">④</div>
+                            <div class="point-text">待遇差の解消方法 ― 正社員の引下げによる解消</div>
+                        </div>
+                        <blockquote class="quote-official">
+                            短時間・有期雇用労働法及び労働者派遣法に基づく通常の労働者と短時間・有期雇用労働者及び派遣労働者との間の不合理と認められる待遇の相違の解消等の目的は、短時間・有期雇用労働者及び派遣労働者の待遇の改善であり、その目的に鑑みれば、当該待遇の相違の解消等に当たっては、通常の労働者の労働条件を不利益に変更することなく、短時間・有期雇用労働者及び派遣労働者の労働条件の改善を図ることが求められる。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第２⑶</cite>
+                        </blockquote>
+                        <blockquote class="quote-official">
+                            その上で、事業主が、通常の労働者と短時間・有期雇用労働者及び派遣労働者との間の不合理と認められる待遇の相違の解消等に対応するため、やむを得ず、就業規則を変更することにより、その雇用する労働者の労働条件を不利益に変更する場合、労働契約法（平成19年法律第128号）第９条の規定に基づき、原則として、労働者と合意する必要がある。また、労働者と合意することなく、就業規則の変更により労働条件を労働者の不利益に変更する場合、当該変更は、同法第10条の規定に基づき、当該変更に係る事情に照らして合理的なものである必要がある。ただし、基本的に、こうした対応は、望ましい対応とはいえないことに留意すべきである。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第２⑶</cite>
+                        </blockquote>
+
+                        <div class="point-header">
+                            <div class="point-circle">⑤</div>
+                            <div class="point-text">待遇の決定基準・ルールの相違</div>
+                        </div>
+                        <p>
+                            改正前は「基本給」の注に置かれていた内容が、<strong>賃金に限らず待遇全般に関する内容</strong>として「第２ 基本的な考え方」へ移設されました。
+                        </p>
+                        <blockquote class="quote-official">
+                            通常の労働者と短時間・有期雇用労働者との間に基本給、賞与、各種手当等の賃金その他の待遇に相違がある場合において、その要因として通常の労働者と短時間・有期雇用労働者の待遇の決定基準・ルールの相違があるときであっても、当該待遇の相違は短時間・有期雇用労働法第８条の適用を受けるものであるが、その相違については、「通常の労働者と短時間・有期雇用労働者との間で将来の役割期待が異なるため、待遇の決定基準・ルールが異なる」等の主観的又は抽象的な説明では足りず、待遇の決定基準・ルールの相違は、短時間・有期雇用労働法第８条の規定に基づき、客観的及び具体的な実態に照らして、不合理と認められるものであってはならない。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第２⑵</cite>
+                        </blockquote>
+
+                        <!-- ===== SECTION 7: DAI6 ===== -->
+                        <h2 id="dai6">無期雇用フルタイム労働者・多様な正社員への波及</h2>
+
+                        <p>
+                            ガイドラインに<strong>第６</strong>が新設されました。無期雇用フルタイム労働者は、短時間・有期雇用労働法第２条第３項に規定する短時間・有期雇用労働者には該当しないため、同法第８条は直接適用されません。しかし、次の留意事項が示されています。
+                        </p>
+                        <ul>
+                            <li>労働契約法第３条第２項により、労働契約は、労働者及び使用者が、就業の実態に応じて、均衡を考慮しつつ締結し、又は変更すべきものとされていること</li>
+                            <li>均衡の考慮に当たっては、この指針の趣旨が考慮されるべきであること</li>
+                        </ul>
+
+                        <p>無期転換後の労働条件の決定については、以下が求められています。</p>
+
+                        <blockquote class="quote-official">
+                            有期労働契約の期間の定めのない労働契約への転換後の労働条件の決定に当たっては、当該転換に係る有期雇用労働者と通常の労働者との間の不合理と認められる待遇の相違の有無についてあらかじめ点検し、そのような待遇の相違がある場合には、確実に解消することが求められること。
+                            <cite class="quote-source">出典④：同一労働同一賃金ガイドライン 新旧対照表（解説付き）第６・新設</cite>
+                        </blockquote>
+
+                        <p>
+                            対象は、勤務地限定正社員・職務限定正社員・短時間正社員（いわゆる「多様な正社員」）についても同様です。
+                        </p>
+
+                        <div class="flow-diagram">
+                            <div class="flow-box fb1">有期労働契約<br>（継続更新）</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box fb2">無期転換<br>申込み</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box fb3">転換直前：<br>待遇差点検！</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box fb4">待遇差の<br>解消</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box fb5">無期雇用<br>へ転換</div>
+                        </div>
+                        <div class="callout-point">
+                            <p class="callout-title">実務ポイント：無期転換と待遇差点検のタイミング</p>
+                            <p>無期転換ルールへの対応と本改正が接続します。<strong>無期転換の直前が待遇差点検のタイミング</strong>になります。転換直前に待遇差の有無を点検・解消する手順を、無期転換の運用フローに組み込んでください。</p>
+                        </div>
+
+                        <!-- ===== SECTION 8: CHECKLIST ===== -->
+                        <h2 id="checklist"><span class="nowrap">令和８年10月１日</span>までの実務点検チェックリスト</h2>
+
+                        <p class="checklist-group">A. 様式・規程（施行日までに完了）</p>
+                        <ul class="checklist">
+                            <li>労働条件通知書・雇用契約書に「説明を求めることができる旨」と窓口（部署名・担当者職氏名・連絡先）を追加する</li>
+                            <li>就業規則・パートタイマー規程の説明手続に関する規定を見直す</li>
+                            <li>労務管理システムの帳票テンプレート・マスタの改版時期をベンダに確認する</li>
+                        </ul>
+
+                        <p class="checklist-group">B. 待遇の棚卸し（ガイドライン追加項目を軸に）</p>
+                        <ul class="checklist">
+                            <li>賞与・退職手当について、何に対して支給しているのか目的を言語化する</li>
+                            <li>無事故手当・家族手当・住宅手当・褒賞の支給要件を確認する</li>
+                            <li>病気休職・病気休暇期間に係る給与保障の適用範囲を確認する</li>
+                            <li>夏季冬季休暇の付与対象を確認する</li>
+                            <li>福利厚生施設の利用料金・割引率等の利用条件に差がないか確認する</li>
+                            <li>配偶者の収入要件がある「配偶者手当」の設計を確認する</li>
+                        </ul>
+
+                        <p class="checklist-group">C. 説明できる状態をつくる</p>
+                        <ul class="checklist">
+                            <li>雇用管理区分ごとに、待遇差の内容と理由を記載した説明資料を作成する</li>
+                            <li>説明担当者を決め、いつ・誰に・どの資料で説明したかを記録する運用を整える</li>
+                            <li>労働契約の更新時に資料を交付する、又は説明を求めることができる旨を周知する運用を組み込む</li>
+                        </ul>
+
+                        <p class="checklist-group">D. プロセスを残す</p>
+                        <ul class="checklist">
+                            <li>パートタイム・有期雇用労働者からの意見聴取（話合い又はアンケート）を実施し、記録する</li>
+                            <li>パ有過半数代表者の選出手続を要件に沿って整える</li>
+                            <li>正社員転換制度の内容と転換実績の明示方法・公表方法を検討する</li>
+                        </ul>
+
+                        <h3>システム・DXの観点</h3>
+                        <ul>
+                            <li>待遇差の説明資料は「雇用管理区分 × 待遇項目」のマトリクスで管理すると、抜け漏れが可視化</li>
+                            <li>説明記録は、資料の版（バージョン）とあわせて保存</li>
+                            <li>帳票改版は労務管理システムのマスタ設定・出力帳票の両方の確認</li>
+                        </ul>
+
+                        <!-- ===== SECTION 10: CLOSING ===== -->
+                        <h2 id="closing">おわりに</h2>
+
+                        <p>
+                            今回の改正の実務上の要点は、<strong>待遇差の内容と理由を説明できる状態を整えること</strong>にあります。説明義務の履行と待遇差の合理性は、本改正によりガイドライン上で明示的に連動する構造となりました。
+                        </p>
+                        <p>
+                            具体的な解釈等は、<span class="nowrap">令和８年10月１日</span>の施行・適用前に通達等で示される予定です。通達の内容によっては追加の対応が必要となる可能性があります。
+                        </p>
+                        <p>
+                            同一労働同一賃金部会報告では、今後、施行状況等を把握した上で、法規定の在り方も含め検討を加えることが適当とされています。通達が公表された際には、本記事を改めて更新いたします。
+                        </p>
+                        <p class="article-note">
+                            本記事は令和8年（2026年）7月30日時点で公表されている資料に基づいています。
+                        </p>
+
+                        <!-- ===== SECTION 11: SOURCES ===== -->
+                        <h2 id="sources">根拠資料一覧</h2>
+
+                        <ol class="source-list">
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001695919.pdf" target="_blank" rel="noopener">改正省令及び告示の周知に係るＱ＆Ａ（同一労働同一賃金施行５年後見直し パートタイム・有期雇用労働法関係）</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/content/001695919.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001695919.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001698010.pdf" target="_blank" rel="noopener">リーフレット「パートタイム・有期雇用労働者に関するルールが変わります」（令和８年４月作成 リーフレットNo.11）</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/content/001698010.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001698010.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001695902.pdf" target="_blank" rel="noopener">令和８年改正の概要</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/content/001695902.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001695902.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001695906.pdf" target="_blank" rel="noopener">同一労働同一賃金ガイドライン 新旧対照表（解説付き）</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/content/001695906.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001695906.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://elaws.e-gov.go.jp/" target="_blank" rel="noopener">短時間労働者及び有期雇用労働者の雇用管理の改善等に関する法律（平成５年法律第76号）</a>（e-Gov法令検索）／
+                                <a href="https://elaws.e-gov.go.jp/" target="_blank" rel="noopener"><span class="source-url">https://elaws.e-gov.go.jp/</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000144972.html" target="_blank" rel="noopener">同一労働同一賃金特集ページ</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000144972.html" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000144972.html</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001695908.pdf" target="_blank" rel="noopener">労働者派遣事業の適正な運営の確保及び派遣労働者の保護等に関する法律施行規則及び短時間労働者及び有期雇用労働者の雇用管理の改善等に関する法律施行規則の一部を改正する省令（<span class="nowrap">令和８年厚生労働省令第87号</span>）</a>（<span class="nowrap">令和８年４月28日</span>公布）／
+                                <a href="https://www.mhlw.go.jp/content/001695908.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001695908.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001695909.pdf" target="_blank" rel="noopener">事業主が講ずべき短時間労働者及び有期雇用労働者の雇用管理の改善等に関する措置等についての指針の一部を改正する件（<span class="nowrap">令和８年厚生労働省告示第202号</span>）</a>（<span class="nowrap">令和８年４月28日</span>公布）／
+                                <a href="https://www.mhlw.go.jp/content/001695909.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001695909.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001695910.pdf" target="_blank" rel="noopener">短時間・有期雇用労働者及び派遣労働者に対する不合理な待遇の禁止等に関する指針の一部を改正する件（<span class="nowrap">令和８年厚生労働省告示第203号</span>）</a>（<span class="nowrap">令和８年４月28日</span>公布）／
+                                <a href="https://www.mhlw.go.jp/content/001695910.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001695910.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001696983.pdf" target="_blank" rel="noopener">改正省令等の公布等について（<span class="nowrap">令和８年４月28日</span> <span class="nowrap">職発0428第９号</span>・<span class="nowrap">雇均発0428第１号</span>）</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/content/001696983.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001696983.pdf</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.mhlw.go.jp/content/001696984.pdf" target="_blank" rel="noopener">モデル労働条件通知書</a>（厚生労働省）／
+                                <a href="https://www.mhlw.go.jp/content/001696984.pdf" target="_blank" rel="noopener"><span class="source-url">https://www.mhlw.go.jp/content/001696984.pdf</span></a>
+                            </li>
+                        </ol>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="career-up-josekin-r8.html">
+                            <div class="nav-label">← 前の記事</div>
+                            令和8年度 キャリアアップ助成金｜情報公表加算の新設と賃金比較の見直し
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC表示） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#overview">令和8年10月改正の全体像</a></li>
+                            <li><a href="#meiji">【改正①】雇い入れ時の労働条件明示事項が追加されます</a></li>
+                            <li><a href="#setsumei-kouzou">整理：説明義務はどう構成されているか</a></li>
+                            <li><a href="#shishin">【改正②】説明の「方法」が具体化されました</a></li>
+                            <li><a href="#guideline">【改正③】同一労働同一賃金ガイドラインの改正</a></li>
+                            <li><a href="#handan">待遇差の判断で押さえるべき5つのポイント</a></li>
+                            <li><a href="#dai6">無期雇用フルタイム労働者・多様な正社員への波及</a></li>
+                            <li><a href="#checklist">令和8年10月1日までの実務点検チェックリスト</a></li>
+                            <li><a href="#soudan">相談窓口</a></li>
+                            <li><a href="#closing">おわりに</a></li>
+                            <li><a href="#sources">根拠資料一覧</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="shakaihoken-2026.html">【2026年10月】社会保険の「106万円の壁」が撤廃へ｜中小企業が今すぐ準備すべきこと</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">就業規則</div>
+                            <a href="shugyo-kisoku-guide.html">就業規則はいつ作る？10人未満でも整備すべき理由と作成の流れ</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration & Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルでは目次をサイドバーから本文先頭に移動
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>
