@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+
+    <meta name="description" content="令和8年10月1日から千葉県最低賃金は1,195円（55円引上げ）に改定されます。全国の答申状況、対象となる賃金の範囲、月給者の時間額換算、罰則、10月1日までに確認すべき実務ポイントを社会保険労務士が解説します。">
+    <meta name="keywords" content="最低賃金,千葉県,1195円,令和8年度,2026年度,社会保険労務士,千葉,賃金,給与計算">
+    <title>令和8年度 千葉県最低賃金1,195円へ｜10月1日までの実務チェック7項目｜今井久一郎社会保険労務士事務所</title>
+
+    <!-- OGP -->
+    <meta property="og:title" content="令和8年度 千葉県最低賃金1,195円へ｜10月1日までの実務チェック7項目">
+    <meta property="og:description" content="令和8年10月1日から千葉県最低賃金は1,195円（55円引上げ）に改定されます。全国の答申状況、対象となる賃金の範囲、月給者の時間額換算、罰則、10月1日までに確認すべき実務ポイントを社会保険労務士が解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://imai504826.github.io/csilc-imai-official/blog/saitei-chingin-2026.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "令和8年度の最低賃金について事業主が確認すべきポイント",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "author": {
+        "@type": "Person",
+        "name": "今井久一郎",
+        "jobTitle": "社会保険労務士"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "今井久一郎社会保険労務士事務所"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        /* --- ヘッダー下の3色ライン --- */
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* --- パンくずリスト --- */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* --- 記事ヘッダー --- */
+        .article-header {
+            padding: 40px 0 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .cat-badge {
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 50px;
+            color: var(--white);
+            background: var(--primary-blue);
+        }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+
+        .article-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            line-height: 1.45;
+            margin: 0 0 20px;
+        }
+        .article-lead {
+            font-size: 1rem;
+            color: var(--text-gray);
+            background: var(--bg-soft);
+            border-left: 4px solid var(--accent-orange);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .article-lead p { margin: 0 0 12px; }
+        .article-lead p:last-child { margin-bottom: 0; }
+
+        /* --- レイアウト（2カラム） --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            padding: 40px 0 80px;
+            align-items: start;
+        }
+
+        /* --- 目次 --- */
+        .toc {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border-top: 4px solid var(--primary-blue);
+            position: sticky;
+            top: 90px;
+        }
+        .toc-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc ol {
+            list-style: decimal;
+            padding-left: 18px;
+            margin: 0;
+        }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* --- 記事本文 --- */
+        .article-body h2 {
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            border-bottom: 1px solid #dce8ff;
+            padding: 10px 16px;
+            margin: 48px 0 20px;
+            background: linear-gradient(90deg, #eef4ff, transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+        .article-body p {
+            font-size: 0.97rem;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .article-body ul, .article-body ol {
+            list-style: revert;
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* 注意・補足ボックス */
+        .box-note {
+            background: #fff8e8;
+            border: 1px solid #ffe0a0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+
+        .box-caution {
+            background: #fff0f0;
+            border: 1px solid #ffb3b3;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+
+        /* 当事務所の見解ボックス */
+        .box-opinion {
+            background: #f5f5f5;
+            border-left: 4px solid #999;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 18px;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        /* 計算式ボックス */
+        .formula-box {
+            background: #eef4ff;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 16px 0;
+            color: var(--primary-blue);
+        }
+
+        /* テーブルラップ（横スクロール対応） */
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+        }
+
+        /* テーブル */
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            font-size: 0.92rem;
+            min-width: 300px;
+        }
+        .article-body th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 14px;
+            text-align: left;
+        }
+        .article-body td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+        }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* チェックリスト */
+        .checklist {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin: 0 0 18px !important;
+        }
+        .checklist li {
+            padding: 9px 8px 9px 36px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 8px;
+            top: 9px;
+            color: var(--primary-blue);
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* ============================
+           ビジュアル要素
+        ============================ */
+
+        /* 改定前後 比較カード */
+        .wage-compare {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 28px 0;
+            flex-wrap: nowrap;
+        }
+        .wage-card {
+            flex: 1;
+            min-width: 0;
+            max-width: 220px;
+            border-radius: 14px;
+            padding: 18px 12px;
+            text-align: center;
+        }
+        .wage-before {
+            background: #f0f0f0;
+            border: 2px solid #bbb;
+        }
+        .wage-after {
+            background: linear-gradient(135deg, #eef4ff, #dce8ff);
+            border: 2px solid var(--primary-blue);
+        }
+        .wc-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .wage-after .wc-label { color: var(--primary-blue); font-weight: bold; }
+        .wc-amount {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #888;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .wc-amount span { font-size: 1.1rem; }
+        .wage-after .wc-amount { color: var(--primary-blue); }
+        .wc-sub {
+            font-size: 0.78rem;
+            margin-top: 6px;
+            color: var(--text-gray);
+        }
+        .wage-after .wc-sub { color: var(--primary-blue); font-weight: bold; }
+        .wc-arrow-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .wc-arrow {
+            font-size: 2rem;
+            color: var(--accent-orange);
+        }
+        .wc-up-badge {
+            background: var(--accent-orange);
+            color: var(--white);
+            font-size: 0.82rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        /* 統計カード */
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .stat-card {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 16px 10px;
+            text-align: center;
+            border-top: 3px solid #ccc;
+        }
+        .stat-card.primary { border-top-color: var(--primary-blue); background: #eef4ff; }
+        .sc-label {
+            font-size: 0.72rem;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+        .sc-highlight {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+        .stat-card.primary .sc-highlight { color: var(--primary-blue); }
+        .sc-sub {
+            font-size: 0.72rem;
+            color: #e07b00;
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        /* フローチャート（決定プロセス） */
+        .flow-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .flow-step {
+            background: var(--bg-soft);
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            padding: 16px 14px;
+            text-align: center;
+            min-width: 120px;
+            max-width: 200px;
+            flex: 1;
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .flow-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .flow-body {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        .flow-connector {
+            font-size: 1.6rem;
+            color: var(--accent-orange);
+            padding: 0 4px;
+            flex-shrink: 0;
+            align-self: center;
+        }
+        .flow-note {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+
+        /* 対象者グリッド */
+        .worker-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .worker-item {
+            background: linear-gradient(135deg, #eef4ff, #dce8ff);
+            border: 1px solid #b0c8ef;
+            border-radius: 10px;
+            padding: 14px 8px;
+            text-align: center;
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            line-height: 1.5;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .worker-icon { font-size: 1.6rem; display: block; margin-bottom: 4px; }
+        .worker-note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.87rem;
+            margin-top: 10px;
+            color: #664d03;
+        }
+
+        /* 賃金の対象・対象外 2カラム */
+        .wage-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .wage-col {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        .wage-col-header {
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: var(--white);
+            text-align: center;
+        }
+        .wage-included .wage-col-header { background: #2ecc71; }
+        .wage-excluded .wage-col-header { background: #e74c3c; }
+        .wage-col-body {
+            padding: 12px 14px;
+            background: var(--white);
+        }
+        .wage-col-body ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .wage-col-body li {
+            font-size: 0.85rem;
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+            line-height: 1.5;
+        }
+        .wage-col-body li:last-child { border-bottom: none; }
+        .wage-included .wage-col-body li::before { content: "✔ "; color: #2ecc71; font-weight: bold; }
+        .wage-excluded .wage-col-body li::before { content: "✖ "; color: #e74c3c; font-weight: bold; }
+
+        /* 深夜割増ビジュアル */
+        .night-visual {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 16px 0;
+        }
+        .night-visual .nv-title {
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+        .nv-row {
+            display: flex;
+            align-items: stretch;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .nv-included {
+            background: #2ecc71;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.78rem;
+            font-weight: bold;
+            flex: 3;
+            padding: 0 8px;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .nv-excluded {
+            background: #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.78rem;
+            font-weight: bold;
+            flex: 1;
+            padding: 0 8px;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .nv-legend {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .nv-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+        }
+        .nv-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* 支払日誤解 ビジュアル */
+        .timeline-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .tc-card {
+            border-radius: 12px;
+            padding: 18px 16px;
+            text-align: center;
+        }
+        .tc-wrong {
+            background: #fff0f0;
+            border: 2px solid #e74c3c;
+        }
+        .tc-right {
+            background: #f0fff4;
+            border: 2px solid #2ecc71;
+        }
+        .tc-label {
+            font-size: 0.82rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tc-wrong .tc-label { color: #c0392b; }
+        .tc-right .tc-label { color: #27ae60; }
+        .tc-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .tc-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+        .tc-wrong .tc-badge { background: #e74c3c; }
+        .tc-right .tc-badge { background: #2ecc71; }
+
+        /* 罰則カード */
+        .penalty-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .penalty-card {
+            background: #fff5f5;
+            border: 2px solid #e74c3c;
+            border-radius: 12px;
+            padding: 18px 16px;
+            text-align: center;
+        }
+        .pc-type {
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .penalty-amount {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #c0392b;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .pc-law {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* 賃金逆転 横棒グラフ */
+        .reversal-wrap {
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 20px 20px 16px;
+            margin: 20px 0;
+        }
+        .reversal-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .reversal-title small {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+        .rhb-section {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+        }
+        .rhb-section-label {
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .rhb-section-label.before { background: #e8e8e8; color: #555; }
+        .rhb-section-label.after  { background: #fde8e8; color: #c0392b; }
+        .rhb-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .rhb-person {
+            font-size: 0.82rem;
+            font-weight: bold;
+            width: 58px;
+            flex-shrink: 0;
+            text-align: right;
+            color: var(--text-dark);
+        }
+        .rhb-track {
+            flex: 1;
+            background: #ececec;
+            border-radius: 6px;
+            height: 32px;
+            overflow: hidden;
+        }
+        .rhb-bar {
+            height: 100%;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            transition: width 0.3s;
+        }
+        .rhb-amount {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--white);
+            white-space: nowrap;
+        }
+        .rhb-blue  { background: #3498db; }
+        .rhb-green { background: #2ecc71; }
+        .rhb-red   { background: #e74c3c; }
+        .rhb-note {
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: right;
+            padding-top: 6px;
+            border-top: 1px dashed #eee;
+            margin-top: 4px;
+        }
+        .rhb-note.ok    { color: #27ae60; }
+        .rhb-note.alert { color: #c0392b; }
+        .rhb-divider {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            background: #eef4ff;
+            border-radius: 50px;
+            padding: 5px 14px;
+            margin: 6px auto;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* 図のキャプション */
+        .fig-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-gray);
+            margin: 6px 0 20px;
+        }
+
+        /* --- 著者ボックス --- */
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 48px;
+            border-top: 4px solid var(--primary-blue);
+        }
+        .author-logo {
+            width: 80px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* --- 記事間ナビゲーション --- */
+        .article-nav {
+            display: flex;
+            justify-content: flex-start;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .article-nav a {
+            flex: 1;
+            display: block;
+            padding: 14px 18px;
+            background: var(--bg-soft);
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            margin-top: 16px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* --- 関連記事 (サイドバー内) --- */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* --- 記事内CTA --- */
+        .inline-cta {
+            background: linear-gradient(135deg, var(--primary-blue), #0d3270);
+            color: var(--white);
+            border-radius: 14px;
+            padding: 28px 28px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* --- フッターCTA --- */
+        .cta-section {
+            background: var(--primary-blue);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* --- フッター --- */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* --- レスポンシブ --- */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .stat-cards { grid-template-columns: repeat(2, 1fr); }
+            .worker-grid { grid-template-columns: repeat(2, 1fr); }
+            .wage-split { grid-template-columns: 1fr; }
+            .timeline-compare { grid-template-columns: 1fr; }
+            .penalty-grid { grid-template-columns: 1fr; }
+            .flow-wrap { flex-direction: column; align-items: center; }
+            .flow-connector { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ4.png" alt="今井久一郎社会保険労務士事務所">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            令和8年度 千葉県最低賃金1,195円へ
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <!-- 記事ヘッダー -->
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge" style="background: var(--accent-sky);">労務管理・DX</span>
+                    <span class="article-date">2026年9月8日</span>
+                    <span class="read-time">📖 約7分</span>
+                </div>
+                <h1 class="article-title">令和8年度の最低賃金について事業主が確認すべきポイント</h1>
+                <div class="article-lead">
+                    <p>令和8年9月1日、千葉労働局長は、千葉県最低賃金を55円引き上げ、時間額1,195円に改正することを決定し、官報公示しました。効力発生日は令和8年10月1日です。</p>
+                    <p>この記事では、令和8年度の最低賃金改定について、全国の状況と千葉県の内容を整理したうえで、事業主の皆さまが10月1日までに確認しておきたい実務ポイントを、社会保険労務士の立場から解説します。</p>
+                </div>
+            </div>
+
+            <!-- 2カラムレイアウト -->
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <!-- 目次（モバイルでは本文の先頭に表示） -->
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">千葉県の最低賃金は「1,195円」に決定しました</a></li>
+                            <li><a href="#section2">全国の状況 ― 加重平均は1,177円（答申額ベース）</a>
+                                <ol>
+                                    <li><a href="#section2-1">ここが重要：全国の数字は「答申額」です</a></li>
+                                    <li><a href="#section2-2">発効日は全国一斉ではありません</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">「目安」と「実際の最低賃金」は違います</a></li>
+                            <li><a href="#section4">対象となるのは、パート・アルバイトだけではありません</a>
+                                <ol>
+                                    <li><a href="#section4-1">減額の特例許可制度があります</a></li>
+                                    <li><a href="#section4-2">特定（産業別）最低賃金にもご注意ください</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section5">最低賃金の対象となる賃金・ならない賃金</a></li>
+                            <li><a href="#section6">10月1日までに確認しておきたい7つのポイント</a></li>
+                            <li><a href="#section7">「10月分の給与は11月払いだから」は誤りです</a></li>
+                            <li><a href="#section8">最低賃金を下回っていた場合はどうなるのか</a></li>
+                            <li><a href="#section9">【当事務所の見解】「55円上げれば終わり」ではありません</a></li>
+                            <li><a href="#section10">賃上げに取り組む企業への支援策</a></li>
+                            <li><a href="#section11">まとめ</a></li>
+                            <li><a href="#section12">出典（一次資料）</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 記事本文 -->
+                    <article class="article-body">
+
+                        <h2 id="section1">1．千葉県の最低賃金は「1,195円」に決定しました</h2>
+                        <p>千葉県の地域別最低賃金は、次のとおり改定されます。</p>
+
+                        <!-- ビジュアル：改定前後比較 -->
+                        <div class="wage-compare">
+                            <div class="wage-card wage-before">
+                                <div class="wc-label">現行<br>（令和7年10月3日～）</div>
+                                <div class="wc-amount">1,140<span>円</span></div>
+                                <div class="wc-sub">昨年度比 +50円</div>
+                            </div>
+                            <div class="wc-arrow-wrap">
+                                <div class="wc-arrow">→</div>
+                                <div class="wc-up-badge">＋55円 UP</div>
+                            </div>
+                            <div class="wage-card wage-after">
+                                <div class="wc-label">改定後<br>（令和8年10月1日～）</div>
+                                <div class="wc-amount">1,195<span>円</span></div>
+                                <div class="wc-sub">引上げ率 約4.8%</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図1：千葉県最低賃金の改定前後比較</p>
+
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>区分</th>
+                                        <th>時間額</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>現行（令和7年10月3日発効）</td>
+                                        <td>1,140円</td>
+                                    </tr>
+                                    <tr>
+                                        <td>改定後（令和8年10月1日発効）</td>
+                                        <td><strong>1,195円</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>引上げ額</td>
+                                        <td><strong>55円</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>引上げ率は約4.8％です（55円÷1,140円、当事務所計算）。</p>
+                        <p>千葉労働局は「千葉労働局長（局長：小山英夫）は、千葉県最低賃金を55 円引き上げ、時間額1,195 円に改正することを決定し、本日官報公示しました。」と公表しています（令和8年9月1日）。</p>
+                        <p>千葉県内の事業場で働くすべての労働者について、<strong>令和8年10月1日以降は、時間額1,195円を下回る賃金を支払うことができません。</strong></p>
+
+                        <h2 id="section2">2．全国の状況 ― 加重平均は1,177円（答申額ベース）</h2>
+                        <p>厚生労働省は令和8年9月3日、すべての都道府県で地域別最低賃金の改定額が答申されたことを公表しました。</p>
+
+                        <!-- ビジュアル：全国の数字 -->
+                        <div class="stat-cards">
+                            <div class="stat-card">
+                                <div class="sc-label">全国加重平均</div>
+                                <div class="sc-highlight">1,177円</div>
+                                <div class="sc-sub">昨年比+56円</div>
+                            </div>
+                            <div class="stat-card primary">
+                                <div class="sc-label">千葉県（決定済）</div>
+                                <div class="sc-highlight">1,195円</div>
+                                <div class="sc-sub">昨年比+55円</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="sc-label">全国最高額</div>
+                                <div class="sc-highlight">1,280円</div>
+                                <div class="sc-sub">昨年比+65円</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="sc-label">全国最低額</div>
+                                <div class="sc-highlight">1,085円</div>
+                                <div class="sc-sub">昨年比+54円</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図2：令和8年度 地域別最低賃金の全国状況（答申額ベース）</p>
+
+                        <p>答申された改定額のポイントは次のとおりです。</p>
+                        <ul>
+                            <li>47都道府県で、54円～65円の引上げ</li>
+                            <li>改定額の全国加重平均額は<strong>1,177円</strong>（昨年度1,121円）</li>
+                            <li>全国加重平均額<strong>56円</strong>の引上げは、昭和53年度に目安制度が始まって以降で<strong>2番目の高さ</strong></li>
+                            <li>最高額（1,280円）に対する最低額（1,085円）の比率は84.8％（昨年度は83.4％。この比率は12年連続の改善）</li>
+                        </ul>
+
+                        <h3 id="section2-1">ここが重要：全国の数字は「答申額」です</h3>
+                        <div class="box-note">
+                            <p>厚生労働省は、答申された改定額について「都道府県労働局での関係労使からの異議申出に関する手続を経た上で、都道府県労働局長の決定により、令和8年10月1日から令和8年12月2日までの間に順次発効される予定」としています。</p>
+                            <p>つまり、</p>
+                            <ul>
+                                <li><strong>千葉県</strong>：すでに決定・官報公示済み（10月1日発効）</li>
+                                <li><strong>全国の1,177円</strong>：答申額ベースの数値</li>
+                            </ul>
+                            <p style="margin-bottom:0;">という違いがあります。</p>
+                        </div>
+
+                        <h3 id="section2-2">発効日は全国一斉ではありません</h3>
+                        <p><strong>発効日は令和8年10月1日から12月2日までの間で都道府県ごとに異なります。</strong></p>
+                        <p>複数の都道府県に事業場をお持ちの会社では、「10月1日に全社一斉」ではなく、<strong>事業場ごとに、その所在する都道府県の最低賃金額と発効日</strong>を確認する必要があります。</p>
+
+                        <h2 id="section3">3．「目安」と「実際の最低賃金」は違います</h2>
+                        <p>最低賃金の改定は、国が全国一律の金額を決める仕組みではありません。次の3ステップで決まります。</p>
+
+                        <!-- ビジュアル：決定プロセス フローチャート -->
+                        <div class="flow-wrap">
+                            <div class="flow-step">
+                                <div class="flow-num">①</div>
+                                <div class="flow-body"><strong>中央最低賃金審議会</strong><br>引上げ額の「目安」を提示</div>
+                            </div>
+                            <div class="flow-connector">→</div>
+                            <div class="flow-step">
+                                <div class="flow-num">②</div>
+                                <div class="flow-body"><strong>各都道府県<br>地方最低賃金審議会</strong><br>地域の実情を踏まえ審議・答申</div>
+                            </div>
+                            <div class="flow-connector">→</div>
+                            <div class="flow-step">
+                                <div class="flow-num">③</div>
+                                <div class="flow-body"><strong>都道府県労働局長</strong><br>決定・官報公示</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図3：最低賃金の決定プロセス（3ステップ）</p>
+
+                        <p>令和8年度の目安は、Aランク54円、Bランク56円、Cランク56円でした。</p>
+                        <p>千葉県はAランク（目安54円）ですが、実際の答申・決定は<strong>55円の引上げ</strong>となり、目安を1円上回りました。</p>
+                        <p>このように、<strong>「目安＝そのまま各都道府県の最低賃金」ではありません。</strong>実際の金額は、必ず各都道府県労働局または厚生労働省の公表資料で確認してください。</p>
+
+                        <h2 id="section4">4．対象となるのは、パート・アルバイトだけではありません</h2>
+                        <p>地域別最低賃金は、厚生労働省の説明によれば「パートタイマー、アルバイト、臨時、嘱託など雇用形態や呼称に関係なく、各都道府県内の事業場で働くすべての労働者とその使用者に適用」されます。</p>
+
+                        <!-- ビジュアル：対象者グリッド -->
+                        <div class="worker-grid">
+                            <div class="worker-item">
+                                <span class="worker-icon">👔</span>
+                                正社員
+                            </div>
+                            <div class="worker-item">
+                                <span class="worker-icon">📋</span>
+                                契約社員
+                            </div>
+                            <div class="worker-item">
+                                <span class="worker-icon">⏰</span>
+                                パートタイマー
+                            </div>
+                            <div class="worker-item">
+                                <span class="worker-icon">🎓</span>
+                                アルバイト
+                            </div>
+                        </div>
+                        <div class="worker-note">
+                            ⚠️ <strong>月給制だから対象外、ということはありません。</strong>雇用形態・呼称に関係なく、すべての労働者について確認が必要です。
+                        </div>
+                        <p class="fig-caption">図4：最低賃金の適用対象（雇用形態は問いません）</p>
+
+                        <h3 id="section4-1">減額の特例許可制度があります</h3>
+                        <p>ただし例外として、一般の労働者より著しく労働能力が低い場合などについては、<strong>使用者が都道府県労働局長の許可を受けることを条件に、個別に最低賃金の減額の特例</strong>が認められています（最低賃金法第7条）。</p>
+                        <p>対象となるのは、次の労働者です。</p>
+                        <ol>
+                            <li>精神又は身体の障害により著しく労働能力の低い方</li>
+                            <li>試の使用期間中の方</li>
+                            <li>基礎的な技能等を内容とする認定職業訓練を受けている方のうち厚生労働省令で定める方</li>
+                            <li>軽易な業務に従事する方</li>
+                            <li>断続的労働に従事する方</li>
+                        </ol>
+                        <p><strong>これは「許可を受けること」が条件です。</strong>許可なく最低賃金を下回る賃金を支払うことはできません。</p>
+
+                        <h3 id="section4-2">特定（産業別）最低賃金にもご注意ください</h3>
+                        <p>最低賃金には、都道府県ごとの「地域別最低賃金」のほかに、特定の産業の基幹的労働者に適用される「特定（産業別）最低賃金」があります。</p>
+                        <p>両方が適用される場合は、<strong>高い方の最低賃金額以上を支払う必要があります。</strong></p>
+                        <p>自社の業種に特定（産業別）最低賃金が設定されているかどうかは、千葉労働局または厚生労働省「最低賃金制度」サイトでご確認ください。</p>
+
+                        <!-- 記事中途のCTA -->
+                        <div class="inline-cta">
+                            <p>「自社の賃金が最低賃金を下回っていないか確認したい」というご相談も、お気軽にどうぞ。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <h2 id="section5">5．最低賃金の対象となる賃金・ならない賃金</h2>
+                        <p>最低賃金との比較では、毎月支払っている賃金をすべて合計すればよいわけではありません。厚生労働省は、最低賃金の対象となるのは「毎月支払われる基本的な賃金」であるとし、次の6種類の賃金を除外すると示しています。</p>
+
+                        <!-- ビジュアル：対象・対象外 2カラム -->
+                        <div class="wage-split">
+                            <div class="wage-col wage-included">
+                                <div class="wage-col-header">✔ 比較に含める賃金</div>
+                                <div class="wage-col-body">
+                                    <ul>
+                                        <li>基本給</li>
+                                        <li>役職手当・職位手当</li>
+                                        <li>資格手当・技能手当</li>
+                                        <li>地域手当（固定支給）</li>
+                                        <li>皆勤手当以外の固定手当</li>
+                                        <li>その他毎月支払う固定的手当</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wage-col wage-excluded">
+                                <div class="wage-col-header">✖ 除外する賃金（6項目）</div>
+                                <div class="wage-col-body">
+                                    <ul>
+                                        <li>臨時に支払われる賃金（結婚手当など）</li>
+                                        <li>1か月超の期間ごとに支払われる賃金（賞与など）</li>
+                                        <li>時間外割増賃金（残業代）</li>
+                                        <li>休日割増賃金</li>
+                                        <li>深夜割増賃金のうち<strong>割増部分のみ</strong></li>
+                                        <li>精皆勤手当・通勤手当・家族手当</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図5：最低賃金の比較対象となる賃金・ならない賃金（厚生労働省公表情報をもとに作成）</p>
+
+                        <h3 id="section5-1">実務上の注意点</h3>
+                        <div class="box-note">
+                            <ul>
+                                <li><strong>深夜勤務手当は「全額」が除外されるわけではありません。</strong>除外されるのは、通常の労働時間の賃金の計算額を<strong>超える部分（＝割増部分）</strong>のみです。深夜時間帯の基本部分は最低賃金の対象に含まれます。</li>
+                                <li>上記6項目に該当しない手当（役職手当、資格手当など）は、原則として最低賃金の対象に含まれます。手当の名称ではなく、<strong>その手当の性質</strong>で判断してください。</li>
+                            </ul>
+                        </div>
+
+                        <!-- ビジュアル：深夜割増の内訳 -->
+                        <div class="night-visual">
+                            <div class="nv-title">深夜割増賃金のうち、最低賃金の比較対象になる部分は？</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray); margin-bottom:10px;">深夜時間帯（午後10時～午前5時）1時間分の賃金イメージ</div>
+                            <div class="nv-row">
+                                <div class="nv-included">基本部分<br>（最低賃金の対象 ✔）</div>
+                                <div class="nv-excluded">割増部分<br>（除外 ✖）</div>
+                            </div>
+                            <div class="nv-legend">
+                                <div class="nv-legend-item">
+                                    <div class="nv-dot" style="background:#2ecc71;"></div>
+                                    <span>最低賃金の比較対象（基本部分）</span>
+                                </div>
+                                <div class="nv-legend-item">
+                                    <div class="nv-dot" style="background:#e74c3c;"></div>
+                                    <span>比較から除外（割増部分のみ）</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図6：深夜割増賃金における最低賃金の対象範囲</p>
+
+                        <h2 id="section6">6．10月1日までに確認しておきたい7つのポイント</h2>
+
+                        <h3 id="section6-1">POINT① 時給制の従業員の時給額</h3>
+                        <p>千葉県内の事業場であれば、<strong>1,195円を下回っていないか</strong>を確認します。</p>
+
+                        <h3 id="section6-2">POINT② 月給制の従業員の時間額換算</h3>
+                        <p>月給制の場合は、次の計算で時間額に換算して比較します。</p>
+                        <div class="formula-box">
+                            （月給のうち最低賃金の対象となる賃金）÷ 1か月平均所定労働時間 ≧ 1,195円
+                        </div>
+                        <p>1か月平均所定労働時間は、<strong>年間所定労働時間 ÷ 12</strong> で算出します。</p>
+                        <p>このとき、前章の「対象とならない賃金」（通勤手当・家族手当・精皆勤手当・割増賃金・賞与など）を月給から除外してから計算する点にご注意ください。</p>
+
+                        <h3 id="section6-3">POINT③ 固定残業代（みなし残業代）の取扱い</h3>
+                        <p>固定残業代は「所定労働時間を超える時間の労働に対して支払われる賃金」に該当するため、<strong>最低賃金の比較対象から除外されます。</strong></p>
+                        <p>「基本給＋固定残業代」の合計額をそのまま時間額換算して比較すると、実際には最低賃金を下回っているにもかかわらず、下回っていないと誤って判断してしまうおそれがあります。</p>
+
+                        <h3 id="section6-4">POINT④ 日給制・出来高払制の従業員</h3>
+                        <p>日給制、歩合給制（出来高払制）を採用している場合も、時間額に換算して最低賃金と比較する必要があります。特に出来高払制は、支給額が月によって変動するため、毎月の確認が必要です。</p>
+
+                        <h3 id="section6-5">POINT⑤ 雇用契約書・労働条件通知書・賃金規程の確認</h3>
+                        <p>実際に支払う給与だけでなく、</p>
+                        <ul>
+                            <li>雇用契約書</li>
+                            <li>労働条件通知書</li>
+                            <li>賃金規程・給与規程</li>
+                        </ul>
+                        <p>の記載内容も確認しましょう。特に「時給1,140円」のように<strong>具体的な金額を記載している場合</strong>は、改定後の金額での見直しが必要です。</p>
+
+                        <h3 id="section6-6">POINT⑥ 給与計算システムの設定</h3>
+                        <p>見落としやすいのが給与計算システムの設定です。</p>
+                        <ul>
+                            <li>時給単価マスタの更新漏れ</li>
+                            <li>改定日（10月1日）と給与計算期間が一致しない場合の期間按分</li>
+                            <li>割増賃金の単価に改定が反映されているか</li>
+                        </ul>
+                        <p>これらを、<strong>10月分の給与計算を実行する前に</strong>確認しておきましょう。給与計算期間が「月末締め・翌月払い」以外（例：20日締め）の場合は、9月分と10月分をまたぐ期間で単価が変わる点に特に注意が必要です。</p>
+
+                        <h3 id="section6-7">POINT⑦ 従業員への周知</h3>
+                        <p>最低賃金法第8条により、使用者には最低賃金の概要を労働者に周知する義務があります。改定内容を、事業場の見やすい場所への掲示等により周知しましょう。</p>
+
+                        <h2 id="section7">7．「10月分の給与は11月払いだから、11月から変更でよい」は誤りです</h2>
+                        <p>千葉県最低賃金の効力発生日は令和8年10月1日です。判断の基準は、<strong>給与の支払日ではなく、労働が行われた日</strong>です。</p>
+
+                        <!-- ビジュアル：誤解と正解の比較 -->
+                        <div class="timeline-compare">
+                            <div class="tc-card tc-wrong">
+                                <div class="tc-label">❌ よくある誤解</div>
+                                <div class="tc-text">「10月分の給与を<br>11月に支払うから、<br>11月支払分から<br>変更すればよい」</div>
+                                <div class="tc-badge">誤り</div>
+                            </div>
+                            <div class="tc-card tc-right">
+                                <div class="tc-label">✅ 正しい理解</div>
+                                <div class="tc-text"><strong>10月1日以降の労働</strong>に対して<br>1,195円を適用する<br>（支払日は関係ない）</div>
+                                <div class="tc-badge">正解</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図7：よくある誤解と正しい理解</p>
+
+                        <p>したがって、<strong>令和8年10月1日以降に行われた労働</strong>については、改定後の1,195円を下回ることができません。「10月分の給与を11月に支払うから、11月支払分から変更すればよい」という考え方は誤りですので、ご注意ください。</p>
+
+                        <h2 id="section8">8．最低賃金を下回っていた場合はどうなるのか</h2>
+                        <p>厚生労働省は、次のとおり説明しています。</p>
+                        <ul>
+                            <li>最低賃金額より低い賃金を<strong>労働者・使用者双方の合意の上で定めても、それは法律によって無効</strong>とされ、最低賃金額と同様の定めをしたものとみなされます。</li>
+                            <li>使用者が労働者に最低賃金未満の賃金しか支払っていない場合には、使用者は労働者に対して<strong>その差額を支払わなければなりません。</strong></li>
+                        </ul>
+
+                        <!-- ビジュアル：罰則カード -->
+                        <div class="penalty-grid">
+                            <div class="penalty-card">
+                                <div class="pc-type">地域別最低賃金<br>（千葉県 1,195円）に違反</div>
+                                <div class="penalty-amount">50万円以下<br>の罰金</div>
+                                <div class="pc-law">最低賃金法 第40条</div>
+                            </div>
+                            <div class="penalty-card">
+                                <div class="pc-type">特定（産業別）最低賃金<br>に違反</div>
+                                <div class="penalty-amount">30万円以下<br>の罰金</div>
+                                <div class="pc-law">労働基準法 第120条</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図8：最低賃金違反の罰則</p>
+
+                        <p>「本人が納得しているから」という理由は、法的に成立しません。差額の遡及支払いが必要となる点も含め、事前の確認が重要です。</p>
+
+                        <h2 id="section9">9．【当事務所の見解】「55円上げれば終わり」ではありません</h2>
+
+                        <div class="box-opinion">
+                            ※ここからは、事実の解説ではなく、当事務所の実務上の見解です。
+                        </div>
+
+                        <p>最低賃金が55円上がると聞くと、「最低賃金ぎりぎりの従業員だけ55円上げればよい」と考えがちです。しかし実務上は、それだけでは済まないケースが多くあります。</p>
+                        <p>例えば「最低賃金＋50円」で新人の時給を設定している会社の場合、最低賃金が55円上がると、新人とベテランの賃金差が縮まり、場合によっては逆転してしまいます。</p>
+
+                        <!-- ビジュアル：賃金逆転 横棒グラフ -->
+                        <div class="reversal-wrap">
+                            <div class="reversal-title">
+                                賃金逆転シミュレーション
+                                <small>「新人 ＝ 最低賃金＋50円」で設定している会社の場合</small>
+                            </div>
+
+                            <!-- 改定前 -->
+                            <div class="rhb-section">
+                                <span class="rhb-section-label before">改定前（最低賃金 1,140円）</span>
+                                <div class="rhb-row">
+                                    <div class="rhb-person">新人</div>
+                                    <div class="rhb-track">
+                                        <div class="rhb-bar rhb-blue" style="width:63%;">
+                                            <span class="rhb-amount">1,190円</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rhb-row">
+                                    <div class="rhb-person">ベテラン</div>
+                                    <div class="rhb-track">
+                                        <div class="rhb-bar rhb-green" style="width:80%;">
+                                            <span class="rhb-amount">1,240円</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rhb-note ok">ベテランが 50円 上回る ✔</div>
+                            </div>
+
+                            <div style="text-align:center; margin:6px 0;">
+                                <span class="rhb-divider">↓ 最低賃金が 1,195円 に改定（＋55円）</span>
+                            </div>
+
+                            <!-- 改定後 -->
+                            <div class="rhb-section">
+                                <span class="rhb-section-label after">改定後（最低賃金 1,195円）</span>
+                                <div class="rhb-row">
+                                    <div class="rhb-person">新人</div>
+                                    <div class="rhb-track">
+                                        <div class="rhb-bar rhb-red" style="width:82%;">
+                                            <span class="rhb-amount">1,245円</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rhb-row">
+                                    <div class="rhb-person">ベテラン</div>
+                                    <div class="rhb-track">
+                                        <div class="rhb-bar rhb-green" style="width:80%;">
+                                            <span class="rhb-amount">1,240円</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rhb-note alert">新人がベテランを上回る ― 逆転！</div>
+                            </div>
+                        </div>
+                        <p class="fig-caption">図9：最低賃金改定による賃金逆転の例（当事務所作成）</p>
+
+                        <p>その結果、</p>
+                        <ul>
+                            <li>経験者・ベテラン従業員の不満につながる</li>
+                            <li>資格や役職に応じた賃金差の意味が失われる</li>
+                            <li>昇給の原資が確保できなくなる</li>
+                        </ul>
+                        <p>といった問題が生じます。</p>
+                        <p>最低賃金の改定は、<strong>自社の賃金テーブル全体を点検する好機</strong>でもあります。「法令対応」で終わらせず、賃金体系そのものを見直す機会として活用されることをおすすめします。</p>
+
+                        <h2 id="section10">10．賃上げに取り組む企業への支援策</h2>
+                        <p>厚生労働省および千葉労働局では、最低賃金の引上げに対応する事業主向けに、業務改善助成金、キャリアアップ助成金などの支援策を案内しています。</p>
+                        <p><strong>支給要件・申請期限・受付状況は年度ごとに変更されます。</strong>令和8年度の最新の内容は、必ず厚生労働省・千葉労働局の公式ページでご確認ください（本記事末尾の出典欄にリンクを掲載しています）。</p>
+                        <p>生産性向上と賃上げを両立させるうえで、助成金の活用は有効な選択肢のひとつです。活用を検討される場合は、早めのご準備をおすすめします。</p>
+
+                        <h2 id="section11">11．まとめ</h2>
+                        <p>令和8年10月1日から、<strong>千葉県最低賃金は1,195円</strong>になります。</p>
+                        <p>10月を迎える前に、次の点をご確認ください。</p>
+                        <ul class="checklist">
+                            <li>時給制の従業員の時給が1,195円以上か</li>
+                            <li>月給制の従業員の時間額換算が1,195円以上か</li>
+                            <li>対象とならない賃金（通勤手当・家族手当・精皆勤手当・割増賃金・賞与等）を除外して計算しているか</li>
+                            <li>固定残業代を比較対象に含めていないか</li>
+                            <li>雇用契約書・労働条件通知書・賃金規程の金額表記</li>
+                            <li>給与計算システムの単価設定と改定日の反映</li>
+                            <li>従業員への周知</li>
+                            <li>他県に事業場がある場合、その都道府県の金額と発効日</li>
+                            <li>特定（産業別）最低賃金の適用有無</li>
+                            <li>賃金バランス（新人とベテランの逆転がないか）</li>
+                        </ul>
+                        <p>最低賃金の改定への対応は、単なる時給の変更にとどまりません。賃金制度全体を見直すきっかけとして活用いただければと思います。</p>
+
+                        <h3 id="contact-section">ご相談について</h3>
+                        <p>当事務所では、最低賃金改定に伴う賃金チェック、賃金規程・雇用契約書の見直し、給与計算システムの設定確認、賃金テーブルの再設計までを一貫してご支援しています。</p>
+                        <p>「自社の計算方法が正しいか確認したい」「どこから手をつければよいかわからない」といった段階でも構いません。お気軽にお問い合わせください。</p>
+                        <p><strong>今井久一郎社会保険労務士事務所（CSI&amp;LC IMAI）</strong><br>
+                        千葉県／社会保険労務士</p>
+
+                        <h2 id="section12">12．出典（一次資料）</h2>
+                        <ul>
+                            <li>厚生労働省「全ての都道府県で地域別最低賃金の改定額が答申されました」（令和8年9月3日）<br>
+                                <a href="https://www.mhlw.go.jp/stf/newpage_75950.html" target="_blank" rel="noopener noreferrer">https://www.mhlw.go.jp/stf/newpage_75950.html</a></li>
+                            <li>厚生労働省「令和8年度地域別最低賃金額改定の目安について」<br>
+                                <a href="https://www.mhlw.go.jp/stf/newpage_74920.html" target="_blank" rel="noopener noreferrer">https://www.mhlw.go.jp/stf/newpage_74920.html</a></li>
+                            <li>千葉労働局「千葉県最低賃金を時間額『1,195円』に引き上げ－効力発生日は令和8年10月1日－」（令和8年9月1日）<br>
+                                <a href="https://jsite.mhlw.go.jp/chiba-roudoukyoku/news_topics/_20260901_chingin_00003.html" target="_blank" rel="noopener noreferrer">https://jsite.mhlw.go.jp/chiba-roudoukyoku/news_topics/_20260901_chingin_00003.html</a></li>
+                            <li>厚生労働省「最低賃金制度」地域別最低賃金全国一覧<br>
+                                <a href="https://saiteichingin.mhlw.go.jp/table/page_list_nationallist.php" target="_blank" rel="noopener noreferrer">https://saiteichingin.mhlw.go.jp/table/page_list_nationallist.php</a></li>
+                            <li>厚生労働省「最低賃金制度」最低賃金とは？（罰則・私法上の効力）<br>
+                                <a href="https://saiteichingin.mhlw.go.jp/point/page_point_what.html" target="_blank" rel="noopener noreferrer">https://saiteichingin.mhlw.go.jp/point/page_point_what.html</a></li>
+                            <li>厚生労働省「最低賃金制度」適用される対象者は？（減額特例・特定最低賃金）<br>
+                                <a href="https://saiteichingin.mhlw.go.jp/point/page_point_target.html" target="_blank" rel="noopener noreferrer">https://saiteichingin.mhlw.go.jp/point/page_point_target.html</a></li>
+                            <li>厚生労働省「最低賃金制度」対象となる賃金は？<br>
+                                <a href="https://saiteichingin.mhlw.go.jp/point/page_point_targetwages.html" target="_blank" rel="noopener noreferrer">https://saiteichingin.mhlw.go.jp/point/page_point_targetwages.html</a></li>
+                            <li>千葉労働局 報道発表資料（PDF）<br>
+                                <a href="https://jsite.mhlw.go.jp/chiba-roudoukyoku/content/contents/002801978.pdf" target="_blank" rel="noopener noreferrer">https://jsite.mhlw.go.jp/chiba-roudoukyoku/content/contents/002801978.pdf</a></li>
+                        </ul>
+                        <p style="font-size: 0.88rem; color: var(--text-gray);">※本記事の内容は令和8年9月6日時点の情報に基づいています。最新の情報は各公式サイトをご確認ください。</p>
+
+                    </article>
+
+                    <!-- 著者ボックス -->
+                    <div class="author-box">
+                        <img src="../images/CSI&LC IMAIのロゴ4.png" alt="今井久一郎社会保険労務士事務所" class="author-logo">
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 記事間ナビゲーション -->
+                    <div class="article-nav">
+                        <a href="37-egov-gbizid-guide.html">
+                            <div class="nav-label">← 前の記事</div>
+                            社会保険の電子申請（e-Gov）入門｜GビズIDの取得から初期設定まで
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <!-- 目次（PC表示） -->
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">千葉県の最低賃金は「1,195円」に決定</a></li>
+                            <li><a href="#section2">全国の状況（答申額ベース）</a>
+                                <ol>
+                                    <li><a href="#section2-1">ここが重要：全国の数字は答申額</a></li>
+                                    <li><a href="#section2-2">発効日は全国一斉ではありません</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section3">「目安」と「実際の最低賃金」は違います</a></li>
+                            <li><a href="#section4">対象はパート・アルバイトだけではない</a>
+                                <ol>
+                                    <li><a href="#section4-1">減額の特例許可制度</a></li>
+                                    <li><a href="#section4-2">特定（産業別）最低賃金</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section5">対象となる賃金・ならない賃金</a></li>
+                            <li><a href="#section6">10月1日までの7つのポイント</a></li>
+                            <li><a href="#section7">支払日ではなく労働日が基準</a></li>
+                            <li><a href="#section8">最低賃金を下回った場合の罰則</a></li>
+                            <li><a href="#section9">当事務所の見解</a></li>
+                            <li><a href="#section10">企業への支援策</a></li>
+                            <li><a href="#section11">まとめ</a></li>
+                            <li><a href="#section12">出典（一次資料）</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- 関連記事 -->
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="josekin-2026.html">2026年版｜中小企業が今すぐ使える助成金まとめ</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">助成金</div>
+                            <a href="career-up-josekin-r8.html">令和8年度 キャリアアップ助成金｜情報公表加算の新設と賃金比較の見直し</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">就業規則</div>
+                            <a href="doitsu-chingin-2026.html">同一労働同一賃金 ― 説明義務と待遇差の点検（2026年版）</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div><!-- /.content-layout -->
+        </div><!-- /.container -->
+
+        <!-- フッターCTA -->
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&amp;LC IMAI - Cloud System Integration &amp; Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルでは目次をサイドバーから本文先頭に移動
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>
