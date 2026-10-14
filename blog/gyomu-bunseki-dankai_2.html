@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://sr-imai-office.com/blog/gyomu-bunseki-dankai_2.html">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+    <meta name="description" content="人事給与システムを導入していても手作業が残る組織の業務を分析した事例。利用者分析・AS-IS業務フロー・課題構造・優先度マトリクス・改善ロードマップを図で解説します。">
+    <title>人事労働業務の棚卸しと段階的な効率化の進め方 | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --light-blue-bg: #f3f5f8fd;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* ヘッダー */
+        header { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* パンくず */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* 記事ヘッダー */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge { font-size: 0.78rem; font-weight: bold; padding: 4px 14px; border-radius: 50px; color: var(--white); background: var(--primary-blue); }
+        .cat-badge.romu-dx { background: var(--accent-sky); }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .article-title { font-size: 1.8rem; color: var(--primary-blue); line-height: 1.45; margin: 0 0 20px; }
+        .article-lead { font-size: 1rem; color: var(--text-gray); background: var(--bg-soft); border-left: 4px solid var(--accent-orange); padding: 14px 18px; border-radius: 0 8px 8px 0; line-height: 1.8; margin: 0; }
+
+        /* 2カラムレイアウト */
+        .content-layout { display: grid; grid-template-columns: 1fr 260px; gap: 40px; padding: 40px 0 80px; align-items: start; }
+
+        /* 目次 */
+        .toc { background: var(--bg-soft); border-radius: 12px; padding: 22px 24px; border-top: 4px solid var(--primary-blue); position: sticky; top: 90px; }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* 記事本文 */
+        .article-body h2 { font-size: 1.35rem; color: var(--primary-blue); border-left: 5px solid var(--primary-blue); border-bottom: 1px solid #dce8ff; padding: 10px 16px; margin: 48px 0 20px; background: linear-gradient(90deg, #eef4ff, transparent); border-radius: 0 8px 8px 0; }
+        .article-body h3 { font-size: 1.1rem; color: var(--text-dark); border-left: 3px solid var(--accent-orange); padding-left: 12px; margin: 32px 0 14px; }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* カスタムリストの二重bullet解消（.article-body ulのrevertより優先） */
+        .article-body .persona-pain,
+        .article-body .issue-branch ul,
+        .article-body .pmatrix-items,
+        .article-body .road-phase ul { list-style: none !important; padding-left: 0 !important; margin-bottom: 0; }
+
+        /* ボックス */
+        .box-note { background: #fff8e8; border: 1px solid #ffe0a0; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+        .box-caution { background: #fff0f0; border: 1px solid #ffb3b3; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+        .box-info { background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92rem; }
+        .article-body th { background: var(--primary-blue); color: var(--white); padding: 10px 14px; text-align: left; }
+        .article-body td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* 著者ボックス */
+        .author-box { display: flex; gap: 20px; align-items: flex-start; background: var(--bg-soft); border-radius: 14px; padding: 24px; margin-top: 48px; border-top: 4px solid var(--primary-blue); }
+        .author-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--primary-blue); color: var(--white); font-size: 1.4rem; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* 記事ナビ */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a { flex: 1; display: block; padding: 14px 18px; background: var(--bg-soft); border-radius: 10px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* 関連記事 */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* 記事内CTA */
+        .inline-cta { background: linear-gradient(135deg, var(--primary-blue), #0d3270); color: var(--white); border-radius: 14px; padding: 28px; text-align: center; margin: 40px 0; }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a { display: inline-block; background: var(--accent-orange); color: var(--white); padding: 12px 32px; border-radius: 50px; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* フッターCTA */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn { display: inline-block; background: var(--white); color: var(--primary-blue); padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* フッター */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* ==============================
+           本記事専用スタイル
+        ============================== */
+
+        /* 段階フロー */
+        .stage-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 24px 0; }
+        .stage { border-radius: 10px; padding: 14px 12px; background: var(--bg-soft); border-top: 5px solid #ccc; }
+        .stage.s0 { border-top-color: #b2bec3; }
+        .stage.s1 { border-top-color: var(--accent-sky); }
+        .stage.s2 { border-top-color: var(--primary-blue); }
+        .stage.s3 { border-top-color: var(--accent-orange); }
+        .stage-no { font-size: 0.78rem; font-weight: bold; color: var(--text-gray); }
+        .stage-name { font-size: 1.05rem; font-weight: bold; color: var(--primary-blue); margin: 2px 0 8px; }
+        .stage-desc { font-size: 0.82rem; line-height: 1.6; }
+        .stage-cost { font-size: 0.78rem; color: var(--accent-orange); font-weight: bold; margin-top: 8px; }
+
+        /* 統計 */
+        .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0 6px; }
+        .stat { background: #eef4ff; border-radius: 12px; padding: 18px; text-align: center; }
+        .stat-num { font-size: 2.2rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .stat-num span { font-size: 1.1rem; color: var(--text-gray); margin-left: 2px; }
+        .stat-orange { background: #fff4e0; }
+        .stat-orange .stat-num { color: #d97f00; }
+        .stat-label { font-size: 0.85rem; line-height: 1.5; margin-top: 6px; }
+        .article-body p.stat-note { font-size: 0.8rem; color: var(--text-gray); margin: 4px 0 18px; }
+
+        /* シンプルフロー */
+        .flow-line { display: flex; align-items: center; gap: 6px; margin: 20px 0; flex-wrap: wrap; }
+        .fl { flex: 1; min-width: 80px; text-align: center; border-radius: 8px; padding: 10px 6px; font-size: 0.88rem; font-weight: bold; line-height: 1.4; }
+        .fl small { font-weight: normal; font-size: 0.75rem; }
+        .fl.paper { background: #eceff1; color: #455a64; }
+        .fl.excel { background: #e3f4fc; color: #0277a8; }
+        .fl.sys { background: #e8eefa; color: var(--primary-blue); }
+        .fl-arrow { color: var(--accent-orange); font-size: 0.8rem; flex: none; }
+
+        .quote { margin: 20px 0; padding: 14px 20px; border-left: 4px solid var(--accent-orange); background: var(--bg-soft); font-weight: bold; color: var(--primary-blue); }
+
+        .law-quote { background: #fafbfd; border: 1px solid #dce3ef; border-radius: 8px; padding: 14px 18px; font-size: 0.88rem; line-height: 1.85; margin: 14px 0 20px; }
+        .law-src { font-size: 0.78rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 6px; }
+
+        .article-body th.num, .article-body td.num { text-align: center; white-space: nowrap; width: 70px; }
+        .score { display: inline-block; min-width: 36px; padding: 2px 8px; border-radius: 50px; color: #fff; font-weight: bold; }
+        .score.high { background: #c0392b; }
+        .score.mid { background: var(--accent-orange); }
+        .score.low { background: #95a5a6; }
+
+        .case { border: 1px solid #e3e8f0; border-radius: 12px; padding: 18px 20px 4px; margin: 18px 0; }
+        .case-head { font-weight: bold; color: var(--primary-blue); font-size: 1.02rem; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .case-no { width: 28px; height: 28px; border-radius: 50%; background: var(--primary-blue); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+
+        .survey { margin: 6px 0 4px; }
+        .sv { display: grid; grid-template-columns: 230px 1fr 56px; align-items: center; gap: 10px; margin: 8px 0; font-size: 0.86rem; }
+        .sv-bar { background: #eceff1; border-radius: 50px; height: 12px; overflow: hidden; }
+        .sv-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent-sky), var(--primary-blue)); border-radius: 50px; }
+        .sv-val { font-weight: bold; color: var(--primary-blue); text-align: right; }
+
+        .sources { margin-top: 36px; padding: 16px 20px; background: var(--bg-soft); border-radius: 8px; }
+        .sources-title { font-weight: bold; color: var(--primary-blue); font-size: 0.92rem; margin-bottom: 6px; }
+        .article-body .sources li { font-size: 0.85rem; }
+
+        /* ===== 利用者分析 ===== */
+        .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .persona-card { border-radius: 10px; padding: 20px 18px; background: var(--bg-soft); border-top: 4px solid var(--primary-blue); }
+        .persona-card.p2 { border-top-color: var(--accent-sky); }
+        .persona-card.p3 { border-top-color: var(--accent-orange); }
+        .persona-card.p4 { border-top-color: #27ae60; }
+        .persona-card.p5 { border-top-color: #8e44ad; }
+        .persona-role { font-size: 0.76rem; color: var(--text-gray); font-weight: bold; letter-spacing: 0.03em; margin-bottom: 4px; }
+        .persona-name { font-size: 1rem; font-weight: bold; color: var(--primary-blue); margin: 4px 0 10px; line-height: 1.45; }
+        .persona-tools { font-size: 0.8rem; color: var(--text-gray); margin-bottom: 10px; line-height: 1.6; }
+        .persona-tools span { display: inline-block; background: #e8eefa; color: var(--primary-blue); border-radius: 3px; padding: 2px 7px; margin: 2px 2px 2px 0; font-size: 0.78rem; }
+        .persona-pain { font-size: 0.85rem; line-height: 1.7; list-style: none; padding: 0; margin: 0; }
+        .persona-pain li { margin-bottom: 6px; padding-left: 14px; position: relative; font-size: 0.85rem; line-height: 1.7; }
+        .persona-pain li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; background: var(--accent-orange); border-radius: 50%; }
+
+        /* ===== AS-ISフロー ===== */
+        .asis-flow { margin: 24px 0; }
+        .asis-title { font-size: 0.88rem; font-weight: bold; color: var(--white); background: var(--primary-blue); padding: 8px 16px; border-radius: 8px 8px 0 0; }
+        .asis-steps { display: flex; align-items: stretch; overflow-x: auto; border: 1px solid #dce3ef; border-top: none; border-radius: 0 0 8px 8px; }
+        .asis-step { flex: 1; min-width: 110px; border-right: 1px solid #dce3ef; display: flex; flex-direction: column; }
+        .asis-step:last-child { border-right: none; }
+        .asis-step-top { padding: 12px 10px 8px; text-align: center; flex: 1; }
+        .asis-step-badge { display: inline-block; font-size: 0.7rem; font-weight: bold; padding: 2px 8px; border-radius: 50px; color: #fff; margin-bottom: 6px; }
+        .badge-paper { background: #b2bec3; }
+        .badge-excel { background: #0277a8; }
+        .badge-sys { background: var(--primary-blue); }
+        .badge-mixed { background: var(--accent-orange); }
+        .asis-step-name { font-size: 0.82rem; font-weight: bold; line-height: 1.4; color: var(--text-dark); }
+        .asis-step-sub { font-size: 0.72rem; color: var(--text-gray); margin-top: 3px; }
+        .asis-step-problem { background: #fff0f0; padding: 8px 10px; font-size: 0.72rem; line-height: 1.65; color: #c0392b; border-top: 1px solid #ffcccc; height: 76px; overflow: hidden; box-sizing: border-box; }
+        .problem-label { display: inline-block; background: #c0392b; color: #fff; font-size: 0.65rem; font-weight: bold; padding: 1px 5px; border-radius: 3px; margin-right: 4px; vertical-align: middle; line-height: 1.6; }
+        .asis-arrow-col { display: flex; align-items: center; padding: 0 4px; color: var(--accent-orange); font-size: 1.1rem; flex-shrink: 0; }
+
+        /* ===== 課題構造ツリー ===== */
+        .issue-tree { margin: 24px 0; }
+        .issue-root { background: var(--primary-blue); color: #fff; text-align: center; padding: 14px 20px; border-radius: 10px; font-weight: bold; font-size: 0.97rem; }
+        .issue-connector { text-align: center; color: var(--accent-orange); font-size: 1.4rem; line-height: 1; padding: 6px 0; }
+        .issue-branches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .issue-branch { background: var(--bg-soft); border-top: 4px solid var(--accent-orange); border-radius: 8px; padding: 14px; }
+        .issue-branch-title { font-weight: bold; font-size: 0.88rem; color: var(--primary-blue); margin-bottom: 10px; line-height: 1.5; }
+        .issue-branch-icon { font-size: 1.1rem; margin-right: 4px; }
+        .issue-branch ul { list-style: none; padding: 0; margin: 0; }
+        .issue-branch li { font-size: 0.8rem !important; line-height: 1.65 !important; margin-bottom: 5px; padding-left: 13px; position: relative; }
+        .issue-branch li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; background: var(--accent-orange); border-radius: 50%; }
+
+        /* ===== 優先度マトリクス ===== */
+        .pmatrix-wrap { margin: 24px 0; }
+        .pmatrix { display: grid; grid-template-columns: 36px 1fr 1fr; gap: 4px; }
+        .pmatrix-corner { background: transparent; }
+        .pmatrix-colhead { background: var(--primary-blue); color: #fff; text-align: center; padding: 8px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 6px; line-height: 1.5; }
+        .pmatrix-colhead small { font-size: 0.7rem; font-weight: normal; opacity: 0.85; display: block; }
+        .pmatrix-rowhead { background: var(--primary-blue); color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.78rem; font-weight: bold; border-radius: 6px; padding: 4px 2px; line-height: 1.6; }
+        .pmatrix-cell { padding: 14px 12px; border-radius: 8px; }
+        .pmatrix-badge { display: inline-block; font-size: 0.72rem; font-weight: bold; padding: 3px 10px; border-radius: 50px; color: #fff; margin-bottom: 8px; }
+        .pmatrix-hh { background: #fff0e0; }
+        .pmatrix-hh .pmatrix-badge { background: #c0392b; }
+        .pmatrix-hl { background: #fffbe0; }
+        .pmatrix-hl .pmatrix-badge { background: #d97f00; }
+        .pmatrix-lh { background: #e8eefa; }
+        .pmatrix-lh .pmatrix-badge { background: var(--accent-sky); }
+        .pmatrix-ll { background: #f5f5f5; }
+        .pmatrix-ll .pmatrix-badge { background: #95a5a6; }
+        .pmatrix-items { font-size: 0.8rem; line-height: 1.75; list-style: none; padding: 0; margin: 0; }
+        .pmatrix-items li { padding-left: 12px; position: relative; margin-bottom: 4px; font-size: 0.8rem; line-height: 1.75; }
+        .pmatrix-items li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 5px; height: 5px; border-radius: 50%; background: var(--text-dark); opacity: 0.35; }
+
+        /* ===== 改善ロードマップ ===== */
+        .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .road-phase { border-radius: 12px; padding: 18px; }
+        .road-phase.ph1 { background: #eef4ff; border-top: 5px solid var(--accent-sky); }
+        .road-phase.ph2 { background: #fff4e0; border-top: 5px solid var(--accent-orange); }
+        .road-phase.ph3 { background: #f0fff4; border-top: 5px solid #27ae60; }
+        .road-phase-no { font-size: 0.75rem; font-weight: bold; color: var(--text-gray); }
+        .road-phase-period { font-size: 0.78rem; font-weight: bold; color: var(--primary-blue); background: rgba(255,255,255,0.7); display: inline-block; padding: 2px 10px; border-radius: 50px; margin: 4px 0 8px; }
+        .road-phase-title { font-size: 1rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; }
+        .road-phase ul { list-style: none; padding: 0; margin: 0; }
+        .road-phase li { font-size: 0.82rem !important; line-height: 1.7 !important; margin-bottom: 5px; padding-left: 14px; position: relative; }
+        .road-phase li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 5px; height: 5px; border-radius: 50%; }
+        .ph1 li::before { background: var(--accent-sky); }
+        .ph2 li::before { background: var(--accent-orange); }
+        .ph3 li::before { background: #27ae60; }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .stage-flow { grid-template-columns: 1fr 1fr; }
+            .flow-line { flex-direction: column; align-items: stretch; }
+            .fl-arrow { transform: rotate(90deg); text-align: center; }
+            .sv { grid-template-columns: 1fr 52px; }
+            .sv-label { grid-column: 1 / -1; margin-bottom: -4px; }
+            .persona-grid { grid-template-columns: repeat(2, 1fr); }
+            .issue-branches { grid-template-columns: 1fr; }
+            .pmatrix { grid-template-columns: 28px 1fr 1fr; }
+            .roadmap { grid-template-columns: 1fr; }
+            .asis-steps { flex-direction: column; }
+            .asis-step { border-right: none; border-bottom: 1px solid #dce3ef; }
+            .asis-arrow-col { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            人事労働業務の棚卸しと段階的な効率化
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge romu-dx">労務管理・DX</span>
+                    <span class="article-date">2026年10月13日</span>
+                    <span class="read-time">📖 約15分</span>
+                </div>
+                <h1 class="article-title">人事労働業務の棚卸しと段階的な効率化の進め方</h1>
+                <p class="article-lead">
+                    人事給与システムを導入していても、ExcelやPaperによる作業が残っている組織は少なくありません。本記事では、ある組織の人事・労働業務を分析する際の手法と結果を、<strong>利用者分析・AS-IS業務フロー・課題構造・優先度マトリクス・改善ロードマップ</strong>の図を使って具体事例を元に紹介いたします。
+                </p>
+            </div>
+
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">システムがあっても手作業が残る理由</a></li>
+                            <li><a href="#section2">関係者分析（利用者分析）</a></li>
+                            <li><a href="#section3">業務フローの現状（AS-IS）</a>
+                                <ol>
+                                    <li><a href="#section3-1">人事業務フロー（採用〜退職）</a></li>
+                                    <li><a href="#section3-2">勤怠業務フロー（月次サイクル）</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section4">課題の構造分析：なぜ手作業が残るのか</a></li>
+                            <li><a href="#section5">分析の枠組み「段階0〜3」</a></li>
+                            <li><a href="#section6">人事管理で見えた課題</a></li>
+                            <li><a href="#section7">労働管理（勤怠）で見えた課題</a></li>
+                            <li><a href="#section8">労働管理上の法的な留意点</a></li>
+                            <li><a href="#section9">優先順位の付け方と優先度マトリクス</a></li>
+                            <li><a href="#section11">改善ロードマップ</a></li>
+                            <li><a href="#section12">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <article class="article-body">
+
+                        <!-- ===== section1 ===== -->
+                        <h2 id="section1">システムがあっても手作業が残る理由</h2>
+                        <p>
+                            システムを導入していても、システムで扱えない情報が残れば、その前後の管理はExcelや紙で行うことになります。今回分析した組織でも、<strong>システム・Excel・紙の三つで同じ情報を管理している状態</strong>が見られました。
+                        </p>
+
+                        <div class="stat-row">
+                            <div class="stat">
+                                <div class="stat-num">28<span>／41</span></div>
+                                <div class="stat-label">人事の工程のうち<br>段階1（Excel並走）の工程</div>
+                            </div>
+                            <div class="stat stat-orange">
+                                <div class="stat-num">20<span>／24</span></div>
+                                <div class="stat-label">勤怠の工程のうち<br>段階0（紙・手作業）の工程</div>
+                            </div>
+                        </div>
+                        <p class="stat-note">※工程数は、業務フロー図中で「段階」を付記したタスクを集計したもの(実例)</p>
+
+                        <p>
+                            新しいシステムを検討する前に、現在の業務がどこに散らばっているか、どの工程がどの程度手作業になっているのか、その理由は何かを把握することから始めます。そのために最初に行うのが<strong>関係者分析（利用者分析）と業務フローの可視化</strong>です。
+                        </p>
+
+                        <!-- ===== section2 ===== -->
+                        <h2 id="section2">関係者分析（利用者分析）</h2>
+                        <p>
+                            業務を分析する前に、誰がどの業務に関わり、何に困っているかを整理します。立場が違えば課題も優先順位も異なるため、関係者ごとに現状と痛点を把握することが改善の起点になります。
+                        </p>
+
+                        <div class="persona-grid">
+                            <div class="persona-card">
+                                <div class="persona-role">本部</div>
+                                <div class="persona-name">人事担当者<br>（主担当）</div>
+                                <div class="persona-tools">
+                                    <span>人事給与システム</span>
+                                    <span>Excel台帳×複数</span>
+                                </div>
+                                <ul class="persona-pain">
+                                    <li>同じ情報を3箇所に入力</li>
+                                    <li>台帳が乱立し版管理が困難</li>
+                                    <li>特殊ケースが自分の記憶頼り</li>
+                                </ul>
+                            </div>
+                            <div class="persona-card p2">
+                                <div class="persona-role">拠点</div>
+                                <div class="persona-name">拠点担当者<br>（勤怠管理）</div>
+                                <div class="persona-tools">
+                                    <span>紙の出退勤簿</span>
+                                    <span>Excel</span>
+                                </div>
+                                <ul class="persona-pain">
+                                    <li>月末の代行入力が繁忙</li>
+                                    <li>拠点ごとに書式が異なる</li>
+                                    <li>修正・差し戻しが多い</li>
+                                </ul>
+                            </div>
+                            <div class="persona-card p3">
+                                <div class="persona-role">管理職</div>
+                                <div class="persona-name">承認者<br>（各部門）</div>
+                                <div class="persona-tools">
+                                    <span>口頭・押印</span>
+                                    <span>メール</span>
+                                </div>
+                                <ul class="persona-pain">
+                                    <li>承認記録が紙・口頭で残らない</li>
+                                    <li>部下の年休残が把握できない</li>
+                                    <li>時間外承認が後付けになる</li>
+                                </ul>
+                            </div>
+                            <div class="persona-card p4">
+                                <div class="persona-role">本部</div>
+                                <div class="persona-name">給与計算担当</div>
+                                <div class="persona-tools">
+                                    <span>給与システム</span>
+                                    <span>確認用Excel</span>
+                                </div>
+                                <ul class="persona-pain">
+                                    <li>毎日十数ファイルを手動確認</li>
+                                    <li>データ不整合の修正が発生</li>
+                                    <li>勤怠の差し戻しで遅延</li>
+                                </ul>
+                            </div>
+                            <div class="persona-card p5">
+                                <div class="persona-role">経営管理</div>
+                                <div class="persona-name">管理部門<br>（コスト管理）</div>
+                                <div class="persona-tools">
+                                    <span>集計Excel</span>
+                                    <span>予算管理表</span>
+                                </div>
+                                <ul class="persona-pain">
+                                    <li>人件費データが月次でしか取れない</li>
+                                    <li>集計に時間がかかる</li>
+                                    <li>部署別の情報が揃わない</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="box-note">
+                            5つの立場それぞれが「自分の仕事を何とかしている」状態で、組織全体として業務の重複・情報の断絶が起きているパターンです。
+                        </div>
+
+                        <!-- ===== section3 ===== -->
+                        <h2 id="section3">業務フローの現状（AS-IS）</h2>
+                        <p>
+                            関係者分析の後は、実際の業務フローを可視化して、どの工程でどのツールが使われ、どこに問題が発生しているかを確認します。
+                        </p>
+
+                        <h3 id="section3-1">人事業務フロー（採用〜退職）</h3>
+                        <p>
+                            採用から退職まで、主要なイベントごとの現状フローです。各ステップの下部（赤字）は問題点を示しています。
+                        </p>
+
+                        <div class="asis-flow">
+                            <div class="asis-title">🔵 人事業務 AS-IS フロー（採用〜在籍〜退職）</div>
+                            <div class="asis-steps">
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-paper">紙</div>
+                                        <div class="asis-step-name">採用書類受取</div>
+                                        <div class="asis-step-sub">履歴書・誓約書<br>各種届出書</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>書式がバラバラで漏れが多い</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-sys">システム</div>
+                                        <div class="asis-step-name">人事データ登録</div>
+                                        <div class="asis-step-sub">基本情報・<br>雇用条件を登録</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>複雑な条件はシステム外で管理</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-excel">Excel</div>
+                                        <div class="asis-step-name">Excel台帳更新</div>
+                                        <div class="asis-step-sub">複数台帳へ<br>それぞれ転記</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>複数台帳で更新漏れ・版ズレ多発</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-mixed">混在</div>
+                                        <div class="asis-step-name">異動・変更対応</div>
+                                        <div class="asis-step-sub">システム＋<br>全台帳を再更新</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>更新先が記憶頼りで引継ぎ困難</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-paper">紙・混在</div>
+                                        <div class="asis-step-name">退職手続き</div>
+                                        <div class="asis-step-sub">返却物・証明書・<br>社保喪失・アカウント</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>チェックリストなく対応漏れが多</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 id="section3-2">勤怠業務フロー（月次サイクル）</h3>
+                        <p>
+                            勤怠業務は、日々の記録が紙であることが後工程すべての手作業の起点になっています。各ステップの問題点を確認してください。
+                        </p>
+
+                        <div class="asis-flow">
+                            <div class="asis-title">🟠 勤怠業務 AS-IS フロー（月次サイクル）</div>
+                            <div class="asis-steps">
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-paper">紙</div>
+                                        <div class="asis-step-name">日々・都度の記録</div>
+                                        <div class="asis-step-sub">紙の出退勤簿<br>休暇申請書（紙）</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>客観的記録がなく口頭承認のみ</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-excel">Excel</div>
+                                        <div class="asis-step-name">拠点が代行入力</div>
+                                        <div class="asis-step-sub">紙からExcelへ<br>月末に集中入力</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>月末代行入力に集中しミスが多発</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-excel">Excel</div>
+                                        <div class="asis-step-name">本部が回収・確認</div>
+                                        <div class="asis-step-sub">各拠点のExcelを<br>集約・チェック</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>書式が拠点ごと異なり差し戻し多</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-excel">Excel</div>
+                                        <div class="asis-step-name">集計・データ加工</div>
+                                        <div class="asis-step-sub">給与システム用に<br>データを整形</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>変換・手集計作業が属人化</div>
+                                </div>
+                                <div class="asis-arrow-col">▶</div>
+                                <div class="asis-step">
+                                    <div class="asis-step-top">
+                                        <div class="asis-step-badge badge-sys">システム</div>
+                                        <div class="asis-step-name">給与計算・支払い</div>
+                                        <div class="asis-step-sub">給与システムで<br>計算・確認</div>
+                                    </div>
+                                    <div class="asis-step-problem"><span class="problem-label">課題</span>毎日16ファイル確認・不整合修正</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <blockquote class="quote">
+                            「入口の紙運用が、後工程すべての手作業の起点になっている。」
+                        </blockquote>
+
+                        <!-- ===== section4 ===== -->
+                        <h2 id="section4">課題の構造分析：なぜ手作業が残るのか</h2>
+                        <p>
+                            業務フローを可視化した後は、手作業が残る根本原因を構造的に整理します。表面の症状（二重入力・転記ミス）だけを解消しようとしても、根本原因が残れば同じ問題が繰り返されます。
+                        </p>
+
+                        <div class="issue-tree">
+                            <div class="issue-root">根本問題：人事・労働業務に手作業が残り続ける</div>
+                            <div class="issue-connector">▼</div>
+                            <div class="issue-branches">
+                                <div class="issue-branch">
+                                    <div class="issue-branch-title">原因① アナログな記録の入口</div>
+                                    <ul>
+                                        <li>出退勤・休暇申請が紙のみ</li>
+                                        <li>採用書類に統一書式がない</li>
+                                        <li>申請経路が口頭・メールに分散</li>
+                                        <li>書式が拠点・担当者ごとに異なる</li>
+                                    </ul>
+                                </div>
+                                <div class="issue-branch">
+                                    <div class="issue-branch-title">原因② システムの機能制約</div>
+                                    <ul>
+                                        <li>複雑な支給条件に対応できない</li>
+                                        <li>複数台帳を統合する機能がない</li>
+                                        <li>外部フォーマットへの出力が困難</li>
+                                        <li>拠点間の情報共有機能が不足</li>
+                                    </ul>
+                                </div>
+                                <div class="issue-branch">
+                                    <div class="issue-branch-title">原因③ 情報の分散・属人化</div>
+                                    <ul>
+                                        <li>担当者が複数の台帳を独自管理</li>
+                                        <li>特殊ケースが個人の記憶に依存</li>
+                                        <li>部署ごとに別の集計表を作成</li>
+                                        <li>引継ぎルールが整備されていない</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box-note">
+                            3つの原因は独立していません。「紙の入口→転記が発生→担当者が独自Excel管理→属人化」という連鎖が起きています。対策もこの連鎖を断ち切る順序で考える必要があります。
+                        </div>
+
+                        <!-- ===== section5 ===== -->
+                        <h2 id="section5">分析の枠組み「段階0〜3」</h2>
+                        <p>
+                            課題の構造が明確になったら、各業務タスクの現在の状態を4段階に分類して整理します。段階が上がるほど投資・工数が大きくなります。
+                        </p>
+
+                        <div class="stage-flow">
+                            <div class="stage s0">
+                                <div class="stage-no">段階0</div>
+                                <div class="stage-name">散らばり</div>
+                                <div class="stage-desc">手続き・書類・担当・書式を洗い出すだけ。重複・属人化が見える前</div>
+                                <div class="stage-cost">費用：小</div>
+                            </div>
+                            <div class="stage s1">
+                                <div class="stage-no">段階1</div>
+                                <div class="stage-name">標準化</div>
+                                <div class="stage-desc">書式・入力項目の統一、紙のPDF/Excel化、フォルダ・命名ルール、チェックリスト</div>
+                                <div class="stage-cost">費用：小〜中</div>
+                            </div>
+                            <div class="stage s2">
+                                <div class="stage-no">段階2</div>
+                                <div class="stage-name">仕組み化</div>
+                                <div class="stage-desc">マスタの一元化、入力フォーム・自動転記・差込印刷・マクロでの集計自動化</div>
+                                <div class="stage-cost">費用：中</div>
+                            </div>
+                            <div class="stage s3">
+                                <div class="stage-no">段階3</div>
+                                <div class="stage-name">システム化</div>
+                                <div class="stage-desc">作り込みでは限界のある領域だけ。クラウド人事・勤怠システムやAPI連携を検討</div>
+                                <div class="stage-cost">費用：大</div>
+                            </div>
+                        </div>
+
+                        <p>
+                            分析では、人事イベント（採用・異動・昇格・休職・退職など）と労働イベント（勤怠の日々・都度・月次・年次・給与）ごとに業務フロー図を作成し、各タスクに現在の段階を記入して集計しました。集計することで、紙のまま残っているイベント、Excelへの転記を繰り返している工程が数値で確認でき、改善の順番を決める根拠になります。
+                        </p>
+
+                        <div class="box-note">
+                            段階3（システム化）は、段階0〜2で対応した後、効果を確認してから、Excelなどでの対応が難しい領域に限って検討します。
+                        </div>
+
+                        <!-- ===== section6 ===== -->
+                        <h2 id="section6">人事管理で見えた課題</h2>
+                        <p>
+                            人事管理では、採用・異動・昇格・退職などの主な処理は人事給与システムで行われていました（段階3）。一方で、システムとは別に複数のExcel台帳が使われており、多くのイベントで<strong>紙確認→システム登録→Excel台帳更新（複数）</strong>という三重の工程が発生していました。
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>人事イベント</th>
+                                    <th>主な手作業の発生箇所</th>
+                                    <th>段階</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>採用・入社</td>
+                                    <td>書類チェック（紙）→システム登録→台帳×3更新</td>
+                                    <td>0→3→1</td>
+                                </tr>
+                                <tr>
+                                    <td>異動・変更</td>
+                                    <td>変更申請（紙）→システム更新→全台帳再確認・更新</td>
+                                    <td>0→3→1</td>
+                                </tr>
+                                <tr>
+                                    <td>昇格・報酬改定</td>
+                                    <td>報酬テーブル確認（Excel）→システム反映→台帳更新</td>
+                                    <td>1→3→1</td>
+                                </tr>
+                                <tr>
+                                    <td>休職・復職</td>
+                                    <td>必要書類の種類が休職事由によって異なり都度確認</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>退職・契約終了</td>
+                                    <td>返却物・アカウント停止・社保喪失・証明書発行が個別対応</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>Excel台帳が複数残っている主な理由は次の4点です。</p>
+                        <ul>
+                            <li><strong>システム機能の制約：</strong>複数拠点の引当や複雑な支給条件、暫定中の社格など、システムで管理しにくいケースがある</li>
+                            <li><strong>属人化：</strong>特別な事情はシステムのメモ欄では扱いにくく、担当者の記憶に頼っている</li>
+                            <li><strong>部署間の情報共有：</strong>予算管理など別部署の目的で、別の一覧表を独自に整理している</li>
+                            <li><strong>転記作業：</strong>外部機関へ提出するため、指定フォーマットのExcelへ転記している</li>
+                        </ul>
+
+                        <!-- ===== section7 ===== -->
+                        <h2 id="section7">労働管理（勤怠）で見えた課題</h2>
+                        <p>
+                            勤怠は、日々の出退勤の記録と休暇の記録を紙で行い、月次に各拠点の担当者が紙からExcelへ入力し、本部が回収・確認・集計して給与システムへ連携する流れでした。
+                        </p>
+                        <div class="flow-line">
+                            <span class="fl paper">日々・都度<br><small>紙の出退勤簿・申請</small></span>
+                            <span class="fl-arrow">▶</span>
+                            <span class="fl excel">月次<br><small>Excelへ代行入力</small></span>
+                            <span class="fl-arrow">▶</span>
+                            <span class="fl excel">本部<br><small>回収・チェック・集計</small></span>
+                            <span class="fl-arrow">▶</span>
+                            <span class="fl sys">給与<br><small>システムで計算</small></span>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>工程</th>
+                                    <th>現状のツール</th>
+                                    <th>主な問題</th>
+                                    <th>段階</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>日々の出退勤記録</td>
+                                    <td>紙の出退勤簿</td>
+                                    <td>客観的記録なし・時間外承認が口頭</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>休暇申請・取得記録</td>
+                                    <td>紙の申請書</td>
+                                    <td>本部が年休残を把握できない</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>月末集計・代行入力</td>
+                                    <td>拠点担当者がExcel入力</td>
+                                    <td>月末集中・書式バラバラ・ミス多発</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>本部回収・確認</td>
+                                    <td>Excel集約・手動チェック</td>
+                                    <td>差し戻し・修正・遅延</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>給与システムへの連携</td>
+                                    <td>給与システム</td>
+                                    <td>毎日16ファイル確認が必要</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            日々の記録・都度の申請・年休の付与・シフト作成・締め後の修正は、ほとんどが段階0（紙・手作業）でした。入口が紙のままでは、後の工程でExcelを修正しても転記・確認・修正の作業は残ります。勤怠については、まず入口の記録方法を見直す必要があります。
+                        </p>
+
+                        <!-- ===== section8 ===== -->
+                        <h2 id="section8">労働管理上の法的な留意点</h2>
+                        <p>
+                            分析では、効率化とは別に、労働管理上の課題も確認しました。①時間外の客観的な記録がなく、承認が口頭で行われていること、②年休の付与と取得の状況を本部で把握できず、両者が一致しないおそれがあることです。
+                        </p>
+
+                        <h3>① 労働時間の客観的な把握義務</h3>
+                        <div class="law-quote">
+                            <div class="law-src">労働安全衛生規則 第52条の7の3</div>
+                            法第六十六条の八の三の厚生労働省令で定める方法は、<strong>タイムカードによる記録、パーソナルコンピュータ等の電子計算機の使用時間の記録等の客観的な方法</strong>その他の適切な方法とする。<br>
+                            ２ 事業者は、前項に規定する方法により把握した労働時間の状況の記録を作成し、<strong>三年間保存</strong>するためのその必要な措置を講じなければならない。
+                        </div>
+
+                        <h3>② 年5日の年休付与と年次有給休暇管理簿</h3>
+                        <div class="law-quote">
+                            <div class="law-src">労働基準法施行規則 第24条の7</div>
+                            使用者は、法第三十九条第二項から第四項までの規定による有給休暇を与えたときは、<strong>時季、日数及び基準日を労働者ごとに明らかにした書類（年次有給休暇管理簿）を作成し、当該有給休暇を与えた期間中及び当該期間の満了後五年間保存</strong>しなければならない。
+                        </div>
+
+                        <div class="box-caution">
+                            年休の付与と取得の状況を把握できない場合、年5日の取得状況の確認や年次有給休暇管理簿の作成に支障が生じます。また、時間外労働の承認が口頭のみの場合、客観的な記録がないとみなされるリスクがあります。効率化とあわせて、記録と承認の方法を統一することが必要です。
+                        </div>
+
+                        <!-- ===== section9 ===== -->
+                        <h2 id="section9">優先順位の付け方と優先度マトリクス</h2>
+                        <p>
+                            課題を整理した後、<strong>「効果（改善の大きさ）」と「容易性（取り組みやすさ）」</strong>の2軸で優先度を評価します。右上（高効果×高容易）から着手するのが基本です。
+                        </p>
+
+                        <div class="pmatrix-wrap">
+                            <div class="pmatrix">
+                                <!-- 1行目：左上空白 + 列ヘッダー2つ -->
+                                <div class="pmatrix-corner"></div>
+                                <div class="pmatrix-colhead">容易性：低<small>手間がかかる</small></div>
+                                <div class="pmatrix-colhead">容易性：高<small>すぐ取り組める</small></div>
+                                <!-- 2行目：高効果 -->
+                                <div class="pmatrix-rowhead">高<br>効<br>果</div>
+                                <div class="pmatrix-cell pmatrix-hl">
+                                    <div class="pmatrix-badge">計画的に取り組む</div>
+                                    <ul class="pmatrix-items">
+                                        <li>人事マスタの一元化</li>
+                                        <li>勤怠打刻システムの導入</li>
+                                        <li>申請フォームの電子化</li>
+                                    </ul>
+                                </div>
+                                <div class="pmatrix-cell pmatrix-hh">
+                                    <div class="pmatrix-badge">最優先で着手する</div>
+                                    <ul class="pmatrix-items">
+                                        <li>採用書類の書式統一・チェックリスト整備</li>
+                                        <li>勤怠入力Excelの入力補助</li>
+                                        <li>退職・休職の手順標準化</li>
+                                        <li>拠点の様式・提出ルール統一</li>
+                                    </ul>
+                                </div>
+                                <!-- 3行目：低効果 -->
+                                <div class="pmatrix-rowhead">低<br>効<br>果</div>
+                                <div class="pmatrix-cell pmatrix-ll">
+                                    <div class="pmatrix-badge">後回しでよい</div>
+                                    <ul class="pmatrix-items">
+                                        <li>外部システムとのAPI連携</li>
+                                        <li>複雑なRPA開発</li>
+                                        <li>AIを活用した高度な自動化</li>
+                                    </ul>
+                                </div>
+                                <div class="pmatrix-cell pmatrix-lh">
+                                    <div class="pmatrix-badge">すきまで対応</div>
+                                    <ul class="pmatrix-items">
+                                        <li>フォルダ・ファイル命名規則の統一</li>
+                                        <li>テンプレートの整備</li>
+                                        <li>定型チェックリストの整備</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>イベント別の優先度スコア（効果×容易性）</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>人事イベント</th>
+                                    <th>段階1（低コスト）の対応例</th>
+                                    <th class="num">優先度</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>採用・入社</td>
+                                    <td>必要書類チェックリストと提出書式を統一し、記入例を添付</td>
+                                    <td class="num"><span class="score high">20</span></td>
+                                </tr>
+                                <tr>
+                                    <td>休職・復職</td>
+                                    <td>休職種別ごとの必要書類・連絡日チェックリスト・テンプレート化</td>
+                                    <td class="num"><span class="score mid">16</span></td>
+                                </tr>
+                                <tr>
+                                    <td>退職・契約終了</td>
+                                    <td>返却物・アカウント停止・社保喪失・証明書のチェックリストを標準化</td>
+                                    <td class="num"><span class="score mid">15</span></td>
+                                </tr>
+                                <tr>
+                                    <td>異動・変更</td>
+                                    <td>変更申請書式を統一し、台帳更新ルールを明示化</td>
+                                    <td class="num"><span class="score low">12</span></td>
+                                </tr>
+                                <tr>
+                                    <td>昇格・降格・報酬改定</td>
+                                    <td>報酬テーブルをExcel化し、改定計算を関数化</td>
+                                    <td class="num"><span class="score low">12</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="stat-note">※優先度：効果(1〜5)×容易性(1〜5)</p>
+
+                        <h3>イベント横断の施策</h3>
+                        <p>個別イベントの改善とは別に、次の6つの横断施策を整理しました。</p>
+                        <ol>
+                            <li><strong>人事マスタの一元化：</strong>氏名・社員番号・所属などを1つのマスタに集約し、全書類・台帳からそこを参照する</li>
+                            <li><strong>フォルダ・命名の標準化：</strong>フォルダ構成・ファイル名・版管理のルールを統一する</li>
+                            <li><strong>入力テンプレート・入力規則：</strong>プルダウン・必須項目で表記のゆれを防止</li>
+                            <li><strong>チェックリスト運用：</strong>手続きの漏れを防ぎ、引き継ぎを容易にする（属人化の解消）</li>
+                            <li><strong>申請・データの電子化受付：</strong>Microsoft Formsなどで紙の申請を置き換え、集計・転記を自動化</li>
+                            <li><strong>定例業務の自動化：</strong>マスタからの差込作成、システムからの定型出力を自動化し、転記をなくす</li>
+                        </ol>
+
+                        <div class="inline-cta">
+                            <p>業務フローの棚卸しや労働管理の確認について、ご相談を承っています。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <!-- ===== section11 ===== -->
+                        <h2 id="section11">改善ロードマップ</h2>
+                        <p>
+                            段階的な改善は、コストと効果のバランスを確認しながら進めることが重要です。次の3フェーズを目安に取り組みます。
+                        </p>
+
+                        <div class="roadmap">
+                            <div class="road-phase ph1">
+                                <div class="road-phase-no">フェーズ1</div>
+                                <div class="road-phase-period">今すぐ〜1ヶ月</div>
+                                <div class="road-phase-title">棚卸し・標準化</div>
+                                <ul>
+                                    <li>業務フロー図の作成と段階の記入</li>
+                                    <li>書式・様式の統一（採用・退職等）</li>
+                                    <li>チェックリストの作成・配布</li>
+                                    <li>フォルダ・ファイル命名ルールの統一</li>
+                                    <li>拠点間の提出ルールの統一</li>
+                                </ul>
+                            </div>
+                            <div class="road-phase ph2">
+                                <div class="road-phase-no">フェーズ2</div>
+                                <div class="road-phase-period">1〜3ヶ月</div>
+                                <div class="road-phase-title">仕組み化・自動化</div>
+                                <ul>
+                                    <li>人事マスタの一元化（Excel/Access）</li>
+                                    <li>申請書類の電子化（Microsoft Forms）</li>
+                                    <li>勤怠入力Excelのマクロ入力補助</li>
+                                    <li>給与チェックデータの自動抽出（RPA）</li>
+                                    <li>定型出力・差込印刷の自動化</li>
+                                </ul>
+                            </div>
+                            <div class="road-phase ph3">
+                                <div class="road-phase-no">フェーズ3</div>
+                                <div class="road-phase-period">3〜6ヶ月以降</div>
+                                <div class="road-phase-title">システム化の検討</div>
+                                <ul>
+                                    <li>勤怠打刻システムの選定・導入</li>
+                                    <li>電子申請（e-Gov）の活用拡大</li>
+                                    <li>クラウド人事・労務システムの比較検討</li>
+                                    <li>フェーズ2の効果測定・課題整理</li>
+                                    <li>必要な領域にのみシステム化を適用</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="box-info">
+                            フェーズ3のシステム化は、フェーズ1・2で「どこまでExcel・RPAで対応できるか」を確認してから判断します。Excelで十分な領域にシステムを導入しても、費用対効果が出ないためです。
+                        </div>
+
+                        <!-- ===== section12 ===== -->
+                        <h2 id="section12">まとめ</h2>
+                        <ul>
+                            <li><strong>利用者分析：</strong>立場（本部人事・拠点担当・管理職・給与担当・経営管理）ごとに課題が異なるため、まず全員の痛点を把握する</li>
+                            <li><strong>AS-IS業務フロー：</strong>人事・勤怠それぞれのフローを可視化し、どの工程にどのツールが使われているかを確認する</li>
+                            <li><strong>課題構造分析：</strong>「アナログな入口／システムの制約／属人化」の3つの根本原因を理解し、連鎖を断ち切る順序で対策を立てる</li>
+                            <li><strong>優先度マトリクス：</strong>効果×容易性で評価し、右上（高効果×高容易）から着手する</li>
+                            <li><strong>ロードマップ：</strong>棚卸し→標準化→仕組み化の順に進め、システム化は最後に必要な領域にのみ適用する</li>
+                        </ul>
+                        <p>
+                            当事務所では、労働管理の確認とあわせて、業務の棚卸しやExcel・RPAなどの活用についても、ご相談を承っています。
+                        </p>
+
+                        <div class="sources">
+                            <div class="sources-title">参考資料（一次情報）</div>
+                            <ul>
+                                <li><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11200000-Roudoukijunkyoku/0000187488.pdf" target="_blank" rel="noopener">厚生労働省「労働時間の適正な把握のために使用者が講ずべき措置に関するガイドライン」（PDF）</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/322AC0000000049" target="_blank" rel="noopener">e-Gov法令検索「労働基準法」</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/322M40000100023" target="_blank" rel="noopener">e-Gov法令検索「労働基準法施行規則」</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/347AC0000000057" target="_blank" rel="noopener">e-Gov法令検索「労働安全衛生法」</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/347M50002000032" target="_blank" rel="noopener">e-Gov法令検索「労働安全衛生規則」</a></li>
+                            </ul>
+                        </div>
+
+                    </article>
+
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-nav">
+                        <a href="saitei-chingin-2026.html">
+                            <div class="nav-label">← 前の記事</div>
+                            令和8年度の最低賃金について事業主が確認すべきポイント
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">システムがあっても手作業が残る理由</a></li>
+                            <li><a href="#section2">関係者分析（利用者分析）</a></li>
+                            <li><a href="#section3">業務フローの現状（AS-IS）</a>
+                                <ol>
+                                    <li><a href="#section3-1">人事業務フロー</a></li>
+                                    <li><a href="#section3-2">勤怠業務フロー</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section4">課題の構造分析</a></li>
+                            <li><a href="#section5">分析の枠組み「段階0〜3」</a></li>
+                            <li><a href="#section6">人事管理で見えた課題</a></li>
+                            <li><a href="#section7">労働管理（勤怠）で見えた課題</a></li>
+                            <li><a href="#section8">法的な留意点</a></li>
+                            <li><a href="#section9">優先順位と優先度マトリクス</a></li>
+                            <li><a href="#section11">改善ロードマップ</a></li>
+                            <li><a href="#section12">まとめ</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="romu-dx-roadmap.html">中小企業の労務DXロードマップ ― 何から手をつけるか</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方｜社労士が失敗しないポイントを解説</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務手続き</div>
+                            <a href="36kyotei-guide.html">36協定とは？中小企業が最初に知っておくべき基本と届出の手順</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration &amp; Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>
