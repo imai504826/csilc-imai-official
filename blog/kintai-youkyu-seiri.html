@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://sr-imai-office.com/blog/kintai-youkyu-seiri.html">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G9TEKC6Y2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1G9TEKC6Y2');
+    </script>
+    <meta name="description" content="労働時間管理システムを導入する前に、要件定義の前段として何を・どの範囲で合意しておくか。法令上の前提・7つの業務分析アプローチ・中小企業の取捨選択を体系的に解説します。">
+    <title>労働時間管理システム導入における業務分析の進め方 | 今井久一郎 社会保険労務士事務所</title>
+
+    <style>
+        :root {
+            --primary-blue: #1a4a93;
+            --accent-orange: #f39800;
+            --accent-sky: #00a0e9;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --bg-soft: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            margin: 0; padding: 0; line-height: 1.7;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* ヘッダー */
+        header { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 40px; width: auto; }
+        .office-name-top { font-size: 1rem; font-weight: bold; color: var(--primary-blue); line-height: 1.2; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-menu a { color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        .nav-menu a:hover { color: var(--accent-orange); }
+        .nav-menu a.active { color: var(--accent-orange); border-bottom: 2px solid var(--accent-orange); padding-bottom: 2px; }
+
+        .header-line { display: flex; width: 100%; height: 6px; }
+        .line-blue { background-color: #1c4b8e; flex: 2; }
+        .line-sky { background-color: #3498db; flex: 1; }
+        .line-orange { background-color: #fabc3f; flex: 0.8; }
+
+        /* パンくず */
+        .breadcrumb { background: var(--bg-soft); padding: 12px 0; font-size: 0.85rem; color: var(--text-gray); }
+        .breadcrumb a { color: var(--primary-blue); }
+        .breadcrumb a:hover { color: var(--accent-orange); }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* 記事ヘッダー */
+        .article-header { padding: 40px 0 30px; border-bottom: 1px solid #eee; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .cat-badge { font-size: 0.78rem; font-weight: bold; padding: 4px 14px; border-radius: 50px; color: var(--white); background: var(--primary-blue); }
+        .cat-badge.romu-dx { background: var(--accent-sky); }
+        .article-date { font-size: 0.85rem; color: var(--text-gray); }
+        .read-time { font-size: 0.85rem; color: var(--text-gray); }
+        .article-title { font-size: 1.8rem; color: var(--primary-blue); line-height: 1.45; margin: 0 0 20px; }
+        .article-lead { font-size: 1rem; color: var(--text-gray); background: var(--bg-soft); border-left: 4px solid var(--accent-orange); padding: 14px 18px; border-radius: 0 8px 8px 0; line-height: 1.8; margin: 0; }
+
+        /* 2カラム */
+        .content-layout { display: grid; grid-template-columns: 1fr 260px; gap: 40px; padding: 40px 0 80px; align-items: start; }
+
+        /* 目次 */
+        .toc { background: var(--bg-soft); border-radius: 12px; padding: 22px 24px; border-top: 4px solid var(--primary-blue); position: sticky; top: 90px; }
+        .toc-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .toc ol { list-style: decimal; padding-left: 18px; margin: 0; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .toc a:hover { color: var(--primary-blue); }
+        .toc ol ol { margin-top: 6px; padding-left: 16px; }
+        .toc ol ol li { margin-bottom: 4px; }
+        .toc ol ol a { font-size: 0.82rem; color: var(--text-gray); }
+
+        /* 記事本文 */
+        .article-body h2 { font-size: 1.35rem; color: var(--primary-blue); border-left: 5px solid var(--primary-blue); border-bottom: 1px solid #dce8ff; padding: 10px 16px; margin: 48px 0 20px; background: linear-gradient(90deg, #eef4ff, transparent); border-radius: 0 8px 8px 0; }
+        .article-body h3 { font-size: 1.1rem; color: var(--text-dark); border-left: 3px solid var(--accent-orange); padding-left: 12px; margin: 32px 0 14px; }
+        .article-body p { font-size: 0.97rem; line-height: 1.9; margin-bottom: 18px; }
+        .article-body ul, .article-body ol { list-style: revert; padding-left: 22px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; font-size: 0.97rem; line-height: 1.8; }
+        .article-body strong { color: var(--primary-blue); }
+        .article-body a { color: var(--primary-blue); text-decoration: underline; }
+
+        /* ボックス */
+        .box-note { background: #fff8e8; border: 1px solid #ffe0a0; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-note::before { content: "📌 ポイント"; display: block; font-weight: bold; color: var(--accent-orange); margin-bottom: 6px; }
+        .box-caution { background: #fff0f0; border: 1px solid #ffb3b3; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-caution::before { content: "⚠️ 注意"; display: block; font-weight: bold; color: #c0392b; margin-bottom: 6px; }
+        .box-info { background: #f0f9ff; border: 1px solid #b3d9f7; border-radius: 8px; padding: 16px 20px; font-size: 0.92rem; line-height: 1.8; margin: 20px 0; }
+        .box-info::before { content: "ℹ️ 補足"; display: block; font-weight: bold; color: var(--accent-sky); margin-bottom: 6px; }
+
+        /* テーブル */
+        .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92rem; }
+        .article-body th { background: var(--primary-blue); color: var(--white); padding: 10px 14px; text-align: left; }
+        .article-body td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: top; }
+        .article-body tr:nth-child(even) td { background: var(--bg-soft); }
+
+        /* 著者ボックス */
+        .author-box { display: flex; gap: 20px; align-items: flex-start; background: var(--bg-soft); border-radius: 14px; padding: 24px; margin-top: 48px; border-top: 4px solid var(--primary-blue); }
+        .author-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--primary-blue); color: var(--white); font-size: 1.4rem; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .author-info .author-name { font-weight: bold; font-size: 1rem; color: var(--primary-blue); margin-bottom: 4px; }
+        .author-info .author-title { font-size: 0.82rem; color: var(--text-gray); margin-bottom: 8px; }
+        .author-info .author-bio { font-size: 0.88rem; line-height: 1.7; }
+
+        /* 記事ナビ */
+        .article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+        .article-nav a { flex: 1; display: block; padding: 14px 18px; background: var(--bg-soft); border-radius: 10px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.5; }
+        .article-nav a:hover { background: #eef4ff; color: var(--primary-blue); }
+        .article-nav .nav-label { font-size: 0.75rem; color: var(--text-gray); margin-bottom: 4px; }
+        .back-to-list { display: block; text-align: center; padding: 12px; margin-top: 16px; color: var(--primary-blue); font-weight: bold; font-size: 0.9rem; }
+        .back-to-list:hover { color: var(--accent-orange); }
+
+        /* 関連記事 */
+        .related-articles { margin-top: 30px; }
+        .related-title { font-size: 0.95rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-orange); }
+        .related-item { padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .related-item:last-child { border-bottom: none; }
+        .related-item a { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; display: block; }
+        .related-item a:hover { color: var(--primary-blue); }
+        .related-cat { font-size: 0.72rem; color: var(--text-gray); margin-bottom: 4px; }
+
+        /* 記事内CTA */
+        .inline-cta { background: linear-gradient(135deg, var(--primary-blue), #0d3270); color: var(--white); border-radius: 14px; padding: 28px; text-align: center; margin: 40px 0; }
+        .inline-cta p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; }
+        .inline-cta a { display: inline-block; background: var(--accent-orange); color: var(--white); padding: 12px 32px; border-radius: 50px; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
+        .inline-cta a:hover { background: #e08800; transform: scale(1.04); }
+
+        /* フッターCTA */
+        .cta-section { background: var(--primary-blue); padding: 60px 20px; text-align: center; color: var(--white); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 28px; opacity: 0.9; }
+        .cta-btn { display: inline-block; background: var(--white); color: var(--primary-blue); padding: 16px 48px; border-radius: 50px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .cta-btn:hover { background: #f0f0f0; transform: scale(1.04); }
+
+        /* フッター */
+        footer { background: #1a1a1a; color: #aaa; padding: 50px 0; text-align: center; }
+        .footer-name { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; font-weight: bold; }
+        .footer-srp { width: 80px; margin: 20px auto; opacity: 0.8; display: block; }
+        .copyright { font-size: 0.75rem; margin-top: 25px; color: #666; }
+
+        /* ==============================
+           本記事専用スタイル
+        ============================== */
+
+        /* 工程フロー図 */
+        .phase-flow { display: flex; align-items: stretch; margin: 24px 0; gap: 0; overflow-x: auto; }
+        .phase-box { flex: 1; min-width: 90px; padding: 14px 10px; text-align: center; font-size: 0.82rem; font-weight: bold; border-radius: 0; border-top: 4px solid #ccc; background: var(--bg-soft); color: var(--text-gray); position: relative; }
+        .phase-box:first-child { border-radius: 8px 0 0 8px; }
+        .phase-box:last-child { border-radius: 0 8px 8px 0; }
+        .phase-box.current { background: var(--primary-blue); color: #fff; border-top-color: #0d3270; }
+        .phase-box::after { content: "▶"; position: absolute; right: -10px; top: 50%; transform: translateY(-50%); font-size: 0.75rem; color: var(--accent-orange); z-index: 1; }
+        .phase-box:last-child::after { display: none; }
+        .phase-label { font-size: 0.72rem; font-weight: normal; margin-top: 4px; opacity: 0.8; }
+
+        /* 完了基準ボックス */
+        .completion-box { background: #eef4ff; border: 1px solid #c0d4f0; border-radius: 10px; padding: 18px 22px; margin: 20px 0; }
+        .completion-box-title { font-weight: bold; color: var(--primary-blue); font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .completion-box ol { list-style: decimal; padding-left: 20px; margin: 0; }
+        .completion-box li { font-size: 0.92rem; line-height: 1.8; margin-bottom: 4px; }
+
+        /* 7つのアプローチ 概観グリッド */
+        .approach-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 24px 0; }
+        .ao-card { background: var(--bg-soft); border-top: 3px solid var(--primary-blue); border-radius: 8px; padding: 14px 12px; }
+        .ao-num { font-size: 1.6rem; font-weight: bold; color: var(--primary-blue); line-height: 1; }
+        .ao-title { font-size: 0.8rem; color: var(--text-dark); line-height: 1.5; margin-top: 4px; }
+
+        /* 客観記録フロー */
+        .record-flow { display: flex; align-items: center; gap: 6px; margin: 20px 0; flex-wrap: wrap; }
+        .rf-box { flex: 1; min-width: 110px; padding: 12px 10px; border-radius: 8px; text-align: center; font-size: 0.84rem; font-weight: bold; line-height: 1.5; }
+        .rf-box small { font-weight: normal; font-size: 0.74rem; display: block; margin-top: 3px; color: inherit; opacity: 0.85; }
+        .rf-obj { background: #eef4ff; color: var(--primary-blue); border: 1px solid #c0d4f0; }
+        .rf-rule { background: #fff4e0; color: #a05000; border: 1px solid #ffdba0; }
+        .rf-gap { background: #fff0f0; color: #c0392b; border: 1px solid #ffb3b3; }
+        .rf-result { background: #e8f5e9; color: #1a7a3a; border: 1px solid #a5d6a7; }
+        .rf-arrow { color: var(--accent-orange); font-size: 0.9rem; flex-shrink: 0; }
+
+        /* 乖離計算ビジュアル */
+        .gap-visual { background: var(--bg-soft); border: 1px solid #dce3ef; border-radius: 10px; padding: 20px; margin: 16px 0; }
+        .gap-visual-title { font-weight: bold; font-size: 0.9rem; color: var(--primary-blue); margin-bottom: 14px; }
+        .gap-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.88rem; }
+        .gap-row:last-child { margin-bottom: 0; }
+        .gap-label { font-weight: bold; color: var(--text-dark); min-width: 80px; }
+        .gap-formula { flex: 1; background: #fff; border: 1px solid #e0e8f0; border-radius: 6px; padding: 8px 12px; color: var(--text-dark); }
+        .gap-formula span.minus { color: #c0392b; }
+        .gap-formula span.note { font-size: 0.78rem; color: var(--text-gray); }
+
+        /* 訂正理由 カテゴリバッジ */
+        .reason-badge { display: inline-block; font-size: 0.75rem; font-weight: bold; padding: 3px 10px; border-radius: 50px; color: #fff; }
+        .rb-high { background: #c0392b; }
+        .rb-mid { background: var(--accent-orange); }
+
+        /* 対策分類 図 */
+        .measure-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
+        .measure-card { border-radius: 8px; padding: 14px 16px; }
+        .measure-card.sys { background: #eef4ff; border-left: 4px solid var(--primary-blue); }
+        .measure-card.ops { background: #fff4e0; border-left: 4px solid var(--accent-orange); }
+        .measure-card.edu { background: #f0f9ff; border-left: 4px solid var(--accent-sky); }
+        .measure-card.app { background: #fff8e8; border-left: 4px solid #e67e22; }
+        .measure-card-title { font-weight: bold; font-size: 0.88rem; margin-bottom: 6px; }
+        .measure-card.sys .measure-card-title { color: var(--primary-blue); }
+        .measure-card.ops .measure-card-title { color: #a05000; }
+        .measure-card.edu .measure-card-title { color: #0077b6; }
+        .measure-card.app .measure-card-title { color: #c0392b; }
+        .measure-card ul { list-style: disc !important; padding-left: 16px !important; margin: 0; }
+        .measure-card li { font-size: 0.82rem !important; line-height: 1.6 !important; margin-bottom: 3px; }
+
+        /* 効果評価テーブル ◎〇△－ */
+        .article-body td.eff-aa { background: #d4edda; font-weight: bold; color: #1a7a3a; text-align: center; }
+        .article-body td.eff-a { background: #e8f5e9; color: #2e7d32; text-align: center; }
+        .article-body td.eff-b { background: #fff4e0; color: #a05000; text-align: center; }
+        .article-body td.eff-none { background: #f5f5f5; color: #999; text-align: center; }
+
+        /* チェックリスト */
+        .checklist { list-style: none !important; padding-left: 0 !important; margin: 16px 0; }
+        .checklist li { padding: 8px 10px 8px 32px; position: relative; margin-bottom: 6px; font-size: 0.92rem; line-height: 1.75; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--primary-blue); }
+        .checklist li::before { content: "☐"; position: absolute; left: 10px; top: 8px; font-size: 1rem; color: var(--primary-blue); }
+        .checklist.opt li { border-left-color: var(--accent-sky); }
+        .checklist.opt li::before { color: var(--accent-sky); }
+
+        /* 参考資料 */
+        .sources { margin-top: 36px; padding: 16px 20px; background: var(--bg-soft); border-radius: 8px; }
+        .sources-title { font-weight: bold; color: var(--primary-blue); font-size: 0.92rem; margin-bottom: 6px; }
+        .article-body .sources li { font-size: 0.85rem; }
+
+        /* 中小企業取捨選択テーブル */
+        .article-body td.stay { color: #1a7a3a; font-weight: bold; }
+        .article-body td.simplify { color: #c0392b; }
+
+        /* 法令引用 */
+        .law-quote { background: #fafbfd; border: 1px solid #dce3ef; border-radius: 8px; padding: 14px 18px; font-size: 0.88rem; line-height: 1.85; margin: 14px 0 20px; }
+        .law-src { font-size: 0.78rem; font-weight: bold; color: var(--primary-blue); margin-bottom: 6px; }
+
+        /* 13項目グリッド */
+        .items-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+        .items-group { background: var(--bg-soft); border-radius: 8px; padding: 14px 16px; }
+        .ig-blue { border-top: 3px solid var(--primary-blue); }
+        .ig-orange { border-top: 3px solid var(--accent-orange); }
+        .ig-sky { border-top: 3px solid var(--accent-sky); }
+        .items-group-title { font-weight: bold; font-size: 0.85rem; margin-bottom: 8px; }
+        .ig-blue .items-group-title { color: var(--primary-blue); }
+        .ig-orange .items-group-title { color: #a05000; }
+        .ig-sky .items-group-title { color: #0077b6; }
+        .items-group ul { list-style: none !important; padding: 0 !important; margin: 0; }
+        .items-group li { font-size: 0.84rem; line-height: 1.6; padding: 5px 0; border-bottom: 1px dashed #e0e8f0; display: flex; align-items: baseline; gap: 7px; }
+        .items-group li:last-child { border-bottom: none; }
+        .items-num { display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: bold; background: var(--primary-blue); color: #fff; border-radius: 50%; width: 18px; height: 18px; min-width: 18px; flex-shrink: 0; }
+        .ig-orange .items-num { background: var(--accent-orange); }
+        .ig-sky .items-num { background: var(--accent-sky); }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 15px; }
+            .nav-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 15px; width: 100%; text-align: center; }
+            .article-title { font-size: 1.35rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .toc { position: static; margin-bottom: 30px; }
+            .author-box { flex-direction: column; }
+            .article-nav { flex-direction: column; }
+            .approach-overview { grid-template-columns: repeat(2, 1fr); }
+            .record-flow { flex-direction: column; align-items: stretch; }
+            .rf-arrow { transform: rotate(90deg); text-align: center; }
+            .measure-grid { grid-template-columns: 1fr; }
+            .gap-row { flex-direction: column; align-items: flex-start; }
+            .items-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="../index.html" class="logo-area">
+                <img src="../images/CSI&LC IMAIのロゴ２.png" alt="CSI&LC IMAI ロゴ">
+                <div class="office-name-top">今井久一郎 社会保険労務士事務所</div>
+            </a>
+            <nav style="width: 100%; max-width: 640px;">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../services.html">3つの柱</a></li>
+                    <li><a href="../serviceAbaut.html">サービス内容</a></li>
+                    <li><a href="../career.html">実績・職務歴</a></li>
+                    <li><a href="../kintaiservice.html">勤怠システム</a></li>
+                    <li><a href="index.html" class="active">コラム</a></li>
+                    <li><a href="../about.html">事務所紹介</a></li>
+                    <li><a href="../contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-line">
+        <div class="line-blue"></div>
+        <div class="line-sky"></div>
+        <div class="line-orange"></div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">ホーム</a>
+            <span>›</span>
+            <a href="index.html">お役立ちコラム</a>
+            <span>›</span>
+            労働時間管理システムの業務分析
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="cat-badge romu-dx">労務管理・DX</span>
+                    <span class="article-date">2026年11月11日</span>
+                    <span class="read-time">📖 約20分</span>
+                </div>
+                <h1 class="article-title">労働時間管理システム導入における業務分析の進め方</h1>
+                <p class="article-lead">
+                    システムの要件定義に入ってから「対象者はどこまでか」「何を客観的な記録にするか」「承認は誰がするか」といった前提で議論が止まることがあります。これは、要件定義の前段で合意しておくべき事項が整理されていないために起きます。本記事では、<strong>要件定義の前に「要求整理」として何を・どの範囲で合意しておくか</strong>を、法令上の前提・7つの業務分析アプローチ・中小企業での取捨選択の順に解説します。
+                </p>
+            </div>
+
+            <div class="content-layout">
+
+                <!-- 本文エリア -->
+                <div>
+                    <div class="toc" style="display: none; margin-bottom: 30px;" id="toc-mobile">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">なぜ「要求整理」という工程を置くのか</a></li>
+                            <li><a href="#section2">出発点となる法令の整理</a></li>
+                            <li><a href="#section3">業務分析の7つのアプローチ</a>
+                                <ol>
+                                    <li><a href="#section3-1">頻度で切り分けて聞く</a></li>
+                                    <li><a href="#section3-2">利用者を役割別に棚卸しする</a></li>
+                                    <li><a href="#section3-3">スコープを5つの軸で確定する</a></li>
+                                    <li><a href="#section3-4">客観的な記録と申告時刻の関係を設計する</a></li>
+                                    <li><a href="#section3-5">訂正の理由をデータで把握する</a></li>
+                                    <li><a href="#section3-6">要求を「標準・設定・追加開発・運用」に仕分ける</a></li>
+                                    <li><a href="#section3-7">効果と負担の増加を役割別で評価する</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section4">業務以外で合意しておく方針</a></li>
+                            <li><a href="#section5">進め方の工夫</a></li>
+                            <li><a href="#section6">中小企業での取捨選択</a></li>
+                            <li><a href="#section7">まとめ：最低限の確認項目</a></li>
+                        </ol>
+                    </div>
+
+                    <article class="article-body">
+
+                        <!-- ===== section1 ===== -->
+                        <h2 id="section1">なぜ「要求整理」という工程を置くのか</h2>
+
+                        <p>労働時間管理システムの導入プロジェクトは、一般に次の工程で進みます。要件定義に入る前に「要求整理」という工程を設けることで、前提の合意が整った状態で要件定義をスタートできます。</p>
+
+                        <div class="phase-flow">
+                            <div class="phase-box current">要求整理<div class="phase-label">この記事の対象</div></div>
+                            <div class="phase-box">要件定義</div>
+                            <div class="phase-box">基本設計</div>
+                            <div class="phase-box">詳細設計・構築</div>
+                            <div class="phase-box">テスト・稼働</div>
+                        </div>
+
+                        <p>要求整理フェーズでは、次の2点を完了基準として最初に定義します。</p>
+
+                        <div class="completion-box">
+                            <div class="completion-box-title">要求整理フェーズの完了基準</div>
+                            <ol>
+                                <li>納品対象の成果物について、発注側の承認が完了していること</li>
+                                <li>次工程（要件定義）のスケジュールについて、発注側の承認が完了していること</li>
+                            </ol>
+                        </div>
+
+                        <p>このフェーズで扱う主要タスクは次のとおりです。各タスクの目的は「細部を決めること」ではなく、<strong>要件定義で何を決めるかを明確にすること</strong>です。</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:4%;">No</th>
+                                    <th style="width:25%;">タスク</th>
+                                    <th style="width:28%;">主な成果物</th>
+                                    <th>合意する内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>現行運用の把握・パッケージ機能の説明</td><td>現行業務フロー、機能説明資料</td><td>現行の業務と、導入する製品の基本機能の相互理解</td></tr>
+                                <tr><td>2</td><td>改革テーマ別の施策策定</td><td>改善施策一覧</td><td>何を改善したいのか</td></tr>
+                                <tr><td>3</td><td>スコープ整理</td><td>要求整理定義書</td><td>利害関係者・利用者・システム・連携・管理項目の範囲</td></tr>
+                                <tr><td>4</td><td>業務要件整理</td><td>新業務フロー（概要）、追加開発一覧</td><td>標準機能・設定変更・追加開発の位置づけ</td></tr>
+                                <tr><td>5</td><td>システム連携方針</td><td>要求整理定義書</td><td>連携先・方向・頻度</td></tr>
+                                <tr><td>6</td><td>データ移行方針</td><td>要求整理定義書</td><td>移行範囲・方法・役割</td></tr>
+                                <tr><td>7</td><td>インフラ方針</td><td>要求整理定義書</td><td>構成・認証・運用の責任範囲</td></tr>
+                                <tr><td>8</td><td>非機能要件方針</td><td>要求整理定義書</td><td>性能・可用性・セキュリティの方向性</td></tr>
+                                <tr><td>9</td><td>システム切替方針</td><td>要求整理定義書</td><td>切替の時期・対象・期間</td></tr>
+                                <tr><td>10</td><td>教育方針</td><td>要求整理定義書</td><td>教育の範囲と進め方</td></tr>
+                                <tr><td>11</td><td>全体テスト方針</td><td>要求整理定義書</td><td>テストの種類と担当</td></tr>
+                            </tbody>
+                        </table>
+
+                        <!-- ===== section2 ===== -->
+                        <h2 id="section2">出発点となる法令の整理</h2>
+
+                        <p>業務分析に入る前に、システムが満たすべき法令上の前提を確認します。ここを曖昧にしたまま機能比較に入ると、判断の軸がなくなります。</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:22%;">論点</th>
+                                    <th style="width:40%;">法令・ガイドラインの内容（要旨）</th>
+                                    <th>業務分析で確認すること</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>労働時間とは</strong></td>
+                                    <td>使用者の指揮命令下に置かれている時間。就業規則等の定めではなく客観的に判断される。義務付けられた準備・手待時間・研修等も該当し得る（労働時間ガイドライン）</td>
+                                    <td>「在社時間」と「労働時間」を分けて扱えるか。準備・後始末の時間を誰がどう申告するか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>始業・終業時刻の確認と記録</strong></td>
+                                    <td>労働日ごとに確認・記録する。方法は原則として、使用者による現認、またはタイムカード・ICカード・パソコンの使用時間の記録等の客観的な記録を基礎とする（労働時間ガイドライン）</td>
+                                    <td>従業員の類型ごとに、客観的な記録を何から取るか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>自己申告制による場合</strong></td>
+                                    <td>対象者と管理者への十分な説明、必要に応じた実態調査と補正、入退場記録等との著しい乖離がある場合の実態調査、申告時間に上限を設ける等の阻害措置の禁止（労働時間ガイドライン）</td>
+                                    <td>乖離をどう計算し、誰が確認し、どう補正するかという業務フローがあるか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>労働時間の状況の把握</strong></td>
+                                    <td>面接指導のため、客観的な方法で把握し、記録を3年間保存する（労働安全衛生法第66条の8の3、労働安全衛生規則第52条の7の3）</td>
+                                    <td>対象は管理監督者・裁量労働制適用者・短時間労働者等を含む。管理職を対象外にしていないか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>時間外労働の上限</strong></td>
+                                    <td>原則は月45時間・年360時間。特別条項による場合も、年720時間以内、時間外と休日労働の合計が月100時間未満・2〜6か月平均80時間以内、月45時間超は年6か月まで（労働基準法第36条）</td>
+                                    <td>月の途中で見込みを把握し、事前に知らせる仕組みがあるか。複数月平均を計算できるか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>長時間労働者への対応</strong></td>
+                                    <td>週40時間を超える労働時間が月80時間を超えた労働者への情報の通知、申出による医師の面接指導（労働安全衛生法第66条の8、労働安全衛生規則第52条の2）</td>
+                                    <td>対象者を誰が抽出し、誰に渡すか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>年次有給休暇</strong></td>
+                                    <td>年10日以上付与される労働者に、基準日から1年以内に5日を取得させる。時間単位年休の取得分は、この5日から差し引けない（労働基準法第39条）</td>
+                                    <td>取得日数を基準日単位で把握できるか。時間単位年休を別に数えているか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>記録の保存</strong></td>
+                                    <td>労働関係に関する重要な書類は5年間保存（当分の間は3年間）（労働基準法第109条、附則第143条）</td>
+                                    <td>訂正前後の履歴を含めて保存できるか。旧システムのデータをどう残すか</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>月60時間超の割増賃金</strong></td>
+                                    <td>月60時間を超える時間外労働の割増賃金率は50%以上（労働基準法第37条第1項ただし書）</td>
+                                    <td>月60時間超の時間数を区分して集計できるか</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-caution">
+                            <strong>法改正の状況（2026年9月時点）</strong><br>
+                            労働基準法の見直し（連続勤務日数の上限、法定休日の特定、勤務間インターバル等）は、2026年9月時点で法案未提出、施行日は未定です。
+                        </div>
+
+                        <!-- ===== section3 ===== -->
+                        <h2 id="section3">業務分析の7つのアプローチ</h2>
+
+                        <p>要求整理フェーズで行う業務分析には、以下の7つのアプローチがあります。</p>
+
+                        <div class="approach-overview">
+                            <div class="ao-card">
+                                <div class="ao-num">1</div>
+                                <div class="ao-title">現行業務を<br>「頻度」で<br>切り分けて聞く</div>
+                            </div>
+                            <div class="ao-card">
+                                <div class="ao-num">2</div>
+                                <div class="ao-title">利用者を<br>役割別に<br>棚卸しする</div>
+                            </div>
+                            <div class="ao-card">
+                                <div class="ao-num">3</div>
+                                <div class="ao-title">スコープを<br>5つの軸で<br>確定する</div>
+                            </div>
+                            <div class="ao-card">
+                                <div class="ao-num">4</div>
+                                <div class="ao-title">客観的な記録と<br>申告時刻の<br>関係を設計する</div>
+                            </div>
+                            <div class="ao-card">
+                                <div class="ao-num">5</div>
+                                <div class="ao-title">訂正の理由を<br>データで<br>把握する</div>
+                            </div>
+                            <div class="ao-card">
+                                <div class="ao-num">6</div>
+                                <div class="ao-title">要求を4種類に<br>仕分ける</div>
+                            </div>
+                            <div class="ao-card">
+                                <div class="ao-num">7</div>
+                                <div class="ao-title">効果と負担の<br>増加を<br>役割別で評価する</div>
+                            </div>
+                        </div>
+
+                        <h3 id="section3-1">1. 現行業務を「頻度」で切り分けて聞く</h3>
+                        <p>
+                            最初のヒアリングは、機能の一覧を起点にするのではなく、業務が発生する<strong>頻度（日々・都度・月次・年次・臨時）</strong>で区切って行います。
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:15%;">区分</th>
+                                    <th>ヒアリングする内容の例</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>日々</strong></td>
+                                    <td>通常の入力、計画的な時間外の入力、突発的な勤務変更、休暇の入力、休日の変更、客観的な時刻との乖離の扱い、訂正の運用</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>都度</strong></td>
+                                    <td>過去に遡った訂正、計画的な勤務形態の変更、他職場への応援、承認者が不在のときの運用、各種申請書（申請者・最終承認者・承認ルート）</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>月次</strong></td>
+                                    <td>締め処理の流れ、未承認・不整合への対応とフォロー、システムで管理していない人の扱い、月次の計算内容、給与へ渡すまでの確認</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>年次</strong></td>
+                                    <td>翌年のカレンダー作成、交替勤務カレンダーの作成、年次有給休暇の付与</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>臨時</strong></td>
+                                    <td>個人属性・組織属性・各種マスタの変更可能範囲</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-note">
+                            頻度で区切ると、「月に1回しか発生しないが、誤ると給与に影響する業務」や「年に1回で担当者しか手順を知らない業務」が漏れにくくなります。各区分の冒頭では必ず「その運用における利用者と登場人物」を確認します。
+                        </div>
+
+                        <h3 id="section3-2">2. 利用者を役割別に棚卸しする</h3>
+                        <p>
+                            利用者は「申請者」「承認者」「人事」といった大括りではなく、役割と勤務形態に応じて細かく分けます。それぞれについて「現在の利用内容」「課題・要望」「新システムで目指す改善」の3点で整理します。
+                        </p>
+                        <ul>
+                            <li>申請者（管理職、日勤者、時給者、交替勤務者、外勤中心の者など勤務形態別）</li>
+                            <li>パソコンを持たない従業員（紙で申請し、庶務担当者や管理者が代行入力する者）</li>
+                            <li>承認者（一次）、承認者（最終）、部門長</li>
+                            <li>地区の人事担当者、人事課長、関係会社の人事</li>
+                            <li>庶務担当者（派遣社員を含む）</li>
+                            <li>労働組合、健康管理部門</li>
+                            <li>給与業務の担当、システム運用の担当</li>
+                        </ul>
+                        <p>
+                            よく挙がる課題として、入力チェックが厳密でない、自動計算の項目が少ない、過去に遡った訂正が運用の一部になっている、紙や口頭での申請・承認が残っている、部下の時間外の状況を把握しにくい、などがあります。
+                        </p>
+                        <div class="box-note">
+                            法令の観点で特に確認が必要な点が2つあります。<br>
+                            ①<strong>代行入力の対象者</strong>：本人が入力しない場合でも、始業・終業時刻の確認と記録は必要です。代行入力者が何を根拠に入力しているかを確認します。<br>
+                            ②<strong>管理職</strong>：割増賃金の対象でなくても、労働時間の状況の把握の対象には含まれます。
+                        </div>
+
+                        <h3 id="section3-3">3. スコープを5つの軸で確定する</h3>
+                        <p>
+                            範囲の整理は次の5つの軸で行います。
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:22%;">軸</th>
+                                    <th>整理する内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>利害関係者</strong></td>
+                                    <td>上記「2. 役割別の棚卸し」の整理</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>利用者</strong></td>
+                                    <td>対象とする法人の範囲。出張・出向・転籍の状態ごとに、労働時間管理の対象か、人事・給与と連携するか、出向元・出向先のどちらが承認するかを一覧化</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>システム</strong></td>
+                                    <td>新システムで実現する範囲と、他システム・紙に残す範囲</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>連携</strong></td>
+                                    <td>連携先ごとの内容・送受信の方向・頻度（日次・月次）・主なデータ項目</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>労働時間管理項目</strong></td>
+                                    <td>下記の13項目を確認・整理する</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p><strong>労働時間管理項目として確認・整理する13項目</strong></p>
+                        <div class="items-grid">
+                            <div class="items-group ig-blue">
+                                <div class="items-group-title">打刻・記録</div>
+                                <ul>
+                                    <li><span class="items-num">1</span>打刻データの種類</li>
+                                    <li><span class="items-num">2</span>打刻データの管理<small>（勤務形態ごとの取得方法）</small></li>
+                                </ul>
+                            </div>
+                            <div class="items-group ig-orange">
+                                <div class="items-group-title">管理の基準</div>
+                                <ul>
+                                    <li><span class="items-num">3</span>勤怠の締日</li>
+                                    <li><span class="items-num">4</span>従業員の分類</li>
+                                </ul>
+                            </div>
+                            <div class="items-group ig-sky">
+                                <div class="items-group-title">勤務・休日の種類</div>
+                                <ul>
+                                    <li><span class="items-num">5</span>休日の種類</li>
+                                    <li><span class="items-num">6</span>勤務時間の分類</li>
+                                </ul>
+                            </div>
+                            <div class="items-group ig-blue">
+                                <div class="items-group-title">休暇・特殊勤務</div>
+                                <ul>
+                                    <li><span class="items-num">7</span>残日数を管理している休暇</li>
+                                    <li><span class="items-num">8</span>休職・長期欠勤・短時間勤務の種類</li>
+                                    <li><span class="items-num">9</span>時間帯で入力する項目<small>（時間単位年休・育児時間・私用外出等）</small></li>
+                                </ul>
+                            </div>
+                            <div class="items-group ig-orange">
+                                <div class="items-group-title">振替・代休</div>
+                                <ul>
+                                    <li><span class="items-num">10</span>振替休日の管理</li>
+                                    <li><span class="items-num">11</span>代休の管理</li>
+                                </ul>
+                            </div>
+                            <div class="items-group ig-sky">
+                                <div class="items-group-title">権限・属性</div>
+                                <ul>
+                                    <li><span class="items-num">12</span>個人属性</li>
+                                    <li><span class="items-num">13</span>承認権限と参照権限</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="box-note">
+                            範囲の整理は、就業規則を条文順に読むよりも、「システムが区別しなければならないもの」の一覧に置き換える方が、抜けを見つけやすくなります。<strong>法定休日と所定休日の区別、振替と代休の区別</strong>は割増賃金の計算に影響するため、この段階で定義を確認しておく必要があります。
+                        </div>
+
+                        <h3 id="section3-4">4. 客観的な記録と申告時刻の関係を設計する</h3>
+                        <p>
+                            法令との関係が最も直接的に表れる部分です。次の流れで設計します。
+                        </p>
+
+                        <div class="record-flow">
+                            <div class="rf-box rf-obj">客観的な記録<small>入退場・PC使用時間・Web打刻</small></div>
+                            <div class="rf-arrow">▶</div>
+                            <div class="rf-box rf-rule">反映ルール<small>誰がどの記録を<br>申告時刻に使うか</small></div>
+                            <div class="rf-arrow">▶</div>
+                            <div class="rf-box rf-gap">乖離の確認<small>出社・退社の<br>乖離を計算</small></div>
+                            <div class="rf-arrow">▶</div>
+                            <div class="rf-box rf-result">補正・記録<small>誰が・いつ・<br>どう補正するか</small></div>
+                        </div>
+
+                        <p><strong>ステップ1：客観的な記録の種類を決める</strong></p>
+                        <p>入退場の記録、パソコンの使用時間の記録、Web打刻などの種類を候補とし、勤務形態（パソコンの有無、モバイル利用、出向・長期出張、ネットワーク接続の可否）ごとに、どの記録が取得できるかを一覧にします。取得できない類型は「管理できない」と明記し、その場合の扱いを決めます。</p>
+
+                        <p><strong>ステップ2：申告時刻への反映ルールを決める</strong></p>
+                        <p>客観的な記録を自動的に始業・終業時刻とするのではなく、どの記録を反映するかを本人が申請し、本人の訂正を最優先とする方式が考えられます。移動時間等を差し引く場合は、その申請方法もあわせて要件定義で決める事項として整理します。</p>
+
+                        <p><strong>ステップ3：乖離の計算方法を定義する</strong></p>
+
+                        <div class="gap-visual">
+                            <div class="gap-visual-title">乖離の計算式（要件定義に向けた定義例）</div>
+                            <div class="gap-row">
+                                <div class="gap-label">出社側の乖離</div>
+                                <div class="gap-formula">申告した出社時刻 <span class="minus">−</span> 客観的な入場時刻　<span class="note">（マイナスの場合は0）</span></div>
+                            </div>
+                            <div class="gap-row">
+                                <div class="gap-label">退社側の乖離</div>
+                                <div class="gap-formula">客観的な退場時刻 <span class="minus">−</span> 申告した退社時刻　<span class="note">（マイナスの場合は0）</span></div>
+                            </div>
+                        </div>
+
+                        <p><strong>ステップ4：日をまたぐ勤務の判定方法と、その限界を明示する</strong></p>
+                        <p>客観的な記録には日付・時刻・入退の区分しかないため、勤務区分ごとに判定用の基準時刻を設けて、どの勤務日の記録かを判定する方式が一般的です。ただし、徹夜後にそのまま翌日も勤務するような変則的な勤務では正しく反映されない場合があります。<strong>システムの判定に限界があることを導入前に関係者へ共有</strong>しておくことが、稼働後の問合せ対応にもつながります。</p>
+
+                        <div class="box-note">
+                            ガイドラインは、自己申告と入退場記録等との間に著しい乖離がある場合の実態調査と補正を求めています。乖離を「計算できる」ことと、乖離を「誰が・いつ・どう確認して補正するか」という業務が決まっていることは別です。乖離の確認・補正は、システムの設計と並行して運用フローも決めておく必要があります。
+                        </div>
+
+                        <h3 id="section3-5">5. 訂正の理由をデータで把握する</h3>
+                        <p>
+                            現行システムに蓄積された訂正データを、訂正理由の種類別に集計します。次の手順で分析します。
+                        </p>
+                        <ol>
+                            <li>全体、および組織区分別に、理由別の件数を集計する</li>
+                            <li>件数の多い理由を特定する</li>
+                            <li>理由ごとに、発生原因の仮説を立てる</li>
+                        </ol>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:28%;">訂正理由（上位）</th>
+                                    <th>考えられる主な原因</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="reason-badge rb-high">時間外</span></td>
+                                    <td>自動計算がなく本人が手計算している。休日出勤か振替後の平日残業かを本人が判断できていない。深夜の入力誤り。入力忘れ</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="reason-badge rb-high">休日・振替・代休</span></td>
+                                    <td>振替休日と代休の違いを理解していない。法定休日と法定外休日の違いが分からない</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="reason-badge rb-mid">未承認</span></td>
+                                    <td>承認を促すフォローの責任が承認者に偏っている。締切直前の申請で承認が間に合わない</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="reason-badge rb-mid">休暇・欠勤の種類</span></td>
+                                    <td>種類の意味を理解せずに入力している</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="reason-badge rb-mid">年次有給休暇</span></td>
+                                    <td>他の休暇との使い分けを理解していない。時間単位の入力誤り</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>訂正理由を把握すると、「訂正が多い」という感覚を「どの入力項目の、どの理解不足が原因か」という改善対象に置き換えられます。対策は次の4種類に分かれます。</p>
+
+                        <div class="measure-grid">
+                            <div class="measure-card sys">
+                                <div class="measure-card-title">システムで対応</div>
+                                <ul>
+                                    <li>時間外・深夜の自動計算</li>
+                                    <li>入力時の自動チェック</li>
+                                    <li>振替・代休の判定ロジック</li>
+                                </ul>
+                            </div>
+                            <div class="measure-card ops">
+                                <div class="measure-card-title">運用で対応</div>
+                                <ul>
+                                    <li>日々の申請・承認の仕組み</li>
+                                    <li>締切前のフォロー体制</li>
+                                    <li>代行入力のルール化</li>
+                                </ul>
+                            </div>
+                            <div class="measure-card edu">
+                                <div class="measure-card-title">教育で対応</div>
+                                <ul>
+                                    <li>振替・代休・休日の区別の説明</li>
+                                    <li>年休の使い分けの説明</li>
+                                    <li>導入前のマニュアル整備</li>
+                                </ul>
+                            </div>
+                            <div class="measure-card app">
+                                <div class="measure-card-title">申請設計で対応</div>
+                                <ul>
+                                    <li>申請と承認の単位の見直し</li>
+                                    <li>承認ルートの整理</li>
+                                    <li>締め処理のフローの明確化</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="box-note">
+                            すべての訂正をシステムで防ごうとする必要はありません。システムで対応できる部分と、運用・教育で対応すべき部分を分けて整理することで、追加開発の範囲を絞り込めます。
+                        </div>
+
+                        <h3 id="section3-6">6. 要求を「標準・設定・追加開発・運用」に仕分ける</h3>
+                        <p>
+                            要求一覧（機能、帳票、連携、申請ワークフロー、セキュリティ、非機能）の1件ごとに実現の方向性を整理し、追加開発が必要なものは業務フローと要求番号に紐付けた一覧にまとめます。
+                        </p>
+                        <p>方針の決定では、複数の案を比較する場面があります。次の2例が典型的です。</p>
+                        <p>
+                            <strong>例1：申請と承認の単位</strong><br>
+                            訂正した日だけ日々申請する方式と、特定の届出がある場合だけ日々申請する方式を、承認者1人あたりの承認件数の目安とともに比較します。本人が入力できない場合（代行入力）は、日々の承認は行わず、月次で所属単位の確認を行う整理も選択肢の一つです。
+                        </p>
+                        <p>
+                            <strong>例2：複数法人の管理方式</strong><br>
+                            全法人を1つの管理単位とする方式、主要な会社と関係会社で分ける方式、法人ごとに分ける方式の3案を、連携・協定の種類・権限・出向・転籍・検索・参照権限・締め処理の観点で、「改修への影響」と「運用への影響」の2列で比較します。
+                        </p>
+                        <div class="box-note">
+                            比較表に「運用への影響」の列を設けることが重要です。追加開発を避けて標準機能に合わせる判断は、設定や締め処理の回数が増えるなど、<strong>運用側の負担と引き換えになる場合</strong>があります。両方を並べて初めて判断できます。
+                        </div>
+
+                        <h3 id="section3-7">7. 効果を2つの軸と役割別で評価し、負担が増える点も記載する</h3>
+                        <p>
+                            導入効果は「負荷の軽減」と「コンプライアンス水準の向上」の2軸で、役割別（従業員・承認者・人事・給与業務担当）に評価します。<strong>負担が増える項目も記載することが重要</strong>です。
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:38%;">施策</th>
+                                    <th style="width:14%; text-align:center;">負荷軽減</th>
+                                    <th style="width:14%; text-align:center;">コンプラ</th>
+                                    <th>考え方</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>客観的な記録を複数種類持つ</td>
+                                    <td class="eff-none">－</td>
+                                    <td class="eff-aa">◎</td>
+                                    <td>乖離を把握しやすくなる</td>
+                                </tr>
+                                <tr>
+                                    <td>客観的な記録を始業・終業時刻へ反映する</td>
+                                    <td class="eff-a">〇</td>
+                                    <td class="eff-none">－</td>
+                                    <td>手入力が不要になる</td>
+                                </tr>
+                                <tr>
+                                    <td>反映する記録を申請・承認する</td>
+                                    <td class="eff-b">△</td>
+                                    <td class="eff-none">－</td>
+                                    <td>初回や異動時に申請・承認の手間が発生する</td>
+                                </tr>
+                                <tr>
+                                    <td>通常勤務以外を日々申請・日々承認する</td>
+                                    <td class="eff-b">△</td>
+                                    <td class="eff-a">〇</td>
+                                    <td>手間は発生するが、月次より実態に近い時点で確認できる</td>
+                                </tr>
+                                <tr>
+                                    <td>時間外・深夜の自動計算を拡充する</td>
+                                    <td class="eff-a">〇</td>
+                                    <td class="eff-a">〇</td>
+                                    <td>入力誤りが減り、確認がしやすくなる</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-caution">
+                            適正な管理のための施策には、利用者の手間が増えるものが含まれます。「効率化」とだけ説明すると稼働後の不満につながります。<strong>手間が増える点と、その理由を、導入前に関係者へ説明できる形</strong>にしておくことが必要です。
+                        </div>
+
+                        <div class="inline-cta">
+                            <p>労働時間管理システム導入の要求整理・業務分析についてご相談を承っています。</p>
+                            <a href="../contact.html">無料相談のお問い合わせはこちら</a>
+                        </div>
+
+                        <!-- ===== section4 ===== -->
+                        <h2 id="section4">業務以外で、要求整理の段階で合意しておく方針</h2>
+                        <p>
+                            業務要件と並行して、次の方針も要求整理の段階で文書化しておきます。
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:22%;">方針</th>
+                                    <th>考え方</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>データ移行</strong></td>
+                                    <td>データをマスタ・日々更新されるデータ・参照のみのデータに分類。切替日時点の定点で移行し、差分移行を行わないことで移行の難易度を下げる</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>全体テスト</strong></td>
+                                    <td>単体・結合・総合・システム基盤・ユーザ受入・トレーニングに分類し、種類ごとに実施者・環境・目的を定義する</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>システム切替</strong></td>
+                                    <td>一斉切替か段階的切替か、並行稼働を実施するかを検討項目として明示する</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>教育</strong></td>
+                                    <td>要求整理の段階では原則の方針まで。要件定義で領域・拠点ごとに「誰に・何を・どう伝えるか」を具体化する。意識づけ→教育計画→マニュアル作成→教育実施→トレーニングの順で進める</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>法改正・制度改定への対応</strong></td>
+                                    <td>対応案の検討→システムへの適用→受入テスト・教育→本番稼働 の流れを、業務フローの一つとして記載しておく</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="box-note">
+                            法改正への対応を業務フローの一つとして扱っておくことで、改正が生じたときに「誰が何をするか」が明確になります。労働時間に関する制度は継続的に改正が行われており、導入後の運用の継続性につながります。
+                        </div>
+
+                        <!-- ===== section5 ===== -->
+                        <h2 id="section5">進め方に関する工夫</h2>
+                        <p>
+                            要求整理フェーズをスムーズに進めるための工夫をまとめます。
+                        </p>
+                        <ul>
+                            <li><strong>完了基準を先に定義する：</strong>フェーズの冒頭で成果物と完了基準を決め、完了報告ではタスクごとに基準と照らして完了を判定する</li>
+                            <li><strong>課題を件数と重要度で管理する：</strong>発生・完了・次工程への持越しの件数を報告し、持越し課題のうち重要度の高いものは対応期限・担当・対応方針を明記する。持越しがあっても次工程の開始に影響しないかを判断する</li>
+                            <li><strong>制度変更のリスクを課題として扱う：</strong>検討中の人事制度の変更により要件が変わる可能性は、手戻りのリスクとして課題に登録しておく</li>
+                            <li><strong>経営層・人事責任者の会議で意見を聞く：</strong>要求整理でまとめた方針を報告し、出た意見（位置情報の取得・勤務の中抜けの扱い・裁量労働制適用者の在社時間と労働時間・協定の上限に関する通知のタイミングなど）を、要件定義での確認項目として一覧化する</li>
+                            <li><strong>宿題の期限を決める：</strong>持ち帰り事項は次回の打合せまでに回答する、という前提を双方で確認する</li>
+                        </ul>
+
+                        <!-- ===== section6 ===== -->
+                        <h2 id="section6">中小企業での取捨選択</h2>
+                        <p>
+                            ここまでの進め方は、複数の法人・多様な勤務形態・多数のシステム連携を抱える比較的大規模な導入を想定したものです。中小企業が同じ量の分析と文書を用意する必要はなく、自社の規模と体制に合わせた取捨選択が必要です。
+                        </p>
+                        <div class="box-info">
+                            取捨選択にあたっての区別<br>
+                            ・<strong>規模によって変えてよいもの：</strong>分析の量、文書化の程度、打合せの回数、比較検討する案の数<br>
+                            ・<strong>規模によって変わらないもの：</strong>第2章で整理した法令上の事項。事業場の規模が小さいことを理由に不要となるものではありません
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:22%;">項目</th>
+                                    <th style="width:35%;">大規模な導入での実施内容</th>
+                                    <th>中小企業での扱い</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. 頻度で切り分けて聞く</td>
+                                    <td>区分ごとに複数回の打合せ</td>
+                                    <td class="stay">残す（簡略化）：日々・月次・年次の業務を、担当者への聞き取りで一覧表にまとめる</td>
+                                </tr>
+                                <tr>
+                                    <td>2. 役割別の棚卸し</td>
+                                    <td>十数種類の役割ごとに整理</td>
+                                    <td class="simplify">簡略化：本人・承認者・給与計算の担当の3者で、困っていることを確認する</td>
+                                </tr>
+                                <tr>
+                                    <td>3. スコープの確定</td>
+                                    <td>5つの軸、管理項目13項目</td>
+                                    <td class="stay">対象者と管理項目は残す。複数法人や出向・転籍の整理は、該当がなければ省略できる</td>
+                                </tr>
+                                <tr>
+                                    <td>4. 客観的な記録と申告時刻</td>
+                                    <td>記録の種類・反映ルール・乖離計算・判定の限界</td>
+                                    <td class="stay">残す（省略しない）：規模にかかわらず、労働時間の把握の中心となる部分</td>
+                                </tr>
+                                <tr>
+                                    <td>5. 訂正理由の把握</td>
+                                    <td>数年分のデータを理由別に集計</td>
+                                    <td class="simplify">簡略化：直近の訂正や差戻しを数え、多い理由を把握する</td>
+                                </tr>
+                                <tr>
+                                    <td>6. 要求の仕分け</td>
+                                    <td>要求1件ごとの回答、複数案の比較表</td>
+                                    <td class="simplify">簡略化：追加開発を前提とせず、「標準機能で足りるか、運用で補うか」を確認する</td>
+                                </tr>
+                                <tr>
+                                    <td>7. 効果の評価</td>
+                                    <td>2軸と役割別の評価表</td>
+                                    <td class="simplify">簡略化：導入によって手間が増える点だけは洗い出し、説明できるようにする</td>
+                                </tr>
+                                <tr>
+                                    <td>業務以外の方針</td>
+                                    <td>移行・テスト・切替・教育・インフラ等を文書化</td>
+                                    <td>一部を残す：年次有給休暇の残日数等の移行、旧記録の保存、切替月の扱い、利用者への説明。クラウドサービスを利用する場合、インフラや非機能はサービスの仕様の確認に置き換えられる</td>
+                                </tr>
+                                <tr>
+                                    <td>進め方の工夫</td>
+                                    <td>完了基準、課題管理、会議での報告</td>
+                                    <td class="simplify">簡略化：決める人と期限を決め、決めた内容を書面に残す</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- ===== section7 ===== -->
+                        <h2 id="section7">まとめ：最低限の確認項目</h2>
+                        <p>
+                            規模を問わず、次の6点が決まっていれば、製品の選定と設定に進む土台になります。
+                        </p>
+                        <ol>
+                            <li><strong>誰の時間を把握するか：</strong>割増賃金の対象者だけでなく、管理職や短時間勤務者を含めて対象者を確認する</li>
+                            <li><strong>何を根拠に記録するか：</strong>客観的な記録（タイムカード、ICカード、パソコンの使用時間の記録等）を基本とする。取得できない人については、自己申告とする理由と必要な措置（説明、実態の確認、補正）を決める</li>
+                            <li><strong>記録と実態の差を、誰が確認して直すか：</strong>乖離が表示されるだけでは足りない。確認する人・時期・補正の手順を決める</li>
+                            <li><strong>上限と休暇に、月の途中で気づけるか：</strong>時間外労働の見込みと年次有給休暇の取得状況を、締め後ではなく途中で把握する方法を決める</li>
+                            <li><strong>記録を残せるか：</strong>訂正の履歴を含めて、保存期間を満たす形で残す。旧システムや紙の記録の扱いも決める</li>
+                            <li><strong>就業規則・36協定とシステムの設定が一致しているか：</strong>所定労働時間・休日の種類・振替と代休の扱い・協定で定めた時間数が、設定に正しく反映されているかを確認する</li>
+                        </ol>
+
+                        <p><strong>最低限、確認する項目</strong></p>
+                        <ul class="checklist">
+                            <li>労働時間を把握する対象者を一覧にしたか（管理職・短時間勤務者・出向者・派遣で受け入れている者を含む）</li>
+                            <li>対象者の類型ごとに、客観的な記録を何から取るかを決めたか。取れない類型をどう扱うかを決めたか</li>
+                            <li>客観的な記録と申告時刻の差を、誰が・いつ確認し、どう補正するかを決めたか</li>
+                            <li>休日の種類（法定休日・所定休日）、振替と代休の定義を、就業規則と照らして確認したか</li>
+                            <li>時間外労働の見込みを、月の途中で本人と管理者に知らせる方法を決めたか</li>
+                            <li>年次有給休暇の取得日数を、基準日から1年の単位で確認できるか</li>
+                            <li>記録（訂正の履歴を含む）の保存期間と、旧システムのデータの残し方を決めたか</li>
+                        </ul>
+
+                        <p><strong>体制に余裕があれば実施する項目</strong></p>
+                        <ul class="checklist opt">
+                            <li>日々・都度・月次・年次・臨時の区分で、現在の業務を書き出したか</li>
+                            <li>過去の訂正や差戻しの理由を集計し、件数の多い理由を把握したか</li>
+                            <li>導入によって手間が増える点を洗い出し、関係者に説明できるか</li>
+                            <li>法改正があったときの対応手順と担当を決めたか</li>
+                        </ul>
+
+                        <div class="box-caution">
+                            システムを導入することは、法令を遵守していることを意味しません。労働時間の把握は、記録の仕組みと、記録を確認・補正する運用の両方で成り立ちます。法令の内容はいずれも要旨で記載しています。
+                        </div>
+
+                        <div class="sources">
+                            <div class="sources-title">参考資料（一次情報）</div>
+                            <ul>
+                                <li><a href="https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/8_sankou4.pdf" target="_blank" rel="noopener">厚生労働省「労働時間の適正な把握のために使用者が講ずべき措置に関するガイドライン」（平成29年1月20日策定）</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/347AC0000000057" target="_blank" rel="noopener">e-Gov法令検索「労働安全衛生法」第66条の8の3</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/347M50002000032" target="_blank" rel="noopener">e-Gov法令検索「労働安全衛生規則」第52条の7の3</a></li>
+                                <li><a href="https://laws.e-gov.go.jp/law/322AC0000000049" target="_blank" rel="noopener">e-Gov法令検索「労働基準法」第36条・第37条・第39条・第109条</a></li>
+                                <li><a href="https://jsite.mhlw.go.jp/shimane-roudoukyoku/content/contents/001303412.pdf" target="_blank" rel="noopener">島根労働局・出雲労働基準監督署「改正労働安全衛生法に基づく労働時間の把握について」</a></li>
+                            </ul>
+                        </div>
+
+                    </article>
+
+                    <div class="author-box">
+                        <div class="author-icon">今</div>
+                        <div class="author-info">
+                            <div class="author-name">今井 久一郎</div>
+                            <div class="author-title">特定社会保険労務士 ／ 元システムエンジニア（25年）</div>
+                            <div class="author-bio">
+                                社労士としての専門知識に加え、25年のSEとしての経験を活かし、中小企業の労務管理×デジタル化を一体支援。1万〜3万人規模の勤怠システム導入プロジェクトに携わった経験を持つ。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-nav">
+                        <a href="gyomu-bunseki-dankai_2.html">
+                            <div class="nav-label">← 前の記事</div>
+                            人事労働業務の棚卸しと段階的な効率化の進め方
+                        </a>
+                    </div>
+                    <a href="index.html" class="back-to-list">← コラム一覧に戻る</a>
+                </div>
+
+                <!-- サイドバー -->
+                <aside>
+                    <div class="toc" id="toc-desktop">
+                        <div class="toc-title">📋 この記事の目次</div>
+                        <ol>
+                            <li><a href="#section1">なぜ「要求整理」という工程を置くのか</a></li>
+                            <li><a href="#section2">出発点となる法令の整理</a></li>
+                            <li><a href="#section3">業務分析の7つのアプローチ</a>
+                                <ol>
+                                    <li><a href="#section3-1">頻度で切り分けて聞く</a></li>
+                                    <li><a href="#section3-2">利用者を役割別に棚卸し</a></li>
+                                    <li><a href="#section3-3">スコープを5つの軸で確定</a></li>
+                                    <li><a href="#section3-4">客観記録と申告時刻の設計</a></li>
+                                    <li><a href="#section3-5">訂正理由のデータ把握</a></li>
+                                    <li><a href="#section3-6">要求を4種類に仕分け</a></li>
+                                    <li><a href="#section3-7">効果と負担の役割別評価</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#section4">業務以外で合意しておく方針</a></li>
+                            <li><a href="#section5">進め方の工夫</a></li>
+                            <li><a href="#section6">中小企業での取捨選択</a></li>
+                            <li><a href="#section7">まとめ：最低限の確認項目</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="related-articles">
+                        <div class="related-title">関連コラム</div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="kinmu-system-guide.html">クラウド勤怠管理システムの選び方｜社労士が失敗しないポイントを解説</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="gyomu-bunseki-dankai_2.html">人事労働業務の棚卸しと段階的な効率化の進め方</a>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-cat">労務管理・DX</div>
+                            <a href="romu-dx-roadmap.html">中小企業の労務DXロードマップ ― 何から手をつけるか</a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>記事を読んで気になったことがあれば、お気軽にご相談ください</h2>
+            <p>「うちの場合はどうなる？」という個別のご相談も、初回無料で承っています。</p>
+            <a href="../contact.html" class="cta-btn">無料相談のお問い合わせはこちら</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-name">今井久一郎 社会保険労務士事務所</div>
+            <p>CSI&LC IMAI - Cloud System Integration &amp; Labor Consulting</p>
+            <img src="../images/認証マーク_SRPⅡ.jpg" alt="SRP II 認証" class="footer-srp">
+            <p class="copyright">&copy; 2026 IMAI HISAICHIRO Social Insurance Labor Consultant Office. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustToc() {
+            const isMobile = window.innerWidth <= 768;
+            document.getElementById('toc-mobile').style.display = isMobile ? 'block' : 'none';
+            document.getElementById('toc-desktop').style.display = isMobile ? 'none' : 'block';
+        }
+        adjustToc();
+        window.addEventListener('resize', adjustToc);
+    </script>
+</body>
+</html>
